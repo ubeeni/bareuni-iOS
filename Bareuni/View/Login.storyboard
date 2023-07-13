@@ -79,17 +79,17 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 가입하셨나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdJ-Sp-v99">
                                 <rect key="frame" x="141" y="739" width="108" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="rdJ-Sp-v99" secondAttribute="height" multiplier="108:17" id="a9W-n2-Ly9"/>
                                     <constraint firstAttribute="height" constant="17" id="xgW-t5-5Fu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJI-jS-9BE">
-                                <rect key="frame" x="249" y="739" width="37" height="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJI-jS-9BE">
+                                <rect key="frame" x="249" y="739" width="40" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="dMd-Dv-gmO"/>
+                                    <constraint firstAttribute="width" constant="40" id="nZ1-eV-78i"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -113,6 +113,7 @@
                             <constraint firstItem="BJI-jS-9BE" firstAttribute="leading" secondItem="rdJ-Sp-v99" secondAttribute="trailing" id="ZJg-sd-pa4"/>
                             <constraint firstItem="94I-6E-70L" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="204" id="aqh-s7-w9L"/>
                             <constraint firstItem="Iji-Ge-cRt" firstAttribute="top" secondItem="eyP-IO-3oR" secondAttribute="bottom" constant="15" id="bHF-x8-imA"/>
+                            <constraint firstItem="rdJ-Sp-v99" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="141" id="cS2-SG-iSg"/>
                             <constraint firstItem="BJI-jS-9BE" firstAttribute="centerY" secondItem="rdJ-Sp-v99" secondAttribute="centerY" id="ejN-SD-STg"/>
                             <constraint firstItem="YZe-0M-OQh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="ggB-vK-dtP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rdJ-Sp-v99" secondAttribute="bottom" constant="54" id="ldh-uo-lDZ"/>
@@ -121,6 +122,12 @@
                             <constraint firstItem="rdJ-Sp-v99" firstAttribute="top" secondItem="Iji-Ge-cRt" secondAttribute="bottom" constant="23" id="xKH-Ol-haX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appleSignupBtn" destination="eyP-IO-3oR" id="KX6-AD-Kca"/>
+                        <outlet property="emailSignupBtn" destination="Iji-Ge-cRt" id="glk-kA-56z"/>
+                        <outlet property="kakaoSignupBtn" destination="YZe-0M-OQh" id="3Ta-8M-Xfa"/>
+                        <outlet property="signupLbLeadingConst" destination="cS2-SG-iSg" id="W9l-tt-x4D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
