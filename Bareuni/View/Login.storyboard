@@ -176,6 +176,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="로그인">
                                     <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginBtnDidTap:" destination="ka6-a7-BA6" eventType="touchUpInside" id="EiE-qk-PKk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvi-fT-s8h">
                                 <rect key="frame" x="155" y="513" width="80" height="34"/>
@@ -197,11 +200,33 @@
                                     <fontDescription key="titleFontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
                                 </buttonConfiguration>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입되지 않은 이메일입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2p-Bb-bQY">
+                                <rect key="frame" x="39" y="300" width="180" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="Jfn-dS-QbA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 확인해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otp-1h-o7e">
+                                <rect key="frame" x="39" y="391" width="150" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="3b1-TM-v7e"/>
+                                    <constraint firstAttribute="height" constant="14" id="BmJ-IA-G6O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="il0-To-2H7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Q2p-Bb-bQY" firstAttribute="top" secondItem="Hkp-fv-HYR" secondAttribute="bottom" id="3ch-Um-A8d"/>
+                            <constraint firstItem="veO-TB-TNu" firstAttribute="top" secondItem="Q2p-Bb-bQY" secondAttribute="bottom" id="6ns-wa-lCN"/>
                             <constraint firstItem="kvi-fT-s8h" firstAttribute="centerX" secondItem="il0-To-2H7" secondAttribute="centerX" id="B5I-h7-Tdc"/>
+                            <constraint firstItem="Q2p-Bb-bQY" firstAttribute="leading" secondItem="il0-To-2H7" secondAttribute="leading" constant="39" id="Ch9-XN-ON6"/>
                             <constraint firstItem="il0-To-2H7" firstAttribute="trailing" secondItem="veO-TB-TNu" secondAttribute="trailing" constant="24" id="DZi-bh-X6c"/>
                             <constraint firstItem="Hkp-fv-HYR" firstAttribute="top" secondItem="lvs-8v-DJB" secondAttribute="bottom" constant="88" id="Fda-MI-rTb"/>
                             <constraint firstItem="il0-To-2H7" firstAttribute="trailing" secondItem="akI-9l-SRJ" secondAttribute="trailing" constant="24" id="JsM-eE-hYG"/>
@@ -209,6 +234,8 @@
                             <constraint firstItem="lvs-8v-DJB" firstAttribute="centerX" secondItem="il0-To-2H7" secondAttribute="centerX" id="Pjh-lu-12W"/>
                             <constraint firstItem="akI-9l-SRJ" firstAttribute="top" secondItem="veO-TB-TNu" secondAttribute="bottom" constant="64" id="PwK-uy-Chw"/>
                             <constraint firstItem="Hkp-fv-HYR" firstAttribute="leading" secondItem="il0-To-2H7" secondAttribute="leading" constant="24" id="RIG-dw-dQG"/>
+                            <constraint firstItem="otp-1h-o7e" firstAttribute="leading" secondItem="il0-To-2H7" secondAttribute="leading" constant="39" id="Wym-nJ-OhE"/>
+                            <constraint firstItem="otp-1h-o7e" firstAttribute="top" secondItem="veO-TB-TNu" secondAttribute="bottom" constant="10" id="ZXo-Tl-pIh"/>
                             <constraint firstItem="4Bn-qt-aao" firstAttribute="top" secondItem="veO-TB-TNu" secondAttribute="bottom" constant="10" id="eKd-ag-Ogz"/>
                             <constraint firstItem="il0-To-2H7" firstAttribute="trailing" secondItem="4Bn-qt-aao" secondAttribute="trailing" constant="20" id="gGy-du-M8N"/>
                             <constraint firstItem="lvs-8v-DJB" firstAttribute="top" secondItem="il0-To-2H7" secondAttribute="top" constant="79" id="h9K-mh-GyW"/>
@@ -220,14 +247,16 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Hkp-fv-HYR" id="EQQ-oJ-cxp"/>
+                        <outlet property="emailWarningLb" destination="Q2p-Bb-bQY" id="SOU-AG-axH"/>
                         <outlet property="findPWBtn" destination="4Bn-qt-aao" id="vsp-OR-Kl0"/>
                         <outlet property="loginSubmitBtn" destination="akI-9l-SRJ" id="jok-4E-D28"/>
                         <outlet property="pwTextField" destination="veO-TB-TNu" id="0y5-5Y-rX9"/>
+                        <outlet property="pwWarningLb" destination="otp-1h-o7e" id="BeJ-lG-P0t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5m0-cW-SQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="-25"/>
+            <point key="canvasLocation" x="738" y="-36"/>
         </scene>
     </scenes>
     <resources>
@@ -248,6 +277,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

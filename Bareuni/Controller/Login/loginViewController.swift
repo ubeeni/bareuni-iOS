@@ -25,11 +25,25 @@ class loginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     
-
     @IBOutlet weak var loginSubmitBtn: UIButton!
-    
     @IBOutlet weak var findPWBtn: UIButton!
+    
+    @IBOutlet weak var emailWarningLb: UILabel!
+    @IBOutlet weak var pwWarningLb: UILabel!
+    
+    @IBAction func loginBtnDidTap(_ sender: Any) {
+        if(emailTextField.text == ""){
+            emailWarningLb.text = "이메일을 입력해주세요."
+            emailWarningLb.isHidden = false
+        }
+        
+        if(pwTextField.text == ""){
+            pwWarningLb.text = "비밀번호를 입력해주세요."
+            pwWarningLb.isHidden = false
+        }
+    }
 }
+
 
 extension UITextField{
     func doViewSetting(paddingWidth: Float, cornerRadius: Float){
