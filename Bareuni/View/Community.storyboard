@@ -301,11 +301,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="176" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="자유수다"/>
+                                        <connections>
+                                            <action selector="buttonTouchUpInside:" destination="yrf-q6-i5G" eventType="touchUpInside" id="Oav-kd-PrE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5s-dS-58F">
                                         <rect key="frame" x="217" y="0.0" width="176" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="자주 물어보는 질문"/>
+                                        <connections>
+                                            <action selector="buttonTouchUpInside:" destination="yrf-q6-i5G" eventType="touchUpInside" id="Mdl-C7-dba"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -322,6 +328,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CqH-7y-pWg"/>
+                    <connections>
+                        <outlet property="CategoryStackView" destination="5gb-W0-ZJi" id="Qq5-Xu-wLR"/>
+                        <outlet property="ChatButton" destination="JnB-Lb-e54" id="ljR-Vb-2TE"/>
+                        <outlet property="FAQButton" destination="s5s-dS-58F" id="62L-3m-4Cv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfM-m6-XC9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
