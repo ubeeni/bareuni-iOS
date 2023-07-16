@@ -26,6 +26,9 @@
 		32A5E7022A557A8500B41644 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32A5E7012A557A8500B41644 /* Pretendard-Medium.otf */; };
 		32A5E7042A557A9E00B41644 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32A5E7032A557A9E00B41644 /* Pretendard-Regular.ttf */; };
 		32A5E7062A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32A5E7052A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf */; };
+		3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB7172A5C508600AC56D0 /* ContentView.swift */; };
+		3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */; };
+		3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACE32A5D3C060071D598 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		32A5E7012A557A8500B41644 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		32A5E7032A557A9E00B41644 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
 		32A5E7052A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		3B9CB7172A5C508600AC56D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		3BB0ACE32A5D3C060071D598 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,8 @@
 				1026BF462A5A98CB00955799 /* Info.storyboard */,
 				1026BF482A5A998600955799 /* Community.storyboard */,
 				1026BF4A2A5A9D6400955799 /* Mypage.storyboard */,
+				3B9CB7172A5C508600AC56D0 /* ContentView.swift */,
+				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				32A5E6CC2A557A1800B41644 /* ViewController.swift */,
+				3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */,
 				1026BF402A59A8F000955799 /* TabBarController.swift */,
 			);
 			path = Controller;
@@ -337,10 +346,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */,
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,
 				32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */,
+				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
+				3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

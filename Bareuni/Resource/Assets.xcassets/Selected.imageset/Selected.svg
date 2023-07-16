@@ -1,0 +1,7 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Atoms / Form / Check / Selected">
+<rect id="Background" width="24" height="24" rx="2" fill="white"/>
+<path id="Border" fill-rule="evenodd" clip-rule="evenodd" d="M21.1765 0H2.82353C1.26414 0 0 1.26414 0 2.82353V21.1765C0 22.7359 1.26414 24 2.82353 24H21.1765C22.7359 24 24 22.7359 24 21.1765V2.82353C24 1.26414 22.7359 0 21.1765 0Z" fill="#0094FF"/>
+<path id="Path 2" d="M4.23535 12.8156L10.1106 16.942L18.708 7.05859" stroke="white" stroke-width="2" stroke-linecap="round"/>
+</g>
+</svg>
