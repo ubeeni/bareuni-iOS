@@ -12,6 +12,8 @@
 		1026BF472A5A98CB00955799 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1026BF462A5A98CB00955799 /* Info.storyboard */; };
 		1026BF492A5A998600955799 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1026BF482A5A998600955799 /* Community.storyboard */; };
 		1026BF4B2A5A9D6400955799 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1026BF4A2A5A9D6400955799 /* Mypage.storyboard */; };
+		1026BF4D2A5AA5C700955799 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026BF4C2A5AA5C700955799 /* HomeViewController.swift */; };
+		1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */; };
 		321B896D2A602AA500AE45D4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321B896C2A602AA500AE45D4 /* Login.storyboard */; };
 		321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */; };
 		321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B89712A60351E00AE45D4 /* loginViewController.swift */; };
@@ -70,6 +72,8 @@
 		26F529F22A62B9DE00813AE3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		26F529F42A62B9F100813AE3 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		26F529F82A62BF2800813AE3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		1026BF4C2A5AA5C700955799 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		32A5E6C52A557A1800B41644 /* Bareuni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bareuni.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A5E6C82A557A1800B41644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32A5E6CA2A557A1800B41644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		104862532A61ADCB00D2683F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1026BF4C2A5AA5C700955799 /* HomeViewController.swift */,
+				1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		321B896E2A60320B00AE45D4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +229,7 @@
 			children = (
 				321B896E2A60320B00AE45D4 /* Login */,
 				26F529EB2A5D91CB00813AE3 /* CommunityController */,
+				104862532A61ADCB00D2683F /* Home */,
 				32A5E6CC2A557A1800B41644 /* ViewController.swift */,
 				3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */,
 				1026BF402A59A8F000955799 /* TabBarController.swift */,
@@ -388,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */,
+				1026BF4D2A5AA5C700955799 /* HomeViewController.swift in Sources */,
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
 				26F529F52A62B9F100813AE3 /* FAQViewController.swift in Sources */,
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
@@ -397,6 +412,7 @@
 				26F529F12A5EC43E00813AE3 /* PopularCell.swift in Sources */,
 				268337382A5C28C900776151 /* CommunityViewController.swift in Sources */,
 				26F529F92A62BF2800813AE3 /* CategoryViewController.swift in Sources */,
+				1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */,
 				32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */,
 				321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */,
 				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
