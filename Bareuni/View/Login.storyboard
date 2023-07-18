@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iNJ-R7-sdb">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -26,14 +26,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueLogo" translatesAutoresizingMaskIntoConstraints="NO" id="94I-6E-70L">
-                                <rect key="frame" x="139.66666666666666" y="251" width="111" height="61"/>
+                                <rect key="frame" x="139.66666666666666" y="295" width="111" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="hRb-vX-Y8l"/>
                                     <constraint firstAttribute="width" constant="111" id="lhf-Ih-F0h"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'바른' 교정 정보 보러가기 🦷  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0l-rU-sud">
-                                <rect key="frame" x="112.00000000000001" y="336" width="166.33333333333337" height="24"/>
+                                <rect key="frame" x="112.00000000000001" y="380" width="166.33333333333337" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="urJ-pu-atH"/>
                                 </constraints>
@@ -96,7 +96,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="로그인"/>
                                 <connections>
-                                    <segue destination="ka6-a7-BA6" kind="showDetail" id="4Iv-PH-iR1"/>
+                                    <segue destination="ka6-a7-BA6" kind="show" id="TDo-uB-KF8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -123,6 +123,7 @@
                             <constraint firstItem="rdJ-Sp-v99" firstAttribute="top" secondItem="Iji-Ge-cRt" secondAttribute="bottom" constant="23" id="xKH-Ol-haX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="754-T0-mVg"/>
                     <connections>
                         <outlet property="appleSignupBtn" destination="eyP-IO-3oR" id="KX6-AD-Kca"/>
                         <outlet property="emailSignupBtn" destination="Iji-Ge-cRt" id="glk-kA-56z"/>
@@ -132,25 +133,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142" y="-36"/>
+            <point key="canvasLocation" x="1171" y="-54"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="5IF-ek-rke">
             <objects>
                 <viewController id="ka6-a7-BA6" customClass="loginViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ep-Um-Peb">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lvs-8v-DJB">
-                                <rect key="frame" x="163" y="126" width="64" height="34"/>
+                                <rect key="frame" x="163" y="170" width="64" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Vfe-dL-CfE"/>
                                     <constraint firstAttribute="width" constant="64" id="bun-FT-Oul"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hkp-fv-HYR">
-                                <rect key="frame" x="24" y="248" width="342" height="52"/>
+                                <rect key="frame" x="24" y="292" width="342" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="U5b-NL-CMl"/>
                                 </constraints>
@@ -158,7 +159,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="veO-TB-TNu">
-                                <rect key="frame" x="24" y="329" width="342" height="52"/>
+                                <rect key="frame" x="24" y="373" width="342" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Bdv-pr-zvz"/>
                                 </constraints>
@@ -166,7 +167,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akI-9l-SRJ">
-                                <rect key="frame" x="24" y="445" width="342" height="51"/>
+                                <rect key="frame" x="24" y="489" width="342" height="51"/>
                                 <color key="backgroundColor" name="BackgroundBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="ONd-6b-vik"/>
@@ -181,7 +182,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvi-fT-s8h">
-                                <rect key="frame" x="155" y="513" width="80" height="34"/>
+                                <rect key="frame" x="155" y="557" width="80" height="34"/>
                                 <color key="tintColor" name="BackgroundBlue"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="회원가입">
@@ -189,7 +190,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bn-qt-aao">
-                                <rect key="frame" x="280" y="391" width="90" height="14"/>
+                                <rect key="frame" x="280" y="435" width="90" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="4OC-s3-3Up"/>
                                     <constraint firstAttribute="height" constant="14" id="ji5-Tl-QL0"/>
@@ -201,7 +202,7 @@
                                 </buttonConfiguration>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입되지 않은 이메일입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2p-Bb-bQY">
-                                <rect key="frame" x="39" y="300" width="180" height="29"/>
+                                <rect key="frame" x="39" y="344" width="180" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="Jfn-dS-QbA"/>
                                 </constraints>
@@ -210,7 +211,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 확인해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otp-1h-o7e">
-                                <rect key="frame" x="39" y="391" width="150" height="14"/>
+                                <rect key="frame" x="39" y="435" width="150" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="3b1-TM-v7e"/>
                                     <constraint firstAttribute="height" constant="14" id="BmJ-IA-G6O"/>
@@ -245,6 +246,7 @@
                             <constraint firstItem="veO-TB-TNu" firstAttribute="leading" secondItem="il0-To-2H7" secondAttribute="leading" constant="24" id="yI3-V9-cDm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="P3C-VM-AXL"/>
                     <connections>
                         <outlet property="emailTextField" destination="Hkp-fv-HYR" id="EQQ-oJ-cxp"/>
                         <outlet property="emailWarningLb" destination="Q2p-Bb-bQY" id="SOU-AG-axH"/>
@@ -256,11 +258,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5m0-cW-SQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="-36"/>
+            <point key="canvasLocation" x="2211" y="-54"/>
+        </scene>
+        <!--LoginUI Navigation Controller-->
+        <scene sceneID="7Ii-ic-Qdw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iNJ-R7-sdb" customClass="LoginUINavigationController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9kg-mV-Wdc">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="heK-Bd-t0i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WnV-26-jEH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="269" y="-54"/>
         </scene>
     </scenes>
     <resources>
-        <image name="BlueLogo" width="74" height="40.666667938232422"/>
+        <image name="BlueLogo" width="111" height="61"/>
         <image name="appleLogo" width="38" height="38"/>
         <image name="kakaoLogo" width="19" height="19"/>
         <namedColor name="BackgroundBlue">
