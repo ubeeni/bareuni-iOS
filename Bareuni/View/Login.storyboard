@@ -335,6 +335,7 @@
                         <outlet property="confirmBtn" destination="shb-bc-5cT" id="mtE-XX-SMS"/>
                         <outlet property="explainLb" destination="ws0-M8-mry" id="Qag-6h-k6L"/>
                         <outlet property="findEmailTF" destination="YYo-CE-jhC" id="DXW-nm-VjR"/>
+                        <outlet property="warningLb" destination="WbN-P6-3fP" id="joW-Ss-jwO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e39-wy-frX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
