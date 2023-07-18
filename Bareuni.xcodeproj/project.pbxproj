@@ -37,6 +37,7 @@
 		32A5E7042A557A9E00B41644 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32A5E7032A557A9E00B41644 /* Pretendard-Regular.ttf */; };
 		32A5E7062A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32A5E7052A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf */; };
 		32B5FE022A663AEC00DBC993 /* LoginUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */; };
+		32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE052A66423D00DBC993 /* FindPWViewController.swift */; };
 		3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB7172A5C508600AC56D0 /* ContentView.swift */; };
 		3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */; };
 		3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACE32A5D3C060071D598 /* TestView.swift */; };
@@ -94,6 +95,7 @@
 		32A5E7032A557A9E00B41644 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
 		32A5E7052A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
 		32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUINavigationController.swift; sourceTree = "<group>"; };
+		32B5FE052A66423D00DBC993 /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
 		3B9CB7172A5C508600AC56D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3BB0ACE32A5D3C060071D598 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */,
 				321B89712A60351E00AE45D4 /* loginViewController.swift */,
 				32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */,
+				32B5FE052A66423D00DBC993 /* FindPWViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
 				26F529F52A62B9F100813AE3 /* FAQViewController.swift in Sources */,
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
+				32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */,
 				321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */,
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,
 				26F529F32A62B9DE00813AE3 /* ChatViewController.swift in Sources */,
