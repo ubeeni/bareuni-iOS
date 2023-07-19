@@ -8,6 +8,8 @@
 import SwiftUI
 
 
+
+
 struct ContentView: View {
     
     @State var tabIndex = "서울"
@@ -42,131 +44,136 @@ struct ContentView: View {
     var cityList = ["서울", "경기", "인천", "부산", "대구", "대전", "광주", "울산", "충남/세종", "충북", "전남", "전북", "경남", "경북", ]
     
     var body: some View {
-        VStack{
-            HStack{
-                Button(action: {
-                    selectedCities.removeAll()
-                }, label: {
-                    HStack{
-                        Image("reset")
-                            .frame(width: 20, height: 20)
-                            .rotationEffect(.degrees(-90))
-                            .padding(.bottom, 10)
-                            .padding(.leading)
-                        
-                        Text("초기화")
-                            .font(
-                                Font.custom("Public Sans", size: 15)
-                                    .weight(.medium)
-                            )
-                            .foregroundColor(Color(red: 0.76, green: 0.82, blue: 0.85))
-                            .frame(width: 52, height: 28, alignment: .topLeading)
-                    }
-                })
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(spacing: 20) {
-                        ForEach(selectedCities, id: \.self){ city in
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                    .frame(width: 113, height: 24)
-                                    .cornerRadius(13)
-                                
-                                HStack {
-                                    Text(city)
-                                        .font(
-                                            Font.custom("Public Sans", size: 15)
-                                                .weight(.medium)
-                                        )
+        NavigationView {
+            VStack{
+                HStack{
+                    Button(action: {
+                        selectedCities.removeAll()
+                    }, label: {
+                        HStack{
+                            Image("reset")
+                                .frame(width: 20, height: 20)
+                                .rotationEffect(.degrees(-90))
+                                .padding(.bottom, 10)
+                                .padding(.leading)
+                            
+                            Text("초기화")
+                                .font(
+                                    Font.custom("Public Sans", size: 15)
+                                        .weight(.medium)
+                                )
+                                .foregroundColor(Color(red: 0.76, green: 0.82, blue: 0.85))
+                                .frame(width: 52, height: 28, alignment: .topLeading)
+                        }
+                    })
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 20) {
+                            ForEach(selectedCities, id: \.self){ city in
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
+                                        .frame(width: 113, height: 24)
+                                        .cornerRadius(13)
                                     
-                                    Button(action: {
-                                        selectedCities.removeAll { $0 == city }
-                                    }, label: {
-                                        Image("Mask")
-                                    })
+                                    HStack {
+                                        Text(city)
+                                            .font(
+                                                Font.custom("Public Sans", size: 15)
+                                                    .weight(.medium)
+                                            )
+                                        
+                                        Button(action: {
+                                            selectedCities.removeAll { $0 == city }
+                                        }, label: {
+                                            Image("Mask")
+                                        })
+                                    }
                                 }
                             }
                         }
-                    }
 
+                    }
+                    .frame(height: 30)
+                    
+                    Spacer()
+                    
                 }
-                .frame(height: 30)
                 
                 Spacer()
                 
-            }
-            
-            Spacer()
-            
-            Rectangle()
-                .foregroundColor(.clear)
-                .frame(width: .infinity, height: 1)
-                .background(Color(red: 0.91, green: 0.93, blue: 0.94))
-            
-            Spacer(minLength: 0)
-            
-            HStack{
-                VStack{
-                    
-                    List(cityList, id: \.self){ city in
-                        LocationButton(text: city, isSelected: .constant(tabIndex == city))
-                            .onTapGesture { onButtonTapped(index: city) }
-                            .listRowSeparator(.hidden)
-                            .listRowInsets(EdgeInsets())
-                    }
-                    .listStyle(.plain)
-                    .frame(width: 95)
-                    
-                }
-                
-                Spacer().frame(width: 0)
-                
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 1, height: .infinity)
+                    .frame(width: .infinity, height: 1)
                     .background(Color(red: 0.91, green: 0.93, blue: 0.94))
                 
+                Spacer(minLength: 0)
                 
-                VStack {
-                    List(cityDic[tabIndex] ?? [], id: \.self) { detailCity in
-                        DetailLocationButton(text: detailCity, detailText: tabIndex + "-" + detailCity, isSelected: bindingForSelection(tabIndex + "-" + detailCity))
-                            .onTapGesture {
-                                onButtonTapped2(index: tabIndex + "-" + detailCity)
-                            }
-                            .listRowSeparator(.hidden)
+                HStack{
+                    VStack{
+                        
+                        List(cityList, id: \.self){ city in
+                            LocationButton(text: city, isSelected: .constant(tabIndex == city))
+                                .onTapGesture { onButtonTapped(index: city) }
+                                .listRowSeparator(.hidden)
+                                .listRowInsets(EdgeInsets())
+                        }
+                        .listStyle(.plain)
+                        .frame(width: 95)
+                        
                     }
-                    .listStyle(.plain)
+                    
+                    Spacer().frame(width: 0)
+                    
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 1, height: .infinity)
+                        .background(Color(red: 0.91, green: 0.93, blue: 0.94))
+                    
+                    
+                    VStack {
+                        List(cityDic[tabIndex] ?? [], id: \.self) { detailCity in
+                            DetailLocationButton(text: detailCity, detailText: tabIndex + "-" + detailCity, isSelected: bindingForSelection(tabIndex + "-" + detailCity))
+                                .onTapGesture {
+                                    onButtonTapped2(index: tabIndex + "-" + detailCity)
+                                }
+                                .listRowSeparator(.hidden)
+                        }
+                        .listStyle(.plain)
+                    }
                 }
+                
+
+                Button(action: {
+                    //아마 API연결
+                }, label: {
+                    NavigationLink(destination: InfoView(), label: {
+                    ZStack {
+                        
+                        if selectedCities.count == 0 {
+                            Rectangle().frame(width: 370, height: 57)
+                                .cornerRadius(4)
+                                .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
+                        }
+                        else{
+                            Rectangle().frame(width: 370, height: 57)
+                                .cornerRadius(4)
+                                .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                        }
+                        
+                        Text("내 지역 선택 완료")
+                            .font(
+                                Font.custom("Public Sans", size: 24)
+                                    .weight(.bold)
+                            )
+                            .multilineTextAlignment(.trailing)
+                            .foregroundColor(.white)
+                    }
+                    })
+                })
+                
+                
             }
-            
-            Button(action: {
-                //아마 API연결
-            }, label: {
-                ZStack {
-                    
-                    if selectedCities.count == 0 {
-                        Rectangle().frame(width: 370, height: 57)
-                            .cornerRadius(4)
-                            .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
-                    }
-                    else{
-                        Rectangle().frame(width: 370, height: 57)
-                            .cornerRadius(4)
-                            .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
-                    }
-                    
-                    Text("내 지역 선택 완료")
-                        .font(
-                            Font.custom("Public Sans", size: 24)
-                                .weight(.bold)
-                        )
-                        .multilineTextAlignment(.trailing)
-                        .foregroundColor(.white)
-                }
-            })
-            
-            
         }
     }
     private func onButtonTapped(index: String) {
