@@ -7,14 +7,16 @@
 
 import UIKit
 
-class EmailAuthViewController: UIViewController {
+class EmailAuthViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         authCodeTF.doViewSetting(paddingWidth: 28, cornerRadius: 12)
         nextBtn.layer.cornerRadius = 12
-        
+        nextBtn.isEnabled = false
+        authCodeTF.delegate = self
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,14 +47,30 @@ class EmailAuthViewController: UIViewController {
         }
     }
     
+    @IBAction func codeTextDidChange(_ sender: Any) {
+
+        if(authCodeTF.text!.count == 4){
+            nextBtn.isEnabled = true
+            self.nextBtn.backgroundColor = UIColor(named: "BackgroundBlue")
+            
+        }
+        else{
+            self.nextBtn.isEnabled = false
+            self.nextBtn.backgroundColor = UIColor(named: "disabledBtnColor")
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newLength = (textField.text?.count)! + string.count - range.length
+            return !(newLength > 4)
+    }
+    
     @IBAction func reSendBtnDidTap(_ sender: Any) {
         self.timerLb.text = "3:00"
         timer!.invalidate()
         countDownTime = 180
         setTimer()
     }
-    
-    
-    
 
 }
+

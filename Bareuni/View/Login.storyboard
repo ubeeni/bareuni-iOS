@@ -325,6 +325,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="로그인">
                                             <fontDescription key="titleFontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="ka6-a7-BA6" kind="show" id="SwC-AL-UGu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -386,14 +389,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="인증코드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oby-9O-0N2">
-                                <rect key="frame" x="24" y="211" width="269" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="Eg8-zv-PxS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCu-AI-nze">
                                 <rect key="frame" x="323" y="227" width="35" height="20"/>
                                 <constraints>
@@ -455,31 +450,42 @@
                                     <constraint firstAttribute="height" constant="40" id="fYB-V3-3be"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="인증코드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hem-5S-Yxv">
+                                <rect key="frame" x="24" y="211" width="268" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="dhQ-tx-LG6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="codeTextDidChange:" destination="qfG-aT-rNt" eventType="editingChanged" id="1HH-2L-6YT"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hng-Gd-FCd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zLf-CO-kHd" firstAttribute="leading" secondItem="hng-Gd-FCd" secondAttribute="leading" constant="32" id="2jO-0z-gQh"/>
-                            <constraint firstItem="Oby-9O-0N2" firstAttribute="leading" secondItem="hng-Gd-FCd" secondAttribute="leading" constant="24" id="3al-j7-p2Y"/>
+                            <constraint firstItem="Hem-5S-Yxv" firstAttribute="leading" secondItem="CPA-bB-vGJ" secondAttribute="leading" constant="24" id="5Cr-ic-aQw"/>
                             <constraint firstItem="hng-Gd-FCd" firstAttribute="trailing" secondItem="K76-EN-PFa" secondAttribute="trailing" constant="60" id="61i-pX-hmC"/>
-                            <constraint firstItem="zLf-CO-kHd" firstAttribute="top" secondItem="Oby-9O-0N2" secondAttribute="bottom" constant="20" id="8c6-Gc-IpJ"/>
                             <constraint firstItem="K76-EN-PFa" firstAttribute="top" secondItem="hng-Gd-FCd" secondAttribute="top" constant="30" id="9SK-DT-4oO"/>
                             <constraint firstItem="pg3-Nm-pgL" firstAttribute="top" secondItem="yCl-nQ-LTg" secondAttribute="bottom" constant="15" id="A9b-s5-Faq"/>
                             <constraint firstItem="hng-Gd-FCd" firstAttribute="bottom" secondItem="pg3-Nm-pgL" secondAttribute="bottom" constant="48" id="BJX-7j-e39"/>
-                            <constraint firstItem="Oby-9O-0N2" firstAttribute="top" secondItem="K76-EN-PFa" secondAttribute="bottom" constant="61" id="IZo-Hn-7fb"/>
                             <constraint firstItem="ffO-fb-ltu" firstAttribute="centerX" secondItem="hng-Gd-FCd" secondAttribute="centerX" id="KjH-no-DxD"/>
+                            <constraint firstItem="Hem-5S-Yxv" firstAttribute="top" secondItem="K76-EN-PFa" secondAttribute="bottom" constant="61" id="Lmn-qE-Omn"/>
+                            <constraint firstItem="hCu-AI-nze" firstAttribute="leading" secondItem="Hem-5S-Yxv" secondAttribute="trailing" constant="31" id="Ne3-ee-S5V"/>
                             <constraint firstItem="pg3-Nm-pgL" firstAttribute="leading" secondItem="hng-Gd-FCd" secondAttribute="leading" constant="24" id="OkN-aD-mNf"/>
-                            <constraint firstItem="hCu-AI-nze" firstAttribute="centerY" secondItem="Oby-9O-0N2" secondAttribute="centerY" id="P1u-rR-eVz"/>
-                            <constraint firstItem="hCu-AI-nze" firstAttribute="leading" secondItem="Oby-9O-0N2" secondAttribute="trailing" constant="30" id="bGI-AA-oLU"/>
                             <constraint firstItem="hng-Gd-FCd" firstAttribute="trailing" secondItem="hCu-AI-nze" secondAttribute="trailing" constant="32" id="bLf-jS-xsh"/>
                             <constraint firstAttribute="trailing" secondItem="zLf-CO-kHd" secondAttribute="trailing" constant="33" id="kEW-t5-IQd"/>
+                            <constraint firstItem="zLf-CO-kHd" firstAttribute="top" secondItem="Hem-5S-Yxv" secondAttribute="bottom" constant="20" id="lCI-ye-XcQ"/>
                             <constraint firstItem="hng-Gd-FCd" firstAttribute="trailing" secondItem="pg3-Nm-pgL" secondAttribute="trailing" constant="24" id="qnH-X5-kvz"/>
                             <constraint firstItem="K76-EN-PFa" firstAttribute="leading" secondItem="hng-Gd-FCd" secondAttribute="leading" constant="32" id="uhU-74-aOR"/>
+                            <constraint firstItem="hCu-AI-nze" firstAttribute="centerY" secondItem="Hem-5S-Yxv" secondAttribute="centerY" id="xDD-eC-4nO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="E1k-re-hTA"/>
                     <connections>
-                        <outlet property="authCodeTF" destination="Oby-9O-0N2" id="hwJ-BD-UVT"/>
+                        <outlet property="authCodeTF" destination="Hem-5S-Yxv" id="oId-mf-ciB"/>
                         <outlet property="nextBtn" destination="pg3-Nm-pgL" id="bXY-xc-aPo"/>
                         <outlet property="timerLb" destination="hCu-AI-nze" id="lB5-46-hzX"/>
                     </connections>
@@ -709,6 +715,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="7OE-I0-gIs"/>
+        <segue reference="SwC-AL-UGu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlueLogo" width="111" height="61"/>
