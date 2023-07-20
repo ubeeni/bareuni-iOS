@@ -12,14 +12,15 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nicknameTF.doViewSetting(paddingWidth: 28, cornerRadius: 12)
+//        nicknameTF.doViewSetting(paddingWidth: 28, cornerRadius: 12)
         emailTF.doViewSetting(paddingWidth: 28, cornerRadius: 12)
         
-        nextBtn.backgroundColor = UIColor(red: 0.821, green: 0.821, blue: 0.821, alpha: 1)
         nextBtn.layer.cornerRadius = 12
         
         self.emailTF.addTarget(self, action: #selector(self.emailTFDidChange(_sender:)), for: .editingChanged)
-        self.nicknameTF.addTarget(self, action: #selector(self.nicknameTFDidChange(_sender:)), for: .editingChanged)
+//        self.nicknameTF.addTarget(self, action: #selector(self.nicknameTFDidChange(_sender:)), for: .editingChanged)
+        
+        nextBtn.isEnabled = false
     }
     
     
@@ -33,17 +34,20 @@ class SignUpViewController: UIViewController {
     @objc func emailTFDidChange(_sender: Any) {
         if(self.emailTF.checkEmail() == false){
             emailWarningLb.isHidden = false
+            nextBtn.isEnabled = false
         }
         else{
             emailWarningLb.isHidden = true
+            nextBtn.backgroundColor = UIColor(named: "BackgroundBlue")
+            nextBtn.isEnabled = true
         }
     }
-    @objc func nicknameTFDidChange(_sender: Any) {
-        if(self.nicknameTF.text == ""){
-            nicknameWarningLb.isHidden = false
-        }
-        else{
-            nicknameWarningLb.isHidden = true
-        }
-    }
+//    @objc func nicknameTFDidChange(_sender: Any) {
+//        if(self.nicknameTF.text == ""){
+//            nicknameWarningLb.isHidden = false
+//        }
+//        else{
+//            nicknameWarningLb.isHidden = true
+//        }
+//    }
 }
