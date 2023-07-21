@@ -40,6 +40,7 @@
 		32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE052A66423D00DBC993 /* FindPWViewController.swift */; };
 		32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE072A6654C300DBC993 /* SignUpViewController.swift */; };
 		32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16BB2A6922430050F45F /* EmailAuthViewController.swift */; };
+		32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16BF2A6A26660050F45F /* ConfirmPWViewController.swift */; };
 		3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB7172A5C508600AC56D0 /* ContentView.swift */; };
 		3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */; };
 		3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACE32A5D3C060071D598 /* TestView.swift */; };
@@ -100,6 +101,7 @@
 		32B5FE052A66423D00DBC993 /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
 		32B5FE072A6654C300DBC993 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		32EB16BB2A6922430050F45F /* EmailAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthViewController.swift; sourceTree = "<group>"; };
+		32EB16BF2A6A26660050F45F /* ConfirmPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPWViewController.swift; sourceTree = "<group>"; };
 		3B9CB7172A5C508600AC56D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3BB0ACE32A5D3C060071D598 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				32B5FE072A6654C300DBC993 /* SignUpViewController.swift */,
 				32EB16BB2A6922430050F45F /* EmailAuthViewController.swift */,
+				32EB16BF2A6A26660050F45F /* ConfirmPWViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				268337382A5C28C900776151 /* CommunityViewController.swift in Sources */,
 				26F529F92A62BF2800813AE3 /* CategoryViewController.swift in Sources */,
 				1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */,
+				32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */,
 				32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */,
 				321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */,
 				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,

@@ -52,4 +52,10 @@ extension UITextField {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
     }
+    public func checkPW() -> Bool {
+        // 최소 8자, 최소 하나의 문자 및 하나의 숫자
+        let str =  self.text
+        let passwordRegex = "(?=.*[A-Za-z])(?=.*[0-9]).{8,20}"
+        return  NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: str)
+    }
 }

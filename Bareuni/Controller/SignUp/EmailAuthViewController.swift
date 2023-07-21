@@ -71,6 +71,10 @@ class EmailAuthViewController: UIViewController, UITextFieldDelegate {
         countDownTime = 180
         setTimer()
     }
-
+    
+    @IBAction func nextBtnDidTap(_ sender: Any) {
+        
+    }
+    
 }
 
