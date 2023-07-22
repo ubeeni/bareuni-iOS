@@ -14,6 +14,7 @@ class TermsOfServiceViewController: UIViewController {
 
         nextBtn.layer.cornerRadius = 12
         nextBtn.changeDisabledState()
+        serviceAgreeBtn.backgroundColor = .none
     }
     
     
@@ -33,24 +34,99 @@ class TermsOfServiceViewController: UIViewController {
         return serviceAgreeBtn.isSelected && privacyAgreeBtn.isSelected && locationAgreeBtn.isSelected && ageAgreeBtn.isSelected && commerceAgreeBtn.isSelected && serviceMessageAgreeBtn.isSelected
     }
     
-    @IBAction func allAgreeBtnDidTap(_ sender: Any) {
-        self.allAgreeBtn.isSelected()
+    var isRequired: Bool {
+        return serviceAgreeBtn.isSelected && privacyAgreeBtn.isSelected && locationAgreeBtn.isSelected && ageAgreeBtn.isSelected && commerceAgreeBtn.isSelected
     }
+    
+    @IBAction func allAgreeBtnDidTap(_ sender: UIButton) {
+        sender.checkBtnDidTap()
+        
+        if(sender.isSelected == true){
+            serviceAgreeBtn.isSelected = false; privacyAgreeBtn.isSelected = false; locationAgreeBtn.isSelected = false; ageAgreeBtn.isSelected = false;  commerceAgreeBtn.isSelected = false;  serviceMessageAgreeBtn.isSelected = false
+            serviceAgreeBtn.checkBtnDidTap()
+            privacyAgreeBtn.checkBtnDidTap()
+            locationAgreeBtn.checkBtnDidTap()
+            ageAgreeBtn.checkBtnDidTap()
+            commerceAgreeBtn.checkBtnDidTap()
+            serviceMessageAgreeBtn.checkBtnDidTap()
+        }
+        else{
+            serviceAgreeBtn.isSelected = true; privacyAgreeBtn.isSelected = true; locationAgreeBtn.isSelected = true; ageAgreeBtn.isSelected = true;  commerceAgreeBtn.isSelected = true;  serviceMessageAgreeBtn.isSelected = true
+            serviceAgreeBtn.checkBtnDidTap()
+            privacyAgreeBtn.checkBtnDidTap()
+            locationAgreeBtn.checkBtnDidTap()
+            ageAgreeBtn.checkBtnDidTap()
+            commerceAgreeBtn.checkBtnDidTap()
+            serviceMessageAgreeBtn.checkBtnDidTap()
+        }
+        checkAllRequiredBtn()
+        
+    }
+    
+    @IBAction func serviceAgreeBtnDidTap(_ sender: UIButton) {
+        sender.checkBtnDidTap()
+        checkAllAgreeBtn()
+        checkAllRequiredBtn()
+    }
+    
+    @IBAction func privacyAgreeBtnDidTap(_ sender: UIButton) {
+        sender.checkBtnDidTap()
+        checkAllAgreeBtn()
+        checkAllRequiredBtn()
+    }
+    @IBAction func locationAgreeBtn(_ sender: UIButton) {
+        sender.checkBtnDidTap()
+        checkAllAgreeBtn()
+        checkAllRequiredBtn()
+    }
+    
+    @IBAction func ageAgreeBtnDidTap(_ sender: UIButton) {
+        sender.checkBtnDidTap()
+        checkAllAgreeBtn()
+        checkAllRequiredBtn()
+    }
+    @IBAction func commerceAgreeBtnDidTap(_ sender: UIButton) {
+        sender.checkBtnDidTap()
+        checkAllAgreeBtn()
+        checkAllRequiredBtn()
+    }
+    @IBAction func serviceMessageAgreeBtnDidTap(_ sender: UIButton) {
+        sender.checkBtnDidTap()
+        checkAllAgreeBtn()
+        checkAllRequiredBtn()
+    }
+    func checkAllAgreeBtn(){
+        if(isAllSelected == true){
+            allAgreeBtn.checkBtnDidTap()
+        }else{
+            if(allAgreeBtn.isSelected == true ){
+                allAgreeBtn.checkBtnDidTap()
+            }
+        }
+    }
+    func checkAllRequiredBtn(){
+        if(isRequired == true){
+            self.nextBtn.changeEnabledState()
+        }else{
+            self.nextBtn.changeDisabledState()
+        }
+    }
+    
+    
     
 }
 
 extension UIButton {
-    func isSelected(){
+    func checkBtnDidTap(){
         if(self.isSelected == true){
             self.isSelected = false
-            self.setBackgroundImage(UIImage(named: "checkNoFill"), for: .normal)
-            print("notselected")
+            self.setImage(UIImage(named: "checkNoFill"), for: UIControl.State.normal)
+            
         }
         else{
             self.isSelected = true
-            self.setBackgroundImage(UIImage(named: "checkFilled"), for: .normal)
-            print("selected")
-
+    
+            self.setImage(UIImage(named: "checkFilled"), for: UIControl.State.normal)
         }
     }
 }

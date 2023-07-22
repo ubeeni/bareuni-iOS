@@ -15,6 +15,9 @@
         <array key="Pretendard-Regular.ttf">
             <string>Pretendard-Regular</string>
         </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Login Selection View Controller-->
@@ -33,7 +36,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'바른' 교정 정보 보러가기 🦷  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0l-rU-sud">
-                                <rect key="frame" x="109.33333333333333" y="326" width="171.33333333333337" height="24"/>
+                                <rect key="frame" x="112.00000000000001" y="326" width="166.33333333333337" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="urJ-pu-atH"/>
                                 </constraints>
@@ -728,11 +731,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="6TM-ko-tqW"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
                                 <color key="tintColor" name="BackgroundWhite"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="다음">
-                                    <color key="baseForegroundColor" name="BackgroundWhite"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" name="BackgroundWhite"/>
+                                </state>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZT-er-cxN">
                                 <rect key="frame" x="24" y="216" width="342" height="467"/>
@@ -755,10 +759,9 @@
                                                             <constraint firstAttribute="height" constant="28" id="QWf-tl-syi"/>
                                                             <constraint firstAttribute="width" constant="28" id="fqQ-c1-D0n"/>
                                                         </constraints>
+                                                        <color key="tintColor" name="BackgroundWhite"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <backgroundConfiguration key="background" image="checkNoFill"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain" image="checkNoFill"/>
                                                         <connections>
                                                             <action selector="allAgreeBtnDidTap:" destination="Jae-SY-xra" eventType="touchUpInside" id="eb3-lh-h1c"/>
                                                         </connections>
@@ -794,10 +797,12 @@
                                                     <constraint firstAttribute="height" constant="28" id="IrM-ve-d7k"/>
                                                     <constraint firstAttribute="width" constant="28" id="Z9B-Mc-rD8"/>
                                                 </constraints>
+                                                <color key="tintColor" name="BackgroundWhite"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <backgroundConfiguration key="background" image="checkNoFill"/>
-                                                </buttonConfiguration>
+                                                <buttonConfiguration key="configuration" style="plain" image="checkNoFill"/>
+                                                <connections>
+                                                    <action selector="serviceAgreeBtnDidTap:" destination="Jae-SY-xra" eventType="touchUpInside" id="IP9-gs-ghv"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An6-3D-XSV">
                                                 <rect key="frame" x="287" y="149" width="28" height="28"/>
@@ -805,10 +810,12 @@
                                                     <constraint firstAttribute="height" constant="28" id="59q-Ax-JDQ"/>
                                                     <constraint firstAttribute="width" constant="28" id="QEz-Ko-wzY"/>
                                                 </constraints>
+                                                <color key="tintColor" name="BackgroundWhite"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <backgroundConfiguration key="background" image="checkNoFill"/>
-                                                </buttonConfiguration>
+                                                <buttonConfiguration key="configuration" style="plain" image="checkNoFill"/>
+                                                <connections>
+                                                    <action selector="privacyAgreeBtnDidTap:" destination="Jae-SY-xra" eventType="touchUpInside" id="Srl-3s-66v"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCh-y8-7aW">
                                                 <rect key="frame" x="287" y="211.66666666666669" width="28" height="28"/>
@@ -816,10 +823,12 @@
                                                     <constraint firstAttribute="width" constant="28" id="Fuy-PF-m7l"/>
                                                     <constraint firstAttribute="height" constant="28" id="xYG-Zb-twR"/>
                                                 </constraints>
+                                                <color key="tintColor" name="BackgroundWhite"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <backgroundConfiguration key="background" image="checkNoFill"/>
-                                                </buttonConfiguration>
+                                                <buttonConfiguration key="configuration" style="plain" image="checkNoFill"/>
+                                                <connections>
+                                                    <action selector="locationAgreeBtn:" destination="Jae-SY-xra" eventType="touchUpInside" id="WlD-pN-jQJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt9-dT-e0f">
                                                 <rect key="frame" x="287" y="274.33333333333331" width="28" height="28"/>
@@ -827,10 +836,12 @@
                                                     <constraint firstAttribute="height" constant="28" id="2sR-v8-QkR"/>
                                                     <constraint firstAttribute="width" constant="28" id="TGO-KU-V8j"/>
                                                 </constraints>
+                                                <color key="tintColor" name="BackgroundWhite"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <backgroundConfiguration key="background" image="checkNoFill"/>
-                                                </buttonConfiguration>
+                                                <buttonConfiguration key="configuration" style="plain" image="checkNoFill"/>
+                                                <connections>
+                                                    <action selector="ageAgreeBtnDidTap:" destination="Jae-SY-xra" eventType="touchUpInside" id="HOe-RC-7fc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWQ-2e-hqS">
                                                 <rect key="frame" x="287" y="347" width="28" height="28"/>
@@ -838,10 +849,12 @@
                                                     <constraint firstAttribute="width" constant="28" id="C9o-9q-BkM"/>
                                                     <constraint firstAttribute="height" constant="28" id="MPg-bF-fGq"/>
                                                 </constraints>
+                                                <color key="tintColor" name="BackgroundWhite"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <backgroundConfiguration key="background" image="checkNoFill"/>
-                                                </buttonConfiguration>
+                                                <buttonConfiguration key="configuration" style="plain" image="checkNoFill"/>
+                                                <connections>
+                                                    <action selector="commerceAgreeBtnDidTap:" destination="Jae-SY-xra" eventType="touchUpInside" id="kCj-Sm-Xei"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZU-sJ-jLh">
                                                 <rect key="frame" x="287" y="419.33333333333337" width="28" height="28"/>
@@ -849,10 +862,12 @@
                                                     <constraint firstAttribute="height" constant="28" id="Gpi-GS-hKC"/>
                                                     <constraint firstAttribute="width" constant="28" id="Xqn-cz-gIz"/>
                                                 </constraints>
+                                                <color key="tintColor" name="BackgroundWhite"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <backgroundConfiguration key="background" image="checkNoFill"/>
-                                                </buttonConfiguration>
+                                                <buttonConfiguration key="configuration" style="plain" image="checkNoFill"/>
+                                                <connections>
+                                                    <action selector="serviceMessageAgreeBtnDidTap:" destination="Jae-SY-xra" eventType="touchUpInside" id="vu0-HJ-zW3"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -955,7 +970,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bA1-Co-TQa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4737" y="-285"/>
+            <point key="canvasLocation" x="3975" y="-95"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
