@@ -7,23 +7,95 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UIScrollViewDelegate {
+class HomeViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var reviewBtn: UIButton!
+    @IBOutlet weak var reviewTableView: UITableView!
+    @IBOutlet weak var communityTableView: UITableView!
+    @IBOutlet weak var lastView: UIView!
     
-    var images = ["AD", "AD", "AD"]
+    var images = ["AD1", "AD2", "AD3"]
     
     var imageViews = [UIImageView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         scrollView.delegate = self
         addContentScrollView()
         setPageControl()
         setupNavigationBar()
+        
+        reviewTableView.delegate = self
+        reviewTableView.dataSource = self
+        
+        communityTableView.delegate = self
+        communityTableView.dataSource = self
+        
+        lastView.layer.cornerRadius = 10
+        lastView.layer.shadowColor = UIColor.black.cgColor
+        lastView.layer.shadowOpacity = 0.1 // 그림자의 투명도
+        lastView.layer.shadowOffset = CGSize(width: 0, height: 4) // 그림자의 offset (가로, 세로)
+        lastView.layer.shadowRadius = 10
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == reviewTableView { // 가장 후기가 좋은 교정치과
+            return DentistData.dummyDentistList.count
+        } else if tableView == communityTableView { // 커뮤니티 실시간 인기글
+            return CommunityData.dummyCommunityList.count
+        }
+        return 0
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == reviewTableView {
+            // 가장 후기가 좋은 교정치과
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DentistTableViewCell
+            let target = DentistData.dummyDentistList[indexPath.row]
+            
+            cell.cellName.text = target.name
+            cell.cellAddress.text = target.address
+            cell.customPhoto.image = UIImage(named: target.photo)
+            cell.cellNumber.text = String(target.number)
+            cell.cellRating.text = String(target.rating)
+            
+            return cell
+        } else if tableView == communityTableView {
+            // 커뮤니티 실시간 인기글
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! CommunityTableViewCell
+            let target2 = CommunityData.dummyCommunityList[indexPath.row]
+            
+            cell2.cellRating.text = target2.rating
+            cell2.cellContents.text = target2.contents
+            cell2.cellTag.text = target2.tag
+            cell2.cellTime.text = target2.time
+            
+            return cell2
+        }
+        
+        // 에러를 방지하기 위해 빈 셀을 반환
+        return UITableViewCell()
+    }
+
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableView == reviewTableView {
+            // 가장 후기가 좋은 교정치과 테이블 뷰
+            tableView.separatorStyle = .none
+            return 100
+        } else if tableView == communityTableView {
+            // 커뮤니티 실시간 인기글 테이블 뷰
+            tableView.separatorStyle = .none
+            return 45
+        }
+        // 기본적으로 설정할 높이를 반환 (에러를 방지하기 위해 빈 셀로 반환)
+        return 30
     }
 
     private func addContentScrollView() {
