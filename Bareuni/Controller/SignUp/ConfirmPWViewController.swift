@@ -17,6 +17,7 @@ class ConfirmPWViewController: UIViewController, UITextFieldDelegate{
 
         nextBtn.layer.cornerRadius = 12
         nextBtn.changeDisabledState()
+        self.setBackBtn()
     }
     
     

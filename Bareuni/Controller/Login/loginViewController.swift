@@ -19,6 +19,7 @@ class loginViewController: UIViewController {
         loginSubmitBtn.layer.cornerRadius = 12
         
         findPWBtn.setTitleColor(UIColor(red: 0.459, green: 0.459, blue: 0.459, alpha: 1), for: .normal)
+        self.setBackBtn()
     }
     
 

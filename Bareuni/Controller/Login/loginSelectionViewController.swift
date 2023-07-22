@@ -26,6 +26,8 @@ class loginSelectionViewController: UIViewController {
         emailSignupBtn.layer.cornerRadius = 12
         
         signupLbLeadingConst.constant = screenWidth/2 - 72
+        
+        self.setBackBtn()
     }
     
     @IBOutlet weak var kakaoSignupBtn: UIButton!
@@ -34,4 +36,11 @@ class loginSelectionViewController: UIViewController {
     
     @IBOutlet weak var signupLbLeadingConst: NSLayoutConstraint!
     
+}
+
+extension UIViewController {
+    func setBackBtn(){
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.62, green: 0.62, blue: 0.62, alpha: 1)
+    }
 }

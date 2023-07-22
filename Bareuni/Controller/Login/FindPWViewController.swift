@@ -19,6 +19,7 @@ class FindPWViewController: UIViewController {
         
         confirmBtn.backgroundColor = UIColor(red: 0.821, green: 0.821, blue: 0.821, alpha: 1)
         confirmBtn.layer.cornerRadius = 12
+        self.setBackBtn()
         
     }
     

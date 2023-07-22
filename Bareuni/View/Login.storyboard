@@ -55,9 +55,6 @@
                                 <buttonConfiguration key="configuration" style="plain" image="kakaoLogo" title="  카카오로 시작하기" cornerStyle="large">
                                     <fontDescription key="titleFontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="Jae-SY-xra" kind="show" id="dfZ-FL-S2Z"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyP-IO-3oR">
                                 <rect key="frame" x="40" y="597" width="310" height="52"/>
@@ -305,7 +302,9 @@
                                 </constraints>
                                 <color key="tintColor" name="BackgroundWhite"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="다음"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다음">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="qfG-aT-rNt" kind="show" id="eDs-rD-c5b"/>
                                 </connections>
@@ -418,7 +417,9 @@
                                 </constraints>
                                 <color key="tintColor" name="BackgroundWhite"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="다음"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다음">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="nextBtnDidTap:" destination="qfG-aT-rNt" eventType="touchUpInside" id="O9W-YQ-2Bx"/>
                                     <segue destination="9G3-Oj-cfN" kind="show" id="BCU-QC-CTg"/>
@@ -550,7 +551,9 @@
                                 </constraints>
                                 <color key="tintColor" name="BackgroundWhite"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                <buttonConfiguration key="configuration" style="plain" title="확인">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                                </buttonConfiguration>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PEV-rz-57i"/>
@@ -638,17 +641,21 @@
                                     <action selector="secondPWDidChange:" destination="9G3-Oj-cfN" eventType="editingChanged" id="gA3-Gs-YNC"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n55-p8-CRn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n55-p8-CRn">
                                 <rect key="frame" x="24" y="711" width="342" height="51"/>
                                 <color key="backgroundColor" name="disabledBtnColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="Eqc-Py-zkO"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
                                 <color key="tintColor" name="BackgroundWhite"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="다음">
-                                    <color key="baseForegroundColor" name="BackgroundWhite"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" name="BackgroundWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Jae-SY-xra" kind="show" id="HeH-Ub-lEf"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유효하지 않은 이메일입니다. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8E-QJ-aQb">
                                 <rect key="frame" x="36" y="351" width="136.33333333333334" height="14"/>
@@ -970,11 +977,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bA1-Co-TQa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3975" y="-95"/>
+            <point key="canvasLocation" x="5125" y="687"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7OE-I0-gIs"/>
+        <segue reference="Esq-hX-RNw"/>
         <segue reference="TDo-uB-KF8"/>
     </inferredMetricsTieBreakers>
     <resources>

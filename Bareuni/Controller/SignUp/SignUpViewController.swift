@@ -21,6 +21,7 @@ class SignUpViewController: UIViewController {
 //        self.nicknameTF.addTarget(self, action: #selector(self.nicknameTFDidChange(_sender:)), for: .editingChanged)
         
         nextBtn.isEnabled = false
+        self.setBackBtn()
     }
     
     

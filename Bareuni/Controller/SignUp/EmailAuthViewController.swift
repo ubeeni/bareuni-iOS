@@ -16,6 +16,7 @@ class EmailAuthViewController: UIViewController, UITextFieldDelegate {
         nextBtn.layer.cornerRadius = 12
         nextBtn.isEnabled = false
         authCodeTF.delegate = self
+        self.setBackBtn()
 
     }
     

@@ -15,6 +15,7 @@ class TermsOfServiceViewController: UIViewController {
         nextBtn.layer.cornerRadius = 12
         nextBtn.changeDisabledState()
         serviceAgreeBtn.backgroundColor = .none
+        self.setBackBtn()
     }
     
     
