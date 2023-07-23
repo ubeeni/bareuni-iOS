@@ -8,43 +8,86 @@
 import SwiftUI
 
 struct TestView: View {
-    @State private var text: String = "Sample Text"
-        
-        var body: some View {
-            GeometryReader { geometry in
-                VStack {
-                    Rectangle()
-                        .foregroundColor(.blue)
-                        .frame(width: geometry.size.width, height: 50)
-                    
-                    Text(text)
-                        .font(.title)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        // Update the text
-                        text = "Updated Text"
-                    }) {
-                        Text("Change Text")
-                    }
-                }
-            }
+    var body: some View {
+        VStack {
+            Text("My Photo Attachment")
+                .font(.title)
+
+            PhotoAttachmentView()
         }
+        .padding()
+    }
+}
+
+struct IdentifiableImage: Identifiable {
+    let id = UUID()
+    let image: Image
 }
 
 
-struct CheckboxToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        Button(action: { configuration.isOn.toggle() }) {
-            HStack {
-                Image(systemName: configuration.isOn ? "checkmark.square" : "square")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                configuration.label
+struct PhotoAttachmentView: View {
+    @State private var selectedImages: [IdentifiableImage] = []
+    @State private var isImagePickerPresented = false
+    
+    var body: some View {
+        VStack {
+            if !selectedImages.isEmpty {
+                ScrollView(.horizontal) {
+                    HStack(spacing: 10) {
+                        ForEach(selectedImages, id: \.id) { identifiableImage in
+                            identifiableImage.image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 100)
+                        }
+                    }
+                }
+            } else {
+                Text("No Photos Selected")
+            }
+            
+            Button("Select Photos") {
+                isImagePickerPresented = true
             }
         }
-        .foregroundColor(.primary)
+        .sheet(isPresented: $isImagePickerPresented) {
+            ImagePicker(selectedImages: $selectedImages)
+        }
+    }
+}
+
+struct ImagePicker: UIViewControllerRepresentable {
+    @Binding var selectedImages: [IdentifiableImage]
+    @Environment(\.presentationMode) private var presentationMode
+
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = context.coordinator
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = ["public.image"]
+        return imagePicker
+    }
+
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        var parent: ImagePicker
+
+        init(_ parent: ImagePicker) {
+            self.parent = parent
+        }
+
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+            if let pickedImage = info[.originalImage] as? UIImage {
+                parent.selectedImages.append(IdentifiableImage(image: Image(uiImage: pickedImage)))
+            }
+            parent.presentationMode.wrappedValue.dismiss()
+        }
     }
 }
 
