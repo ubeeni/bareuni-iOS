@@ -18,6 +18,14 @@
 		1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */; };
 		1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052C3EC2A6701EC00CD6508 /* DentistData.swift */; };
 		1052C3EF2A6702B400CD6508 /* DentistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052C3EE2A6702B400CD6508 /* DentistTableViewCell.swift */; };
+		268337382A5C28C900776151 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268337372A5C28C900776151 /* CommunityViewController.swift */; };
+		26F529F12A5EC43E00813AE3 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F529F02A5EC43E00813AE3 /* PopularCell.swift */; };
+		26F529F32A62B9DE00813AE3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F529F22A62B9DE00813AE3 /* ChatViewController.swift */; };
+		26F529F52A62B9F100813AE3 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F529F42A62B9F100813AE3 /* FAQViewController.swift */; };
+		26F529F92A62BF2800813AE3 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F529F82A62BF2800813AE3 /* CategoryViewController.swift */; };
+		321B896D2A602AA500AE45D4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321B896C2A602AA500AE45D4 /* Login.storyboard */; };
+		321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */; };
+		321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B89712A60351E00AE45D4 /* loginViewController.swift */; };
 		32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6C82A557A1800B41644 /* AppDelegate.swift */; };
 		32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6CA2A557A1800B41644 /* SceneDelegate.swift */; };
 		32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6CC2A557A1800B41644 /* ViewController.swift */; };
@@ -32,6 +40,15 @@
 		32A5E7022A557A8500B41644 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32A5E7012A557A8500B41644 /* Pretendard-Medium.otf */; };
 		32A5E7042A557A9E00B41644 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32A5E7032A557A9E00B41644 /* Pretendard-Regular.ttf */; };
 		32A5E7062A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32A5E7052A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf */; };
+		32B5FE022A663AEC00DBC993 /* LoginUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */; };
+		32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE052A66423D00DBC993 /* FindPWViewController.swift */; };
+		32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE072A6654C300DBC993 /* SignUpViewController.swift */; };
+		32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16BB2A6922430050F45F /* EmailAuthViewController.swift */; };
+		32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16BF2A6A26660050F45F /* ConfirmPWViewController.swift */; };
+		32EB16C42A6BF3830050F45F /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16C32A6BF3830050F45F /* TermsOfServiceViewController.swift */; };
+		3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB7172A5C508600AC56D0 /* ContentView.swift */; };
+		3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */; };
+		3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACE32A5D3C060071D598 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +78,14 @@
 		1026BF4A2A5A9D6400955799 /* Mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
 		1026BF4C2A5AA5C700955799 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		268337372A5C28C900776151 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		26F529F02A5EC43E00813AE3 /* PopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCell.swift; sourceTree = "<group>"; };
+		26F529F22A62B9DE00813AE3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		26F529F42A62B9F100813AE3 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		26F529F82A62BF2800813AE3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		321B896C2A602AA500AE45D4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginSelectionViewController.swift; sourceTree = "<group>"; };
+		321B89712A60351E00AE45D4 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		1052C3EC2A6701EC00CD6508 /* DentistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistData.swift; sourceTree = "<group>"; };
 		1052C3EE2A6702B400CD6508 /* DentistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistTableViewCell.swift; sourceTree = "<group>"; };
 		32A5E6C52A557A1800B41644 /* Bareuni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bareuni.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +106,15 @@
 		32A5E7012A557A8500B41644 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		32A5E7032A557A9E00B41644 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
 		32A5E7052A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUINavigationController.swift; sourceTree = "<group>"; };
+		32B5FE052A66423D00DBC993 /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
+		32B5FE072A6654C300DBC993 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		32EB16BB2A6922430050F45F /* EmailAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthViewController.swift; sourceTree = "<group>"; };
+		32EB16BF2A6A26660050F45F /* ConfirmPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPWViewController.swift; sourceTree = "<group>"; };
+		32EB16C32A6BF3830050F45F /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
+		3B9CB7172A5C508600AC56D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		3BB0ACE32A5D3C060071D598 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +153,29 @@
 				102166542A6949ED00DC6351 /* CommunityTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		26F529EB2A5D91CB00813AE3 /* CommunityController */ = {
+			isa = PBXGroup;
+			children = (
+				268337372A5C28C900776151 /* CommunityViewController.swift */,
+				26F529F02A5EC43E00813AE3 /* PopularCell.swift */,
+				26F529F22A62B9DE00813AE3 /* ChatViewController.swift */,
+				26F529F42A62B9F100813AE3 /* FAQViewController.swift */,
+				26F529F82A62BF2800813AE3 /* CategoryViewController.swift */,
+			);
+			path = CommunityController;
+			sourceTree = "<group>";
+		};
+		321B896E2A60320B00AE45D4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */,
+				321B89712A60351E00AE45D4 /* loginViewController.swift */,
+				32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */,
+				32B5FE052A66423D00DBC993 /* FindPWViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		32A5E6BC2A557A1800B41644 = {
@@ -186,6 +243,9 @@
 				1026BF462A5A98CB00955799 /* Info.storyboard */,
 				1026BF482A5A998600955799 /* Community.storyboard */,
 				1026BF4A2A5A9D6400955799 /* Mypage.storyboard */,
+				321B896C2A602AA500AE45D4 /* Login.storyboard */,
+				3B9CB7172A5C508600AC56D0 /* ContentView.swift */,
+				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,8 +253,12 @@
 		32A5E6FA2A557A3500B41644 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				32EB16BA2A6921E10050F45F /* SignUp */,
+				321B896E2A60320B00AE45D4 /* Login */,
+				26F529EB2A5D91CB00813AE3 /* CommunityController */,
 				104862532A61ADCB00D2683F /* Home */,
 				32A5E6CC2A557A1800B41644 /* ViewController.swift */,
+				3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */,
 				1026BF402A59A8F000955799 /* TabBarController.swift */,
 			);
 			path = Controller;
@@ -221,6 +285,17 @@
 				32A5E7052A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		32EB16BA2A6921E10050F45F /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				32B5FE072A6654C300DBC993 /* SignUpViewController.swift */,
+				32EB16BB2A6922430050F45F /* EmailAuthViewController.swift */,
+				32EB16BF2A6A26660050F45F /* ConfirmPWViewController.swift */,
+				32EB16C32A6BF3830050F45F /* TermsOfServiceViewController.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +414,7 @@
 				32A5E6D02A557A1800B41644 /* Main.storyboard in Resources */,
 				1026BF472A5A98CB00955799 /* Info.storyboard in Resources */,
 				32A5E7022A557A8500B41644 /* Pretendard-Medium.otf in Resources */,
+				321B896D2A602AA500AE45D4 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,15 +440,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
+				3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */,
 				1026BF4D2A5AA5C700955799 /* HomeViewController.swift in Sources */,
+				32B5FE022A663AEC00DBC993 /* LoginUINavigationController.swift in Sources */,
+				32EB16C42A6BF3830050F45F /* TermsOfServiceViewController.swift in Sources */,
 				1052C3EF2A6702B400CD6508 /* DentistTableViewCell.swift in Sources */,
 				102166552A6949ED00DC6351 /* CommunityTableViewCell.swift in Sources */,
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
+				26F529F52A62B9F100813AE3 /* FAQViewController.swift in Sources */,
+				32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */,
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
+				32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */,
+				32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */,
+				321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */,
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,
+				26F529F32A62B9DE00813AE3 /* ChatViewController.swift in Sources */,
+				26F529F12A5EC43E00813AE3 /* PopularCell.swift in Sources */,
+				268337382A5C28C900776151 /* CommunityViewController.swift in Sources */,
+				26F529F92A62BF2800813AE3 /* CategoryViewController.swift in Sources */,
 				1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */,
 				102166532A69492A00DC6351 /* CommunityData.swift in Sources */,
+				32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */,
 				32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */,
+				321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */,
+				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
+				3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
