@@ -42,6 +42,7 @@
 		3BB0ACE82A657FEE0071D598 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACE72A657FEE0071D598 /* InfoView.swift */; };
 		3BB0ACEA2A6685780071D598 /* DentistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACE92A6685780071D598 /* DentistModel.swift */; };
 		3BB0ACEC2A6685AA0071D598 /* DentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */; };
+		3BB0ACF02A6A17C00071D598 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACEF2A6A17C00071D598 /* WriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		3BB0ACE72A657FEE0071D598 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		3BB0ACE92A6685780071D598 /* DentistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DentistModel.swift; path = Bareuni/View/DentistModel.swift; sourceTree = SOURCE_ROOT; };
 		3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DentistViewModel.swift; path = Bareuni/View/DentistViewModel.swift; sourceTree = SOURCE_ROOT; };
+		3BB0ACEF2A6A17C00071D598 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				321B896C2A602AA500AE45D4 /* Login.storyboard */,
 				3B9CB7172A5C508600AC56D0 /* ContentView.swift */,
 				3BB0ACE72A657FEE0071D598 /* InfoView.swift */,
+				3BB0ACEF2A6A17C00071D598 /* WriteView.swift */,
 				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
 			);
 			path = View;
@@ -422,6 +425,7 @@
 				26F529F32A62B9DE00813AE3 /* ChatViewController.swift in Sources */,
 				3BB0ACEC2A6685AA0071D598 /* DentistViewModel.swift in Sources */,
 				26F529F12A5EC43E00813AE3 /* PopularCell.swift in Sources */,
+				3BB0ACF02A6A17C00071D598 /* WriteView.swift in Sources */,
 				268337382A5C28C900776151 /* CommunityViewController.swift in Sources */,
 				26F529F92A62BF2800813AE3 /* CategoryViewController.swift in Sources */,
 				1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */,

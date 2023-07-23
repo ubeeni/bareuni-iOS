@@ -14,5 +14,5 @@ struct Dentist: Identifiable, Hashable{
     var info = ""
     var star = 0
     var address = ""
-    
+    var reservation:Bool
 }
