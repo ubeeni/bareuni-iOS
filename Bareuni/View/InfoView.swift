@@ -1,0 +1,672 @@
+//
+//  InfoView.swift
+//  Bareuni
+//
+//  Created by 황인성 on 2023/07/17.
+//
+
+import SwiftUI
+
+struct InfoView: View {
+    
+    @State var tabIndex = 0
+    @State var cities = ContentView().selectedCities
+    @State var dentistInfo = DentistViewModel()
+    
+    var body: some View {
+        NavigationView {
+            VStack{
+                HStack{
+                    Text("치과 정보")
+                        .font(
+                            Font.custom("Pretendard", size: 24)
+                                .weight(.medium)
+                        )
+                        .foregroundColor(.black)
+                        .frame(width: 131, height: 29, alignment: .topLeading)
+                        .padding(.leading, 24)
+                    
+                    Spacer()
+                    
+                    Image("Search_light")
+                        .frame(width: 32, height: 32)
+                    Image("Bell_light")
+                        .frame(width: 32, height: 32)
+                        .padding(.trailing, 24)
+                }
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: 20) {
+                        ForEach(cities, id: \.self){ city in
+                            ZStack {
+                                Rectangle()
+                                    .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
+                                    .frame(width: 113, height: 24)
+                                    .cornerRadius(13)
+                                
+                                HStack {
+                                    Text(city)
+                                        .font(
+                                            Font.custom("Public Sans", size: 15)
+                                                .weight(.medium)
+                                        )
+                                    
+                                    Button(action: {
+                                        cities.removeAll { $0 == city }
+                                    }, label: {
+                                        Image("Mask")
+                                    })
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                .frame(height: 30)
+                
+                
+                CustomTopTabBar(tabIndex: $tabIndex).padding(.bottom, -5)
+                
+                if tabIndex == 0 {
+                    Spacer().frame(height: 0)
+                    ScrollView(showsIndicators: false) {
+                        VStack {
+                            ForEach(dentistInfo.Dentists){ dentist in
+                                recommendedDentistView(dentist: dentist)
+                                Spacer().frame(height: 23)
+                            }
+                        }
+                    }
+                }
+                else if tabIndex == 1 {
+                    nearDentistView()
+                }
+            }
+        }
+    }
+}
+
+struct CustomTopTabBar: View {
+    @Binding var tabIndex: Int
+    @Namespace var animation
+    var body: some View {
+        HStack {
+            Spacer().frame(width: 32)
+            TabBarButton(text: "추천 치과", isSelected: .constant(tabIndex == 0))
+                .onTapGesture { onButtonTapped(index: 0) }
+            
+            Spacer().frame(width: 13)
+            
+            TabBarButton(text: "내 주변 치과", isSelected: .constant(tabIndex == 1))
+                .onTapGesture { onButtonTapped(index: 1) }
+            
+            Spacer()
+        }
+    }
+    
+    private func onButtonTapped(index: Int) {
+        withAnimation { tabIndex = index }
+    }
+}
+
+struct CustomTopTabBar2: View {
+    @Binding var tabIndex: Int
+    @Namespace var animation
+    var body: some View {
+        VStack {
+            HStack(spacing: 0) {
+                
+                TabBarButton2(text: "치과 소개", isSelected: .constant(tabIndex == 0))
+                    .onTapGesture { onButtonTapped(index: 0) }
+                
+                
+                
+                TabBarButton2(text: "리뷰", isSelected: .constant(tabIndex == 1))
+                    .onTapGesture { onButtonTapped(index: 1) }
+                
+                
+            }
+        }
+    }
+    
+    private func onButtonTapped(index: Int) {
+        withAnimation { tabIndex = index }
+    }
+}
+
+struct TabBarButton: View {
+    let text: String
+    @Binding var isSelected: Bool
+    var body: some View {
+        VStack {
+            Text(text)
+                .font(
+                    Font.custom("Pretendard", size: 18)
+                        .weight(.semibold)
+                )
+                .thickUnderline(color: isSelected ? .blue : .white, thickness: 4, radius: 10)
+                .baselineOffset(30)
+        }
+    }
+}
+
+struct TabBarButton2: View {
+    let text: String
+    @Binding var isSelected: Bool
+    var body: some View {
+        VStack {
+            Text(text)
+                .font(
+                    Font.custom("Pretendard", size: 16)
+                        .weight(.semibold)
+                )
+                .foregroundColor(isSelected ? Color(red: 0, green: 0.58, blue: 1) : .black)
+            
+            if isSelected == true {
+                Rectangle()
+                  .foregroundColor(.clear)
+                  .frame(width: .infinity, height: 2)
+                  .background(Color(red: 0, green: 0.58, blue: 1))
+            }
+            else {
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: .infinity, height: 0.5)
+                    .background(Color(red: 0.82, green: 0.82, blue: 0.82))
+            }
+            
+        }
+    }
+}
+
+
+struct recommendedDentistView:View {
+    
+    @State var dentist: Dentist
+    
+    var body: some View{
+        NavigationLink(destination: {
+            detailDentistView(dentist: $dentist)
+        }, label: {
+            ZStack {
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 339, height: 203)
+                    .background(.white)
+                    .cornerRadius(14)
+                    .shadow(color: .black.opacity(0.1), radius: 6, x: 0, y: 2)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14)
+                            .inset(by: 0.25)
+                            .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
+                    )
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Spacer().frame(width: 23)
+                        Text(dentist.name)
+                            .font(
+                                Font.custom("Pretendard", size: 20)
+                                    .weight(.semibold)
+                            )
+                            .foregroundColor(.black)
+                        
+                        Spacer().frame(width: 8)
+                        
+                        Image("star")
+                        
+                        Text(String(dentist.star))
+                            .font(
+                                Font.custom("Pretendard", size: 12)
+                                    .weight(.medium)
+                            )
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color(red: 0.43, green: 0.43, blue: 0.43))
+                        
+                        Spacer()
+                        
+                        Image("Mask2")
+                            .frame(width: 27, height: 27)
+                            .padding(.trailing, 12)
+                    }
+                    
+                    Text(dentist.info)
+                        .font(
+                            Font.custom("Pretendard", size: 12)
+                                .weight(.medium)
+                        )
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color(red: 0.63, green: 0.63, blue: 0.63))
+                        .padding(.leading, 23)
+                    
+                    HStack {
+                        Spacer().frame(width: 23)
+                        Image("Pin_alt_light")
+                            .frame(width: 19, height: 19)
+                        
+                        Text(dentist.address)
+                            .font(
+                                Font.custom("Pretendard", size: 12)
+                                    .weight(.medium)
+                            )
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color(red: 0.43, green: 0.43, blue: 0.43))
+                    }
+                    
+                    HStack {
+                        Spacer().frame(width: 23)
+                        
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 108, height: 86)
+                            .padding(.trailing, 12)
+                            .background(
+                                Image("스크린샷 2023-06-10 오전 8.45 1")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 108, height: 86)
+                                    .clipped()
+                            )
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 108, height: 86)
+                            .background(
+                                Image("스크린샷 2023-06-10 오전 8.45 1")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 108, height: 86)
+                                    .clipped()
+                            )
+                    }
+                }
+            }
+            .frame(width: 339, height: 203)
+        })
+    }
+}
+
+struct nearDentistView:View {
+    var body: some View{
+        Text("내 주변 치과 화면")
+    }
+}
+
+struct detailDentistView:View {
+    
+    @Binding var dentist: Dentist
+    @State var tabIndex = 0
+    
+    var body: some View{
+        VStack{
+            ZStack {
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 41.6875, height: 17.25)
+                    .background(dentist.reservation ? Color(red: 0.2, green: 0.47, blue: 1) : .red)
+                    .cornerRadius(8)
+                
+                Text(dentist.reservation ? "예약가능" : "예약불가")
+                    .font(
+                        Font.custom("Biennale", size: 8)
+                            .weight(.semibold)
+                    )
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                    .frame(width: 32, height: 12, alignment: .center)
+            }
+            
+            Text(dentist.name)
+                .font(
+                    Font.custom("Pretendard", size: 24)
+                        .weight(.semibold)
+                )
+                .foregroundColor(.black)
+                .frame(width: 183, height: 29, alignment: .topLeading)
+            
+            Text("오늘 휴진 (일요일 휴무)")
+                .font(
+                    Font.custom("Pretendard", size: 16)
+                        .weight(.medium)
+                )
+                .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                .frame(width: 183, height: 29, alignment: .topLeading)
+            
+            Text(dentist.address)
+                .font(
+                    Font.custom("Pretendard", size: 14)
+                        .weight(.medium)
+                )
+                .foregroundColor(Color(red: 0.56, green: 0.56, blue: 0.56))
+                .frame(width: 183, height: 18, alignment: .leading)
+    
+            Image("스크린샷 2023-06-10 오전 8.45 1")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .cornerRadius(20)
+                .frame(width: 340, height: 210)
+        
+            CustomTopTabBar2(tabIndex: $tabIndex)
+            
+            if tabIndex == 0 {
+                IntroduceView(dentist: $dentist)
+            }
+            else if tabIndex == 1 {
+                Text("1")
+            }
+        }
+    }
+}
+
+extension View {
+    func thickUnderline(color: Color, thickness: CGFloat, radius: CGFloat) -> some View {
+        self.overlay(
+            Rectangle()
+                .foregroundColor(color)
+                .frame(height: thickness)
+                .cornerRadius(radius)
+                .padding(.bottom, -thickness)
+        )
+    }
+}
+
+struct IntroduceView: View {
+    
+    @Binding var dentist: Dentist
+    
+    var body: some View {
+//        ScrollView{
+            VStack{
+                Text("진료시간")
+                  .font(
+                    Font.custom("Pretendard", size: 20)
+                      .weight(.semibold)
+                  )
+                  .foregroundColor(.black)
+                
+                ZStack {
+                    VStack {
+                        Text("매일 09:00 - 20:00")
+                          .font(
+                            Font.custom("Pretendard", size: 14)
+                              .weight(.semibold)
+                          )
+                          .multilineTextAlignment(.center)
+                      .foregroundColor(.black)
+                        
+                        Text("일요일 휴무")
+                          .font(
+                            Font.custom("Pretendard", size: 14)
+                              .weight(.medium)
+                          )
+                          .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                        
+                        Text("점심시간 13:00 - 14:00")
+                          .font(
+                            Font.custom("Pretendard", size: 14)
+                              .weight(.medium)
+                          )
+                          .foregroundColor(.black)
+                    }
+                }
+                .frame(width: 338, height: 112)
+                .background(Color(red: 0.93, green: 0.97, blue: 1))
+                .cornerRadius(10)
+                
+                Text("치과소개")
+                  .font(
+                    Font.custom("Pretendard", size: 20)
+                      .weight(.semibold)
+                  )
+                  .foregroundColor(.black)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("대한민국 1.7% 교정과 전문의")
+                      .font(
+                        Font.custom("Pretendard", size: 14)
+                          .weight(.medium)
+                      )
+                      .foregroundColor(.black)
+                    
+                    Text("보건복지부 인증 치과교정과 전문 3인이 모든 진료 과정을 함께합니다.")
+                      .font(
+                        Font.custom("Pretendard", size: 14)
+                          .weight(.medium)
+                      )
+                      .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                      .frame(width: 298, alignment: .topLeading)
+                    
+                    Text("교정치료에 사용되는 브라켓, 와이어, 튜브, 밴드, 기구 등, 좋은 재료로 교정치료의 완성도를 높이겠습니다.")
+                      .font(
+                        Font.custom("Pretendard", size: 14)
+                          .weight(.medium)
+                      )
+                      .foregroundColor(.black)
+                      .frame(width: 298, alignment: .topLeading)
+                }
+                .padding(.leading, 22)
+                .padding(.trailing, 18)
+                .padding(.top, 18)
+                .padding(.bottom, 15)
+                .background(Color(red: 0.93, green: 0.97, blue: 1))
+                .cornerRadius(10)
+            }
+        ZStack {
+            Text("상담받기")
+              .font(
+                Font.custom("Public Sans", size: 16)
+                  .weight(.semibold)
+              )
+              .foregroundColor(.white)
+        }
+        .padding(16)
+        .frame(width: 348, height: 51, alignment: .center)
+        .background(Color(red: 0, green: 0.58, blue: 1))
+        .cornerRadius(9)
+//        }
+    }
+}
+
+struct ReviewView: View {
+    var body: some View{
+        VStack{
+            HStack{
+                Image("star")
+                Image("star")
+                Image("star")
+                Image("star")
+                Image("star")
+            }
+            
+            Text("4.9  |  리뷰 48개")
+              .font(
+                Font.custom("Pretendard", size: 16)
+                  .weight(.medium)
+              )
+              .foregroundColor(.black)
+            
+            HStack{
+                Text("진료결과")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.medium)
+                  )
+                  .foregroundColor(Color(red: 0.59, green: 0.59, blue: 0.59))
+                
+                Text("만족해요")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.medium)
+                  )
+                  .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
+                
+                Text("-----------------------")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.light)
+                  )
+                  .multilineTextAlignment(.trailing)
+                  .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
+                
+                Text("99%")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.medium)
+                  )
+                  .multilineTextAlignment(.trailing)
+                  .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
+            }
+            HStack{
+                Text("진료결과")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.medium)
+                  )
+                  .foregroundColor(Color(red: 0.59, green: 0.59, blue: 0.59))
+                
+                Text("만족해요")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.medium)
+                  )
+                  .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
+                
+                Text("-----------------------")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.light)
+                  )
+                  .multilineTextAlignment(.trailing)
+                  .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
+                
+                Text("99%")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.medium)
+                  )
+                  .multilineTextAlignment(.trailing)
+                  .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
+            }
+            HStack{
+                Text("진료결과")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.medium)
+                  )
+                  .foregroundColor(Color(red: 0.59, green: 0.59, blue: 0.59))
+                
+                Text("만족해요")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.medium)
+                  )
+                  .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
+                
+                Text("-----------------------")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.light)
+                  )
+                  .multilineTextAlignment(.trailing)
+                  .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
+                
+                Text("99%")
+                  .font(
+                    Font.custom("Pretendard", size: 12)
+                      .weight(.medium)
+                  )
+                  .multilineTextAlignment(.trailing)
+                  .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
+            }
+            ZStack {
+                Text("리뷰쓰기")
+                  .font(
+                    Font.custom("Pretendard", size: 14)
+                      .weight(.semibold)
+                  )
+                  .multilineTextAlignment(.center)
+                  .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+            }
+            .padding(.horizontal, 149)
+            .padding(.vertical, 13)
+            .background(.white)
+            .cornerRadius(8)
+            .overlay(
+              RoundedRectangle(cornerRadius: 8)
+                .inset(by: 0.25)
+                .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 0.5)
+            )
+            
+            Rectangle()
+              .foregroundColor(.clear)
+              .frame(width: 411, height: 3)
+              .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+              .blur(radius: 0.5)
+            
+            HStack {
+                ZStack {
+                    Text("영수증 인증")
+                      .font(Font.custom("Pretendard", size: 12))
+                      .multilineTextAlignment(.center)
+                      .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
+                      .frame(width: 61, alignment: .top)
+                }
+                .padding(.horizontal, 2)
+                .padding(.vertical, 0)
+                .frame(width: 69, alignment: .center)
+                .cornerRadius(4)
+                .overlay(
+                  RoundedRectangle(cornerRadius: 4)
+                    .inset(by: 0.25)
+                    .stroke(Color(red: 0.76, green: 0.76, blue: 0.76), lineWidth: 0.5)
+            )
+                ZStack {
+                    Menu("성별") {
+                      Button("남자") {
+                        print("남자")
+                      }
+                      Button("여자") {
+                        print("여자")
+                      }
+                    }
+                }
+                .padding(.horizontal, 2)
+                .padding(.vertical, 0)
+                .frame(width: 69, alignment: .center)
+                .cornerRadius(4)
+                .overlay(
+                  RoundedRectangle(cornerRadius: 4)
+                    .inset(by: 0.25)
+                    .stroke(Color(red: 0.76, green: 0.76, blue: 0.76), lineWidth: 0.5)
+                )
+                ZStack {
+                    Menu("최신순") {
+                      Button("최신순") {
+                        print("최신순")
+                      }
+                      Button("평점 높은순") {
+                        print("평점 높은순")
+                      }
+                    }
+                }
+                .padding(.horizontal, 2)
+                .padding(.vertical, 0)
+                .frame(width: 69, alignment: .center)
+                .cornerRadius(4)
+                .overlay(
+                  RoundedRectangle(cornerRadius: 4)
+                    .inset(by: 0.25)
+                    .stroke(Color(red: 0.76, green: 0.76, blue: 0.76), lineWidth: 0.5)
+                )
+            }
+        }
+    }
+}
+
+
+
+struct InfoView_Previews: PreviewProvider {
+    static var previews: some View {
+        InfoView()
+        ReviewView()
+    }
+}
