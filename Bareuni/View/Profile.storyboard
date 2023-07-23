@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OWh-v3-HIo">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-Regular.ttf">
+            <string>Pretendard-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반가워요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1v-Nj-HdH">
+                                <rect key="frame" x="32.000000000000007" y="187" width="89.666666666666686" height="28"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원님에 대해 알려주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjj-dq-oEH">
+                                <rect key="frame" x="32.000000000000014" y="223" width="246.33333333333337" height="28"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iO-ru-CPE">
+                                <rect key="frame" x="24" y="710" width="342" height="51"/>
+                                <color key="backgroundColor" name="BackgroundBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="s8e-zF-amV"/>
+                                </constraints>
+                                <color key="tintColor" name="BackgroundWhite"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다음">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="QMl-IL-dW5" kind="show" id="K3n-5Y-Y6n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7iO-ru-CPE" secondAttribute="bottom" constant="49" id="5dB-Tb-8oX"/>
+                            <constraint firstItem="T1v-Nj-HdH" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="96" id="Gf9-CT-6n6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7iO-ru-CPE" secondAttribute="trailing" constant="24" id="MGw-5V-td1"/>
+                            <constraint firstItem="tjj-dq-oEH" firstAttribute="top" secondItem="T1v-Nj-HdH" secondAttribute="bottom" constant="8" id="U92-q0-dW5"/>
+                            <constraint firstItem="T1v-Nj-HdH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="ehX-9U-Qu7"/>
+                            <constraint firstItem="tjj-dq-oEH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="mT5-4T-9kh"/>
+                            <constraint firstItem="7iO-ru-CPE" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="24" id="ner-Jo-SH0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="znK-Cz-26U"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="549.23076923076917" y="-10.663507109004739"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tXf-J8-8kY">
+            <objects>
+                <viewController id="QMl-IL-dW5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ksQ-Ry-2iD">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진과 닉네임을 등록해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcf-5e-ctG">
+                                <rect key="frame" x="32" y="141" width="288" height="29"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqT-XM-wsF">
+                                <rect key="frame" x="24" y="711" width="342" height="51"/>
+                                <color key="backgroundColor" name="disabledBtnColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="V0a-MW-bBV"/>
+                                </constraints>
+                                <color key="tintColor" name="BackgroundWhite"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다음">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="4OS-P8-Wk6" kind="show" id="7t3-Kh-lFj"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tooth" translatesAutoresizingMaskIntoConstraints="NO" id="Kac-QV-AAc">
+                                <rect key="frame" x="117" y="228" width="156" height="156"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="oKK-9z-kgr"/>
+                                    <constraint firstAttribute="height" constant="156" id="u29-Ua-ftX"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-Zd-sDF">
+                                <rect key="frame" x="24" y="432" width="342" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="hWu-QL-hvg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로필 정보(사진, 닉네임)은 회원, 사람, 친구간 커뮤니케이션 등의 목적으로 활용되며, 바른이 이용기간동안 보관됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsC-6G-DcO">
+                                <rect key="frame" x="32" y="515" width="326" height="28.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <color key="textColor" name="75grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4U-li-jze">
+                                <rect key="frame" x="328" y="448" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="OUK-iY-d44"/>
+                                    <constraint firstAttribute="width" constant="20" id="e2e-Ae-fQN"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <backgroundConfiguration key="background" image="greyXMark"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Ia-Aa-rCQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Ia-Aa-rCQ" firstAttribute="trailing" secondItem="XqT-XM-wsF" secondAttribute="trailing" constant="24" id="5I4-gM-yDY"/>
+                            <constraint firstItem="Bfi-Zd-sDF" firstAttribute="top" secondItem="Kac-QV-AAc" secondAttribute="bottom" constant="48" id="7Wd-tM-QB0"/>
+                            <constraint firstItem="KsC-6G-DcO" firstAttribute="top" secondItem="Bfi-Zd-sDF" secondAttribute="bottom" constant="31" id="8tu-q9-SC4"/>
+                            <constraint firstItem="KsC-6G-DcO" firstAttribute="leading" secondItem="9Ia-Aa-rCQ" secondAttribute="leading" constant="32" id="M67-sl-OGI"/>
+                            <constraint firstItem="d4U-li-jze" firstAttribute="trailing" secondItem="Bfi-Zd-sDF" secondAttribute="trailing" constant="-18" id="Umu-Cm-oMl"/>
+                            <constraint firstItem="Bfi-Zd-sDF" firstAttribute="leading" secondItem="9Ia-Aa-rCQ" secondAttribute="leading" constant="24" id="XPw-Fm-tHc"/>
+                            <constraint firstAttribute="trailing" secondItem="KsC-6G-DcO" secondAttribute="trailing" constant="32" id="YMX-ee-tGt"/>
+                            <constraint firstAttribute="trailing" secondItem="Bfi-Zd-sDF" secondAttribute="trailing" constant="24" id="YuA-Xu-6er"/>
+                            <constraint firstItem="Kac-QV-AAc" firstAttribute="top" secondItem="tcf-5e-ctG" secondAttribute="bottom" constant="58" id="amr-Xz-9QM"/>
+                            <constraint firstItem="tcf-5e-ctG" firstAttribute="leading" secondItem="9Ia-Aa-rCQ" secondAttribute="leading" constant="32" id="fpY-79-8eh"/>
+                            <constraint firstItem="9Ia-Aa-rCQ" firstAttribute="bottom" secondItem="XqT-XM-wsF" secondAttribute="bottom" constant="48" id="hre-nG-MOe"/>
+                            <constraint firstItem="tcf-5e-ctG" firstAttribute="top" secondItem="9Ia-Aa-rCQ" secondAttribute="top" constant="50" id="lRB-r4-8S4"/>
+                            <constraint firstItem="d4U-li-jze" firstAttribute="top" secondItem="Bfi-Zd-sDF" secondAttribute="top" constant="16" id="p8A-zT-o3h"/>
+                            <constraint firstItem="Kac-QV-AAc" firstAttribute="centerX" secondItem="9Ia-Aa-rCQ" secondAttribute="centerX" id="sak-HW-01I"/>
+                            <constraint firstItem="XqT-XM-wsF" firstAttribute="leading" secondItem="9Ia-Aa-rCQ" secondAttribute="leading" constant="24" id="wsg-uW-3Ui"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fOq-XE-M8s"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nmZ-eG-X7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="-11"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="36r-kq-3NJ">
+            <objects>
+                <viewController id="4OS-P8-Wk6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f4z-uS-Use">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마지막으로," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8U-n3-RzA">
+                                <rect key="frame" x="32" y="121" width="111" height="29"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별을 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-5O-REp">
+                                <rect key="frame" x="32" y="166" width="144" height="24"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이를 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNX-nq-gaz">
+                                <rect key="frame" x="32" y="308" width="144" height="24"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 교정 중이신가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfU-hM-epk">
+                                <rect key="frame" x="32" y="598" width="176" height="24"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRo-t5-UCQ">
+                                <rect key="frame" x="32" y="210" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="UAJ-Ak-u9U"/>
+                                    <constraint firstAttribute="height" constant="60" id="qUS-hL-4aO"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="남자">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhm-oW-CVf">
+                                <rect key="frame" x="32" y="352" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="w8w-PT-egj"/>
+                                    <constraint firstAttribute="width" constant="120" id="xCY-8M-tEC"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="남자">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKF-Dy-dfP">
+                                <rect key="frame" x="32" y="426" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3Kk-n5-5Wk"/>
+                                    <constraint firstAttribute="width" constant="120" id="eFE-FU-jqL"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="남자">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb8-49-CmC">
+                                <rect key="frame" x="32" y="500" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="pep-wS-jBz"/>
+                                    <constraint firstAttribute="height" constant="60" id="ygc-Mn-g3J"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="남자">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mij-4C-hw6">
+                                <rect key="frame" x="32" y="642" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="1kv-aG-j6l"/>
+                                    <constraint firstAttribute="height" constant="60" id="xoc-ru-jck"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="네">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vu-Pt-Ul1">
+                                <rect key="frame" x="166" y="642" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="TPF-02-YL9"/>
+                                    <constraint firstAttribute="width" constant="120" id="sAe-13-8Zz"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="아니오">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iq-ov-IbG">
+                                <rect key="frame" x="166" y="500" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="VPg-oM-4cW"/>
+                                    <constraint firstAttribute="height" constant="60" id="ocX-Dn-PzN"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="남자">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb0-vA-Rep">
+                                <rect key="frame" x="166" y="426" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="49J-pw-eUg"/>
+                                    <constraint firstAttribute="height" constant="60" id="Wu8-bd-xTy"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="남자">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGA-fS-4wq">
+                                <rect key="frame" x="166" y="352" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0Wc-jF-fXQ"/>
+                                    <constraint firstAttribute="width" constant="120" id="LFx-cV-164"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="남자">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evT-B3-l8M">
+                                <rect key="frame" x="166" y="210" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="XhM-3e-Ftd"/>
+                                    <constraint firstAttribute="width" constant="120" id="drs-V8-auG"/>
+                                </constraints>
+                                <color key="tintColor" name="75grey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="여자">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veQ-iz-3i7">
+                                <rect key="frame" x="24" y="711" width="342" height="51"/>
+                                <color key="backgroundColor" name="disabledBtnColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="XdB-4q-MRc"/>
+                                </constraints>
+                                <color key="tintColor" name="BackgroundWhite"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다음">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="heH-4u-w3c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fb0-vA-Rep" firstAttribute="leading" secondItem="QKF-Dy-dfP" secondAttribute="trailing" constant="14" id="1CV-Jm-qTj"/>
+                            <constraint firstItem="lNX-nq-gaz" firstAttribute="leading" secondItem="heH-4u-w3c" secondAttribute="leading" constant="32" id="2kj-t9-gdy"/>
+                            <constraint firstItem="lNX-nq-gaz" firstAttribute="top" secondItem="WRo-t5-UCQ" secondAttribute="bottom" constant="38" id="4kk-Pc-3ed"/>
+                            <constraint firstItem="BfU-hM-epk" firstAttribute="top" secondItem="eb8-49-CmC" secondAttribute="bottom" constant="38" id="53f-kn-3Co"/>
+                            <constraint firstItem="2Vu-Pt-Ul1" firstAttribute="centerY" secondItem="mij-4C-hw6" secondAttribute="centerY" id="60n-ow-5hP"/>
+                            <constraint firstItem="nhm-oW-CVf" firstAttribute="top" secondItem="lNX-nq-gaz" secondAttribute="bottom" constant="20" id="6cb-NX-e49"/>
+                            <constraint firstItem="v8U-n3-RzA" firstAttribute="leading" secondItem="heH-4u-w3c" secondAttribute="leading" constant="32" id="8tM-f3-XBl"/>
+                            <constraint firstItem="V9d-5O-REp" firstAttribute="top" secondItem="v8U-n3-RzA" secondAttribute="bottom" constant="16" id="CAO-DN-Fgb"/>
+                            <constraint firstItem="v8U-n3-RzA" firstAttribute="top" secondItem="heH-4u-w3c" secondAttribute="top" constant="30" id="JuY-JC-Qe9"/>
+                            <constraint firstItem="mij-4C-hw6" firstAttribute="leading" secondItem="heH-4u-w3c" secondAttribute="leading" constant="32" id="Mbq-hB-U59"/>
+                            <constraint firstItem="heH-4u-w3c" firstAttribute="bottom" secondItem="veQ-iz-3i7" secondAttribute="bottom" constant="48" id="Nos-aJ-7ft"/>
+                            <constraint firstItem="3iq-ov-IbG" firstAttribute="centerY" secondItem="eb8-49-CmC" secondAttribute="centerY" id="QGs-Fy-AEU"/>
+                            <constraint firstItem="veQ-iz-3i7" firstAttribute="leading" secondItem="heH-4u-w3c" secondAttribute="leading" constant="24" id="QUN-R0-Db0"/>
+                            <constraint firstItem="pGA-fS-4wq" firstAttribute="centerY" secondItem="nhm-oW-CVf" secondAttribute="centerY" id="T1m-MB-AHm"/>
+                            <constraint firstItem="QKF-Dy-dfP" firstAttribute="top" secondItem="nhm-oW-CVf" secondAttribute="bottom" constant="14" id="Uu2-lT-qlh"/>
+                            <constraint firstItem="evT-B3-l8M" firstAttribute="centerY" secondItem="WRo-t5-UCQ" secondAttribute="centerY" id="VAS-MK-CrF"/>
+                            <constraint firstItem="WRo-t5-UCQ" firstAttribute="top" secondItem="V9d-5O-REp" secondAttribute="bottom" constant="20" id="WPy-Rc-UoF"/>
+                            <constraint firstItem="2Vu-Pt-Ul1" firstAttribute="leading" secondItem="mij-4C-hw6" secondAttribute="trailing" constant="14" id="euY-Cv-K1G"/>
+                            <constraint firstItem="heH-4u-w3c" firstAttribute="trailing" secondItem="veQ-iz-3i7" secondAttribute="trailing" constant="24" id="gom-if-qFA"/>
+                            <constraint firstItem="QKF-Dy-dfP" firstAttribute="leading" secondItem="heH-4u-w3c" secondAttribute="leading" constant="32" id="h6G-s8-HkC"/>
+                            <constraint firstItem="BfU-hM-epk" firstAttribute="leading" secondItem="heH-4u-w3c" secondAttribute="leading" constant="32" id="i5e-lv-Hgz"/>
+                            <constraint firstItem="3iq-ov-IbG" firstAttribute="leading" secondItem="eb8-49-CmC" secondAttribute="trailing" constant="14" id="iqZ-Ks-Rgp"/>
+                            <constraint firstItem="pGA-fS-4wq" firstAttribute="leading" secondItem="nhm-oW-CVf" secondAttribute="trailing" constant="14" id="jyd-SQ-3Ba"/>
+                            <constraint firstItem="V9d-5O-REp" firstAttribute="leading" secondItem="heH-4u-w3c" secondAttribute="leading" constant="32" id="kaM-Po-rqW"/>
+                            <constraint firstItem="eb8-49-CmC" firstAttribute="leading" secondItem="heH-4u-w3c" secondAttribute="leading" constant="32" id="mP2-KB-cNb"/>
+                            <constraint firstItem="WRo-t5-UCQ" firstAttribute="leading" secondItem="f4z-uS-Use" secondAttribute="leading" constant="32" id="q5K-6G-8Oy"/>
+                            <constraint firstItem="nhm-oW-CVf" firstAttribute="leading" secondItem="heH-4u-w3c" secondAttribute="leading" constant="32" id="rN1-KN-1l9"/>
+                            <constraint firstItem="Fb0-vA-Rep" firstAttribute="centerY" secondItem="QKF-Dy-dfP" secondAttribute="centerY" id="sff-mX-EEF"/>
+                            <constraint firstItem="mij-4C-hw6" firstAttribute="top" secondItem="BfU-hM-epk" secondAttribute="bottom" constant="20" id="szf-h1-Xmi"/>
+                            <constraint firstItem="evT-B3-l8M" firstAttribute="leading" secondItem="WRo-t5-UCQ" secondAttribute="trailing" constant="14" id="yil-nM-xyO"/>
+                            <constraint firstItem="eb8-49-CmC" firstAttribute="top" secondItem="QKF-Dy-dfP" secondAttribute="bottom" constant="14" id="zWc-jV-uuw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rqf-zj-96m"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Brh-vc-sKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2483" y="6"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uwv-0t-DYf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OWh-v3-HIo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aDw-B0-eSQ">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="78f-iB-c6x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NHn-Jy-b7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-380" y="-10.663507109004739"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Tooth" width="38" height="42"/>
+        <image name="greyXMark" width="20" height="20"/>
+        <namedColor name="75grey">
+            <color red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundBlue">
+            <color red="0.0" green="0.58039215686274515" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="disabledBtnColor">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
