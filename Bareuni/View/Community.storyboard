@@ -29,7 +29,7 @@
         <!--커뮤니티-->
         <scene sceneID="gam-g4-NUw">
             <objects>
-                <viewController id="k4V-nf-wRT" customClass="CommunityVC" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k4V-nf-wRT" customClass="CommunityViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EfS-XW-xpU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
