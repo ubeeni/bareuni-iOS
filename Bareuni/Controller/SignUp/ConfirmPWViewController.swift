@@ -77,11 +77,10 @@ class ConfirmPWViewController: UIViewController, UITextFieldDelegate{
 extension UIButton{
     func changeDisabledState() {
         self.isEnabled = false
-        self.tintColor = .green
-        self.setTitleColor(UIColor.green, for: .normal)
+        self.tintColor = .white
+        self.setTitleColor(UIColor.white, for: .normal)
         self.backgroundColor = UIColor(named: "disabledBtnColor")
-        self.tintColor = .green
-        self.setTitleColor(UIColor.green, for: .normal)
+
     }
     
     func changeEnabledState() {

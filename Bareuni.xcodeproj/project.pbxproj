@@ -49,6 +49,7 @@
 		32EB16CC2A6D726E0050F45F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EB16CB2A6D726E0050F45F /* Profile.storyboard */; };
 		32EB16CF2A6E37BA0050F45F /* profileGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16CE2A6E37BA0050F45F /* profileGuideViewController.swift */; };
 		32EB16D32A6E3F850050F45F /* NicknameSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16D22A6E3F850050F45F /* NicknameSettingViewController.swift */; };
+		32EB16D52A6E4AB80050F45F /* DetailedProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16D42A6E4AB80050F45F /* DetailedProfileSettingViewController.swift */; };
 		3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB7172A5C508600AC56D0 /* ContentView.swift */; };
 		3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */; };
 		3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACE32A5D3C060071D598 /* TestView.swift */; };
@@ -122,6 +123,7 @@
 		32EB16CB2A6D726E0050F45F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		32EB16CE2A6E37BA0050F45F /* profileGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileGuideViewController.swift; sourceTree = "<group>"; };
 		32EB16D22A6E3F850050F45F /* NicknameSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameSettingViewController.swift; sourceTree = "<group>"; };
+		32EB16D42A6E4AB80050F45F /* DetailedProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProfileSettingViewController.swift; sourceTree = "<group>"; };
 		3B9CB7172A5C508600AC56D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3BB0ACE32A5D3C060071D598 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			children = (
 				32EB16CE2A6E37BA0050F45F /* profileGuideViewController.swift */,
 				32EB16D22A6E3F850050F45F /* NicknameSettingViewController.swift */,
+				32EB16D42A6E4AB80050F45F /* DetailedProfileSettingViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
 				32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */,
 				32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */,
+				32EB16D52A6E4AB80050F45F /* DetailedProfileSettingViewController.swift in Sources */,
 				321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */,
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,
 				26F529F32A62B9DE00813AE3 /* ChatViewController.swift in Sources */,
