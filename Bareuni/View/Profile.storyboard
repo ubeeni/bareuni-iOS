@@ -15,12 +15,15 @@
         <array key="Pretendard-Regular.ttf">
             <string>Pretendard-Regular</string>
         </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Profile Guide View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="profileGuideViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,21 +69,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="znK-Cz-26U"/>
+                    <connections>
+                        <outlet property="nextBtn" destination="7iO-ru-CPE" id="5kx-iA-Gg8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="549.23076923076917" y="-10.663507109004739"/>
         </scene>
-        <!--View Controller-->
+        <!--Nickname Setting View Controller-->
         <scene sceneID="tXf-J8-8kY">
             <objects>
-                <viewController id="QMl-IL-dW5" sceneMemberID="viewController">
+                <viewController id="QMl-IL-dW5" customClass="NicknameSettingViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ksQ-Ry-2iD">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진과 닉네임을 등록해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcf-5e-ctG">
-                                <rect key="frame" x="32" y="141" width="288" height="29"/>
+                                <rect key="frame" x="32" y="141" width="288" height="28"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -91,38 +97,40 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="V0a-MW-bBV"/>
                                 </constraints>
-                                <color key="tintColor" name="BackgroundWhite"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="다음">
-                                    <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음"/>
                                 <connections>
                                     <segue destination="4OS-P8-Wk6" kind="show" id="7t3-Kh-lFj"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tooth" translatesAutoresizingMaskIntoConstraints="NO" id="Kac-QV-AAc">
-                                <rect key="frame" x="117" y="228" width="156" height="156"/>
+                                <rect key="frame" x="120" y="227" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="156" id="oKK-9z-kgr"/>
-                                    <constraint firstAttribute="height" constant="156" id="u29-Ua-ftX"/>
+                                    <constraint firstAttribute="width" constant="150" id="oKK-9z-kgr"/>
+                                    <constraint firstAttribute="height" constant="150" id="u29-Ua-ftX"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-Zd-sDF">
-                                <rect key="frame" x="24" y="432" width="342" height="52"/>
+                                <rect key="frame" x="24" y="425" width="342" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="hWu-QL-hvg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nicknameTextFieldDidChange:" destination="QMl-IL-dW5" eventType="editingChanged" id="mZk-pm-O7w"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로필 정보(사진, 닉네임)은 회원, 사람, 친구간 커뮤니케이션 등의 목적으로 활용되며, 바른이 이용기간동안 보관됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsC-6G-DcO">
-                                <rect key="frame" x="32" y="515" width="326" height="28.666666666666629"/>
+                                <rect key="frame" x="32" y="508.00000000000006" width="326" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
                                 <color key="textColor" name="75grey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4U-li-jze">
-                                <rect key="frame" x="328" y="448" width="20" height="20"/>
+                                <rect key="frame" x="328" y="441" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="OUK-iY-d44"/>
                                     <constraint firstAttribute="width" constant="20" id="e2e-Ae-fQN"/>
@@ -132,6 +140,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="">
                                     <backgroundConfiguration key="background" image="greyXMark"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteBtnDidTap:" destination="QMl-IL-dW5" eventType="touchUpInside" id="GA2-wX-iq0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Ia-Aa-rCQ"/>
@@ -155,6 +166,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fOq-XE-M8s"/>
+                    <connections>
+                        <outlet property="nextBtn" destination="XqT-XM-wsF" id="4bs-lr-xmF"/>
+                        <outlet property="nicknameTextField" destination="Bfi-Zd-sDF" id="CIV-el-xD0"/>
+                        <outlet property="profileImageView" destination="Kac-QV-AAc" id="1lp-Wh-5JE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmZ-eG-X7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,31 +185,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마지막으로," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8U-n3-RzA">
-                                <rect key="frame" x="32" y="121" width="111" height="29"/>
+                                <rect key="frame" x="32" y="121" width="111" height="28"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별을 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-5O-REp">
-                                <rect key="frame" x="32" y="166" width="144" height="24"/>
+                                <rect key="frame" x="32" y="165" width="144" height="24"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이를 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNX-nq-gaz">
-                                <rect key="frame" x="32" y="308" width="144" height="24"/>
+                                <rect key="frame" x="32" y="307" width="144" height="24"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 교정 중이신가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfU-hM-epk">
-                                <rect key="frame" x="32" y="598" width="176" height="24"/>
+                                <rect key="frame" x="32" y="597" width="175.33333333333334" height="24"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRo-t5-UCQ">
-                                <rect key="frame" x="32" y="210" width="120" height="60"/>
+                                <rect key="frame" x="32" y="209" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="UAJ-Ak-u9U"/>
                                     <constraint firstAttribute="height" constant="60" id="qUS-hL-4aO"/>
@@ -205,7 +221,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhm-oW-CVf">
-                                <rect key="frame" x="32" y="352" width="120" height="60"/>
+                                <rect key="frame" x="32" y="351" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="w8w-PT-egj"/>
                                     <constraint firstAttribute="width" constant="120" id="xCY-8M-tEC"/>
@@ -217,7 +233,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKF-Dy-dfP">
-                                <rect key="frame" x="32" y="426" width="120" height="60"/>
+                                <rect key="frame" x="32" y="425" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="3Kk-n5-5Wk"/>
                                     <constraint firstAttribute="width" constant="120" id="eFE-FU-jqL"/>
@@ -229,7 +245,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb8-49-CmC">
-                                <rect key="frame" x="32" y="500" width="120" height="60"/>
+                                <rect key="frame" x="32" y="499" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="pep-wS-jBz"/>
                                     <constraint firstAttribute="height" constant="60" id="ygc-Mn-g3J"/>
@@ -241,7 +257,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mij-4C-hw6">
-                                <rect key="frame" x="32" y="642" width="120" height="60"/>
+                                <rect key="frame" x="32" y="641" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="1kv-aG-j6l"/>
                                     <constraint firstAttribute="height" constant="60" id="xoc-ru-jck"/>
@@ -253,7 +269,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vu-Pt-Ul1">
-                                <rect key="frame" x="166" y="642" width="120" height="60"/>
+                                <rect key="frame" x="166" y="641" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="TPF-02-YL9"/>
                                     <constraint firstAttribute="width" constant="120" id="sAe-13-8Zz"/>
@@ -265,7 +281,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iq-ov-IbG">
-                                <rect key="frame" x="166" y="500" width="120" height="60"/>
+                                <rect key="frame" x="166" y="499" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="VPg-oM-4cW"/>
                                     <constraint firstAttribute="height" constant="60" id="ocX-Dn-PzN"/>
@@ -277,7 +293,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb0-vA-Rep">
-                                <rect key="frame" x="166" y="426" width="120" height="60"/>
+                                <rect key="frame" x="166" y="425" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="49J-pw-eUg"/>
                                     <constraint firstAttribute="height" constant="60" id="Wu8-bd-xTy"/>
@@ -289,7 +305,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGA-fS-4wq">
-                                <rect key="frame" x="166" y="352" width="120" height="60"/>
+                                <rect key="frame" x="166" y="351" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="0Wc-jF-fXQ"/>
                                     <constraint firstAttribute="width" constant="120" id="LFx-cV-164"/>
@@ -301,7 +317,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evT-B3-l8M">
-                                <rect key="frame" x="166" y="210" width="120" height="60"/>
+                                <rect key="frame" x="166" y="209" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="XhM-3e-Ftd"/>
                                     <constraint firstAttribute="width" constant="120" id="drs-V8-auG"/>
@@ -365,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Brh-vc-sKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2483" y="6"/>
+            <point key="canvasLocation" x="2451" y="-11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uwv-0t-DYf">
