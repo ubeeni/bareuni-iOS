@@ -210,22 +210,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이를 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNX-nq-gaz">
-                                <rect key="frame" x="32" y="307" width="144" height="24"/>
+                                <rect key="frame" x="32" y="303" width="144" height="24"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 교정 중이신가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfU-hM-epk">
-                                <rect key="frame" x="32" y="597" width="175.33333333333334" height="24"/>
+                                <rect key="frame" x="32" y="581" width="175.33333333333334" height="24"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRo-t5-UCQ">
-                                <rect key="frame" x="32" y="209" width="120" height="60"/>
+                                <rect key="frame" x="32" y="209" width="112" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="UAJ-Ak-u9U"/>
-                                    <constraint firstAttribute="height" constant="60" id="qUS-hL-4aO"/>
+                                    <constraint firstAttribute="width" constant="112" id="UAJ-Ak-u9U"/>
+                                    <constraint firstAttribute="height" constant="56" id="qUS-hL-4aO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
                                 <color key="tintColor" name="BackgroundWhite"/>
@@ -233,106 +233,18 @@
                                 <state key="normal" title="남자">
                                     <color key="titleColor" name="75grey"/>
                                 </state>
+                                <state key="selected">
+                                    <color key="titleColor" name="BackgroundBlue"/>
+                                </state>
                                 <connections>
                                     <action selector="manBtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="opv-bj-FzM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhm-oW-CVf">
-                                <rect key="frame" x="32" y="351" width="120" height="60"/>
+                                <rect key="frame" x="32" y="347" width="112" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="w8w-PT-egj"/>
-                                    <constraint firstAttribute="width" constant="120" id="xCY-8M-tEC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
-                                <color key="tintColor" name="BackgroundWhite"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="9세 이하">
-                                    <color key="titleColor" name="75grey"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKF-Dy-dfP">
-                                <rect key="frame" x="32" y="425" width="120" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="3Kk-n5-5Wk"/>
-                                    <constraint firstAttribute="width" constant="120" id="eFE-FU-jqL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
-                                <color key="tintColor" name="BackgroundWhite"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="20대">
-                                    <color key="titleColor" name="75grey"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb8-49-CmC">
-                                <rect key="frame" x="32" y="499" width="120" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="pep-wS-jBz"/>
-                                    <constraint firstAttribute="height" constant="60" id="ygc-Mn-g3J"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
-                                <color key="tintColor" name="BackgroundWhite"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="40대">
-                                    <color key="titleColor" name="75grey"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mij-4C-hw6">
-                                <rect key="frame" x="32" y="641" width="120" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="1kv-aG-j6l"/>
-                                    <constraint firstAttribute="height" constant="60" id="xoc-ru-jck"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
-                                <color key="tintColor" name="BackgroundWhite"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="네">
-                                    <color key="titleColor" name="75grey"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vu-Pt-Ul1">
-                                <rect key="frame" x="166" y="641" width="120" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="TPF-02-YL9"/>
-                                    <constraint firstAttribute="width" constant="120" id="sAe-13-8Zz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
-                                <color key="tintColor" name="BackgroundWhite"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="아니오">
-                                    <color key="titleColor" name="75grey"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iq-ov-IbG">
-                                <rect key="frame" x="166" y="499" width="120" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="VPg-oM-4cW"/>
-                                    <constraint firstAttribute="height" constant="60" id="ocX-Dn-PzN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
-                                <color key="tintColor" name="BackgroundWhite"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="50대 이상">
-                                    <color key="titleColor" name="75grey"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb0-vA-Rep">
-                                <rect key="frame" x="166" y="425" width="120" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="49J-pw-eUg"/>
-                                    <constraint firstAttribute="height" constant="60" id="Wu8-bd-xTy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
-                                <color key="tintColor" name="BackgroundWhite"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="30대">
-                                    <color key="titleColor" name="75grey"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGA-fS-4wq">
-                                <rect key="frame" x="166" y="351" width="120" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="0Wc-jF-fXQ"/>
-                                    <constraint firstAttribute="width" constant="120" id="LFx-cV-164"/>
+                                    <constraint firstAttribute="height" constant="56" id="w8w-PT-egj"/>
+                                    <constraint firstAttribute="width" constant="112" id="xCY-8M-tEC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
                                 <color key="tintColor" name="BackgroundWhite"/>
@@ -340,17 +252,160 @@
                                 <state key="normal" title="10대">
                                     <color key="titleColor" name="75grey"/>
                                 </state>
+                                <state key="selected">
+                                    <color key="titleColor" name="BackgroundBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="age10BtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="ntQ-lg-kHu"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evT-B3-l8M">
-                                <rect key="frame" x="166" y="209" width="120" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKF-Dy-dfP">
+                                <rect key="frame" x="32" y="417" width="112" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="XhM-3e-Ftd"/>
-                                    <constraint firstAttribute="width" constant="120" id="drs-V8-auG"/>
+                                    <constraint firstAttribute="height" constant="56" id="3Kk-n5-5Wk"/>
+                                    <constraint firstAttribute="width" constant="112" id="eFE-FU-jqL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="tintColor" name="BackgroundWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="30대">
+                                    <color key="titleColor" name="75grey"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" name="BackgroundBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="age30BtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="M30-NI-K9y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb8-49-CmC">
+                                <rect key="frame" x="32" y="487" width="112" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="pep-wS-jBz"/>
+                                    <constraint firstAttribute="height" constant="56" id="ygc-Mn-g3J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="tintColor" name="BackgroundWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="50대">
+                                    <color key="titleColor" name="75grey"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" name="BackgroundBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="age50BtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="xtY-FA-ClC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mij-4C-hw6">
+                                <rect key="frame" x="32" y="625" width="112" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="1kv-aG-j6l"/>
+                                    <constraint firstAttribute="height" constant="56" id="xoc-ru-jck"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="tintColor" name="BackgroundWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="네">
+                                    <color key="titleColor" name="75grey"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" name="BackgroundBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="yesBtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="il0-Nh-mfz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vu-Pt-Ul1">
+                                <rect key="frame" x="158" y="625" width="112" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="TPF-02-YL9"/>
+                                    <constraint firstAttribute="width" constant="112" id="sAe-13-8Zz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="tintColor" name="BackgroundWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="아니오">
+                                    <color key="titleColor" name="75grey"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" name="BackgroundBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="noBtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="Ayh-DS-edV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iq-ov-IbG">
+                                <rect key="frame" x="158" y="487" width="112" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="VPg-oM-4cW"/>
+                                    <constraint firstAttribute="height" constant="56" id="ocX-Dn-PzN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="tintColor" name="BackgroundWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="60대">
+                                    <color key="titleColor" name="75grey"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" name="BackgroundBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="age60BtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="6mZ-Qb-4YZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb0-vA-Rep">
+                                <rect key="frame" x="158" y="417" width="112" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="49J-pw-eUg"/>
+                                    <constraint firstAttribute="height" constant="56" id="Wu8-bd-xTy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="tintColor" name="BackgroundWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="40대">
+                                    <color key="titleColor" name="75grey"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" name="BackgroundBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="age40BtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="8Zu-En-scF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGA-fS-4wq">
+                                <rect key="frame" x="158" y="347" width="112" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="0Wc-jF-fXQ"/>
+                                    <constraint firstAttribute="width" constant="112" id="LFx-cV-164"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="tintColor" name="BackgroundWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="20대">
+                                    <color key="titleColor" name="75grey"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" name="BackgroundBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="age20BtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="tQh-tS-FDu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evT-B3-l8M">
+                                <rect key="frame" x="158" y="209" width="112" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="XhM-3e-Ftd"/>
+                                    <constraint firstAttribute="width" constant="112" id="drs-V8-auG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="tintColor" name="BackgroundWhite"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="여자">
                                     <color key="titleColor" name="75grey"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" name="BackgroundBlue"/>
                                 </state>
                                 <connections>
                                     <action selector="womanBtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="gzv-M4-Dcn"/>
@@ -366,6 +421,9 @@
                                 <color key="tintColor" name="BackgroundWhite"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="확인"/>
+                                <connections>
+                                    <action selector="confirmBtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="9vk-zM-eDQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="heH-4u-w3c"/>
