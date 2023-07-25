@@ -423,6 +423,7 @@
                                 <state key="normal" title="확인"/>
                                 <connections>
                                     <action selector="confirmBtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="9vk-zM-eDQ"/>
+                                    <segue destination="glg-Gh-1dl" kind="show" id="Nuv-v7-zh2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -481,6 +482,67 @@
             </objects>
             <point key="canvasLocation" x="2451" y="-11"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="mBc-oH-eFX">
+            <objects>
+                <viewController id="glg-Gh-1dl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3DG-lN-iwL">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DnP-xV-6rs">
+                                <rect key="frame" x="115" y="267" width="160" height="155"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입 완료!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFH-63-Ygs">
+                                        <rect key="frame" x="40.333333333333336" y="130" width="79.333333333333314" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="2x5-0Z-cw4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="20"/>
+                                        <color key="textColor" name="BackgroundBlue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="7Bx-7O-SEy">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="G5Q-ql-XJ2"/>
+                                            <constraint firstAttribute="width" constant="160" id="XiT-f4-C83"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BFH-63-Ygs" secondAttribute="bottom" id="54J-hj-gFt"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Bx-7O-SEy" secondAttribute="trailing" id="H9r-5H-qMx"/>
+                                    <constraint firstItem="7Bx-7O-SEy" firstAttribute="centerX" secondItem="DnP-xV-6rs" secondAttribute="centerX" id="Luj-WJ-4un"/>
+                                    <constraint firstItem="BFH-63-Ygs" firstAttribute="centerX" secondItem="DnP-xV-6rs" secondAttribute="centerX" id="Xj9-em-jWM"/>
+                                    <constraint firstItem="7Bx-7O-SEy" firstAttribute="top" secondItem="DnP-xV-6rs" secondAttribute="top" id="lxS-64-Ems"/>
+                                    <constraint firstItem="7Bx-7O-SEy" firstAttribute="leading" secondItem="DnP-xV-6rs" secondAttribute="leading" id="tZv-Rz-H3q"/>
+                                    <constraint firstItem="BFH-63-Ygs" firstAttribute="top" secondItem="7Bx-7O-SEy" secondAttribute="bottom" constant="40" id="toZ-we-G97"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이아파님, 환영해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW4-wQ-Hnx">
+                                <rect key="frame" x="106" y="436" width="178" height="29"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vRw-Oe-c8t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iW4-wQ-Hnx" firstAttribute="centerX" secondItem="vRw-Oe-c8t" secondAttribute="centerX" id="ASW-Rx-hcv"/>
+                            <constraint firstItem="iW4-wQ-Hnx" firstAttribute="centerY" secondItem="vRw-Oe-c8t" secondAttribute="centerY" id="CIR-7x-sIG"/>
+                            <constraint firstItem="7Bx-7O-SEy" firstAttribute="centerX" secondItem="vRw-Oe-c8t" secondAttribute="centerX" id="i3Y-Al-4v7"/>
+                            <constraint firstItem="iW4-wQ-Hnx" firstAttribute="top" secondItem="DnP-xV-6rs" secondAttribute="bottom" constant="14" id="j3L-JS-Ic1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gzV-1S-POh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KPV-a5-4gJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3416.9230769230767" y="-11.374407582938389"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="uwv-0t-DYf">
             <objects>
@@ -504,6 +566,7 @@
         <image name="Tooth" width="38" height="42"/>
         <image name="greyXMark" width="20" height="20"/>
         <image name="profile" width="43" height="43"/>
+        <image name="welcome" width="162.33332824707031" height="154"/>
         <namedColor name="75grey">
             <color red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
