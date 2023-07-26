@@ -20,6 +20,8 @@
 		1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */; };
 		1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052C3EC2A6701EC00CD6508 /* DentistData.swift */; };
 		1052C3EF2A6702B400CD6508 /* DentistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052C3EE2A6702B400CD6508 /* DentistTableViewCell.swift */; };
+		10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEE93C2A70FCD7005833CE /* TalkView.swift */; };
+		10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEE93E2A70FD03005833CE /* FAQView.swift */; };
 		321B896D2A602AA500AE45D4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321B896C2A602AA500AE45D4 /* Login.storyboard */; };
 		321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */; };
 		321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B89712A60351E00AE45D4 /* loginViewController.swift */; };
@@ -83,6 +85,8 @@
 		1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		1052C3EC2A6701EC00CD6508 /* DentistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistData.swift; sourceTree = "<group>"; };
 		1052C3EE2A6702B400CD6508 /* DentistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistTableViewCell.swift; sourceTree = "<group>"; };
+		10AEE93C2A70FCD7005833CE /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
+		10AEE93E2A70FD03005833CE /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		321B896C2A602AA500AE45D4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginSelectionViewController.swift; sourceTree = "<group>"; };
 		321B89712A60351E00AE45D4 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
@@ -242,13 +246,15 @@
 				1026BF422A5A94E600955799 /* Home.storyboard */,
 				1026BF462A5A98CB00955799 /* Info.storyboard */,
 				1026BF482A5A998600955799 /* Community.storyboard */,
-				1014A0B22A6E604D00CE8170 /* CommunityMainView.swift */,
 				1026BF4A2A5A9D6400955799 /* Mypage.storyboard */,
 				321B896C2A602AA500AE45D4 /* Login.storyboard */,
+				1014A0B22A6E604D00CE8170 /* CommunityMainView.swift */,
 				3B9CB7172A5C508600AC56D0 /* ContentView.swift */,
 				3BB0ACE72A657FEE0071D598 /* InfoView.swift */,
 				3BB0ACEF2A6A17C00071D598 /* WriteView.swift */,
 				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
+				10AEE93C2A70FCD7005833CE /* TalkView.swift */,
+				10AEE93E2A70FD03005833CE /* FAQView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */,
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
 				3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */,
 				1026BF4D2A5AA5C700955799 /* HomeViewController.swift in Sources */,
@@ -453,6 +460,7 @@
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
 				3BB0ACEA2A6685780071D598 /* DentistModel.swift in Sources */,
 				1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */,
+				10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */,
 				32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */,
 				3BB0ACE82A657FEE0071D598 /* InfoView.swift in Sources */,
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
