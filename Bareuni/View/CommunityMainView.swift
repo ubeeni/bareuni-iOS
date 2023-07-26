@@ -101,7 +101,7 @@ struct CommunityMainView: View {
                 }
                 .padding(.horizontal)
                 .background(Color.white)
-                .cornerRadius(10)
+                .cornerRadius(6)
                 .padding(.horizontal)
                 .shadow(color: Color.gray.opacity(0.5), radius: 3, x: 0, y: 1)
                 .padding(.top, 15)

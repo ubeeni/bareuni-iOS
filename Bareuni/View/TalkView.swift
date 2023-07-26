@@ -35,7 +35,7 @@ struct TalkView: View {
                     .padding(.vertical, 8)
                     .background(Color.white)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 4)
                             .stroke(Color.gray, lineWidth: 1)
                             .opacity(0.6)
                     )
@@ -104,9 +104,9 @@ struct WritePostView: View {
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $postContent)
                     .padding(.horizontal, 10)
-                    .cornerRadius(10)
+                    .cornerRadius(16)
                 
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 16)
                     .stroke(Color("TextEditor"), lineWidth: 1)
                     .padding(0.6)
             }
@@ -137,7 +137,7 @@ struct WritePostView: View {
                         .background(Color.white)
                         .foregroundColor(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"))
                         .overlay(
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 8)
                                 .stroke(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"), lineWidth: 1)
                                 .opacity(0.6)
                         )
