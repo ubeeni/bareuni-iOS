@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1014A0B32A6E604D00CE8170 /* CommunityMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1014A0B22A6E604D00CE8170 /* CommunityMainView.swift */; };
+		1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1014A0B42A6E61C500CE8170 /* CommunityViewController.swift */; };
 		102166532A69492A00DC6351 /* CommunityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102166522A69492A00DC6351 /* CommunityData.swift */; };
 		102166552A6949ED00DC6351 /* CommunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102166542A6949ED00DC6351 /* CommunityTableViewCell.swift */; };
 		1026BF412A59A8F000955799 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026BF402A59A8F000955799 /* TabBarController.swift */; };
@@ -18,11 +20,8 @@
 		1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */; };
 		1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052C3EC2A6701EC00CD6508 /* DentistData.swift */; };
 		1052C3EF2A6702B400CD6508 /* DentistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052C3EE2A6702B400CD6508 /* DentistTableViewCell.swift */; };
-		268337382A5C28C900776151 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268337372A5C28C900776151 /* CommunityViewController.swift */; };
-		26F529F12A5EC43E00813AE3 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F529F02A5EC43E00813AE3 /* PopularCell.swift */; };
-		26F529F32A62B9DE00813AE3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F529F22A62B9DE00813AE3 /* ChatViewController.swift */; };
-		26F529F52A62B9F100813AE3 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F529F42A62B9F100813AE3 /* FAQViewController.swift */; };
-		26F529F92A62BF2800813AE3 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F529F82A62BF2800813AE3 /* CategoryViewController.swift */; };
+		10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEE93C2A70FCD7005833CE /* TalkView.swift */; };
+		10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEE93E2A70FD03005833CE /* FAQView.swift */; };
 		321B896D2A602AA500AE45D4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321B896C2A602AA500AE45D4 /* Login.storyboard */; };
 		321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */; };
 		321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B89712A60351E00AE45D4 /* loginViewController.swift */; };
@@ -77,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1014A0B22A6E604D00CE8170 /* CommunityMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityMainView.swift; sourceTree = "<group>"; };
+		1014A0B42A6E61C500CE8170 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		102166522A69492A00DC6351 /* CommunityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityData.swift; sourceTree = "<group>"; };
 		102166542A6949ED00DC6351 /* CommunityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTableViewCell.swift; sourceTree = "<group>"; };
 		1026BF402A59A8F000955799 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -88,11 +89,8 @@
 		1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		1052C3EC2A6701EC00CD6508 /* DentistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistData.swift; sourceTree = "<group>"; };
 		1052C3EE2A6702B400CD6508 /* DentistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistTableViewCell.swift; sourceTree = "<group>"; };
-		268337372A5C28C900776151 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
-		26F529F02A5EC43E00813AE3 /* PopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCell.swift; sourceTree = "<group>"; };
-		26F529F22A62B9DE00813AE3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		26F529F42A62B9F100813AE3 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
-		26F529F82A62BF2800813AE3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		10AEE93C2A70FCD7005833CE /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
+		10AEE93E2A70FD03005833CE /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		321B896C2A602AA500AE45D4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginSelectionViewController.swift; sourceTree = "<group>"; };
 		321B89712A60351E00AE45D4 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +156,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1014A0AF2A6E592500CE8170 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				1014A0B42A6E61C500CE8170 /* CommunityViewController.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
 		104862532A61ADCB00D2683F /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,18 +175,6 @@
 				102166542A6949ED00DC6351 /* CommunityTableViewCell.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		26F529EB2A5D91CB00813AE3 /* CommunityController */ = {
-			isa = PBXGroup;
-			children = (
-				268337372A5C28C900776151 /* CommunityViewController.swift */,
-				26F529F02A5EC43E00813AE3 /* PopularCell.swift */,
-				26F529F22A62B9DE00813AE3 /* ChatViewController.swift */,
-				26F529F42A62B9F100813AE3 /* FAQViewController.swift */,
-				26F529F82A62BF2800813AE3 /* CategoryViewController.swift */,
-			);
-			path = CommunityController;
 			sourceTree = "<group>";
 		};
 		321B896E2A60320B00AE45D4 /* Login */ = {
@@ -262,10 +256,13 @@
 				1026BF482A5A998600955799 /* Community.storyboard */,
 				1026BF4A2A5A9D6400955799 /* Mypage.storyboard */,
 				321B896C2A602AA500AE45D4 /* Login.storyboard */,
+				1014A0B22A6E604D00CE8170 /* CommunityMainView.swift */,
 				3B9CB7172A5C508600AC56D0 /* ContentView.swift */,
 				3BB0ACE72A657FEE0071D598 /* InfoView.swift */,
 				3BB0ACEF2A6A17C00071D598 /* WriteView.swift */,
 				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
+				10AEE93C2A70FCD7005833CE /* TalkView.swift */,
+				10AEE93E2A70FD03005833CE /* FAQView.swift */,
 				32EB16CB2A6D726E0050F45F /* Profile.storyboard */,
 			);
 			path = View;
@@ -275,9 +272,9 @@
 			isa = PBXGroup;
 			children = (
 				32EB16CD2A6E374E0050F45F /* Profile */,
+				1014A0AF2A6E592500CE8170 /* Community */,
 				32EB16BA2A6921E10050F45F /* SignUp */,
 				321B896E2A60320B00AE45D4 /* Login */,
-				26F529EB2A5D91CB00813AE3 /* CommunityController */,
 				104862532A61ADCB00D2683F /* Home */,
 				32A5E6CC2A557A1800B41644 /* ViewController.swift */,
 				3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */,
@@ -472,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */,
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
 				3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */,
 				1026BF4D2A5AA5C700955799 /* HomeViewController.swift in Sources */,
@@ -479,11 +477,13 @@
 				32EB16C42A6BF3830050F45F /* TermsOfServiceViewController.swift in Sources */,
 				1052C3EF2A6702B400CD6508 /* DentistTableViewCell.swift in Sources */,
 				102166552A6949ED00DC6351 /* CommunityTableViewCell.swift in Sources */,
+				1014A0B32A6E604D00CE8170 /* CommunityMainView.swift in Sources */,
 				32EB16CF2A6E37BA0050F45F /* profileGuideViewController.swift in Sources */,
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
 				32EB16D32A6E3F850050F45F /* NicknameSettingViewController.swift in Sources */,
 				3BB0ACEA2A6685780071D598 /* DentistModel.swift in Sources */,
-				26F529F52A62B9F100813AE3 /* FAQViewController.swift in Sources */,
+				1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */,
+				10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */,
 				32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */,
 				3BB0ACE82A657FEE0071D598 /* InfoView.swift in Sources */,
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
@@ -492,12 +492,8 @@
 				32EB16D52A6E4AB80050F45F /* DetailedProfileSettingViewController.swift in Sources */,
 				321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */,
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,
-				26F529F32A62B9DE00813AE3 /* ChatViewController.swift in Sources */,
 				3BB0ACEC2A6685AA0071D598 /* DentistViewModel.swift in Sources */,
-				26F529F12A5EC43E00813AE3 /* PopularCell.swift in Sources */,
 				3BB0ACF02A6A17C00071D598 /* WriteView.swift in Sources */,
-				268337382A5C28C900776151 /* CommunityViewController.swift in Sources */,
-				26F529F92A62BF2800813AE3 /* CategoryViewController.swift in Sources */,
 				1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */,
 				102166532A69492A00DC6351 /* CommunityData.swift in Sources */,
 				32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */,
