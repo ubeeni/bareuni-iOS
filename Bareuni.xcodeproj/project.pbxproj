@@ -45,6 +45,9 @@
 		32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16BB2A6922430050F45F /* EmailAuthViewController.swift */; };
 		32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16BF2A6A26660050F45F /* ConfirmPWViewController.swift */; };
 		32EB16C42A6BF3830050F45F /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16C32A6BF3830050F45F /* TermsOfServiceViewController.swift */; };
+		3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5AF6502A708F2900A94BF1 /* BSImagePicker */; };
+		3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6522A7095F600A94BF1 /* TestView2.swift */; };
+		3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */; };
 		32EB16CC2A6D726E0050F45F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EB16CB2A6D726E0050F45F /* Profile.storyboard */; };
 		32EB16CF2A6E37BA0050F45F /* profileGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16CE2A6E37BA0050F45F /* profileGuideViewController.swift */; };
 		32EB16D32A6E3F850050F45F /* NicknameSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16D22A6E3F850050F45F /* NicknameSettingViewController.swift */; };
@@ -89,6 +92,13 @@
 		1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		1052C3EC2A6701EC00CD6508 /* DentistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistData.swift; sourceTree = "<group>"; };
 		1052C3EE2A6702B400CD6508 /* DentistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistTableViewCell.swift; sourceTree = "<group>"; };
+		268337372A5C28C900776151 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		26F529F02A5EC43E00813AE3 /* PopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCell.swift; sourceTree = "<group>"; };
+		26F529F22A62B9DE00813AE3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		26F529F42A62B9F100813AE3 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		26F529F82A62BF2800813AE3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		1052C3EC2A6701EC00CD6508 /* DentistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistData.swift; sourceTree = "<group>"; };
+		1052C3EE2A6702B400CD6508 /* DentistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistTableViewCell.swift; sourceTree = "<group>"; };
 		10AEE93C2A70FCD7005833CE /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
 		10AEE93E2A70FD03005833CE /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		321B896C2A602AA500AE45D4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -118,6 +128,8 @@
 		32EB16BB2A6922430050F45F /* EmailAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthViewController.swift; sourceTree = "<group>"; };
 		32EB16BF2A6A26660050F45F /* ConfirmPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPWViewController.swift; sourceTree = "<group>"; };
 		32EB16C32A6BF3830050F45F /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
+		3B5AF6522A7095F600A94BF1 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
+		3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultingView.swift; sourceTree = "<group>"; };
 		32EB16CB2A6D726E0050F45F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		32EB16CE2A6E37BA0050F45F /* profileGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileGuideViewController.swift; sourceTree = "<group>"; };
 		32EB16D22A6E3F850050F45F /* NicknameSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameSettingViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +273,9 @@
 				3B9CB7172A5C508600AC56D0 /* ContentView.swift */,
 				3BB0ACE72A657FEE0071D598 /* InfoView.swift */,
 				3BB0ACEF2A6A17C00071D598 /* WriteView.swift */,
+				3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */,
 				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
+				3B5AF6522A7095F600A94BF1 /* TestView2.swift */,
 				10AEE93C2A70FCD7005833CE /* TalkView.swift */,
 				10AEE93E2A70FD03005833CE /* FAQView.swift */,
 				32EB16CB2A6D726E0050F45F /* Profile.storyboard */,
@@ -343,6 +358,9 @@
 			dependencies = (
 			);
 			name = Bareuni;
+			packageProductDependencies = (
+				3B5AF6502A708F2900A94BF1 /* BSImagePicker */,
+			);
 			productName = Bareuni;
 			productReference = 32A5E6C52A557A1800B41644 /* Bareuni.app */;
 			productType = "com.apple.product-type.application";
@@ -415,6 +433,9 @@
 				Base,
 			);
 			mainGroup = 32A5E6BC2A557A1800B41644;
+			packageReferences = (
+				3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */,
+			);
 			productRefGroup = 32A5E6C62A557A1800B41644 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -482,6 +503,8 @@
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
 				32EB16D32A6E3F850050F45F /* NicknameSettingViewController.swift in Sources */,
 				3BB0ACEA2A6685780071D598 /* DentistModel.swift in Sources */,
+				3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */,
+				26F529F52A62B9F100813AE3 /* FAQViewController.swift in Sources */,
 				1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */,
 				10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */,
 				32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */,
@@ -489,6 +512,7 @@
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
 				32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */,
 				32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */,
+				3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */,
 				32EB16D52A6E4AB80050F45F /* DetailedProfileSettingViewController.swift in Sources */,
 				321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */,
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,
@@ -836,6 +860,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mikaoj/BSImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B5AF6502A708F2900A94BF1 /* BSImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */;
+			productName = BSImagePicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 32A5E6BD2A557A1800B41644 /* Project object */;
 }
