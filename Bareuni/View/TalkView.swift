@@ -13,6 +13,8 @@ struct TalkView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @Binding var posts: [Post]
+    
     var body: some View {
         VStack {
             HStack {
@@ -20,7 +22,7 @@ struct TalkView: View {
                 
                 Button(action: {
                     withAnimation {
-                        showSortingOptions.toggle() // 정렬 옵션 보이기/숨기기 토글
+                        showSortingOptions.toggle()
                     }
                 }) {
                     HStack {
@@ -49,7 +51,7 @@ struct TalkView: View {
             if showSortingOptions {
                 VStack {
                     sortingOptionButton(label: "최신순")
-                    Divider() // 구분선
+                    Divider()
                     sortingOptionButton(label: "인기순")
                 }
                 .background(Color.white)
@@ -59,10 +61,20 @@ struct TalkView: View {
                 .padding(.leading, 170)
                 .padding(.horizontal, 10)
             }
-            Spacer()
-            NavigationLink(destination: WritePostView()) {
+            
+            // 글 목록을 나열하는 부분 추가
+            ScrollView {
+                ForEach(posts, id: \.id) { post in
+                    VStack {
+                        PostCell(post: post)
+                        Image("Line")
+                    }
+                }
+            }
+            
+            NavigationLink(destination: WritePostView(posts: $posts)) {
                 Spacer()
-                Image("WriteBtn") // WriteBtn 이미지를 가진 버튼
+                Image("WriteBtn")
                     .padding(.horizontal, 30)
             }
             .navigationBarTitle("자유수다", displayMode: .inline)
@@ -81,8 +93,8 @@ struct TalkView: View {
         }) {
             Text(label)
                 .font(.custom("Pretendard-Regular", size: 16))
-                .padding(.horizontal, 10) // 버튼 가로 크기 조정
-                .padding(.vertical, 9) // 버튼 세로 크기 조정
+                .padding(.horizontal, 10)
+                .padding(.vertical, 9)
                 .foregroundColor(Color("TextBlack"))
                 .background(Color.white)
         }
@@ -93,12 +105,14 @@ struct WritePostView: View {
     @State private var postContent = ""
     @Environment(\.presentationMode) var presentationMode
     
+    @Binding var posts: [Post] // Binding으로 전달받음
+    
     var body: some View {
         VStack() {
             Text("글 작성")
                 .font(.custom("Pretendard-Medium", size: 20))
-                .frame(maxWidth: .infinity, alignment: .leading) // 가로 폭을 전체 너비로 지정
-                .padding(.horizontal, 20) // 왼쪽 여백 추가
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 20)
                 .padding(.top, 20)
             
             ZStack(alignment: .topLeading) {
@@ -128,7 +142,7 @@ struct WritePostView: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
-                    // 게시 버튼이 눌렸을 때 할 동작 추가
+                    savePost() // 게시 버튼이 눌렸을 때 게시글을 저장하는 함수 호출
                 }) {
                     Text("게시")
                         .font(.custom("Pretendard-Medium", size: 16))
@@ -145,5 +159,17 @@ struct WritePostView: View {
                 }
             }
         }
+    }
+    
+    func savePost() {
+        // 작성한 게시글을 배열에 추가하는 로직
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd HH:mm"
+        let currentTimeString = formatter.string(from: currentDate)
+        let newPost = Post(content: postContent, modificationTime: currentTimeString, likeCount: 0, comments: 0)
+        posts.append(newPost)
+        
+        presentationMode.wrappedValue.dismiss()
     }
 }
