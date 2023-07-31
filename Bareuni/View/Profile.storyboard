@@ -23,7 +23,7 @@
         <!--Profile Guide View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="profileGuideViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profileGuideViewController" id="Y6W-OH-hqX" customClass="profileGuideViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,7 +216,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 교정 중이신가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfU-hM-epk">
-                                <rect key="frame" x="32" y="581" width="175.33333333333334" height="24"/>
+                                <rect key="frame" x="32" y="581" width="178" height="24"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -423,7 +423,6 @@
                                 <state key="normal" title="확인"/>
                                 <connections>
                                     <action selector="confirmBtnDidTap:" destination="4OS-P8-Wk6" eventType="touchUpInside" id="9vk-zM-eDQ"/>
-                                    <segue destination="glg-Gh-1dl" kind="show" id="Nuv-v7-zh2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -482,16 +481,16 @@
             </objects>
             <point key="canvasLocation" x="2451" y="-11"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome Profile View Controller-->
         <scene sceneID="mBc-oH-eFX">
             <objects>
-                <viewController id="glg-Gh-1dl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeProfileViewController" id="glg-Gh-1dl" customClass="WelcomeProfileViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3DG-lN-iwL">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DnP-xV-6rs">
-                                <rect key="frame" x="115" y="267" width="160" height="155"/>
+                                <rect key="frame" x="115" y="245" width="160" height="155"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입 완료!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFH-63-Ygs">
                                         <rect key="frame" x="40.333333333333336" y="130" width="79.333333333333314" height="25"/>
@@ -522,7 +521,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이아파님, 환영해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW4-wQ-Hnx">
-                                <rect key="frame" x="106" y="436" width="178" height="29"/>
+                                <rect key="frame" x="106" y="414" width="178" height="29"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -541,12 +540,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPV-a5-4gJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3416.9230769230767" y="-11.374407582938389"/>
+            <point key="canvasLocation" x="3735" y="-11"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile Navigation Controller-->
         <scene sceneID="uwv-0t-DYf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OWh-v3-HIo" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="OWh-v3-HIo" customClass="ProfileNavigationController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aDw-B0-eSQ">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>

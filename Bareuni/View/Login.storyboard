@@ -743,6 +743,9 @@
                                 <state key="normal" title="다음">
                                     <color key="titleColor" name="BackgroundWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextBtnDidTap:" destination="Jae-SY-xra" eventType="touchUpInside" id="tk7-fw-pAE"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZT-er-cxN">
                                 <rect key="frame" x="24" y="216" width="342" height="467"/>

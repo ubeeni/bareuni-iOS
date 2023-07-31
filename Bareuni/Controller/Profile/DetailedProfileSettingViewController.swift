@@ -165,6 +165,9 @@ class DetailedProfileSettingViewController: UIViewController {
         }
     }
     @IBAction func confirmBtnDidTap(_ sender: Any) {
-       
+        let newStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let newViewController = newStoryboard.instantiateViewController(identifier: "WelcomeProfileViewController")
+        self.changeRootViewController(newViewController)
+        
     }
 }
