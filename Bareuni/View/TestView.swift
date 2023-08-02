@@ -8,12 +8,26 @@
 import SwiftUI
 
 struct TestView: View {
+    @State private var rating: Int = 0
+
     var body: some View {
         VStack {
-            Text("My Photo Attachment")
-                .font(.title)
-
-            PhotoAttachmentView()
+            Text("Rate this app:")
+                .font(.headline)
+            
+            HStack {
+                ForEach(1...5, id: \.self) { index in
+                    Image(systemName: index <= rating ? "star.fill" : "star")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(index <= rating ? .yellow : .gray)
+                        .onTapGesture {
+                            rating = index
+                        }
+                }
+            }
+            
+            Text("You've rated \(rating) star\(rating == 1 ? "" : "s")")
         }
         .padding()
     }

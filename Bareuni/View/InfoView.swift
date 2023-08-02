@@ -351,7 +351,7 @@ struct detailDentistView:View {
                 IntroduceView(dentist: $dentist)
             }
             else if tabIndex == 1 {
-                Text("1")
+                ReviewView()
             }
         }
     }
@@ -577,24 +577,27 @@ struct ReviewView: View {
                   .multilineTextAlignment(.trailing)
                   .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
             }
-            ZStack {
-                Text("리뷰쓰기")
-                  .font(
-                    Font.custom("Pretendard", size: 14)
-                      .weight(.semibold)
-                  )
-                  .multilineTextAlignment(.center)
-                  .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
-            }
-            .padding(.horizontal, 149)
-            .padding(.vertical, 13)
-            .background(.white)
-            .cornerRadius(8)
-            .overlay(
-              RoundedRectangle(cornerRadius: 8)
-                .inset(by: 0.25)
-                .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 0.5)
-            )
+            NavigationLink(destination: WriteView(), label: {
+                ZStack {
+                    Text("리뷰쓰기")
+                      .font(
+                        Font.custom("Pretendard", size: 14)
+                          .weight(.semibold)
+                      )
+                      .multilineTextAlignment(.center)
+                      .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                }
+                .padding(.horizontal, 149)
+                .padding(.vertical, 13)
+                .background(.white)
+                .cornerRadius(8)
+                .overlay(
+                  RoundedRectangle(cornerRadius: 8)
+                    .inset(by: 0.25)
+                    .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 0.5)
+                )
+            })
+            
             
             Rectangle()
               .foregroundColor(.clear)
