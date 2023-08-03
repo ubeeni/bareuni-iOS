@@ -7,21 +7,13 @@
 
 import SwiftUI
 
-struct Post: Identifiable {
-    let id = UUID()
-    let content: String
-    let modificationTime: String
-    let likeCount: Int
-    let comments: Int
-}
-
 struct CommunityMainView: View {
     @State private var selectedPost: Post?
     @State private var posts: [Post] = [
-        Post(content: "저는 치아교정한지 2년 3개월 된 사람입니다. 다름이 아니라 현재 이런 고민이 있습니다..", modificationTime: "12시간 전 (수정됨)", likeCount: 10, comments: 21),
-        Post(content: "교정을 마친 지 3년째인데 혹시 저랑 같은 문제가 생기신 분 계시나요?", modificationTime: "2일 전 (수정됨)", likeCount: 5, comments: 2),
-        Post(content: "좋은 치과 선생님 좀 소개해 주세요! 저희 아이가 12살인데 지금 교정을 하는 것이 맞을까요?", modificationTime: "2시간 전", likeCount: 20, comments: 10),
-        Post(content: "교정 유지 장치가 갑자기 떨어져 버렸어요. 이거 어떻게 하는 게 좋을까요?", modificationTime: "10분 전", likeCount: 15, comments: 7)
+        Post(content: "저는 치아교정한지 2년 3개월 된 사람입니다. 다름이 아니라 현재 이런 고민이 있습니다..", modificationTime: "12시간 전 (수정됨)", likeCount: 10, comments: 21, isLiked: false),
+        Post(content: "교정을 마친 지 3년째인데 혹시 저랑 같은 문제가 생기신 분 계시나요?", modificationTime: "2일 전 (수정됨)", likeCount: 5, comments: 2, isLiked: false),
+        Post(content: "좋은 치과 선생님 좀 소개해 주세요! 저희 아이가 12살인데 지금 교정을 하는 것이 맞을까요?", modificationTime: "2시간 전", likeCount: 20, comments: 10, isLiked: false),
+        Post(content: "교정 유지 장치가 갑자기 떨어져 버렸어요. 이거 어떻게 하는 게 좋을까요?", modificationTime: "10분 전", likeCount: 15, comments: 7, isLiked: false)
     ]
     
     var body: some View {
@@ -134,58 +126,6 @@ struct CommunityMainView: View {
         }
     }
 }
-
-struct PostCell: View {
-    let post: Post
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            HStack(spacing: 10) {
-                Image("Tooth")
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle())
-                
-                Text("닉네임")
-                    .font(.custom("Pretendard-SemiBold", size: 12))
-            }
-            
-            Text(post.content) // 글 내용을 보여줄 부분 (3줄까지만 보이고 더보기 형식은 추가 구현 필요)
-                .font(.custom("Pretendard-Medium", size: 12))
-                .lineLimit(3)
-                .padding(.top, 15)
-                .padding(.bottom, 15)
-            
-            Divider()
-            
-            HStack(spacing: 0) {
-                Image("Heart")
-                Text("좋아요 \(post.likeCount)")
-                    .font(.custom("Pretendard-Regular", size: 10))
-                    .foregroundColor(Color("9Egray"))
-                    .padding(.leading, 5)
-                
-                Image("Comment")
-                    .padding(.leading, 15)
-                Text("댓글 \(post.comments)")
-                    .font(.custom("Pretendard-Regular", size: 10))
-                    .foregroundColor(Color("9Egray"))
-                    .padding(.leading, 5)
-                
-                Spacer()
-                
-                Text(post.modificationTime)
-                    .font(.custom("Pretendard-Regular", size: 11))
-                    .foregroundColor(Color("9Egray"))
-            }
-            .padding(.top, 15)
-        }
-        .padding(.vertical, 10)
-        .padding(.horizontal, 16)
-        .background(Color.white)
-    }
-}
-
 
 struct CommunityMainView_Previews: PreviewProvider {
     static var previews: some View {
