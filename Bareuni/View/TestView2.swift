@@ -9,8 +9,39 @@ import SwiftUI
 import PhotosUI
 
 struct TestView2: View {
+    @State private var isShowingSecondScreen = false
+
     var body: some View {
-        MultipleImagePicker()
+        NavigationView {
+            VStack {
+                Text("First Screen")
+                    .padding()
+
+                Button("Show Second Screen") {
+                    isShowingSecondScreen = true
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        isShowingSecondScreen = false
+                    }
+                }
+            }
+            .navigationTitle("First Screen")
+            .zIndex(0) // Ensure the first screen is at the bottom of the stack
+            .overlay(
+                Group {
+                    if isShowingSecondScreen {
+                        Color.black.opacity(0.4)
+                            .edgesIgnoringSafeArea(.all)
+                            .zIndex(1) // Ensure the second screen is on top of the first screen
+                            .onTapGesture {
+                                isShowingSecondScreen = false
+                            }
+                            .transition(.opacity)
+                            .animation(.easeInOut)
+                    }
+                }
+            )
+        }
     }
 }
 
