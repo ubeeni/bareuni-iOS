@@ -174,8 +174,8 @@ struct PostDetailView: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     ForEach(comments) { comment in
-                        VStack(alignment: .leading, spacing: 5) {
-                            HStack(spacing: 10) {
+                        VStack {
+                            HStack {
                                 Image(comment.profileImageName)
                                     .resizable()
                                     .frame(width: 30, height: 30)
@@ -195,7 +195,6 @@ struct PostDetailView: View {
                                         .font(.caption)
                                         .foregroundColor(Color("9Egray"))
                                 }
-                                .padding(.horizontal, 10)
                             }
                         }
                         
@@ -224,10 +223,9 @@ struct PostDetailView: View {
                         
                         Divider()
                     }
-                    .padding(.leading, 10)
+                    .padding(.horizontal, 10)
                 }
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.top, 10)
         }
         .navigationBarItems(
