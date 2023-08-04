@@ -64,10 +64,14 @@ struct TalkView: View {
             
             // 글 목록을 나열하는 부분 추가
             ScrollView {
-                ForEach(posts, id: \.id) { post in
-                    VStack {
-                        PostCell(post: post)
-                        Image("Line")
+                LazyVStack {
+                    ForEach(posts, id: \.id) { post in
+                        NavigationLink(destination: PostDetailView(post: post)) {
+                            VStack {
+                                PostCell(post: post)
+                                Image("Line")
+                            }
+                        }
                     }
                 }
             }
@@ -87,7 +91,7 @@ struct TalkView: View {
         Button(action: {
             selectedOption = label // 버튼을 눌렀을 때 선택된 옵션으로 업데이트
             withAnimation {
-                showSortingOptions.toggle() // 옵션 숨기기
+                showSortingOptions.toggle()
             }
             // 선택된 정렬 옵션에 따른 정렬 로직 추가
         }) {
@@ -105,7 +109,7 @@ struct WritePostView: View {
     @State private var postContent = ""
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding var posts: [Post] // Binding으로 전달받음
+    @Binding var posts: [Post]
     
     var body: some View {
         VStack() {
@@ -162,12 +166,11 @@ struct WritePostView: View {
     }
     
     func savePost() {
-        // 작성한 게시글을 배열에 추가하는 로직
         let currentDate = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd HH:mm"
         let currentTimeString = formatter.string(from: currentDate)
-        let newPost = Post(content: postContent, modificationTime: currentTimeString, likeCount: 0, comments: 0)
+        let newPost = Post(content: postContent, modificationTime: currentTimeString, likeCount: 0, comments: 0, isLiked: false)
         posts.append(newPost)
         
         presentationMode.wrappedValue.dismiss()
