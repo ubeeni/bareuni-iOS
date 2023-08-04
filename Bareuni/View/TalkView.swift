@@ -176,3 +176,4 @@ struct WritePostView: View {
         presentationMode.wrappedValue.dismiss()
     }
 }
+

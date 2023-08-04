@@ -79,7 +79,15 @@ struct InfoView: View {
                     }
                 }
                 else if tabIndex == 1 {
-                    nearDentistView()
+                    Spacer().frame(height: 0)
+                    ScrollView(showsIndicators: false) {
+                        VStack {
+                            ForEach(dentistInfo.Dentists){ dentist in
+                                recommendedDentistView(dentist: dentist)
+                                Spacer().frame(height: 23)
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -296,6 +304,8 @@ struct detailDentistView:View {
     @Binding var dentist: Dentist
     @State var tabIndex = 0
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View{
         VStack{
             ZStack {
@@ -351,9 +361,19 @@ struct detailDentistView:View {
                 IntroduceView(dentist: $dentist)
             }
             else if tabIndex == 1 {
-                Text("1")
+                ReviewView()
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }, label: {
+            Image("Expand_right")
+        }), trailing: Button(action: {
+            
+        }, label: {
+            Image("Bookmark_light")
+        }))
     }
 }
 
@@ -466,7 +486,15 @@ struct IntroduceView: View {
     }
 }
 
+class ModalState: ObservableObject {
+    @Published var isPresentingModal = false
+}
+
 struct ReviewView: View {
+    
+    @State private var isPresentingModal = false
+    @StateObject private var modalState = ModalState()
+    
     var body: some View{
         VStack{
             HStack{
@@ -577,24 +605,57 @@ struct ReviewView: View {
                   .multilineTextAlignment(.trailing)
                   .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
             }
-            ZStack {
-                Text("리뷰쓰기")
-                  .font(
-                    Font.custom("Pretendard", size: 14)
-                      .weight(.semibold)
-                  )
-                  .multilineTextAlignment(.center)
-                  .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+//            NavigationLink(destination: WriteView(), label: {
+//                ZStack {
+//                    Text("리뷰쓰기")
+//                      .font(
+//                        Font.custom("Pretendard", size: 14)
+//                          .weight(.semibold)
+//                      )
+//                      .multilineTextAlignment(.center)
+//                      .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+//                }
+//                .padding(.horizontal, 149)
+//                .padding(.vertical, 13)
+//                .background(.white)
+//                .cornerRadius(8)
+//                .overlay(
+//                  RoundedRectangle(cornerRadius: 8)
+//                    .inset(by: 0.25)
+//                    .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 0.5)
+//                )
+//            })
+            
+            Button(action: {
+//                isPresentingModal = true
+                isPresentingModal = true
+            }, label: {
+                ZStack {
+                    Text("리뷰쓰기")
+                      .font(
+                        Font.custom("Pretendard", size: 14)
+                          .weight(.semibold)
+                      )
+                      .multilineTextAlignment(.center)
+                      .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                }
+                .padding(.horizontal, 149)
+                .padding(.vertical, 13)
+                .background(.white)
+                .cornerRadius(8)
+                .overlay(
+                  RoundedRectangle(cornerRadius: 8)
+                    .inset(by: 0.25)
+                    .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 0.5)
+                )
+            })
+            .fullScreenCover(isPresented: $isPresentingModal) {
+                WriteView()
             }
-            .padding(.horizontal, 149)
-            .padding(.vertical, 13)
-            .background(.white)
-            .cornerRadius(8)
-            .overlay(
-              RoundedRectangle(cornerRadius: 8)
-                .inset(by: 0.25)
-                .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 0.5)
-            )
+//            .sheet(isPresented: $isPresentingModal) {
+//                WriteView()
+//            }
+            
             
             Rectangle()
               .foregroundColor(.clear)

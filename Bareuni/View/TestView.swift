@@ -8,88 +8,73 @@
 import SwiftUI
 
 struct TestView: View {
+    @State private var isPresentingModal = false
+    @State var stack = NavigationPath()
+
     var body: some View {
-        VStack {
-            Text("My Photo Attachment")
-                .font(.title)
-
-            PhotoAttachmentView()
-        }
-        .padding()
-    }
-}
-
-struct IdentifiableImage: Identifiable {
-    let id = UUID()
-    let image: Image
-}
-
-
-struct PhotoAttachmentView: View {
-    @State private var selectedImages: [IdentifiableImage] = []
-    @State private var isImagePickerPresented = false
-    
-    var body: some View {
-        VStack {
-            if !selectedImages.isEmpty {
-                ScrollView(.horizontal) {
-                    HStack(spacing: 10) {
-                        ForEach(selectedImages, id: \.id) { identifiableImage in
-                            identifiableImage.image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 100, height: 100)
-                        }
-                    }
+        NavigationStack(path: $stack) {
+            VStack {
+                Button("Show Modal") {
+                    isPresentingModal = true
                 }
-            } else {
-                Text("No Photos Selected")
             }
-            
-            Button("Select Photos") {
-                isImagePickerPresented = true
-            }
+            .sheet(isPresented: $isPresentingModal) {
+                ModalView()
         }
-        .sheet(isPresented: $isImagePickerPresented) {
-            ImagePicker(selectedImages: $selectedImages)
         }
     }
 }
 
+struct ModalView: View {
+    @Environment(\.presentationMode) var presentationMode
 
+    var body: some View {
+        NavigationView {
+            VStack {
+                Text("Modal View")
+                    .font(.title)
 
+                NavigationLink("Go to First Screen", destination: FirstScreen())
+                    .padding()
 
-struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var selectedImages: [IdentifiableImage]
-    @Environment(\.presentationMode) private var presentationMode
+                NavigationLink("Go to Second Screen", destination: SecondScreen())
+                    .padding()
 
-    func makeUIViewController(context: Context) -> UIImagePickerController {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = context.coordinator
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.mediaTypes = ["public.image"]
-        return imagePicker
-    }
-
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-
-    final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        var parent: ImagePicker
-
-        init(_ parent: ImagePicker) {
-            self.parent = parent
-        }
-
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-            if let pickedImage = info[.originalImage] as? UIImage {
-                parent.selectedImages.append(IdentifiableImage(image: Image(uiImage: pickedImage)))
+                Button("Close Modal") {
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
-            parent.presentationMode.wrappedValue.dismiss()
+            .navigationBarTitle("Modal View")
+        }
+    }
+}
+
+struct FirstScreen: View {
+    var body: some View {
+        VStack {
+            Text("First Screen")
+                .navigationBarTitle("First Screen")
+
+            NavigationLink("Go to Second Screen", destination: SecondScreen())
+                .padding()
+        }
+    }
+}
+
+struct SecondScreen: View {
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        VStack {
+            Text("Second Screen")
+                .navigationBarTitle("Second Screen")
+
+            Button("Go to TestView") {
+                presentationMode.wrappedValue.dismiss()
+                presentationMode.wrappedValue.dismiss()
+            }
+            .padding()
+            
         }
     }
 }
