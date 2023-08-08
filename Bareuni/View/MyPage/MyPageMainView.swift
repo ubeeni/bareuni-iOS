@@ -17,19 +17,17 @@ struct MyPageMainView: View {
                         .aspectRatio(contentMode: .fill).frame(width: 60, height: 60).clipShape(Circle())
                         .overlay(Circle().stroke(Color(UIColor(red: 0.62, green: 0.62, blue: 0.62, alpha: 1).cgColor), lineWidth: 0.5))
                         .padding(.leading, 13)
-                    VStack(alignment: .leading){
+                    VStack(alignment: .leading, spacing: 6){
                         Text("이아파").font(.custom("Pretendard-SemiBold", size: 18))
                         Text("교정 0").font(.custom("Pretendard-Medium", size: 13)).foregroundColor(Color(UIColor(red: 0.583, green: 0.583, blue: 0.583, alpha: 1)))
                         
                         Text("5,000p").font(.custom("Pretendard-Medium", size: 13)).foregroundColor(Color(UIColor(red: 0.469, green: 0.751, blue: 0.954, alpha: 1)))
                     }
                     Spacer()
-                    Button(action: {
-                    }, label: {
-                        Text("내 정보 수정").font(.custom("Pretendard-Medium", size: 12)).foregroundColor(Color(UIColor(red: 0.442, green: 0.442, blue: 0.442, alpha: 1))).frame(width: 73, height: 25)
-                    }).background(Color(UIColor(red: 0.913, green: 0.913, blue: 0.913, alpha: 1)))
-                        .cornerRadius(8).padding(.trailing, 13)
-                    
+                    NavigationLink(destination: MyInfoView()) { // $ 표시로 Binding으로 전달
+                        Text("내 정보 수정").font(.custom("Pretendard-Medium", size: 12)).foregroundColor(Color(UIColor(red: 0.442, green: 0.442, blue: 0.442, alpha: 1))).frame(width: 73, height: 25).background(Color(UIColor(red: 0.913, green: 0.913, blue: 0.913, alpha: 1)))
+                            .cornerRadius(8).padding(.trailing, 13)
+                    }
                 }.overlay( /// apply a rounded border
                     RoundedRectangle(cornerRadius: 12)
                         .stroke(Color(UIColor(red: 0.762, green: 0.762, blue: 0.762, alpha: 1)), lineWidth: 0.5)
