@@ -52,6 +52,8 @@
 		32EB16D52A6E4AB80050F45F /* DetailedProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16D42A6E4AB80050F45F /* DetailedProfileSettingViewController.swift */; };
 		32EB16D92A77CEDE0050F45F /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16D82A77CEDE0050F45F /* ProfileNavigationController.swift */; };
 		32EB16DB2A77D0610050F45F /* WelcomeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16DA2A77D0610050F45F /* WelcomeProfileViewController.swift */; };
+		32EB16DE2A825F0A0050F45F /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16DD2A825F0A0050F45F /* MyPageViewController.swift */; };
+		32EB16E12A8262A70050F45F /* MyPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E02A8262A70050F45F /* MyPageMainView.swift */; };
 		3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5AF6502A708F2900A94BF1 /* BSImagePicker */; };
 		3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6522A7095F600A94BF1 /* TestView2.swift */; };
 		3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */; };
@@ -131,6 +133,8 @@
 		32EB16D42A6E4AB80050F45F /* DetailedProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProfileSettingViewController.swift; sourceTree = "<group>"; };
 		32EB16D82A77CEDE0050F45F /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 		32EB16DA2A77D0610050F45F /* WelcomeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeProfileViewController.swift; sourceTree = "<group>"; };
+		32EB16DD2A825F0A0050F45F /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		32EB16E02A8262A70050F45F /* MyPageMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainView.swift; sourceTree = "<group>"; };
 		3B5AF6522A7095F600A94BF1 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultingView.swift; sourceTree = "<group>"; };
 		3B9CB7172A5C508600AC56D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 		32A5E6F92A557A2B00B41644 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				32EB16DF2A82627D0050F45F /* MyPage */,
 				32A5E6CE2A557A1800B41644 /* Main.storyboard */,
 				32A5E6D32A557A1900B41644 /* LaunchScreen.storyboard */,
 				1026BF422A5A94E600955799 /* Home.storyboard */,
@@ -286,6 +291,7 @@
 		32A5E6FA2A557A3500B41644 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				32EB16DC2A825EF50050F45F /* MyPage */,
 				32EB16CD2A6E374E0050F45F /* Profile */,
 				1014A0AF2A6E592500CE8170 /* Community */,
 				32EB16BA2A6921E10050F45F /* SignUp */,
@@ -342,6 +348,22 @@
 				32EB16DA2A77D0610050F45F /* WelcomeProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		32EB16DC2A825EF50050F45F /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				32EB16DD2A825F0A0050F45F /* MyPageViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		32EB16DF2A82627D0050F45F /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				32EB16E02A8262A70050F45F /* MyPageMainView.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +523,7 @@
 				1052C3EF2A6702B400CD6508 /* DentistTableViewCell.swift in Sources */,
 				102166552A6949ED00DC6351 /* CommunityTableViewCell.swift in Sources */,
 				1014A0B32A6E604D00CE8170 /* CommunityMainView.swift in Sources */,
+				32EB16E12A8262A70050F45F /* MyPageMainView.swift in Sources */,
 				32EB16CF2A6E37BA0050F45F /* profileGuideViewController.swift in Sources */,
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
 				32EB16D32A6E3F850050F45F /* NicknameSettingViewController.swift in Sources */,
@@ -511,6 +534,7 @@
 				32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */,
 				3BB0ACE82A657FEE0071D598 /* InfoView.swift in Sources */,
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
+				32EB16DE2A825F0A0050F45F /* MyPageViewController.swift in Sources */,
 				32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */,
 				32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */,
 				3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */,
