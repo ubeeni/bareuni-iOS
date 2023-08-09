@@ -43,6 +43,7 @@
 		32B5FE022A663AEC00DBC993 /* LoginUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */; };
 		32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE052A66423D00DBC993 /* FindPWViewController.swift */; };
 		32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE072A6654C300DBC993 /* SignUpViewController.swift */; };
+		32BEFC422A83B74D00D11792 /* ChangingNumberAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFC412A83B74D00D11792 /* ChangingNumberAuthView.swift */; };
 		32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16BB2A6922430050F45F /* EmailAuthViewController.swift */; };
 		32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16BF2A6A26660050F45F /* ConfirmPWViewController.swift */; };
 		32EB16C42A6BF3830050F45F /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16C32A6BF3830050F45F /* TermsOfServiceViewController.swift */; };
@@ -57,7 +58,6 @@
 		32EB16E32A8291DE0050F45F /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E22A8291DE0050F45F /* MyInfoView.swift */; };
 		32EB16E72A8341D80050F45F /* ChangingNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E62A8341D80050F45F /* ChangingNicknameView.swift */; };
 		32EB16E92A8358E50050F45F /* ChangingAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E82A8358E50050F45F /* ChangingAgeView.swift */; };
-		32EB16EB2A8376890050F45F /* ChangingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16EA2A8376890050F45F /* ChangingNumberView.swift */; };
 		32EB16ED2A8378AF0050F45F /* NumberAuthHalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16EC2A8378AF0050F45F /* NumberAuthHalfSheet.swift */; };
 		3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5AF6502A708F2900A94BF1 /* BSImagePicker */; };
 		3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6522A7095F600A94BF1 /* TestView2.swift */; };
@@ -129,6 +129,7 @@
 		32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUINavigationController.swift; sourceTree = "<group>"; };
 		32B5FE052A66423D00DBC993 /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
 		32B5FE072A6654C300DBC993 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		32BEFC412A83B74D00D11792 /* ChangingNumberAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingNumberAuthView.swift; sourceTree = "<group>"; };
 		32EB16BB2A6922430050F45F /* EmailAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthViewController.swift; sourceTree = "<group>"; };
 		32EB16BF2A6A26660050F45F /* ConfirmPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPWViewController.swift; sourceTree = "<group>"; };
 		32EB16C32A6BF3830050F45F /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +144,6 @@
 		32EB16E22A8291DE0050F45F /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		32EB16E62A8341D80050F45F /* ChangingNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingNicknameView.swift; sourceTree = "<group>"; };
 		32EB16E82A8358E50050F45F /* ChangingAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingAgeView.swift; sourceTree = "<group>"; };
-		32EB16EA2A8376890050F45F /* ChangingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingNumberView.swift; sourceTree = "<group>"; };
 		32EB16EC2A8378AF0050F45F /* NumberAuthHalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAuthHalfSheet.swift; sourceTree = "<group>"; };
 		3B5AF6522A7095F600A94BF1 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultingView.swift; sourceTree = "<group>"; };
@@ -375,8 +375,8 @@
 				32EB16E22A8291DE0050F45F /* MyInfoView.swift */,
 				32EB16E62A8341D80050F45F /* ChangingNicknameView.swift */,
 				32EB16E82A8358E50050F45F /* ChangingAgeView.swift */,
-				32EB16EA2A8376890050F45F /* ChangingNumberView.swift */,
 				32EB16EC2A8378AF0050F45F /* NumberAuthHalfSheet.swift */,
+				32BEFC412A83B74D00D11792 /* ChangingNumberAuthView.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -561,9 +561,9 @@
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,
 				3BB0ACEC2A6685AA0071D598 /* DentistViewModel.swift in Sources */,
 				3BB0ACF02A6A17C00071D598 /* WriteView.swift in Sources */,
-				32EB16EB2A8376890050F45F /* ChangingNumberView.swift in Sources */,
 				1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */,
 				102166532A69492A00DC6351 /* CommunityData.swift in Sources */,
+				32BEFC422A83B74D00D11792 /* ChangingNumberAuthView.swift in Sources */,
 				32EB16DB2A77D0610050F45F /* WelcomeProfileViewController.swift in Sources */,
 				32EB16E32A8291DE0050F45F /* MyInfoView.swift in Sources */,
 				32EB16D92A77CEDE0050F45F /* ProfileNavigationController.swift in Sources */,
