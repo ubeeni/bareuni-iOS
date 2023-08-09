@@ -11,6 +11,7 @@ struct MyInfoView: View {
     @State var showingProfileImgSheet = false
     @State var showingSexSheet = false
     @State var isNameClicked = false
+    @State var isAgeClicked = false
     @State var sex = "여성"
     
     var body: some View {
@@ -67,11 +68,14 @@ struct MyInfoView: View {
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
                 
-                HStack{
-                    Text("연령대").font(.custom("Pretendard-Regular", size: 16))
-                    Spacer()
-                    Text("20대").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
-                }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
+                Button(action: {self.isAgeClicked.toggle()}, label: {
+                    HStack{
+                        Text("연령대").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
+                        Spacer()
+                        Text("20대").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                    }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)}).fullScreenCover(isPresented: $isAgeClicked) {
+                        ChangingAgeView()
+                    }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
                 

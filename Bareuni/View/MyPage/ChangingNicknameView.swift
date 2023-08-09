@@ -63,9 +63,8 @@ struct ChangingNicknameView: View {
             
             
             Button(action: {
-                //아마 API연결
+                dismiss()
             }, label: {
-                NavigationLink(destination: InfoView(), label: {
                     ZStack {
                         
                         if bfNickname == nickname && bfName == name {
@@ -87,7 +86,6 @@ struct ChangingNicknameView: View {
                             .multilineTextAlignment(.trailing)
                             .foregroundColor(.white)
                     }
-                })
             }).padding(.top, 34).padding(.trailing, 24).padding(.leading, 24)
             
             Spacer()

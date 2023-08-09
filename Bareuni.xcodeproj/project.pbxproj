@@ -56,6 +56,7 @@
 		32EB16E12A8262A70050F45F /* MyPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E02A8262A70050F45F /* MyPageMainView.swift */; };
 		32EB16E32A8291DE0050F45F /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E22A8291DE0050F45F /* MyInfoView.swift */; };
 		32EB16E72A8341D80050F45F /* ChangingNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E62A8341D80050F45F /* ChangingNicknameView.swift */; };
+		32EB16E92A8358E50050F45F /* ChangingAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E82A8358E50050F45F /* ChangingAgeView.swift */; };
 		3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5AF6502A708F2900A94BF1 /* BSImagePicker */; };
 		3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6522A7095F600A94BF1 /* TestView2.swift */; };
 		3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */; };
@@ -139,6 +140,7 @@
 		32EB16E02A8262A70050F45F /* MyPageMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainView.swift; sourceTree = "<group>"; };
 		32EB16E22A8291DE0050F45F /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		32EB16E62A8341D80050F45F /* ChangingNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingNicknameView.swift; sourceTree = "<group>"; };
+		32EB16E82A8358E50050F45F /* ChangingAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingAgeView.swift; sourceTree = "<group>"; };
 		3B5AF6522A7095F600A94BF1 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultingView.swift; sourceTree = "<group>"; };
 		3B9CB7172A5C508600AC56D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				32EB16E02A8262A70050F45F /* MyPageMainView.swift */,
 				32EB16E22A8291DE0050F45F /* MyInfoView.swift */,
 				32EB16E62A8341D80050F45F /* ChangingNicknameView.swift */,
+				32EB16E82A8358E50050F45F /* ChangingAgeView.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
 				3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */,
 				1026BF4D2A5AA5C700955799 /* HomeViewController.swift in Sources */,
+				32EB16E92A8358E50050F45F /* ChangingAgeView.swift in Sources */,
 				32B5FE022A663AEC00DBC993 /* LoginUINavigationController.swift in Sources */,
 				32EB16C42A6BF3830050F45F /* TermsOfServiceViewController.swift in Sources */,
 				1052C3EF2A6702B400CD6508 /* DentistTableViewCell.swift in Sources */,
