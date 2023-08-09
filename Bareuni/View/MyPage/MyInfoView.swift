@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct MyInfoView: View {
-    @State var showingSheet = false
+    @State var showingProfileImgSheet = false
+    @State var showingSexSheet = false
     @State var isNameClicked = false
+    @State var sex = "여성"
     
     var body: some View {
         VStack {
@@ -20,13 +22,13 @@ struct MyInfoView: View {
                     .overlay(Circle().stroke(Color(UIColor(red: 0.62, green: 0.62, blue: 0.62, alpha: 1).cgColor), lineWidth: 0.5))
                 
                 Button(action: {
-                    self.showingSheet = true
+                    self.showingProfileImgSheet = true
                 })
                 {
                     Image("profile")}
-                .actionSheet(isPresented: $showingSheet) {
-                        ActionSheet(title: Text("프로필 이미지 변경"), buttons: [.default(Text("프로필 이미지 변경")), .default(Text("프로필 이미지 삭제")), .cancel(Text("취소"))])
-                    }
+                .actionSheet(isPresented: $showingProfileImgSheet) {
+                    ActionSheet(title: Text("프로필 이미지 변경"), buttons: [.default(Text("프로필 이미지 변경")), .default(Text("프로필 이미지 삭제")), .cancel(Text("취소"))])
+                }
                 .frame(width: 26, height: 26).offset(x: 37, y: 34)
                 
             }.padding(.top, 50)
@@ -35,7 +37,7 @@ struct MyInfoView: View {
             
             HStack{
                 Text("내 정보").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color(UIColor(red: 0.561, green: 0.561, blue: 0.561, alpha: 1))).padding(.leading, 24)
-                                  
+                
                 Spacer()
             }.padding(.top, 34)
             
@@ -43,19 +45,25 @@ struct MyInfoView: View {
                 Button(action: {self.isNameClicked.toggle()}, label: {
                     HStack{
                         Text("닉네임 / 이름").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
-                    Spacer()
-                    Text("이아파").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
-                }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)}).fullScreenCover(isPresented: $isNameClicked) {
-                    ChangingNicknameView()
-                }
+                        Spacer()
+                        Text("이아파").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                    }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)}).fullScreenCover(isPresented: $isNameClicked) {
+                        ChangingNicknameView()
+                    }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
                 
-                HStack{
-                    Text("성별").font(.custom("Pretendard-Regular", size: 16))
-                    Spacer()
-                    Text("여성").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
-                }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
+                Button(action: {
+                    self.showingSexSheet = true
+                }, label: {
+                    HStack{
+                        Text("성별").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
+                        Spacer()
+                        Text(sex).font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                    }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
+                }).actionSheet(isPresented: $showingSexSheet){
+                    ActionSheet(title: Text("성별 변경"), buttons: [.default(Text("남성"), action: {sex = "남성"}), .default(Text("여성"), action: {sex = "여성"}), .cancel(Text("취소"))])
+                }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
                 
