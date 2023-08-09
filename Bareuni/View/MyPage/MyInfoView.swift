@@ -10,10 +10,13 @@ import SwiftUI
 struct MyInfoView: View {
     @State var showingProfileImgSheet = false
     @State var showingSexSheet = false
+    @State var showingOrthodonticSheet = false
+    @State var showingSheet = false
     @State var isNameClicked = false
     @State var isAgeClicked = false
     @State var showNumberSheet = false
     @State var sex = "여성"
+    @State var didOrthodontic = "교정 O"
     
     var body: some View {
         VStack {
@@ -95,11 +98,17 @@ struct MyInfoView: View {
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
                 
-                HStack{
-                    Text("교정 여부").font(.custom("Pretendard-Regular", size: 16))
-                    Spacer()
-                    Text("교정 O").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
-                }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
+                Button(action: {
+                    self.showingOrthodonticSheet = true
+                }, label: {
+                    HStack{
+                        Text("교정 여부").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
+                        Spacer()
+                        Text(didOrthodontic).font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                    }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
+                }).actionSheet(isPresented: $showingOrthodonticSheet){
+                    ActionSheet(title: Text("교정 여부"), buttons: [.default(Text("교정 O"), action: {didOrthodontic = "교정 O"}), .default(Text("교정 X"), action: {didOrthodontic = "교정 X"}), .cancel(Text("취소"))])
+                }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
             }.padding(.top, 32)

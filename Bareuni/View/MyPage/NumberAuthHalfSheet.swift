@@ -10,6 +10,7 @@ import SwiftUI
 struct NumberAuthHalfSheet: View {
     @State var showSheet = false
     @State private var name = ""
+    @State var isConfirmed = false
     @State var btnsSelected = Array(repeating: false, count: 7)
     @Environment(\.dismiss) var dismiss
     
@@ -66,7 +67,7 @@ struct NumberAuthHalfSheet: View {
                 }
                 
                 Button(action: {
-                    dismiss()
+                    self.isConfirmed.toggle()
                 }, label: {
                         ZStack {
                                 Rectangle().frame( height: 51)
@@ -82,6 +83,8 @@ struct NumberAuthHalfSheet: View {
                                 .foregroundColor(.white)
                         }
                 }).padding(.top, 39).disabled(!btnsSelected[1])
+                    .fullScreenCover(isPresented: $isConfirmed) {
+                        ChangingNumberAuthView()}
                 
             }.padding(.leading, 26).padding(.trailing, 20).padding(.top, 36)
         }
