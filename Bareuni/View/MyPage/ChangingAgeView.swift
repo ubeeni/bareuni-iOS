@@ -24,7 +24,7 @@ struct ChangingAgeView: View {
                     Image(systemName: "xmark")
                         .foregroundColor(Color("TextBlack"))
                 }.frame(width: 24, height: 24).padding(.trailing, 24)
-            }
+            }.frame(height: 40)
             
             VStack(alignment: .leading){
                 Text("연령대").font(.custom("Pretendard-Medium", size: 16)).padding(.leading, 8)
