@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyInfoView: View {
     @State var showingSheet = false
+    @State var isNameClicked = false
     
     var body: some View {
         VStack {
@@ -39,11 +40,14 @@ struct MyInfoView: View {
             }.padding(.top, 34)
             
             VStack{
-                HStack{
-                    Text("닉네임 / 이름").font(.custom("Pretendard-Regular", size: 16))
+                Button(action: {self.isNameClicked.toggle()}, label: {
+                    HStack{
+                        Text("닉네임 / 이름").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
                     Spacer()
                     Text("이아파").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
-                }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
+                }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)}).fullScreenCover(isPresented: $isNameClicked) {
+                    ChangingNicknameView()
+                }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
                 
