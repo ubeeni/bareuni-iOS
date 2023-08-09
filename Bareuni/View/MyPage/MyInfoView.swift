@@ -12,6 +12,7 @@ struct MyInfoView: View {
     @State var showingSexSheet = false
     @State var isNameClicked = false
     @State var isAgeClicked = false
+    @State var showNumberSheet = false
     @State var sex = "여성"
     
     var body: some View {
@@ -79,11 +80,18 @@ struct MyInfoView: View {
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
                 
-                HStack{
-                    Text("전화번호").font(.custom("Pretendard-Regular", size: 16))
-                    Spacer()
-                    Text("-").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
-                }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
+                Button(action: {
+                    showNumberSheet = true
+                }, label: {
+                    HStack{
+                        Text("전화번호").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
+                        Spacer()
+                        Text("-").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                    }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
+                }).sheet(isPresented: $showNumberSheet){
+                    NumberAuthHalfSheet().presentationDetents([.height(544), .fraction(0.75)]).presentationDragIndicator(.hidden)
+                            }
+                
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
                 
