@@ -48,43 +48,47 @@ struct TalkView: View {
             .padding(.leading, 250)
             .padding(.trailing, 0)
             
-            if showSortingOptions {
-                VStack {
-                    sortingOptionButton(label: "최신순")
-                    Divider()
-                    sortingOptionButton(label: "인기순")
-                }
-                .background(Color.white)
-                .cornerRadius(10)
-                .shadow(color: Color.gray.opacity(0.5), radius: 2, x: 0, y: 1)
-                .padding(.top, 10)
-                .padding(.leading, 170)
-                .padding(.horizontal, 10)
-            }
-            
-            // 글 목록을 나열하는 부분 추가
-            ScrollView {
-                LazyVStack {
-                    ForEach(posts, id: \.id) { post in
-                        NavigationLink(destination: PostDetailView(post: post)) {
-                            VStack {
-                                PostCell(post: post)
-                                Image("Line")
+            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
+                ScrollView {
+                    LazyVStack {
+                        ForEach(posts, id: \.id) { post in
+                            NavigationLink(destination: PostDetailView(post: post)) {
+                                VStack {
+                                    PostCell(post: post)
+                                    Image("Line")
+                                }
                             }
                         }
                     }
                 }
-            }
-            
-            NavigationLink(destination: WritePostView(posts: $posts)) {
-                Spacer()
-                Image("WriteBtn")
-                    .padding(.horizontal, 30)
+                
+                if showSortingOptions {
+                    VStack(spacing: 0) {
+                        sortingOptionButton(label: "최신순")
+                            .padding(.bottom, 2)
+                        Divider()
+                        sortingOptionButton(label: "인기순")
+                            .padding(.top, 2)
+                    }
+                    .frame(width: 186, height: 88)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .shadow(color: Color.gray.opacity(0.5), radius: 2, x: 0, y: 1)
+                    .padding(.top, 10)
+                    .padding(.horizontal, 10)
+                }
+                
+                VStack {
+                    Spacer()
+                    NavigationLink(destination: WritePostView(posts: $posts)) {
+                        Image("WriteBtn")
+                            .padding(.horizontal, 20)
+                            .padding(.bottom, 10)
+                    }
+                }
             }
             .navigationBarTitle("자유수다", displayMode: .inline)
         }
-        .padding(.top, 10)
-        Spacer()
     }
     
     func sortingOptionButton(label: String) -> some View {
@@ -93,7 +97,6 @@ struct TalkView: View {
             withAnimation {
                 showSortingOptions.toggle()
             }
-            // 선택된 정렬 옵션에 따른 정렬 로직 추가
         }) {
             Text(label)
                 .font(.custom("Pretendard-Regular", size: 16))
@@ -146,7 +149,7 @@ struct WritePostView: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
-                    savePost() // 게시 버튼이 눌렸을 때 게시글을 저장하는 함수 호출
+                    savePost()
                 }) {
                     Text("게시")
                         .font(.custom("Pretendard-Medium", size: 16))
