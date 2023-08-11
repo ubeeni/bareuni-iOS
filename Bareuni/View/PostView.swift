@@ -7,20 +7,17 @@
 
 import SwiftUI
 
-struct Post: Identifiable {
-    let id = UUID()
-    let content: String
-    let modificationTime: String
-    let likeCount: Int
-    let comments: Int
-    var isLiked: Bool
-}
-
 struct PostCell: View {
-    let post: Post
+    @ObservedObject private var postviewModel: PostViewModel
+    var index: Int
+    
+    init(postviewModel: PostViewModel, index: Int) {
+        self._postviewModel = ObservedObject(wrappedValue: postviewModel)
+        self.index = index
+    }
     
     var body: some View {
-        NavigationLink(destination: PostDetailView(post: post)) {
+        NavigationLink(destination: PostDetailView(postviewModel: postviewModel, index: index)) {
             VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: 10) {
                     Image("Tooth")
@@ -33,7 +30,7 @@ struct PostCell: View {
                         .foregroundColor(Color("212B36"))
                 }
                 
-                Text(post.content) // 글 내용을 보여줄 부분 (3줄까지만 보이고 더보기 형식은 추가 구현 필요)
+                Text(postviewModel.posts[index].content)
                     .font(.custom("Pretendard-Medium", size: 12))
                     .foregroundColor(Color("TextBlack"))
                     .multilineTextAlignment(.leading)
@@ -45,21 +42,21 @@ struct PostCell: View {
                 
                 HStack(spacing: 0) {
                     Image("Heart")
-                    Text("좋아요 \(post.likeCount)")
+                    Text("좋아요 \(postviewModel.posts[index].likeCount)") // Corrected
                         .font(.custom("Pretendard-Regular", size: 10))
                         .foregroundColor(Color("9Egray"))
                         .padding(.leading, 5)
                     
                     Image("Comment")
                         .padding(.leading, 15)
-                    Text("댓글 \(post.comments)")
+                    Text("댓글 \(postviewModel.posts[index].comments)") // Corrected
                         .font(.custom("Pretendard-Regular", size: 10))
                         .foregroundColor(Color("9Egray"))
                         .padding(.leading, 5)
                     
                     Spacer()
                     
-                    Text(post.modificationTime)
+                    Text(postviewModel.posts[index].modificationTime)
                         .font(.custom("Pretendard-Regular", size: 11))
                         .foregroundColor(Color("9Egray"))
                 }
@@ -72,32 +69,20 @@ struct PostCell: View {
     }
 }
 
-struct Comment: Identifiable {
-    let id = UUID()
-    let profileImageName: String
-    let nickname: String
-    let content: String
-    let date: Date
-}
-
 struct PostDetailView: View {
     @State private var isLiked: Bool = false
     @State private var likeCount: Int = 0
     @State private var commentText: String = ""
     
-    let post: Post
+    @ObservedObject var postviewModel: PostViewModel
+    @StateObject private var commentviewModel = CommentViewModel()
+    var index: Int
     
     @Environment(\.presentationMode) var presentationMode
     @State private var showMoreOptions = false
     
     @State private var showCommentOptions = false
     @State private var selectedComment: Comment?
-    
-    @State private var comments: [Comment] = [
-        Comment(profileImageName: "Tooth", nickname: "이아파", content: "공감합니다.", date: Date()),
-        Comment(profileImageName: "Tooth", nickname: "토깽이굴", content: "저도 궁금해요.", date: Date())
-        // 추가적인 댓글 데이터 추가 가능
-    ]
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -112,7 +97,7 @@ struct PostDetailView: View {
     
     func deleteComment(comment: Comment) {
         // 댓글 삭제 로직 추가
-        comments.removeAll { $0.id == comment.id }
+        commentviewModel.comments.removeAll { $0.id == comment.id }
     }
     
     
@@ -128,7 +113,7 @@ struct PostDetailView: View {
                     VStack(alignment: .leading, spacing: 5) {
                         Text("바른이")
                             .font(.custom("Pretendard-Medium", size: 12))
-                        Text(post.modificationTime)
+                        Text(postviewModel.posts[index].modificationTime)
                             .font(.custom("Pretendard-Regular", size: 12))
                             .foregroundColor(Color("9Egray"))
                     }
@@ -139,7 +124,7 @@ struct PostDetailView: View {
                 .padding(.horizontal, 10)
                 .padding(.top, 10)
                 
-                Text(post.content)
+                Text(postviewModel.posts[index].content)
                     .font(.custom("Pretendard-Regular", size: 14))
                     .foregroundColor(Color("212B36"))
                     .padding(.all, 8)
@@ -160,7 +145,7 @@ struct PostDetailView: View {
                         .resizable()
                         .frame(width: 18, height: 18)
                         .padding(.leading, 4)
-                    Text("댓글 \(comments.count)")
+                    Text("댓글 \(commentviewModel.comments.count)")
                         .font(.custom("Pretendard-Medium", size: 10))
                         .foregroundColor(Color("9Egray"))
                     
@@ -173,7 +158,7 @@ struct PostDetailView: View {
                 Image("Bar")
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    ForEach(comments) { comment in
+                    ForEach(commentviewModel.comments) { comment in
                         VStack {
                             HStack {
                                 Image(comment.profileImageName)
@@ -265,7 +250,7 @@ struct PostDetailView: View {
                 Button(action: {
                     if !commentText.isEmpty {
                         let newComment = Comment(profileImageName: "Tooth", nickname: "바른이", content: commentText, date: Date())
-                        comments.append(newComment)
+                        commentviewModel.comments.append(newComment)
                         commentText = ""
                     }
                 }) {
