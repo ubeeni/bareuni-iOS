@@ -31,6 +31,7 @@
 		3273943B2A875769001A739E /* ReservationHIstoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273943A2A875769001A739E /* ReservationHIstoryView.swift */; };
 		3273943D2A8757A6001A739E /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273943C2A8757A6001A739E /* PointView.swift */; };
 		3273943F2A8757E9001A739E /* CustomerServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273943E2A8757E9001A739E /* CustomerServiceView.swift */; };
+		327394412A876370001A739E /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327394402A876370001A739E /* FontManager.swift */; };
 		32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6C82A557A1800B41644 /* AppDelegate.swift */; };
 		32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6CA2A557A1800B41644 /* SceneDelegate.swift */; };
 		32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6CC2A557A1800B41644 /* ViewController.swift */; };
@@ -118,6 +119,7 @@
 		3273943A2A875769001A739E /* ReservationHIstoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationHIstoryView.swift; sourceTree = "<group>"; };
 		3273943C2A8757A6001A739E /* PointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
 		3273943E2A8757E9001A739E /* CustomerServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceView.swift; sourceTree = "<group>"; };
+		327394402A876370001A739E /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		32A5E6C52A557A1800B41644 /* Bareuni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bareuni.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A5E6C82A557A1800B41644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32A5E6CA2A557A1800B41644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				32A5E7012A557A8500B41644 /* Pretendard-Medium.otf */,
 				32A5E7032A557A9E00B41644 /* Pretendard-Regular.ttf */,
 				32A5E7052A557AAA00B41644 /* Inter-VariableFont_slnt,wght.ttf */,
+				327394402A876370001A739E /* FontManager.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */,
 				32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */,
 				3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */,
+				327394412A876370001A739E /* FontManager.swift in Sources */,
 				32EB16D52A6E4AB80050F45F /* DetailedProfileSettingViewController.swift in Sources */,
 				321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */,
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,

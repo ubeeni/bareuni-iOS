@@ -62,6 +62,7 @@
                     <view key="view" contentMode="scaleToFill" id="AFh-EE-UK7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="710"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="m8r-dW-NMA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
