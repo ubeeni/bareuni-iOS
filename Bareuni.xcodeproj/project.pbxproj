@@ -67,6 +67,9 @@
 		3BB0ACEA2A6685780071D598 /* DentistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACE92A6685780071D598 /* DentistModel.swift */; };
 		3BB0ACEC2A6685AA0071D598 /* DentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */; };
 		3BB0ACF02A6A17C00071D598 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0ACEF2A6A17C00071D598 /* WriteView.swift */; };
+		3BCB5B6E2A82A22700F58C50 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B6D2A82A22700F58C50 /* DateValue.swift */; };
+		3BCB5B702A82A70E00F58C50 /* TestView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */; };
+		3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B712A83E96700F58C50 /* CityDictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +153,9 @@
 		3BB0ACE92A6685780071D598 /* DentistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DentistModel.swift; path = Bareuni/Model/DentistModel.swift; sourceTree = SOURCE_ROOT; };
 		3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DentistViewModel.swift; path = Bareuni/Model/DentistViewModel.swift; sourceTree = SOURCE_ROOT; };
 		3BB0ACEF2A6A17C00071D598 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		3BCB5B6D2A82A22700F58C50 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView3.swift; sourceTree = "<group>"; };
+		3BCB5B712A83E96700F58C50 /* CityDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityDictionary.swift; path = Bareuni/View/CityDictionary.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				3BB0ACE92A6685780071D598 /* DentistModel.swift */,
+				3BCB5B712A83E96700F58C50 /* CityDictionary.swift */,
 				3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */,
 				10AB8CE22A851CC8009B594E /* PostModel.swift */,
 				10AB8CE42A851E4A009B594E /* PostViewModel.swift */,
@@ -289,6 +296,8 @@
 				3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */,
 				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
 				3B5AF6522A7095F600A94BF1 /* TestView2.swift */,
+				3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */,
+				3BCB5B6D2A82A22700F58C50 /* DateValue.swift */,
 				10AEE93C2A70FCD7005833CE /* TalkView.swift */,
 				10AEE93E2A70FD03005833CE /* FAQView.swift */,
 				10C82FE02A76764B00ADF34E /* PostView.swift */,
@@ -525,6 +534,7 @@
 				3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */,
 				1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */,
 				10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */,
+				3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */,
 				32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */,
 				3BB0ACE82A657FEE0071D598 /* InfoView.swift in Sources */,
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
@@ -538,6 +548,7 @@
 				3BB0ACEC2A6685AA0071D598 /* DentistViewModel.swift in Sources */,
 				3BB0ACF02A6A17C00071D598 /* WriteView.swift in Sources */,
 				1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */,
+				3BCB5B6E2A82A22700F58C50 /* DateValue.swift in Sources */,
 				102166532A69492A00DC6351 /* CommunityData.swift in Sources */,
 				32EB16DB2A77D0610050F45F /* WelcomeProfileViewController.swift in Sources */,
 				32EB16D92A77CEDE0050F45F /* ProfileNavigationController.swift in Sources */,
@@ -545,6 +556,7 @@
 				32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */,
 				32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */,
 				321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */,
+				3BCB5B702A82A70E00F58C50 /* TestView3.swift in Sources */,
 				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
 				10C82FE12A76764C00ADF34E /* PostView.swift in Sources */,
 				10AB8CEB2A852242009B594E /* CommentViewModel.swift in Sources */,

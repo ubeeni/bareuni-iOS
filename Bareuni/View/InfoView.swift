@@ -11,7 +11,7 @@ struct InfoView: View {
     
     @State var tabIndex = 0
     @State var cities = ContentView().selectedCities
-    @State var dentistInfo = DentistViewModel()
+    @StateObject var dentistInfo = DentistViewModel()
     
     var body: some View {
         NavigationView {
@@ -90,7 +90,7 @@ struct InfoView: View {
                     }
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
@@ -202,7 +202,7 @@ struct recommendedDentistView:View {
                     .frame(width: 339, height: 203)
                     .background(.white)
                     .cornerRadius(14)
-                    .shadow(color: .black.opacity(0.1), radius: 6, x: 0, y: 2)
+                    .shadow(color: .black.opacity(0.1), radius: 6, x: 2, y: 2)
                     .overlay(
                         RoundedRectangle(cornerRadius: 14)
                             .inset(by: 0.25)
