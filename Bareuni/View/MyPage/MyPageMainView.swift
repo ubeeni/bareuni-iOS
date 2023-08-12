@@ -17,6 +17,7 @@ struct MyPageMainView: View {
                         .aspectRatio(contentMode: .fill).frame(width: 60, height: 60).clipShape(Circle())
                         .overlay(Circle().stroke(Color(UIColor(red: 0.62, green: 0.62, blue: 0.62, alpha: 1).cgColor), lineWidth: 0.5))
                         .padding(.leading, 13)
+                    
                     VStack(alignment: .leading, spacing: 6){
                         Text("이아파").font(.custom("Pretendard-SemiBold", size: 18))
                         Text("교정 0").font(.custom("Pretendard-Medium", size: 13)).foregroundColor(Color(UIColor(red: 0.583, green: 0.583, blue: 0.583, alpha: 1)))
@@ -35,7 +36,7 @@ struct MyPageMainView: View {
                 ).padding(.leading, 24).padding(.trailing, 24).padding(.top, 30)
                 
                 HStack{
-                    Button(action: {}) {
+                    NavigationLink(destination: SavedListView()) {
                         VStack {
                             Image("BookMark")
                             Text("저장 목록").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color.black)
@@ -60,7 +61,7 @@ struct MyPageMainView: View {
                 Image("Line").padding(.top, 40)
                 
                 VStack(spacing: 20){
-                    Button(action: {}){
+                    NavigationLink(destination: PointView()) {
                         HStack(spacing: 8){
                             Text("포인트 관리").font(.custom("Pretendard-Medium", size: 16)).foregroundColor(Color.black)
                             Spacer()
@@ -68,7 +69,7 @@ struct MyPageMainView: View {
                             Image("ArrowBack").frame(width: 15, height: 15)
                         }
                     }.frame(height: 35)
-                    Button(action: {}){
+                    Button(action: {}) {
                         HStack(spacing: 8){
                             Text("바른이 칼럼").font(.custom("Pretendard-Medium", size: 16)).foregroundColor(Color.black)
                             Spacer()
@@ -77,7 +78,7 @@ struct MyPageMainView: View {
                         }
                     }.frame(height: 35)
                     
-                    Button(action: {}){
+                    NavigationLink(destination: CustomerServiceView()) {
                         HStack(spacing: 8){
                             Text("이용 내역").font(.custom("Pretendard-Medium", size: 16)).foregroundColor(Color.black)
                             Spacer()

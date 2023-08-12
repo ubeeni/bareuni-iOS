@@ -19,7 +19,9 @@ struct MyInfoView: View {
     @State var didOrthodontic = "교정 O"
     
     var body: some View {
+        
         VStack {
+            Divider()
             ZStack{
                 Image("Tooth")
                     .resizable()
@@ -123,12 +125,8 @@ struct MyInfoView: View {
                 Text("내 정보")
                     .font(.custom("Pretendard-Medium", size: 20))
             }
-            
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Image("icon_search")
-            }
         }
-        .padding(.top, 28)
+        
         Spacer()
     }
 }
