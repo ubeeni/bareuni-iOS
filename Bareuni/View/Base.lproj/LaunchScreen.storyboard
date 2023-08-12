@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="54" id="PzS-cn-EPx"/>
                                 </constraints>
                             </imageView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모든 치아교정 정보를 한눈에!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wez-DM-Xn2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모든 치아교정 정보를 한눈에!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wez-DM-Xn2">
                                 <rect key="frame" x="92.666666666666686" y="414" width="205" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="tqF-d9-UGV"/>
@@ -49,9 +49,6 @@
                             <constraint firstItem="hpw-AE-x3T" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="y6Y-nT-d1y"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="bottomLabel" destination="wez-DM-Xn2" id="Os7-vI-oZh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
