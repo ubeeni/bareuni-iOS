@@ -13,7 +13,7 @@ struct TalkView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding var posts: [Post]
+    @StateObject private var postviewModel = PostViewModel()
     
     var body: some View {
         VStack {
@@ -48,43 +48,47 @@ struct TalkView: View {
             .padding(.leading, 250)
             .padding(.trailing, 0)
             
-            if showSortingOptions {
-                VStack {
-                    sortingOptionButton(label: "최신순")
-                    Divider()
-                    sortingOptionButton(label: "인기순")
-                }
-                .background(Color.white)
-                .cornerRadius(10)
-                .shadow(color: Color.gray.opacity(0.5), radius: 2, x: 0, y: 1)
-                .padding(.top, 10)
-                .padding(.leading, 170)
-                .padding(.horizontal, 10)
-            }
-            
-            // 글 목록을 나열하는 부분 추가
-            ScrollView {
-                LazyVStack {
-                    ForEach(posts, id: \.id) { post in
-                        NavigationLink(destination: PostDetailView(post: post)) {
-                            VStack {
-                                PostCell(post: post)
-                                Image("Line")
+            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
+                ScrollView {
+                    LazyVStack {
+                        ForEach(Array(postviewModel.posts.enumerated()), id: \.element.id) { index, post in
+                            NavigationLink(destination: PostDetailView(postviewModel: postviewModel, index: index)) {
+                                VStack {
+                                    PostCell(postviewModel: postviewModel, index: index)
+                                    Image("Line")
+                                }
                             }
                         }
                     }
                 }
-            }
-            
-            NavigationLink(destination: WritePostView(posts: $posts)) {
-                Spacer()
-                Image("WriteBtn")
-                    .padding(.horizontal, 30)
+                
+                if showSortingOptions {
+                    VStack(spacing: 0) {
+                        sortingOptionButton(label: "최신순")
+                            .padding(.bottom, 2)
+                        Divider()
+                        sortingOptionButton(label: "인기순")
+                            .padding(.top, 2)
+                    }
+                    .frame(width: 186, height: 88)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .shadow(color: Color.gray.opacity(0.5), radius: 2, x: 0, y: 1)
+                    .padding(.top, 10)
+                    .padding(.horizontal, 10)
+                }
+                
+                VStack {
+                    Spacer()
+                    NavigationLink(destination: WritePostView(postviewModel: postviewModel)) {
+                        Image("WriteBtn")
+                            .padding(.horizontal, 20)
+                            .padding(.bottom, 10)
+                    }
+                }
             }
             .navigationBarTitle("자유수다", displayMode: .inline)
         }
-        .padding(.top, 10)
-        Spacer()
     }
     
     func sortingOptionButton(label: String) -> some View {
@@ -93,7 +97,6 @@ struct TalkView: View {
             withAnimation {
                 showSortingOptions.toggle()
             }
-            // 선택된 정렬 옵션에 따른 정렬 로직 추가
         }) {
             Text(label)
                 .font(.custom("Pretendard-Regular", size: 16))
@@ -102,78 +105,6 @@ struct TalkView: View {
                 .foregroundColor(Color("TextBlack"))
                 .background(Color.white)
         }
-    }
-}
-
-struct WritePostView: View {
-    @State private var postContent = ""
-    @Environment(\.presentationMode) var presentationMode
-    
-    @Binding var posts: [Post]
-    
-    var body: some View {
-        VStack() {
-            Text("글 작성")
-                .font(.custom("Pretendard-Medium", size: 20))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 20)
-                .padding(.top, 20)
-            
-            ZStack(alignment: .topLeading) {
-                TextEditor(text: $postContent)
-                    .padding(.horizontal, 10)
-                    .cornerRadius(16)
-                
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color("TextEditor"), lineWidth: 1)
-                    .padding(0.6)
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 15)
-            .padding(.bottom, 200)
-            Spacer()
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden()
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "xmark")
-                        .foregroundColor(Color("TextBlack"))
-                }
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    savePost() // 게시 버튼이 눌렸을 때 게시글을 저장하는 함수 호출
-                }) {
-                    Text("게시")
-                        .font(.custom("Pretendard-Medium", size: 16))
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 8)
-                        .background(Color.white)
-                        .foregroundColor(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"), lineWidth: 1)
-                                .opacity(0.6)
-                        )
-                        .disabled(postContent.isEmpty)
-                }
-            }
-        }
-    }
-    
-    func savePost() {
-        let currentDate = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd HH:mm"
-        let currentTimeString = formatter.string(from: currentDate)
-        let newPost = Post(content: postContent, modificationTime: currentTimeString, likeCount: 0, comments: 0, isLiked: false)
-        posts.append(newPost)
-        
-        presentationMode.wrappedValue.dismiss()
     }
 }
 
