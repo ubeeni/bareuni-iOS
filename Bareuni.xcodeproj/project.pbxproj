@@ -20,6 +20,11 @@
 		1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */; };
 		1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052C3EC2A6701EC00CD6508 /* DentistData.swift */; };
 		1052C3EF2A6702B400CD6508 /* DentistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052C3EE2A6702B400CD6508 /* DentistTableViewCell.swift */; };
+		10AB8CE32A851CC8009B594E /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB8CE22A851CC8009B594E /* PostModel.swift */; };
+		10AB8CE52A851E4A009B594E /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB8CE42A851E4A009B594E /* PostViewModel.swift */; };
+		10AB8CE72A85216D009B594E /* WritePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB8CE62A85216D009B594E /* WritePostView.swift */; };
+		10AB8CE92A8521A3009B594E /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB8CE82A8521A3009B594E /* CommentModel.swift */; };
+		10AB8CEB2A852242009B594E /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB8CEA2A852242009B594E /* CommentViewModel.swift */; };
 		10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEE93C2A70FCD7005833CE /* TalkView.swift */; };
 		10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEE93E2A70FD03005833CE /* FAQView.swift */; };
 		10C82FE12A76764C00ADF34E /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C82FE02A76764B00ADF34E /* PostView.swift */; };
@@ -108,6 +113,11 @@
 		1026BF4E2A5AAC4700955799 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		1052C3EC2A6701EC00CD6508 /* DentistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistData.swift; sourceTree = "<group>"; };
 		1052C3EE2A6702B400CD6508 /* DentistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistTableViewCell.swift; sourceTree = "<group>"; };
+		10AB8CE22A851CC8009B594E /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostModel.swift; path = Bareuni/Model/PostModel.swift; sourceTree = SOURCE_ROOT; };
+		10AB8CE42A851E4A009B594E /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostViewModel.swift; path = Bareuni/Model/PostViewModel.swift; sourceTree = SOURCE_ROOT; };
+		10AB8CE62A85216D009B594E /* WritePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostView.swift; sourceTree = "<group>"; };
+		10AB8CE82A8521A3009B594E /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommentModel.swift; path = Bareuni/Model/CommentModel.swift; sourceTree = SOURCE_ROOT; };
+		10AB8CEA2A852242009B594E /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommentViewModel.swift; path = Bareuni/Model/CommentViewModel.swift; sourceTree = SOURCE_ROOT; };
 		10AEE93C2A70FCD7005833CE /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
 		10AEE93E2A70FD03005833CE /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		10C82FE02A76764B00ADF34E /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -163,8 +173,8 @@
 		3B9CB7192A5C528500AC56D0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3BB0ACE32A5D3C060071D598 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		3BB0ACE72A657FEE0071D598 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		3BB0ACE92A6685780071D598 /* DentistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DentistModel.swift; path = Bareuni/View/DentistModel.swift; sourceTree = SOURCE_ROOT; };
-		3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DentistViewModel.swift; path = Bareuni/View/DentistViewModel.swift; sourceTree = SOURCE_ROOT; };
+		3BB0ACE92A6685780071D598 /* DentistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DentistModel.swift; path = Bareuni/Model/DentistModel.swift; sourceTree = SOURCE_ROOT; };
+		3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DentistViewModel.swift; path = Bareuni/Model/DentistViewModel.swift; sourceTree = SOURCE_ROOT; };
 		3BB0ACEF2A6A17C00071D598 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,6 +290,10 @@
 			children = (
 				3BB0ACE92A6685780071D598 /* DentistModel.swift */,
 				3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */,
+				10AB8CE22A851CC8009B594E /* PostModel.swift */,
+				10AB8CE42A851E4A009B594E /* PostViewModel.swift */,
+				10AB8CE82A8521A3009B594E /* CommentModel.swift */,
+				10AB8CEA2A852242009B594E /* CommentViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +319,7 @@
 				10AEE93E2A70FD03005833CE /* FAQView.swift */,
 				10C82FE02A76764B00ADF34E /* PostView.swift */,
 				32EB16CB2A6D726E0050F45F /* Profile.storyboard */,
+				10AB8CE62A85216D009B594E /* WritePostView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,9 +562,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AB8CE52A851E4A009B594E /* PostViewModel.swift in Sources */,
 				32EB16E72A8341D80050F45F /* ChangingNicknameView.swift in Sources */,
 				10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */,
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
+				10AB8CE32A851CC8009B594E /* PostModel.swift in Sources */,
 				3273943B2A875769001A739E /* ReservationHIstoryView.swift in Sources */,
 				3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */,
 				1026BF4D2A5AA5C700955799 /* HomeViewController.swift in Sources */,
@@ -581,10 +598,12 @@
 				32EB16D52A6E4AB80050F45F /* DetailedProfileSettingViewController.swift in Sources */,
 				321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */,
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,
+				10AB8CE72A85216D009B594E /* WritePostView.swift in Sources */,
 				3BB0ACEC2A6685AA0071D598 /* DentistViewModel.swift in Sources */,
 				3BB0ACF02A6A17C00071D598 /* WriteView.swift in Sources */,
 				1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */,
 				102166532A69492A00DC6351 /* CommunityData.swift in Sources */,
+				10AB8CE92A8521A3009B594E /* CommentModel.swift in Sources */,
 				32BEFC422A83B74D00D11792 /* ChangingNumberAuthView.swift in Sources */,
 				32EB16DB2A77D0610050F45F /* WelcomeProfileViewController.swift in Sources */,
 				32EB16E32A8291DE0050F45F /* MyInfoView.swift in Sources */,
@@ -595,6 +614,7 @@
 				321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */,
 				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
 				10C82FE12A76764C00ADF34E /* PostView.swift in Sources */,
+				10AB8CEB2A852242009B594E /* CommentViewModel.swift in Sources */,
 				3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */,
 				327394372A8752AB001A739E /* SavedListView.swift in Sources */,
 			);
