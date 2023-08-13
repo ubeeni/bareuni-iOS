@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct PostHistroyView: View {
+    @Environment(\.presentationMode) var presentationMode
     @State var slideBarLocation: Int = 1
+    @State var reviewCount: Int = 0
     @StateObject private var postviewModel = PostViewModel()
+    
     
     var body: some View {
         VStack{
@@ -38,28 +41,55 @@ struct PostHistroyView: View {
                 Spacer()
             }.padding(.top, 35).frame(height: 60)
             
-            // 글이나 후기를 담은 테이블 뷰
-            ScrollView {
-                LazyVStack {
-                    ForEach(Array(postviewModel.posts.enumerated()), id: \.element.id) { index, post in
-                        NavigationLink(destination: PostDetailView(postviewModel: postviewModel, index: index)) {
-                            VStack {
-                                PostCell(postviewModel: postviewModel, index: index)
-                                Image("Line")
+            if(slideBarLocation == 1){
+                if(reviewCount == 0){
+                    Spacer()
+                    BlankView(text: "아직 작성한 후기가 없어요.")
+                    Spacer()
+                }else{
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(Array(postviewModel.posts.enumerated()), id: \.element.id) { index, post in
+                                NavigationLink(destination: PostDetailView(postviewModel: postviewModel, index: index)) {
+                                    VStack {
+                                        PostCell(postviewModel: postviewModel, index: index)
+                                        Image("Line")
+                                    }
+                                }
                             }
                         }
                     }
                 }
-            }.navigationBarTitle("", displayMode: .inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text("작성 내역")
-                            .font(.custom("Pretendard-Medium", size: 20))
+            }else{
+                if(postviewModel.posts.count == 0){
+                    Spacer()
+                    BlankView(text: "아직 작성한 글이 없어요.")
+                    Spacer()
+                }else{
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(Array(postviewModel.posts.enumerated()), id: \.element.id) { index, post in
+                                NavigationLink(destination: PostDetailView(postviewModel: postviewModel, index: index)) {
+                                    VStack {
+                                        PostCell(postviewModel: postviewModel, index: index)
+                                        Image("Line")
+                                    }
+                                }
+                            }
+                        }
                     }
-                    
                 }
-            
-        }
+            }
+
+        }.navigationBarTitle("", displayMode: .inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("작성 내역")
+                        .font(.custom("Pretendard-Medium", size: 20))
+                }
+                
+            }
+        
             
     }
 }
