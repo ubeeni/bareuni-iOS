@@ -72,7 +72,7 @@ struct CustomerServiceView: View {
                         .listRowInsets(EdgeInsets())
                     
                 }
-            }.scrollContentBackground(.hidden).listStyle(.plain).listStyle(.insetGrouped)
+            }.scrollContentBackground(.hidden).listStyle(.plain).listStyle(.grouped).listRowInsets(.init())
             
             
 
@@ -98,10 +98,10 @@ struct InquiryView: View{
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
-                Text(inquiry.title).font(.pretendard(.medium, size: 16)).foregroundColor(Color("BackgroundBlue")).padding(.top, 36)//.padding(.leading, 33)
-                
-                Text(inquiry.question).font(.pretendard(.regular, size: 16)).padding(.top, 20)//.padding(.leading, 33)
-           
+            Text(inquiry.title).font(.pretendard(.medium, size: 16)).foregroundColor(Color("BackgroundBlue")).padding(.top, 36).padding(.leading, 33)
+            
+            Text(inquiry.question).font(.pretendard(.regular, size: 16)).padding(.top, 20).padding(.leading, 33)
+            
             
             HStack{
                 Spacer()
@@ -109,10 +109,13 @@ struct InquiryView: View{
                     Image(systemName: "chevron.down").frame(width: 24, height: 24).foregroundColor(Color(UIColor(red: 0.65, green: 0.65, blue: 0.65, alpha: 1))).padding(.trailing, 14).padding(.bottom, 19)
                 })
             }
+            //separator full width로 적용하기
+        }.alignmentGuide(.listRowSeparatorLeading) { viewDimensions in
+            
+            // 2
+            return 0
         }
-        
     }
-
 }
 
 struct CustomerServiceView_Previews: PreviewProvider {

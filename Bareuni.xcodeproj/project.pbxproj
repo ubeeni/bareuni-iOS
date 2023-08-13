@@ -329,6 +329,7 @@
 				10C82FE02A76764B00ADF34E /* PostView.swift */,
 				32EB16CB2A6D726E0050F45F /* Profile.storyboard */,
 				10AB8CE62A85216D009B594E /* WritePostView.swift */,
+				10AB8CE62A85216D009B594E /* WritePostView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -573,6 +574,10 @@
 			files = (
 				32EB16E72A8341D80050F45F /* ChangingNicknameView.swift in Sources */,
 				10AB8CE52A851E4A009B594E /* PostViewModel.swift in Sources */,
+				32EB16E72A8341D80050F45F /* ChangingNicknameView.swift in Sources */,
+				10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */,
+				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
+				10AB8CE32A851CC8009B594E /* PostModel.swift in Sources */,
 				10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */,
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
 				3273943B2A875769001A739E /* ReservationHIstoryView.swift in Sources */,
@@ -614,6 +619,7 @@
 				1026BF4F2A5AAC4700955799 /* HomeNavigationController.swift in Sources */,
 				3BCB5B6E2A82A22700F58C50 /* DateValue.swift in Sources */,
 				102166532A69492A00DC6351 /* CommunityData.swift in Sources */,
+				10AB8CE92A8521A3009B594E /* CommentModel.swift in Sources */,
 				32BEFC422A83B74D00D11792 /* ChangingNumberAuthView.swift in Sources */,
 				32EB16DB2A77D0610050F45F /* WelcomeProfileViewController.swift in Sources */,
 				32EB16E32A8291DE0050F45F /* MyInfoView.swift in Sources */,
