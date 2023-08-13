@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct SavedListView: View {
-    @State var dentistList: [DentistData] = []
+    @State var dentistList = DentistViewModel()
+    
     var body: some View {
         VStack{
             Divider()
             Spacer()
             
-            if(dentistList.isEmpty){
+            if(dentistList.Dentists.isEmpty){
                 BlankView(text: "아직 저장된 치과가 없어요.")
             }else{
-                
+                ScrollView {
+                    LazyVStack {
+                        
+                        ForEach(dentistList.Dentists){ dentist in
+                            recommendedDentistView(dentist: dentist)
+                            Spacer().frame(height: 23)
+                        }
+                        
+                    }.scrollContentBackground(.hidden).listStyle(.plain)
+                }
             }
             
             Spacer()
