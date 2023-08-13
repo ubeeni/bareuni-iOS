@@ -33,7 +33,7 @@ struct SavedListView: View {
             Spacer()
             
             
-        }.navigationBarTitleDisplayMode(.inline)
+        }.navigationBarTitle("", displayMode: .inline).accentColor(.gray)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("저장 목록")

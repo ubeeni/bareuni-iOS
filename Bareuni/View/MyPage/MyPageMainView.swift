@@ -42,7 +42,7 @@ struct MyPageMainView: View {
                             Text("저장 목록").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color.black)
                         }.frame(width: 66, height: 54)
                     }
-                    Button(action: {}) {
+                    NavigationLink(destination: PostHistroyView()) {
                         VStack {
                             Image("pencil")
                             Text("작성 내역").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color.black)
@@ -90,7 +90,8 @@ struct MyPageMainView: View {
                 
                 Spacer()
                 
-            }.padding(.top, 30).toolbar {
+            }.padding(.top, 30).navigationBarTitle("", displayMode: .inline).accentColor(.gray)
+                .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("마이페이지")
                         .font(.custom("Pretendard-Medium", size: 24))
@@ -112,7 +113,7 @@ struct MyPageMainView: View {
                 }
                 
             }
-        }
+        }.accentColor(.gray)
     }
 }
 struct MyPageMainView_Previews: PreviewProvider {
