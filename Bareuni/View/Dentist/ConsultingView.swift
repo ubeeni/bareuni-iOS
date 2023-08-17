@@ -16,6 +16,7 @@ struct ConsultingView: View {
     
     var body: some View {
         VStack{
+            Divider().padding(.bottom, 41)
             
             Button(action: {
                 isSelected1.toggle()
@@ -53,7 +54,7 @@ struct ConsultingView: View {
                         }
                     }
                 }
-            })
+            }).padding(.bottom, 20)
             
             Button(action: {
                 isSelected2.toggle()
@@ -91,7 +92,7 @@ struct ConsultingView: View {
                         }
                     }
                 }
-            })
+            }).padding(.bottom, 62)
             
             HStack{
                 Text("상담받는 분 ")
@@ -100,24 +101,36 @@ struct ConsultingView: View {
                       .weight(.semibold)
                   )
                   .foregroundColor(.black)
+                  .padding(.leading, 32)
+                
+                Spacer()
+                
                 Text("개인정보 인증이 필요해요")
                   .font(
                     Font.custom("Pretendard", size: 12)
                       .weight(.medium)
                   )
                   .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                  .padding(.trailing, 32)
             }
+            .padding(.bottom, 13)
+            
             Rectangle()
               .foregroundColor(.clear)
               .frame(width: 390, height: 1)
               .background(Color(red: 0.91, green: 0.93, blue: 0.94))
+              .padding(.bottom, 27)
             
-            Text("이름")
-              .font(
-                Font.custom("Pretendard", size: 16)
-                  .weight(.medium)
-              )
+            HStack {
+                Text("이름")
+                  .font(
+                    Font.custom("Pretendard", size: 16)
+                      .weight(.medium)
+                  )
               .foregroundColor(.black)
+              .padding(.leading, 32)
+                Spacer()
+            }
             
             TextField("", text: $name)
                 .frame(width: 290, height: 51)
@@ -126,22 +139,29 @@ struct ConsultingView: View {
                     .stroke(Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 1)
                 .frame(width: 342, height: 51))
             
-            Text("연락처")
-              .font(
-                Font.custom("Pretendard", size: 16)
-                  .weight(.medium)
-              )
+            HStack {
+                Text("연락처")
+                  .font(
+                    Font.custom("Pretendard", size: 16)
+                      .weight(.medium)
+                  )
               .foregroundColor(.black)
+              .padding(.leading, 32)
+                
+                Spacer()
+            }
             
             HStack {
                 TextField("", text: $phoneNumber)
                     .frame(width: 220, height: 51)
-                    .background(RoundedRectangle(cornerRadius: 12)
+                    .overlay(RoundedRectangle(cornerRadius: 12)
                         .inset(by: 0.5)
                         .stroke(Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 1)
                     .frame(width: 256, height: 51))
+                    .padding(.trailing, 30)
+                    .padding(.leading, 43)
                 
-                Spacer()
+                
                 
                 Text("인증")
                   .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
@@ -153,7 +173,10 @@ struct ConsultingView: View {
                       .inset(by: 0.5)
                       .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 1)
                   )
-            }
+                  .padding(.trailing, 25)
+            }.frame(width: 342, height: 51)
+        Spacer()
+            
         }
     }
 }

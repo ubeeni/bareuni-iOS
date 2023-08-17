@@ -237,14 +237,14 @@
 			isa = PBXGroup;
 			children = (
 				3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */,
-				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
-				3B5AF6522A7095F600A94BF1 /* TestView2.swift */,
-				3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */,
-				3BCB5B932A8DDAF200F58C50 /* TestView4.swift */,
 				3B9CB7172A5C508600AC56D0 /* ContentView.swift */,
 				3BB0ACEF2A6A17C00071D598 /* WriteView.swift */,
 				3BB0ACE72A657FEE0071D598 /* InfoView.swift */,
 				3BCB5B6D2A82A22700F58C50 /* DateValue.swift */,
+				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
+				3B5AF6522A7095F600A94BF1 /* TestView2.swift */,
+				3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */,
+				3BCB5B932A8DDAF200F58C50 /* TestView4.swift */,
 			);
 			path = Dentist;
 			sourceTree = "<group>";
