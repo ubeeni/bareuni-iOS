@@ -65,6 +65,7 @@ struct ChangingNumberAuthView: View {
                             RoundedRectangle(cornerRadius: 8)
                                 .stroke(Color(UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1)), lineWidth: 0.5)
                         ).frame(height: 48).padding(.top, 8)
+                    
                     Text("\(timeRemaining / 60) :" + String(format: "%02d", timeRemaining % 60)).foregroundColor(Color("BackgroundBlue")).font(.custom("Pretendard-Regular", size: 16)).padding(.leading, 23).onReceive(timer) { _ in
                         if self.timeRemaining > 0 {
                             self.timeRemaining -= 1
