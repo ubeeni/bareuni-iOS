@@ -38,6 +38,7 @@
 		3273943D2A8757A6001A739E /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273943C2A8757A6001A739E /* PointView.swift */; };
 		3273943F2A8757E9001A739E /* CustomerServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273943E2A8757E9001A739E /* CustomerServiceView.swift */; };
 		327394412A876370001A739E /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327394402A876370001A739E /* FontManager.swift */; };
+		328DDE9F2A8E1F64006B82EF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 328DDE9E2A8E1F64006B82EF /* Alamofire */; };
 		32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6C82A557A1800B41644 /* AppDelegate.swift */; };
 		32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6CA2A557A1800B41644 /* SceneDelegate.swift */; };
 		32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6CC2A557A1800B41644 /* ViewController.swift */; };
@@ -206,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */,
+				328DDE9F2A8E1F64006B82EF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +507,7 @@
 			name = Bareuni;
 			packageProductDependencies = (
 				3B5AF6502A708F2900A94BF1 /* BSImagePicker */,
+				328DDE9E2A8E1F64006B82EF /* Alamofire */,
 			);
 			productName = Bareuni;
 			productReference = 32A5E6C52A557A1800B41644 /* Bareuni.app */;
@@ -580,6 +583,7 @@
 			mainGroup = 32A5E6BC2A557A1800B41644;
 			packageReferences = (
 				3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */,
+				328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 32A5E6C62A557A1800B41644 /* Products */;
 			projectDirPath = "";
@@ -1043,6 +1047,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mikaoj/BSImagePicker.git";
@@ -1054,6 +1066,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		328DDE9E2A8E1F64006B82EF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		3B5AF6502A708F2900A94BF1 /* BSImagePicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */;
