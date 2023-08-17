@@ -650,7 +650,7 @@ struct ReviewView: View {
                 )
             })
             .fullScreenCover(isPresented: $isPresentingModal) {
-                WriteView()
+                WriteView(isPresentingModal: $isPresentingModal)
             }
 //            .sheet(isPresented: $isPresentingModal) {
 //                WriteView()
