@@ -28,6 +28,7 @@
 		10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEE93C2A70FCD7005833CE /* TalkView.swift */; };
 		10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEE93E2A70FD03005833CE /* FAQView.swift */; };
 		10C82FE12A76764C00ADF34E /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C82FE02A76764B00ADF34E /* PostView.swift */; };
+		10E125BB2A8DEAA000A2805C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E125BA2A8DEAA000A2805C /* HomeView.swift */; };
 		321B896D2A602AA500AE45D4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321B896C2A602AA500AE45D4 /* Login.storyboard */; };
 		321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */; };
 		321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B89712A60351E00AE45D4 /* loginViewController.swift */; };
@@ -125,6 +126,7 @@
 		10AEE93C2A70FCD7005833CE /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
 		10AEE93E2A70FD03005833CE /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		10C82FE02A76764B00ADF34E /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		10E125BA2A8DEAA000A2805C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		321B896C2A602AA500AE45D4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		321B896F2A60333F00AE45D4 /* loginSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginSelectionViewController.swift; sourceTree = "<group>"; };
 		321B89712A60351E00AE45D4 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,14 @@
 			path = Community;
 			sourceTree = "<group>";
 		};
+		10E125B92A8DEA8B00A2805C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				10E125BA2A8DEAA000A2805C /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		321B896E2A60320B00AE45D4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +364,7 @@
 		32A5E6F92A557A2B00B41644 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				10E125B92A8DEA8B00A2805C /* Home */,
 				10E125B62A8DE4BF00A2805C /* Community */,
 				10E125B52A8DE42C00A2805C /* Dentist */,
 				32EB16DF2A82627D0050F45F /* MyPage */,
@@ -634,6 +645,7 @@
 				3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */,
 				1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */,
 				10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */,
+				10E125BB2A8DEAA000A2805C /* HomeView.swift in Sources */,
 				3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */,
 				32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */,
 				3BB0ACE82A657FEE0071D598 /* InfoView.swift in Sources */,

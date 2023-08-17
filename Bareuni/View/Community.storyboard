@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yd6-cr-RDn">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="751"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="qxC-1d-ayp" kind="embed" destinationCreationSelector="addCommunityView:" id="59C-wW-y0O"/>
@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Qq-Hr-82b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-334" y="43"/>
+            <point key="canvasLocation" x="-335.1145038167939" y="42.95774647887324"/>
         </scene>
         <!--Community Main View-->
         <scene sceneID="m5P-3V-SdD">
