@@ -90,6 +90,7 @@
 		3BCB5B702A82A70E00F58C50 /* TestView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */; };
 		3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B712A83E96700F58C50 /* CityDictionary.swift */; };
 		3BCB5BB02A8E12C700F58C50 /* HiddenTabBarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */; };
+		3BCB5BB22A8E1C4A00F58C50 /* DentistModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView3.swift; sourceTree = "<group>"; };
 		3BCB5B712A83E96700F58C50 /* CityDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityDictionary.swift; path = Bareuni/Model/Dentist/CityDictionary.swift; sourceTree = SOURCE_ROOT; };
 		3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenTabBarTest.swift; sourceTree = "<group>"; };
+		3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistModel2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				3BB0ACE92A6685780071D598 /* DentistModel.swift */,
 				3BCB5B712A83E96700F58C50 /* CityDictionary.swift */,
 				3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */,
+				3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */,
 			);
 			path = Dentist;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				32EB16E72A8341D80050F45F /* ChangingNicknameView.swift in Sources */,
 				10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */,
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
+				3BCB5BB22A8E1C4A00F58C50 /* DentistModel2.swift in Sources */,
 				10AB8CE32A851CC8009B594E /* PostModel.swift in Sources */,
 				10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */,
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
