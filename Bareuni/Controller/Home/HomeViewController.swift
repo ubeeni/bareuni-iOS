@@ -6,7 +6,20 @@
 //
 
 import UIKit
+import SwiftUI
 
+class HomeViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBSegueAction func addHomeView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: HomeView())
+    }
+}
+
+/*
 class HomeViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var pageControl: UIPageControl!
@@ -171,6 +184,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITableViewDel
        
     }
 }
+*/
 
 // 검색 화면
 /*
