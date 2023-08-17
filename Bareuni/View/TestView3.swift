@@ -18,7 +18,7 @@
 //    }
 //    
 //    // MARK: - 월 표시 뷰
-//    private var monthView: some View {
+//    private var monthVizew: some View {
 //        HStack(spacing: 30) {
 //            Button(
 //                action: {

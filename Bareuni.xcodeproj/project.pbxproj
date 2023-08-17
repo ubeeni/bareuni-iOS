@@ -83,6 +83,7 @@
 		3BCB5B6E2A82A22700F58C50 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B6D2A82A22700F58C50 /* DateValue.swift */; };
 		3BCB5B702A82A70E00F58C50 /* TestView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */; };
 		3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B712A83E96700F58C50 /* CityDictionary.swift */; };
+		3BCB5B942A8DDAF200F58C50 /* TestView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B932A8DDAF200F58C50 /* TestView4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		3BCB5B6D2A82A22700F58C50 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView3.swift; sourceTree = "<group>"; };
 		3BCB5B712A83E96700F58C50 /* CityDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityDictionary.swift; path = Bareuni/View/CityDictionary.swift; sourceTree = SOURCE_ROOT; };
+		3BCB5B932A8DDAF200F58C50 /* TestView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +325,7 @@
 				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
 				3B5AF6522A7095F600A94BF1 /* TestView2.swift */,
 				3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */,
+				3BCB5B932A8DDAF200F58C50 /* TestView4.swift */,
 				3BCB5B6D2A82A22700F58C50 /* DateValue.swift */,
 				10AEE93C2A70FCD7005833CE /* TalkView.swift */,
 				10AEE93E2A70FD03005833CE /* FAQView.swift */,
@@ -623,6 +626,7 @@
 				32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */,
 				32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */,
 				321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */,
+				3BCB5B942A8DDAF200F58C50 /* TestView4.swift in Sources */,
 				3BCB5B702A82A70E00F58C50 /* TestView3.swift in Sources */,
 				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
 				10C82FE12A76764C00ADF34E /* PostView.swift in Sources */,

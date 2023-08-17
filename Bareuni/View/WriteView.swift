@@ -14,6 +14,7 @@ struct WriteView: View {
     @State var selectedSatisfaction1 = ""
     @State var selectedSatisfaction2 = ""
     @State var selectedSatisfaction3 = ""
+    @Binding var isPresentingModal: Bool
     let placeholder = "Placeholder"
     
     @Environment(\.presentationMode) var
@@ -32,7 +33,7 @@ struct WriteView: View {
                         })
                         
                         Spacer()
-                        NavigationLink(destination: WriteView2(), label: {
+                        NavigationLink(destination: WriteView2(isPresentingModal: $isPresentingModal), label: {
                             HStack(alignment: .top, spacing: 8) {
                                 Text("다음")
                                     .font(
@@ -288,9 +289,8 @@ struct WriteView2: View {
     @State private var text: String = ""
     @State var isSelected1 = false
     @State var isSelected2 = false
+    @Binding var isPresentingModal: Bool
     @Environment(\.presentationMode) var presentationMode
-    
-    @StateObject private var modalState = ModalState()
 
     
     var body: some View {
@@ -425,7 +425,7 @@ struct WriteView2: View {
         }), trailing: Button(action: {
 
         }, label: {
-            NavigationLink(destination: FinishView(), label: {
+            NavigationLink(destination: FinishView(isPresentingModal: $isPresentingModal), label: {
                 HStack(alignment: .top, spacing: 8) {
                     Text("완료")
                         .font(
@@ -454,6 +454,10 @@ struct WriteView2: View {
 
 
 struct FinishView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var isPresentingModal: Bool
+    
     var body: some View {
         VStack {
             Image("brightness-alt-high").padding(.leading,15)
@@ -465,6 +469,11 @@ struct FinishView: View {
             
             Spacer().frame(height: 100)
         }.navigationBarBackButtonHidden(true)
+            .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            isPresentingModal = false // Dismiss the ModalView after 2 seconds
+                        }
+                    }
     }
 }
 
@@ -562,10 +571,10 @@ struct ImagePickerView: UIViewControllerRepresentable {
     }
 }
 
-struct WriteView_Previews: PreviewProvider {
-    static var previews: some View {
-        WriteView()
-        WriteView2()
-        FinishView()
-    }
-}
+//struct WriteView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WriteView()
+//        WriteView2()
+//        FinishView()
+//    }
+//}
