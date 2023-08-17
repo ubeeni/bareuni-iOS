@@ -13,6 +13,7 @@ struct InfoView: View {
     @State var cities = ContentView().selectedCities
     @StateObject var dentistInfo = DentistViewModel()
     
+    
     var body: some View {
         NavigationView {
             VStack{
