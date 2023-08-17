@@ -89,7 +89,7 @@
 		3BCB5B6E2A82A22700F58C50 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B6D2A82A22700F58C50 /* DateValue.swift */; };
 		3BCB5B702A82A70E00F58C50 /* TestView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */; };
 		3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B712A83E96700F58C50 /* CityDictionary.swift */; };
-		3BCB5B942A8DDAF200F58C50 /* TestView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B932A8DDAF200F58C50 /* TestView4.swift */; };
+		3BCB5BB02A8E12C700F58C50 /* HiddenTabBarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,7 +195,7 @@
 		3BCB5B6D2A82A22700F58C50 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView3.swift; sourceTree = "<group>"; };
 		3BCB5B712A83E96700F58C50 /* CityDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityDictionary.swift; path = Bareuni/Model/Dentist/CityDictionary.swift; sourceTree = SOURCE_ROOT; };
-		3BCB5B932A8DDAF200F58C50 /* TestView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView4.swift; sourceTree = "<group>"; };
+		3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenTabBarTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,14 +249,14 @@
 			isa = PBXGroup;
 			children = (
 				3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */,
-				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
-				3B5AF6522A7095F600A94BF1 /* TestView2.swift */,
-				3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */,
-				3BCB5B932A8DDAF200F58C50 /* TestView4.swift */,
 				3B9CB7172A5C508600AC56D0 /* ContentView.swift */,
 				3BB0ACEF2A6A17C00071D598 /* WriteView.swift */,
 				3BB0ACE72A657FEE0071D598 /* InfoView.swift */,
 				3BCB5B6D2A82A22700F58C50 /* DateValue.swift */,
+				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
+				3B5AF6522A7095F600A94BF1 /* TestView2.swift */,
+				3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */,
+				3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */,
 			);
 			path = Dentist;
 			sourceTree = "<group>";
@@ -642,6 +642,7 @@
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
 				32FC44302A8E0C6A00505C99 /* AccountInfoView.swift in Sources */,
 				3273943B2A875769001A739E /* ReservationHIstoryView.swift in Sources */,
+				3BCB5BB02A8E12C700F58C50 /* HiddenTabBarTest.swift in Sources */,
 				10AB8CE32A851CC8009B594E /* PostModel.swift in Sources */,
 				3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */,
 				1026BF4D2A5AA5C700955799 /* HomeViewController.swift in Sources */,
@@ -695,7 +696,6 @@
 				32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */,
 				32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */,
 				321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */,
-				3BCB5B942A8DDAF200F58C50 /* TestView4.swift in Sources */,
 				3BCB5B702A82A70E00F58C50 /* TestView3.swift in Sources */,
 				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
 				10C82FE12A76764C00ADF34E /* PostView.swift in Sources */,

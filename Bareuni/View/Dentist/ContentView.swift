@@ -17,6 +17,7 @@ struct ContentView: View {
     @State var isSelected = false
     @State var selectedCities: [String] = []
     
+    
     let cityDic = CityDictionary().cityDic
     let cityList = CityDictionary().cityList
     
