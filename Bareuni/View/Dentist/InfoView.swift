@@ -394,7 +394,7 @@ struct IntroduceView: View {
     @Binding var dentist: Dentist
     
     var body: some View {
-//        ScrollView{
+        ScrollView{
             VStack{
                 Text("진료시간")
                   .font(
@@ -482,7 +482,7 @@ struct IntroduceView: View {
         .frame(width: 348, height: 51, alignment: .center)
         .background(Color(red: 0, green: 0.58, blue: 1))
         .cornerRadius(9)
-//        }
+        }
     }
 }
 
