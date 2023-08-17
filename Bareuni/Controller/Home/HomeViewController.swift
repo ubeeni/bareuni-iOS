@@ -73,7 +73,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UITableViewDel
             
             cell2.cellRating.text = target2.rating
             cell2.cellContents.text = target2.contents
-            cell2.cellTag.text = target2.tag
             cell2.cellTime.text = target2.time
             
             return cell2
