@@ -71,6 +71,11 @@
 		32EB16E72A8341D80050F45F /* ChangingNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E62A8341D80050F45F /* ChangingNicknameView.swift */; };
 		32EB16E92A8358E50050F45F /* ChangingAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E82A8358E50050F45F /* ChangingAgeView.swift */; };
 		32EB16ED2A8378AF0050F45F /* NumberAuthHalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16EC2A8378AF0050F45F /* NumberAuthHalfSheet.swift */; };
+		32FC442E2A8E01FB00505C99 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC442D2A8E01FB00505C99 /* SettingView.swift */; };
+		32FC44302A8E0C6A00505C99 /* AccountInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC442F2A8E0C6A00505C99 /* AccountInfoView.swift */; };
+		32FC44322A8E0CC800505C99 /* AlarmSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC44312A8E0CC800505C99 /* AlarmSettingView.swift */; };
+		32FC44342A8E0CE600505C99 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC44332A8E0CE600505C99 /* PrivacyPolicyView.swift */; };
+		32FC44362A8E0D1C00505C99 /* DeletingAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC44352A8E0D1C00505C99 /* DeletingAccountView.swift */; };
 		3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5AF6502A708F2900A94BF1 /* BSImagePicker */; };
 		3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6522A7095F600A94BF1 /* TestView2.swift */; };
 		3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */; };
@@ -173,6 +178,11 @@
 		32EB16E62A8341D80050F45F /* ChangingNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingNicknameView.swift; sourceTree = "<group>"; };
 		32EB16E82A8358E50050F45F /* ChangingAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingAgeView.swift; sourceTree = "<group>"; };
 		32EB16EC2A8378AF0050F45F /* NumberAuthHalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAuthHalfSheet.swift; sourceTree = "<group>"; };
+		32FC442D2A8E01FB00505C99 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		32FC442F2A8E0C6A00505C99 /* AccountInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoView.swift; sourceTree = "<group>"; };
+		32FC44312A8E0CC800505C99 /* AlarmSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSettingView.swift; sourceTree = "<group>"; };
+		32FC44332A8E0CE600505C99 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		32FC44352A8E0D1C00505C99 /* DeletingAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletingAccountView.swift; sourceTree = "<group>"; };
 		3B5AF6522A7095F600A94BF1 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultingView.swift; sourceTree = "<group>"; };
 		3B9CB7172A5C508600AC56D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -465,6 +475,11 @@
 				3273943A2A875769001A739E /* ReservationHIstoryView.swift */,
 				3273943C2A8757A6001A739E /* PointView.swift */,
 				3273943E2A8757E9001A739E /* CustomerServiceView.swift */,
+				32FC442D2A8E01FB00505C99 /* SettingView.swift */,
+				32FC442F2A8E0C6A00505C99 /* AccountInfoView.swift */,
+				32FC44312A8E0CC800505C99 /* AlarmSettingView.swift */,
+				32FC44332A8E0CE600505C99 /* PrivacyPolicyView.swift */,
+				32FC44352A8E0D1C00505C99 /* DeletingAccountView.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -625,6 +640,7 @@
 				10AB8CE32A851CC8009B594E /* PostModel.swift in Sources */,
 				10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */,
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
+				32FC44302A8E0C6A00505C99 /* AccountInfoView.swift in Sources */,
 				3273943B2A875769001A739E /* ReservationHIstoryView.swift in Sources */,
 				10AB8CE32A851CC8009B594E /* PostModel.swift in Sources */,
 				3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */,
@@ -638,6 +654,7 @@
 				1014A0B32A6E604D00CE8170 /* CommunityMainView.swift in Sources */,
 				32EB16E12A8262A70050F45F /* MyPageMainView.swift in Sources */,
 				32EB16CF2A6E37BA0050F45F /* profileGuideViewController.swift in Sources */,
+				32FC442E2A8E01FB00505C99 /* SettingView.swift in Sources */,
 				3273943D2A8757A6001A739E /* PointView.swift in Sources */,
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
 				32EB16D32A6E3F850050F45F /* NicknameSettingViewController.swift in Sources */,
@@ -659,6 +676,7 @@
 				32EB16D52A6E4AB80050F45F /* DetailedProfileSettingViewController.swift in Sources */,
 				321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */,
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,
+				32FC44322A8E0CC800505C99 /* AlarmSettingView.swift in Sources */,
 				10AB8CE72A85216D009B594E /* WritePostView.swift in Sources */,
 				3BB0ACEC2A6685AA0071D598 /* DentistViewModel.swift in Sources */,
 				3BB0ACF02A6A17C00071D598 /* WriteView.swift in Sources */,
@@ -666,7 +684,9 @@
 				3BCB5B6E2A82A22700F58C50 /* DateValue.swift in Sources */,
 				102166532A69492A00DC6351 /* CommunityData.swift in Sources */,
 				10AB8CE92A8521A3009B594E /* CommentModel.swift in Sources */,
+				32FC44342A8E0CE600505C99 /* PrivacyPolicyView.swift in Sources */,
 				32BEFC422A83B74D00D11792 /* ChangingNumberAuthView.swift in Sources */,
+				32FC44362A8E0D1C00505C99 /* DeletingAccountView.swift in Sources */,
 				32EB16DB2A77D0610050F45F /* WelcomeProfileViewController.swift in Sources */,
 				32EB16E32A8291DE0050F45F /* MyInfoView.swift in Sources */,
 				3273943F2A8757E9001A739E /* CustomerServiceView.swift in Sources */,
