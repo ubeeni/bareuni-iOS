@@ -10,11 +10,23 @@ import SwiftUI
 struct CustomerServiceView: View {
     @State var searchContent: String = ""
     @State var slideBarLocation: Int = 1
-    @State private var inquiries: [inquiry] = [
-        inquiry(title: "예약 정보 변경", question: "예약 정보를 삭제하고 싶습니다.", answer: ""),
+    @State var first: Bool = true
+    
+    @State private var top10: [inquiry] = [
+        inquiry(title: "예약 정보 변경", question: "예약 정보를 삭제하고 싶습니다.", answer: "어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸"),
         inquiry(title: "병원 정보 수정", question: "병원 정보가 맞지 않는 것 같아서 수정하고 싶습니다.", answer: ""),
         inquiry(title: "예약 정보 변경", question: "예약 정보는 영구적으로 저장되는 건가요?", answer: "")
         ]
+    @State var inquiries: [inquiry] = []
+    @State private var reservation: [inquiry] = [
+        inquiry(title: "예약 정보 변경", question: "예약 정보를 삭제하고 싶습니다.", answer: "어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸"),
+        inquiry(title: "병원 정보 수정", question: "예약 정보는 영구적으로 저장되 는 건가요?", answer: ""),
+        inquiry(title: "예약 정보 변경", question: "예약 정보는 영구적으로 저장되는 건가요?", answer: "")
+        ]
+    @State private var hospital: [inquiry] = [
+        inquiry(title: "병원 정보 수정", question: "병원 정보가 맞지 않는 것 같아서 수정하고 싶습니다.", answer: "어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸"),
+        ]
+    
     var body: some View {
         VStack(alignment: .leading){
             Divider()
@@ -34,7 +46,9 @@ struct CustomerServiceView: View {
             HStack(alignment: .center){
                 Spacer()
                 Button(action: {
+                    first = false
                     slideBarLocation = 1
+                    inquiries = top10
                 }, label: {
                     VStack{
                         Text("TOP 10").font(.pretendard(.regular, size: 16)).foregroundColor(slideBarLocation == 1 ? .black: Color(UIColor(red: 0.67, green: 0.67, blue: 0.67, alpha: 1))
@@ -44,7 +58,11 @@ struct CustomerServiceView: View {
                 })
                 
                 Spacer()
-                Button(action: {slideBarLocation = 2}, label: {
+                Button(action: {
+                    first = false
+                    slideBarLocation = 2
+                    inquiries = reservation
+                }, label: {
                     VStack{
                         Text("예약 정보 변경").font(.pretendard(.regular, size: 16)).foregroundColor(slideBarLocation == 2 ? .black : Color(UIColor(red: 0.67, green: 0.67, blue: 0.67, alpha: 1)))
                         Rectangle().frame(width: 110, height: 4).foregroundColor(slideBarLocation == 2 ? Color("BackgroundBlue") : .white)
@@ -55,6 +73,7 @@ struct CustomerServiceView: View {
                 
                 Button(action: {
                     slideBarLocation = 3
+                    inquiries = hospital
                 }, label: {
                     VStack{
                         Text("병원 정보 수정").font(.pretendard(.regular, size: 16)).foregroundColor(slideBarLocation == 3 ? .black : Color(UIColor(red: 0.67, green: 0.67, blue: 0.67, alpha: 1)))
@@ -67,11 +86,17 @@ struct CustomerServiceView: View {
             }.padding(.top, 40).frame(height: 70)
             
             List(){
-                ForEach(inquiries, id: \.self.key) { inquiry in
-                    InquiryView(inquiry: inquiry)
-                        .listRowInsets(EdgeInsets())
+                
+
+
+                ForEach(first ? top10 : inquiries, id: \.self.key) { inquiry in
+                    disclouserView(inquiry: inquiry)
+                        .listRowInsets(EdgeInsets(top: 0, // make the top 0 to remove the spacing
+                                                              leading: 0,
+                                                              bottom: 0,
+                                                              trailing: 0))
                     
-                }
+                }.listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }.scrollContentBackground(.hidden).listStyle(.plain).listStyle(.grouped).listRowInsets(.init())
             
             
@@ -93,30 +118,37 @@ struct inquiry {
     let question: String
     let answer: String
 }
-struct InquiryView: View{
+struct disclouserView: View {
     let inquiry: inquiry
+    @State private var showDetails = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
-            Text(inquiry.title).font(.pretendard(.medium, size: 16)).foregroundColor(Color("BackgroundBlue")).padding(.top, 36).padding(.leading, 33)
-            
-            Text(inquiry.question).font(.pretendard(.regular, size: 16)).padding(.top, 20).padding(.leading, 33)
-            
-            
-            HStack{
-                Spacer()
-                Button(action: {}, label: {
-                    Image(systemName: "chevron.down").frame(width: 24, height: 24).foregroundColor(Color(UIColor(red: 0.65, green: 0.65, blue: 0.65, alpha: 1))).padding(.trailing, 14).padding(.bottom, 19)
-                })
+            DisclosureGroup(isExpanded: $showDetails, content: {
+                
+                VStack(alignment: .center){
+                    Text(inquiry.answer).padding(.all, 30).font(.pretendard(.regular, size: 16)).frame(maxWidth: .infinity)
+                }.frame(width: .infinity).background(Color(red: 0.95, green: 0.95, blue: 0.95))
             }
-            //separator full width로 적용하기
+                            ,label: {
+                VStack(alignment: .leading){
+                    Text(inquiry.title).font(.pretendard(.medium, size: 16)).foregroundColor(Color("BackgroundBlue")).padding(.top, 36).padding(.leading, 33)
+                    
+                    Text(inquiry.question).font(.pretendard(.regular, size: 16)).padding(.top, 20).padding(.leading, 33).padding(.bottom, 33)
+                }.padding(.trailing, 14)
+                
+            }).accentColor(Color(UIColor(red: 0.65, green: 0.65, blue: 0.65, alpha: 1)))
+            
         }.alignmentGuide(.listRowSeparatorLeading) { viewDimensions in
             
             // 2
             return 0
         }
     }
+    
 }
+
+
 
 struct CustomerServiceView_Previews: PreviewProvider {
     static var previews: some View {
