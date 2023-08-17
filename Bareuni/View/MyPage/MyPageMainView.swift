@@ -105,7 +105,7 @@ struct MyPageMainView: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {print("Button1")}){
+                    NavigationLink(destination: SettingView()){
                         Image("setting")
                             .resizable()
                             .frame(width: 32, height: 32)

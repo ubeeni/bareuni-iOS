@@ -70,6 +70,7 @@
 		32EB16E72A8341D80050F45F /* ChangingNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E62A8341D80050F45F /* ChangingNicknameView.swift */; };
 		32EB16E92A8358E50050F45F /* ChangingAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16E82A8358E50050F45F /* ChangingAgeView.swift */; };
 		32EB16ED2A8378AF0050F45F /* NumberAuthHalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB16EC2A8378AF0050F45F /* NumberAuthHalfSheet.swift */; };
+		32FC442E2A8E01FB00505C99 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC442D2A8E01FB00505C99 /* SettingView.swift */; };
 		3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5AF6502A708F2900A94BF1 /* BSImagePicker */; };
 		3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6522A7095F600A94BF1 /* TestView2.swift */; };
 		3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */; };
@@ -171,6 +172,7 @@
 		32EB16E62A8341D80050F45F /* ChangingNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingNicknameView.swift; sourceTree = "<group>"; };
 		32EB16E82A8358E50050F45F /* ChangingAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingAgeView.swift; sourceTree = "<group>"; };
 		32EB16EC2A8378AF0050F45F /* NumberAuthHalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAuthHalfSheet.swift; sourceTree = "<group>"; };
+		32FC442D2A8E01FB00505C99 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		3B5AF6522A7095F600A94BF1 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultingView.swift; sourceTree = "<group>"; };
 		3B9CB7172A5C508600AC56D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				3273943A2A875769001A739E /* ReservationHIstoryView.swift */,
 				3273943C2A8757A6001A739E /* PointView.swift */,
 				3273943E2A8757E9001A739E /* CustomerServiceView.swift */,
+				32FC442D2A8E01FB00505C99 /* SettingView.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				1014A0B32A6E604D00CE8170 /* CommunityMainView.swift in Sources */,
 				32EB16E12A8262A70050F45F /* MyPageMainView.swift in Sources */,
 				32EB16CF2A6E37BA0050F45F /* profileGuideViewController.swift in Sources */,
+				32FC442E2A8E01FB00505C99 /* SettingView.swift in Sources */,
 				3273943D2A8757A6001A739E /* PointView.swift in Sources */,
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
 				32EB16D32A6E3F850050F45F /* NicknameSettingViewController.swift in Sources */,
