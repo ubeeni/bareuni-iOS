@@ -57,22 +57,24 @@ struct SettingView: View {
                         
                     }.padding(.top, 20).padding(.trailing, 20)
                     
-                    HStack() {
-                        Text("앱 잠금")
-                            .font(
-                                Font.custom("Pretendard", size: 16)
-                                    .weight(.medium)
-                            )
-                            .kerning(0.16)
-                            .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23))
-                        
-                        Spacer()
-                        
-                        Toggle(isOn: $isLocked, label: { })
-                            .padding()
-                            .toggleStyle(SwitchToggleStyle(tint: Color("BackgroundBlue")))
-                        
-                    }.padding(.top, 20).padding(.trailing, 20)
+                    NavigationLink(destination: AlarmSettingView()){
+                        HStack() {
+                            Text("앱 잠금")
+                                .font(
+                                    Font.custom("Pretendard", size: 16)
+                                        .weight(.medium)
+                                )
+                                .kerning(0.16)
+                                .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23))
+                            
+                            Spacer()
+                            
+                            Toggle(isOn: $isLocked, label: { })
+                                .padding()
+                                .toggleStyle(SwitchToggleStyle(tint: Color("BackgroundBlue")))
+                            
+                        }.padding(.top, 20).padding(.trailing, 20)
+                    }
                     
                     Text("앱 정보")
                         .font(
@@ -81,21 +83,22 @@ struct SettingView: View {
                         )
                         .kerning(0.12)
                         .foregroundColor(Color(red: 0.5, green: 0.51, blue: 0.52)).padding(.top, 40)
-                    
-                    HStack() {
-                        Text("개인정보 처리방침")
-                            .font(
-                                Font.custom("Pretendard", size: 16)
-                                    .weight(.medium)
-                            )
-                            .kerning(0.16)
-                            .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23))
-                        
-                        Spacer()
-                        
-                        Image("ArrowBack").frame(width: 15, height: 15)
-                        
-                    }.padding(.top, 25).padding(.trailing, 20)
+                    NavigationLink(destination: PrivacyPolicyView()){
+                        HStack() {
+                            Text("개인정보 처리방침")
+                                .font(
+                                    Font.custom("Pretendard", size: 16)
+                                        .weight(.medium)
+                                )
+                                .kerning(0.16)
+                                .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23))
+                            
+                            Spacer()
+                            
+                            Image("ArrowBack").frame(width: 15, height: 15)
+                            
+                        }.padding(.top, 25).padding(.trailing, 20)
+                    }
                     
                     Group(){
                         HStack() {

@@ -68,7 +68,7 @@ struct AlarmSettingView: View {
                     
                     Spacer()
                     
-                    Toggle(isOn: $recommendAlarm, label: { })
+                    Toggle(isOn: $sendSMS, label: { })
                         .padding()
                         .toggleStyle(SwitchToggleStyle(tint: Color("BackgroundBlue")))
                     
@@ -82,7 +82,7 @@ struct AlarmSettingView: View {
                     
                     Spacer()
                     
-                    Toggle(isOn: $generalAlarm, label: { })
+                    Toggle(isOn: $sendEmail, label: { })
                         .padding()
                         .toggleStyle(SwitchToggleStyle(tint: Color("BackgroundBlue")))
                     
