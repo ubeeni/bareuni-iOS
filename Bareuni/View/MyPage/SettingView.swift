@@ -21,14 +21,16 @@ struct SettingView: View {
                             .weight(.semibold))
                         .kerning(0.12)
                         .foregroundColor(Color(red: 0.5, green: 0.51, blue: 0.52))
-                    NavigationLink(destination: SettingView()){
-                        Text("계정 정보")
-                            .font(
-                                Font.custom("Pretendard", size: 16)
-                                    .weight(.medium)
-                            )
-                            .kerning(0.16)
-                            .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23)).padding(.top, 20)
+                    NavigationLink(destination: AccountInfoView()){
+
+                            Text("계정 정보")
+                                .font(
+                                    Font.custom("Pretendard", size: 16)
+                                        .weight(.medium)
+                                )
+                                .kerning(0.16)
+                                .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23)).padding(.top, 20).frame(maxWidth: .infinity, alignment: .leading)
+                        
                     }
                     
                     
@@ -160,7 +162,7 @@ struct SettingView: View {
             
             
             
-        }.navigationBarTitleDisplayMode(.inline)
+        }.navigationBarTitle("", displayMode: .inline).accentColor(.gray)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("설정")
