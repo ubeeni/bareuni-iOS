@@ -13,13 +13,21 @@ struct ChangingPasswordView: View {
     @State var authNumber = ""
     @State var timeRemaining = 180
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    @State var currentPW: String = ""
+    @State var newPW: String = ""
+    @State var newPWForCheck: String = ""
+
+    @State var isCurrentPWHidden: Bool = true
+    @State var isNewPWHidden: Bool = true
+    @State var isCheckPWHidden: Bool = true
 
     
     var body: some View {
         VStack(alignment: .leading){
             HStack{
                 Spacer()
-                Text("전화번호 인증").font(.custom("Pretendard-Medium", size: 20)).padding(.leading, 24)
+                Text("비밀번호 변경").font(.custom("Pretendard-Medium", size: 20)).padding(.leading, 24)
                 Spacer()
                 Button(action: {
                     dismiss()
@@ -30,50 +38,82 @@ struct ChangingPasswordView: View {
             }.frame(height: 40)
             
             VStack(alignment: .leading){
-                Text("전화번호").font(.custom("Pretendard-Medium", size: 16)).padding(.leading, 8)
+                Text("현재 비밀번호* ")
+                  .font(
+                    Font.custom("Pretendard", size: 14)
+                      .weight(.medium)
+                  )
+                  .multilineTextAlignment(.center)
+                  .foregroundColor(Color(red: 0.28, green: 0.28, blue: 0.28))
                 
-                HStack{
-                    TextField("010-0000-0000", text: $phoneNumber)
-                        .padding(16)
-                        .foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color(UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1)), lineWidth: 0.5)
-                        ).frame(height: 48).padding(.top, 8)
-                    Button(action: {
-                        
-                    }) {
-                        Text("인증")
-                            .font(.custom("Pretendard-Medium", size: 14))
-                            .frame(width: 56, height: 49)
-                            .background(Color.white).foregroundColor(Color("BackgroundBlue"))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke( Color("BackgroundBlue"), lineWidth: 0.5)
-                                    .opacity(0.6)
-                            )
-                    }.disabled(!validatePhoneNumber(phoneNumber))
-                }
-                Text("인증번호").font(.custom("Pretendard-Medium", size: 16)).padding(.leading, 8).padding(.top, 35)
-                
-                HStack{
-                    TextField("", text: $authNumber)
-                        .padding(16)
-                        .keyboardType(.decimalPad)
-                        .foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color(UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1)), lineWidth: 0.5)
-                        ).frame(height: 48).padding(.top, 8)
-                    
-                    Text("\(timeRemaining / 60) :" + String(format: "%02d", timeRemaining % 60)).foregroundColor(Color("BackgroundBlue")).font(.custom("Pretendard-Regular", size: 16)).padding(.leading, 23).onReceive(timer) { _ in
-                        if self.timeRemaining > 0 {
-                            self.timeRemaining -= 1
-                        }
+                ZStack(alignment: .trailing){
+                    if isCurrentPWHidden {
+                        SecureField("", text: $currentPW).textFieldStyle(BottomBorderTextfieldStyle())
                     }
-                }
+                    else{
+                        TextField("", text: $currentPW).textFieldStyle(BottomBorderTextfieldStyle())
+                    }
+                    
+                    Button(action: {
+                        isCurrentPWHidden.toggle()
+                    }, label: {
+                        Image(isCurrentPWHidden ? "hide" : "unhide").frame(width:25, height: 25)
+                    }).padding(.bottom, 12)
+                }.padding(.top, 15).padding(.leading, 5)
                 
-            }.padding(.top, 43)
+                Text("새 비밀번호* ")
+                  .font(
+                    Font.custom("Pretendard", size: 14)
+                      .weight(.medium)
+                  )
+                  .multilineTextAlignment(.center)
+                  .foregroundColor(Color(red: 0.28, green: 0.28, blue: 0.28)).padding(.top, 20)
+                
+                ZStack(alignment: .trailing){
+                    if isNewPWHidden {
+                        SecureField("", text: $newPW).textFieldStyle(BottomBorderTextfieldStyle())
+                    }
+                    else{
+                        TextField("", text: $newPW).textFieldStyle(BottomBorderTextfieldStyle())
+                    }
+                    
+                    Button(action: {
+                        isNewPWHidden.toggle()
+                    }, label: {
+                        Image(isNewPWHidden ? "hide" : "unhide").frame(width:25, height: 25)
+                    }).padding(.bottom, 12)
+                }.padding(.top, 15).padding(.leading, 5)
+                
+                Text("i.영문, 숫자, 특수문자를 모두 포함하여 8~20자로 입력해주세요.")
+                  .font(Font.custom("Pretendard", size: 12))
+                  .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62)).lineLimit(2).padding(.leading, 5)
+                
+                Text("새 비밀번호 확인* ")
+                  .font(
+                    Font.custom("Pretendard", size: 14)
+                      .weight(.medium)
+                  )
+                  .multilineTextAlignment(.center)
+                  .foregroundColor(Color(red: 0.28, green: 0.28, blue: 0.28)).padding(.top, 20)
+                
+                
+                ZStack(alignment: .trailing){
+                    if isCheckPWHidden {
+                        SecureField("", text: $newPWForCheck).textFieldStyle(BottomBorderTextfieldStyle())
+                    }
+                    else{
+                        TextField("", text: $newPWForCheck).textFieldStyle(BottomBorderTextfieldStyle())
+                    }
+                    
+                    Button(action: {
+                        isCheckPWHidden.toggle()
+                    }, label: {
+                        Image(isCheckPWHidden ? "hide" : "unhide").frame(width:25, height: 25)
+                    }).padding(.bottom, 12)
+                }.padding(.top, 15).padding(.leading, 5)
+                
+                
+            }.padding(.top, 50)
             
             Button(action: {
                 dismiss()
@@ -81,9 +121,9 @@ struct ChangingPasswordView: View {
                     ZStack {
                             Rectangle().frame( height: 51)
                                 .cornerRadius(4)
-                                .foregroundColor(Color("BackgroundBlue"))
+                                .foregroundColor(newPW.validatePassword() && newPW.isNewPWConfirmed(newPWForCheck) && !currentPW.isEmpty ? Color("BackgroundBlue") : Color("disabledBtnColor"))
                         
-                        Text("완료")
+                        Text("설정 완료")
                             .font(
                                 Font.custom("Pretendard-SemiBold", size: 16)
                                     .weight(.bold)
@@ -91,25 +131,54 @@ struct ChangingPasswordView: View {
                             .multilineTextAlignment(.trailing)
                             .foregroundColor(.white)
                     }
-            }).padding(.top, 49).disabled(!validateAuthNum(authNumber))
+            }).padding(.top, 34).disabled(!(newPW.validatePassword() && newPW.isNewPWConfirmed(newPWForCheck) && !currentPW.isEmpty))
             
             Spacer()
             
-        }.padding(.trailing, 24).padding(.leading, 24).padding(.top, 35)
+        }.padding(.trailing, 24).padding(.leading, 26).padding(.top, 10)
     }
-    // 핸드폰 번호 정규성 체크
-    func validatePhoneNumber(_ input: String) -> Bool {
-        
-        let regex = "^01[0-1, 7][0-9]{7,8}$"
-        
-        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: input)
-    }
-    func validateAuthNum(_ input: String) -> Bool {
-        let regex = "^[0-9]{4}$"
-        
-        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: input)
+    func hidePassword(_ count: Int) -> String{
+        String(repeating: "•", count: count)
     }
    
+}
+extension String {
+    // 핸드폰 번호 정규성 체크
+    func isNewPWConfirmed(_ pwForCheck: String) -> Bool {
+        
+        if(self == pwForCheck){
+            return true
+        }else{
+            return false
+        }
+    }
+    func validatePassword() -> Bool {
+        let regex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}"
+        
+        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)
+    }
+}
+
+
+struct BottomBorderTextfieldStyle: TextFieldStyle {
+    
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        
+        ZStack(alignment: .bottom) {
+            Rectangle()
+              .foregroundColor(.clear)
+              .frame( height: 1)
+              .background(Color(red: 0.55, green: 0.55, blue: 0.55))
+            
+            // 텍스트필드
+            configuration
+                .font(
+                  Font.custom("Pretendard", size: 15)
+                    .weight(.medium)
+                )
+                .padding(.trailing, 30).padding(.leading, 10).padding(.bottom, 5)
+        }
+    }
 }
 
 struct ChangingPasswordView_Previews: PreviewProvider {
