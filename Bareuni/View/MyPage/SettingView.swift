@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingView: View {
     @State var isLocked: Bool = true
+    @State var isShowLogoutAlert: Bool = false
     var body: some View {
         VStack(alignment: .leading){
             Divider()
@@ -129,20 +130,35 @@ struct SettingView: View {
                             )
                             .kerning(0.12)
                             .foregroundColor(Color(red: 0.81, green: 0.81, blue: 0.81))
-                        HStack() {
-                            Text("로그아웃")
-                                .font(
-                                    Font.custom("Pretendard", size: 16)
-                                        .weight(.medium)
-                                )
-                                .kerning(0.16)
-                                .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23))
-                            
-                            Spacer()
-                            
-                            Image("ArrowBack").frame(width: 15, height: 15)
-                            
-                        }.padding(.top, 25).padding(.trailing, 20)
+                        Button(action: {
+                            isShowLogoutAlert.toggle()
+                        }, label: {
+                            HStack() {
+                                Text("로그아웃")
+                                    .font(
+                                        Font.custom("Pretendard", size: 16)
+                                            .weight(.medium)
+                                    )
+                                    .kerning(0.16)
+                                    .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23))
+                                
+                                Spacer()
+                                
+                                Image("ArrowBack").frame(width: 15, height: 15)
+                                
+                            }.padding(.top, 25).padding(.trailing, 20)
+                        }).alert(isPresented: $isShowLogoutAlert) {
+                            Alert(
+                                        title: Text("로그아웃 하시겠습니까?"),
+                                        message: Text(""),
+                                        primaryButton: .destructive(
+                                            Text("네")
+                                        ),
+                                        secondaryButton: .default(
+                                            Text("아니요").foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
+                                        )
+                                    )
+                        }
                       
                         HStack() {
                             Text("회원 탈퇴")
