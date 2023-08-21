@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingView: View {
     @State var isLocked: Bool = true
     @State var isShowLogoutAlert: Bool = false
+    @State var showingDeletingUser: Bool = false
     var body: some View {
         VStack(alignment: .leading){
             Divider()
@@ -160,20 +161,26 @@ struct SettingView: View {
                                     )
                         }
                       
-                        HStack() {
-                            Text("회원 탈퇴")
-                                .font(
-                                    Font.custom("Pretendard", size: 16)
-                                        .weight(.medium)
-                                )
-                                .kerning(0.16)
-                                .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23))
-                            
-                            Spacer()
-                            
-                            Image("ArrowBack").frame(width: 15, height: 15)
-                            
-                        }.padding(.top, 25).padding(.trailing, 20)
+                        Button(action: {
+                            showingDeletingUser.toggle()
+                        }, label: {
+                            HStack() {
+                                Text("회원 탈퇴")
+                                    .font(
+                                        Font.custom("Pretendard", size: 16)
+                                            .weight(.medium)
+                                    )
+                                    .kerning(0.16)
+                                    .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23))
+                                
+                                Spacer()
+                                
+                                Image("ArrowBack").frame(width: 15, height: 15)
+                                
+                            }.padding(.top, 25).padding(.trailing, 20)
+                        }).fullScreenCover(isPresented: $showingDeletingUser) {
+                            DeletingAccountView()
+                        }
                     }
                 }.padding(.leading, 24)
             }.padding(.top, 30)

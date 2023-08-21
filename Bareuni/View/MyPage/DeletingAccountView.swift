@@ -90,8 +90,7 @@ struct DeletingAccountView: View {
 
                 
                 Button(action: {
-                    //dismiss()
-                    print(isEnabledBtn())
+                    dismiss()
                 }, label: {
                         ZStack {
                                 Rectangle().frame( height: 51)

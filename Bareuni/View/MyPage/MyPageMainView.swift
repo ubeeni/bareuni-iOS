@@ -49,10 +49,12 @@ struct MyPageMainView: View {
                         }.frame(width: 66, height: 54)
                     }
                     Button(action: {}) {
-                        VStack {
-                            Image("note")
-                            Text("예약 내역").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color.black)
-                        }.frame(width: 66, height: 54)
+                        NavigationLink(destination: ReservationHIstoryView()) {
+                            VStack {
+                                Image("note")
+                                Text("예약 내역").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color.black)
+                            }.frame(width: 66, height: 54)
+                        }
                     }
                     
                 }.frame( width: 244, height: 66).padding(.top, 36)
