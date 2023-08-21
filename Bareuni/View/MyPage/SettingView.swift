@@ -43,23 +43,24 @@ struct SettingView: View {
                         )
                         .kerning(0.12)
                         .foregroundColor(Color(red: 0.5, green: 0.51, blue: 0.52)).padding(.top, 55)
-                    
-                    HStack() {
-                        Text("알림 설정")
-                            .font(
-                                Font.custom("Pretendard", size: 16)
-                                    .weight(.medium)
-                            )
-                            .kerning(0.16)
-                            .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23))
-                        
-                        Spacer()
-                        
-                        Image("ArrowBack").frame(width: 15, height: 15)
-                        
-                    }.padding(.top, 20).padding(.trailing, 20)
-                    
                     NavigationLink(destination: AlarmSettingView()){
+                        HStack() {
+                            Text("알림 설정")
+                                .font(
+                                    Font.custom("Pretendard", size: 16)
+                                        .weight(.medium)
+                                )
+                                .kerning(0.16)
+                                .foregroundColor(Color(red: 0.22, green: 0.23, blue: 0.23))
+                            
+                            Spacer()
+                            
+                            Image("ArrowBack").frame(width: 15, height: 15)
+                            
+                        }.padding(.top, 20).padding(.trailing, 20)
+                    }
+                    
+                    
                         HStack() {
                             Text("앱 잠금")
                                 .font(
@@ -76,7 +77,7 @@ struct SettingView: View {
                                 .toggleStyle(SwitchToggleStyle(tint: Color("BackgroundBlue")))
                             
                         }.padding(.top, 20).padding(.trailing, 20)
-                    }
+                    
                     
                     Text("앱 정보")
                         .font(

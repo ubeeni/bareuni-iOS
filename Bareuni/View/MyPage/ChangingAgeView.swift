@@ -128,7 +128,7 @@ struct ChangingAgeView: View {
                         ZStack {
                                 Rectangle().frame( height: 51)
                                     .cornerRadius(4)
-                                    .foregroundColor(Color("BackgroundBlue"))
+                                    .foregroundColor((isSelected[0] || isSelected[1] || isSelected[2] || isSelected[3] || isSelected[4] || isSelected[5]) ? Color("BackgroundBlue") : Color("disabledBtnColor"))
                             
                             Text("설정 완료")
                                 .font(
@@ -138,7 +138,7 @@ struct ChangingAgeView: View {
                                 .multilineTextAlignment(.trailing)
                                 .foregroundColor(.white)
                         }
-                }).padding(.top, 34)
+                }).padding(.top, 34).disabled(!(isSelected[0] || isSelected[1] || isSelected[2] || isSelected[3] || isSelected[4] || isSelected[5]))
                 
                 Spacer()
             }.padding(.leading, 24).padding(.trailing, 24).padding(.top, 43)

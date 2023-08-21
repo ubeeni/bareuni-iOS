@@ -71,14 +71,14 @@ struct MyPageMainView: View {
                             Image("ArrowBack").frame(width: 15, height: 15)
                         }
                     }.frame(height: 35)
-                    Button(action: {}) {
-                        HStack(spacing: 8){
-                            Text("바른이 칼럼").font(.custom("Pretendard-Medium", size: 16)).foregroundColor(Color.black)
-                            Spacer()
-                            
-                            Image("ArrowBack").frame(width: 15, height: 15)
-                        }
-                    }.frame(height: 35)
+//                    Button(action: {}) {
+//                        HStack(spacing: 8){
+//                            Text("바른이 칼럼").font(.custom("Pretendard-Medium", size: 16)).foregroundColor(Color.black)
+//                            Spacer()
+//
+//                            Image("ArrowBack").frame(width: 15, height: 15)
+//                        }
+//                    }.frame(height: 35)
                     
                     NavigationLink(destination: CustomerServiceView()) {
                         HStack(spacing: 8){

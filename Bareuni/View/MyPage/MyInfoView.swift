@@ -94,7 +94,7 @@ struct MyInfoView: View {
                         Text("-").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
                 }).sheet(isPresented: $showNumberSheet){
-                    NumberAuthHalfSheet().presentationDetents([.height(544), .fraction(0.75)]).presentationDragIndicator(.hidden)
+                    NumberAuthHalfSheet( showSelfSheet: $showingSexSheet).presentationDetents([.height(544), .fraction(0.75)]).presentationDragIndicator(.hidden)
                             }
                 
                 
@@ -131,8 +131,9 @@ struct MyInfoView: View {
     }
 }
 
-struct MyInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyInfoView()
-    }
-}
+//struct MyInfoView_Previews: PreviewProvider {
+//    let show: Bool = false
+//    static var previews: some View {
+//        MyInfoView(showNumberSheet: show)
+//    }
+//}

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChangingNumberAuthView: View {
     @Environment(\.dismiss) var dismiss
+    
     @State var phoneNumber: String = ""
     @State var authNumber = ""
     @State var timeRemaining = 180
@@ -66,7 +67,7 @@ struct ChangingNumberAuthView: View {
                                 .stroke(Color(UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1)), lineWidth: 0.5)
                         ).frame(height: 48).padding(.top, 8)
                     
-                    Text("\(timeRemaining / 60) :" + String(format: "%02d", timeRemaining % 60)).foregroundColor(Color("BackgroundBlue")).font(.custom("Pretendard-Regular", size: 16)).padding(.leading, 23).onReceive(timer) { _ in
+                    Text("\(timeRemaining / 60) : " + String(format: "%02d", timeRemaining % 60)).foregroundColor(Color("BackgroundBlue")).font(.custom("Pretendard-Regular", size: 16)).padding(.leading, 23).onReceive(timer) { _ in
                         if self.timeRemaining > 0 {
                             self.timeRemaining -= 1
                         }
@@ -81,7 +82,7 @@ struct ChangingNumberAuthView: View {
                     ZStack {
                             Rectangle().frame( height: 51)
                                 .cornerRadius(4)
-                                .foregroundColor(Color("BackgroundBlue"))
+                                .foregroundColor((authNumber.count != 0) ? Color("BackgroundBlue") : Color("disabledBtnColor"))
                         
                         Text("완료")
                             .font(
@@ -91,7 +92,7 @@ struct ChangingNumberAuthView: View {
                             .multilineTextAlignment(.trailing)
                             .foregroundColor(.white)
                     }
-            }).padding(.top, 49).disabled(!validateAuthNum(authNumber))
+            }).padding(.top, 49).disabled((authNumber.count == 0))
             
             Spacer()
             

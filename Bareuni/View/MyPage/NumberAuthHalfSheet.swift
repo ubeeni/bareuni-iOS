@@ -13,7 +13,7 @@ struct NumberAuthHalfSheet: View {
     @State var isConfirmed = false
     @State var btnsSelected = Array(repeating: false, count: 7)
     @Environment(\.dismiss) var dismiss
-    
+    @Binding var showSelfSheet: Bool
     var body: some View {
         VStack(alignment: .leading){
             HStack(alignment: .top){
@@ -67,7 +67,9 @@ struct NumberAuthHalfSheet: View {
                 }
                 
                 Button(action: {
+                    
                     self.isConfirmed.toggle()
+
                 }, label: {
                         ZStack {
                                 Rectangle().frame( height: 51)
@@ -199,8 +201,9 @@ struct moreDetailedBtn: View{
     }
 }
 
-struct NumberAuthHalfSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        NumberAuthHalfSheet()
-    }
-}
+//struct NumberAuthHalfSheet_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        NumberAuthHalfSheet(, showSelfSheet: showSelfSheet)
+//    }
+//}
