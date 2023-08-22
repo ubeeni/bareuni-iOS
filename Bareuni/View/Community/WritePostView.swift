@@ -99,7 +99,7 @@ struct WritePostView: View {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd HH:mm"
         let currentTimeString = formatter.string(from: currentDate)
-        let newPost = Post(content: postContent, modificationTime: currentTimeString, likeCount: 0, comments: 0, isLiked: false)
+        let newPost = Post(authorName: "바른이", content: postContent, modificationTime: currentTimeString, likeCount: 0, comments: 0, isLiked: false)
         postviewModel.posts.append(newPost)
         
         presentationMode.wrappedValue.dismiss()

@@ -16,14 +16,6 @@ struct PostCell: View {
         self.index = index
     }
     
-    var authorNames: [String] = [
-        "바른이",
-        "못난이",
-        "이아파",
-        "토꺵이굴",
-        "교정이",
-    ]
-    
     var body: some View {
         NavigationLink(destination: PostDetailView(postviewModel: postviewModel, index: index)) {
             VStack(alignment: .leading, spacing: 0) {
@@ -33,7 +25,7 @@ struct PostCell: View {
                         .frame(width: 40, height: 40)
                         .clipShape(Circle())
                     
-                    Text(authorNames[index])
+                    Text(postviewModel.posts[index].authorName)
                         .font(.custom("Pretendard-SemiBold", size: 12))
                         .foregroundColor(Color("212B36"))
                 }
@@ -119,7 +111,7 @@ struct PostDetailView: View {
                         .clipShape(Circle())
                     
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("바른이")
+                        Text(postviewModel.posts[index].authorName)
                             .font(.custom("Pretendard-Medium", size: 12))
                         Text(postviewModel.posts[index].modificationTime)
                             .font(.custom("Pretendard-Regular", size: 12))
@@ -142,13 +134,17 @@ struct PostDetailView: View {
                 
                 HStack {
                     Button(action: {
-                        isLiked.toggle()
-                        likeCount += isLiked ? 1 : -1
+                        postviewModel.posts[index].isLiked.toggle()
+                        if postviewModel.posts[index].isLiked {
+                            postviewModel.posts[index].likeCount += 1
+                        } else {
+                            postviewModel.posts[index].likeCount -= 1
+                        }
                     }) {
-                        Image(systemName: isLiked ? "heart.fill" : "heart")
-                            .foregroundColor(isLiked ? Color.red : Color("9Egray"))
+                        Image(systemName: postviewModel.posts[index].isLiked ? "heart.fill" : "heart")
+                            .foregroundColor(postviewModel.posts[index].isLiked ? Color.red : Color("9Egray"))
                     }
-                    Text("좋아요 \(likeCount)")
+                    Text("좋아요 \(postviewModel.posts[index].likeCount)")
                         .font(.custom("Pretendard-Medium", size: 10))
                         .foregroundColor(Color("9Egray"))
                     
