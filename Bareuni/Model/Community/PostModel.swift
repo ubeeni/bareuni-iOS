@@ -9,6 +9,7 @@ import Foundation
 
 struct Post: Identifiable {
     var id = UUID()
+    var authorName: String
     var content: String
     var modificationTime: String
     var likeCount: Int
