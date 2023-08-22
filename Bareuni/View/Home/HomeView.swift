@@ -41,18 +41,15 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 20) {
-                            ForEach(1...3, id: \.self) { index in
-                                Image("AD\(index)")
-                                    .resizable()
-                                    .scaledToFit() // 이미지 비율 유지하며 화면에 맞춤
-                                    .frame(width: UIScreen.main.bounds.width - 40, height: 135)
-                                    .cornerRadius(10)
-                            }
+                    TabView {
+                        ForEach(1...3, id: \.self) { index in
+                            Image("AD\(index)")
+                                .resizable()
                         }
-                        .padding(.horizontal, 20)
                     }
+                    .cornerRadius(10)
+                    .frame(width: 342, height: 131)
+                    .tabViewStyle(.page)
                     .padding(.vertical, 20)
                     
                     NavigationLink(destination: InfoView()) {
@@ -68,7 +65,6 @@ struct HomeView: View {
                             Spacer()
                         }
                     }
-                    .padding(.top, 20)
                     
                     VStack {
                         ForEach(dentistList) { dentist in
@@ -99,11 +95,11 @@ struct HomeView: View {
                     
                     ZStack {
                         Rectangle()
-                          .foregroundColor(.clear)
-                          .frame(width: 355, height: 216)
-                          .background(.white)
-                          .cornerRadius(6)
-                          .shadow(color: .black.opacity(0.1), radius: 9, x: 0, y: 4)
+                            .foregroundColor(.clear)
+                            .frame(width: 355, height: 216)
+                            .background(.white)
+                            .cornerRadius(6)
+                            .shadow(color: .black.opacity(0.1), radius: 9, x: 0, y: 4)
                         
                         VStack {
                             ForEach(communityList) { community in
@@ -112,7 +108,6 @@ struct HomeView: View {
                         }
                         .padding(.bottom, 8)
                     }
-            
                 }
             }
             .toolbar {
@@ -127,7 +122,6 @@ struct HomeView: View {
         }
     }
 }
-
 
 struct DentistCell: View {
     let dentist: Dentists
