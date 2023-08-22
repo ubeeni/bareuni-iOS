@@ -25,6 +25,10 @@ class SignUpViewController: UIViewController {
     }
     
     
+    @IBAction func nextBtnDidTap(_ sender: Any) {
+        UserDefaults.standard.set(emailTF.text, forKey: "email")
+    }
+    
     @IBOutlet weak var nicknameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     

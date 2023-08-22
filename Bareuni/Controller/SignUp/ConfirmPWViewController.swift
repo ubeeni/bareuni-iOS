@@ -20,6 +20,10 @@ class ConfirmPWViewController: UIViewController, UITextFieldDelegate{
         self.setBackBtn()
     }
     
+    @IBAction func nextBtnDidTap(_ sender: Any) {
+        UserDefaults.standard.set(pwTextField.text, forKey: "password")
+    }
+    
     
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var anotherPWTextField: UITextField!
