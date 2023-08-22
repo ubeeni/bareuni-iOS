@@ -65,6 +65,7 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
                     
                     self.profileImageView.image = image
                     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
+                    self.profileImageView.contentMode = .scaleToFill
                     self.profileImageView.clipsToBounds = true
                     self.profileImageView.layer.borderWidth = 0.5
                     self.profileImageView.layer.borderColor = UIColor(red: 0.637, green: 0.637, blue: 0.637, alpha: 1).cgColor
