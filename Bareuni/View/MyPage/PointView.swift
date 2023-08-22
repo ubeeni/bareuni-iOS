@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct PointView: View {
-    @State var pointAmount: Int = 5000
-    @State var pointList: [pointModel] = [pointModel(date: "05.13", title: "신규 가입 포인트", expiredDate: "2023.08.11", amount: 5000), pointModel(date: "05.13", title: "신규 가입 포인트", expiredDate: "2023.08.11", amount: 5000)]
+    @State var pointAmount: Int = 6000
+    @State var pointList: [pointModel] = [pointModel(date: "05.13", title: "신규 가입 포인트", expiredDate: "2023.08.11", amount: 5000), pointModel(date: "05.13", title: "첫 후기 작성 포인트", expiredDate: "2023.08.11", amount: 1000)]
     var body: some View {
         VStack(alignment: .leading){
             Divider()

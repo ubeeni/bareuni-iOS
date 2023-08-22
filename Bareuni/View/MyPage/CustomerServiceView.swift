@@ -19,12 +19,12 @@ struct CustomerServiceView: View {
         ]
     @State var inquiries: [inquiry] = []
     @State private var reservation: [inquiry] = [
-        inquiry(title: "예약 정보 변경", question: "예약 정보를 삭제하고 싶습니다.", answer: "어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸"),
-        inquiry(title: "병원 정보 수정", question: "예약 정보는 영구적으로 저장되 는 건가요?", answer: ""),
-        inquiry(title: "예약 정보 변경", question: "예약 정보는 영구적으로 저장되는 건가요?", answer: "")
+        inquiry(title: "예약 정보 삭제", question: "예약 정보를 삭제하고 싶습니다.", answer: "에약 정보를 변경하려면 마이페이지에 저장된 예약 정보 메뉴를 통해서 삭제할 수 있습니다."),
+        inquiry(title: "예약 정보 수정", question: "예약 정보를 변경하고 싶습니다.", answer: "예약 정보 수정 방법은 다음과 같습니다. 환자 정보를 바꾸고 싶으면 예약 정보 메뉴에서 내용을 수정할 수 있으며 예약 시간은 삭제 후에 재예약을 진행해야 합니다."),
+        
         ]
     @State private var hospital: [inquiry] = [
-        inquiry(title: "병원 정보 수정", question: "병원 정보가 맞지 않는 것 같아서 수정하고 싶습니다.", answer: "어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸 어쩌구 저쩌꾸"),
+        inquiry(title: "병원 정보 수정", question: "병원 정보가 맞지 않는 것 같아서 수정하고 싶습니다.", answer: "병원 정보는 다음과 같이 수정이 가능합니다. 주소를 포함한 정보는 요청 문의 사항 메뉴를 통해 변경 신청이 가능합니다."),
         ]
     
     var body: some View {
