@@ -10,6 +10,7 @@ import SwiftUI
 struct TalkView: View {
     @State private var showSortingOptions = false
     @State private var selectedOption = "최신순" // 기본값
+    @State private var showWritePostView = false
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -80,11 +81,18 @@ struct TalkView: View {
                 
                 VStack {
                     Spacer()
-                    NavigationLink(destination: WritePostView(postviewModel: postviewModel)) {
+                    
+                    Button(action: {
+                        showWritePostView.toggle()
+                    }, label: {
                         Image("WriteBtn")
                             .padding(.horizontal, 20)
                             .padding(.bottom, 10)
+                    }).fullScreenCover(isPresented: $showWritePostView) {
+                        WritePostView(postviewModel: postviewModel)
                     }
+                    
+                    
                 }
             }
             .navigationBarTitle("자유수다", displayMode: .inline)

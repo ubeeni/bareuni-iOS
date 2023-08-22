@@ -16,6 +16,32 @@ struct WritePostView: View {
     
     var body: some View {
         VStack() {
+            HStack{
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "xmark")
+                        .foregroundColor(Color("TextBlack"))
+                }.padding(.leading, 24)
+                Spacer()
+                Button(action: {
+                    savePost()
+                }) {
+                    Text("게시")
+                        .font(.custom("Pretendard-Medium", size: 16))
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 8)
+                        .background(Color.white)
+                        .foregroundColor(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"), lineWidth: 1)
+                                .opacity(0.6)
+                        )
+                        .disabled(postContent.isEmpty)
+                }.padding(.trailing, 24)
+            }.frame(height: 30)
+            
             Text("글 작성")
                 .font(.custom("Pretendard-Medium", size: 20))
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -38,34 +64,34 @@ struct WritePostView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "xmark")
-                        .foregroundColor(Color("TextBlack"))
-                }
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    savePost()
-                }) {
-                    Text("게시")
-                        .font(.custom("Pretendard-Medium", size: 16))
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 8)
-                        .background(Color.white)
-                        .foregroundColor(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"), lineWidth: 1)
-                                .opacity(0.6)
-                        )
-                        .disabled(postContent.isEmpty)
-                }
-            }
-        }
+//        .toolbar {
+//            ToolbarItem(placement: .navigationBarLeading) {
+//                Button(action: {
+//                    presentationMode.wrappedValue.dismiss()
+//                }) {
+//                    Image(systemName: "xmark")
+//                        .foregroundColor(Color("TextBlack"))
+//                }
+//            }
+//            ToolbarItem(placement: .navigationBarTrailing) {
+//                Button(action: {
+//                    savePost()
+//                }) {
+//                    Text("게시")
+//                        .font(.custom("Pretendard-Medium", size: 16))
+//                        .padding(.horizontal, 20)
+//                        .padding(.vertical, 8)
+//                        .background(Color.white)
+//                        .foregroundColor(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"))
+//                        .overlay(
+//                            RoundedRectangle(cornerRadius: 8)
+//                                .stroke(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"), lineWidth: 1)
+//                                .opacity(0.6)
+//                        )
+//                        .disabled(postContent.isEmpty)
+//                }
+//            }
+//        }
     }
     
     func savePost() {
