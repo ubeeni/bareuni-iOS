@@ -37,6 +37,8 @@ struct HomeView: View {
         BestCommunity(rating: "4.", contents: "교정 유지 장치가 갑자기 떨어져 버렸어요.. 이거 어떻게 하는 게 좋을까요?", time: "10분 전")
     ]
     
+    @StateObject var dentistInfo = DentistViewModel()
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -52,7 +54,16 @@ struct HomeView: View {
                     .tabViewStyle(.page)
                     .padding(.vertical, 20)
                     
-                    NavigationLink(destination: InfoView()) {
+                    NavigationLink(destination:{
+                        ScrollView(showsIndicators: false) {
+                            VStack {
+                                ForEach(dentistInfo.Dentists){ dentist in
+                                    recommendedDentistView(dentist: dentist)
+                                    Spacer().frame(height: 23)
+                                }
+                            }
+                        }
+                    }) {
                         HStack {
                             Text("가장 후기가 좋은 교정치과")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
