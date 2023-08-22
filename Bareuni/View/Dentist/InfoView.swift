@@ -12,6 +12,8 @@ struct InfoView: View {
     @State var tabIndex = 0
     @State var cities = LocationView().selectedCities
     @StateObject var dentistInfo = DentistViewModel()
+    @Binding var selectedCities: [String]
+    
     
     var body: some View {
         VStack{
@@ -39,29 +41,30 @@ struct InfoView: View {
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(spacing: 20) {
-                    ForEach(cities, id: \.self){ city in
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                .frame(width: 113, height: 24)
-                                .cornerRadius(13)
+                LazyHStack(spacing: 0) {
+                    ForEach(selectedCities, id: \.self){ city in
+                        HStack {
+                            Text(city)
+                                .font(Font.custom("Pretendard", size: 16))
+                                .kerning(0.2)
+                                .foregroundColor(.BackgroundBlue)
                             
-                            HStack {
-                                Text(city)
-                                    .font(
-                                        Font.custom("Pretendard", size: 15)
-                                            .weight(.medium)
-                                    )
-                                
-                                Button(action: {
-                                    cities.removeAll { $0 == city }
-                                }, label: {
-                                    Image("Mask")
-                                })
-                            }
+                            Button(action: {
+                                selectedCities.removeAll { $0 == city }
+                            }, label: {
+                                Image("Cancel")
+                            })
                         }
+                        .padding(.leading, 16)
+                        .padding(.vertical, 4)
+                        .padding(.trailing, 8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 24)
+                                .stroke(Color.BackgroundBlue, lineWidth: 0.5)
+                        )
                     }
+                    .padding(.leading, 20)
+                    .padding(.trailing, -10)
                 }
             }
             .frame(height: 30)
@@ -111,6 +114,7 @@ struct CustomTopTabBar: View {
             
             Spacer()
         }
+        .padding(.top, 5)
     }
     
     private func onButtonTapped(index: Int) {
@@ -135,6 +139,7 @@ struct CustomTopTabBar2: View {
                 
                 
             }
+            .padding(.top, 10)
         }
     }
     
@@ -160,6 +165,7 @@ struct CustomTopTabBar3: View {
                 
                 
             }
+            .padding(.top, 10)
         }
     }
     
@@ -273,10 +279,12 @@ struct recommendedDentistView:View {
                                     .weight(.semibold)
                             )
                             .foregroundColor(.black)
+                            .padding(.top, 10)
                         
                         Spacer().frame(width: 8)
                         
                         Image("star")
+                            .padding(.top, 10)
                         
                         Text(String(dentist.star))
                             .font(
@@ -285,12 +293,14 @@ struct recommendedDentistView:View {
                             )
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color(red: 0.43, green: 0.43, blue: 0.43))
+                            .padding(.top, 10)
                         
                         Spacer()
                         
-                        Image("Mask2")
+                        Image("Expand_right")
                             .frame(width: 27, height: 27)
                             .padding(.trailing, 12)
+                            .padding(.top, 10)
                     }
                     
                     Text(dentist.info)
@@ -300,7 +310,7 @@ struct recommendedDentistView:View {
                         )
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color(red: 0.63, green: 0.63, blue: 0.63))
-                        .padding(.leading, 23)
+                        .padding(.horizontal, 23)
                     
                     HStack {
                         Spacer().frame(width: 23)
@@ -379,7 +389,7 @@ struct detailDentistView:View {
                         )
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
-                        .frame(width: 32, height: 12, alignment: .leading)
+                        .frame(width: 32, height: 12, alignment: .center)
                 }
                 
                 Text(dentist.name)
@@ -390,7 +400,7 @@ struct detailDentistView:View {
                     .foregroundColor(.black)
                     .frame(width: 350, height: 29, alignment: .leading)
                 
-                Text("오늘 휴진 (일요일 휴무)")
+                Text("진료중 (점심시간 13:00 - 14:00)")
                     .font(
                         Font.custom("Pretendard", size: 16)
                             .weight(.medium)
@@ -409,15 +419,16 @@ struct detailDentistView:View {
                 
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 373, height: 265)
+                    .frame(width: 350, height: 190)
                     .background(
                         Image("Sample" + String(Int.random(in: 1...3)))
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 373, height: 265)
+                            .frame(width: 350, height: 190)
                             .clipped()
                             .cornerRadius(20)
                     )
+                    .padding(.vertical, 10)
                 //                Image("Sample" + String(Int.random(in: 1...3)))
                 //                    .resizable()
                 //                    .aspectRatio(contentMode: .fill)
@@ -473,9 +484,10 @@ struct IntroduceView: View {
                         .weight(.semibold)
                 )
                 .foregroundColor(.black)
+                .padding(.top, 15)
             
             ZStack {
-                VStack {
+                VStack(alignment: .leading, spacing: 10) {
                     Text("매일 09:00 - 20:00")
                         .font(
                             Font.custom("Pretendard", size: 14)
@@ -509,6 +521,7 @@ struct IntroduceView: View {
                         .weight(.semibold)
                 )
                 .foregroundColor(.black)
+                .padding(.top, 15)
             
             VStack(alignment: .leading, spacing: 10) {
                 Text("대한민국 1.7% 교정과 전문의")
@@ -549,10 +562,11 @@ struct IntroduceView: View {
                 )
                 .foregroundColor(.white)
         }
-        .padding(16)
         .frame(width: 348, height: 51, alignment: .center)
         .background(Color(red: 0, green: 0.58, blue: 1))
         .cornerRadius(9)
+        .padding(.top, 15)
+        .padding(.bottom, 5)
         //        }
     }
 }
@@ -580,8 +594,9 @@ struct ReviewView: View {
                 Image("star")
                 Image("star")
             }
+            .padding(.top, 10)
             
-            Text("4.9  |  리뷰 48개")
+            Text("4.9  |  리뷰 28개")
                 .font(
                     Font.custom("Pretendard", size: 16)
                         .weight(.medium)
@@ -619,15 +634,16 @@ struct ReviewView: View {
                     .multilineTextAlignment(.trailing)
                     .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
             }
+            .padding(.top, 5)
             HStack{
-                Text("진료결과")
+                Text("서비스")
                     .font(
                         Font.custom("Pretendard", size: 12)
                             .weight(.medium)
                     )
                     .foregroundColor(Color(red: 0.59, green: 0.59, blue: 0.59))
                 
-                Text("만족해요")
+                Text("친절해요")
                     .font(
                         Font.custom("Pretendard", size: 12)
                             .weight(.medium)
@@ -650,15 +666,16 @@ struct ReviewView: View {
                     .multilineTextAlignment(.trailing)
                     .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
             }
+            .padding(.top, 5)
             HStack{
-                Text("진료결과")
+                Text("시설 및 장비")
                     .font(
                         Font.custom("Pretendard", size: 12)
                             .weight(.medium)
                     )
                     .foregroundColor(Color(red: 0.59, green: 0.59, blue: 0.59))
                 
-                Text("만족해요")
+                Text("좋았어요")
                     .font(
                         Font.custom("Pretendard", size: 12)
                             .weight(.medium)
@@ -673,7 +690,7 @@ struct ReviewView: View {
                     .multilineTextAlignment(.trailing)
                     .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
                 
-                Text("99%")
+                Text("98%")
                     .font(
                         Font.custom("Pretendard", size: 12)
                             .weight(.medium)
@@ -681,6 +698,7 @@ struct ReviewView: View {
                     .multilineTextAlignment(.trailing)
                     .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
             }
+            .padding(.top, 5)
             //            NavigationLink(destination: WriteView(), label: {
             //                ZStack {
             //                    Text("리뷰쓰기")
@@ -725,6 +743,7 @@ struct ReviewView: View {
                         .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 0.5)
                 )
             })
+            .padding(.vertical, 10)
             .fullScreenCover(isPresented: $isPresentingModal) {
                 WriteView(isPresentingModal: $isPresentingModal)
             }
@@ -733,11 +752,7 @@ struct ReviewView: View {
             //            }
             
             
-            Rectangle()
-                .foregroundColor(.clear)
-                .frame(width: 411, height: 3)
-                .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                .blur(radius: 0.5)
+            Image("Bar")
             
             HStack {
                 ZStack {
@@ -795,6 +810,11 @@ struct ReviewView: View {
                         .stroke(Color(red: 0.76, green: 0.76, blue: 0.76), lineWidth: 0.5)
                 )
             }
+            .padding(.vertical, 10)
+            
+            Divider()
+                .padding(.bottom, 10)
+            
             //            ScrollView{
             ForEach(reviewInfo.reviews){ review in
                 VStack{
@@ -804,10 +824,17 @@ struct ReviewView: View {
                                 .stroke().frame(width: 40, height: 40)
                                 .foregroundColor(.gray)
                             Image("Tooth")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 26, height: 29)
+                                .clipped()
                         }
                         .padding(.leading, 20)
                         VStack{
                             Text(review.nickName)
+                                .font(Font.custom("Pretendard", size: 14).weight(.semibold))
+                                .padding(.leading, -2)
+                                .padding(.bottom, -3)
                             if review.certification == true {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 20).stroke(Color.BackgroundBlue).frame(width: 50, height: 17)
@@ -818,7 +845,7 @@ struct ReviewView: View {
                             }
                         }
                         Spacer()
-                        Image("star")
+                        Image("YStar")
                         Text(String(review.star))
                             .padding(.trailing, 30)
                     }
@@ -993,8 +1020,8 @@ extension View {
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-        InfoView()
-        ReviewView()
-        SearchView()
+        //        InfoView()
+        //        ReviewView()
+        //        SearchView()
     }
 }

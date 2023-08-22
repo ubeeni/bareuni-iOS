@@ -34,10 +34,12 @@ struct HomeView: View {
         BestCommunity(rating: "1.", contents: "저는 치아교정한지 2년 3개월 된 사람입니다. 다름이 아니라 요즘 고민이 있는데요..", time: "12시간 전 (수정됨)"),
         BestCommunity(rating: "2.", contents: "교정을 마친 지 3년째인데 혹시 저랑 같은 문제가 생기신 분 계시나요?", time: "2일 전 (수정됨)"),
         BestCommunity(rating: "3.", contents: "좋은 치과 선생님 좀 소개해 주세요! 저희 아이가 12살인데 지금 교정을 하는 것이 맞을까요?", time: "2시간 전"),
-        BestCommunity(rating: "4.", contents: "교정 유지 장치가 갑자기 떨어져 버렸어요.. 이거 어떻게 하는 게 좋을까요?", time: "10분 전")
+        BestCommunity(rating: "4.", contents: "교정 유지 장치가 갑자기 떨어져 버렸어요.. 이거 어떻게 하는 게 좋을까요?", time: "50분 전")
     ]
     
     @StateObject var dentistInfo = DentistViewModel()
+    @State var showCommunityMainView: Bool = false
+    @State var showDentistMainView: Bool = false
     
     var body: some View {
         NavigationView {
@@ -54,16 +56,10 @@ struct HomeView: View {
                     .tabViewStyle(.page)
                     .padding(.vertical, 20)
                     
-                    NavigationLink(destination:{
-                        ScrollView(showsIndicators: false) {
-                            VStack {
-                                ForEach(dentistInfo.Dentists){ dentist in
-                                    recommendedDentistView(dentist: dentist)
-                                    Spacer().frame(height: 23)
-                                }
-                            }
-                        }
-                    }) {
+                    
+                    Button(action: {
+                        showDentistMainView.toggle()
+                    }, label: {
                         HStack {
                             Text("가장 후기가 좋은 교정치과")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
@@ -75,7 +71,48 @@ struct HomeView: View {
                             
                             Spacer()
                         }
-                    }
+                    }).fullScreenCover(isPresented: $showDentistMainView) {
+                        ScrollView(showsIndicators: false) {
+                            VStack {
+                                ForEach(dentistInfo.Dentists){ dentist in
+                                    recommendedDentistView(dentist: dentist)
+                                    Spacer().frame(height: 23)
+                                }
+                            }
+                        }
+                        .gesture(DragGesture(minimumDistance: 50, coordinateSpace: .local)
+                            .onEnded { value in
+                                if value.translation.height > 0 {
+                                    withAnimation {
+                                        showCommunityMainView.toggle()
+                                    }
+                                }
+                            }
+                        )
+                }
+                    
+//                    NavigationLink(destination:{
+//                        ScrollView(showsIndicators: false) {
+//                            VStack {
+//                                ForEach(dentistInfo.Dentists){ dentist in
+//                                    recommendedDentistView(dentist: dentist)
+//                                    Spacer().frame(height: 23)
+//                                }
+//                            }
+//                        }
+//                    }) {
+//                        HStack {
+//                            Text("가장 후기가 좋은 교정치과")
+//                                .font(.custom("Pretendard-SemiBold", size: 18))
+//                                .foregroundColor(.black)
+//                                .padding(.leading, 20)
+//
+//                            Image("Expand_right")
+//                                .frame(width: 22, height: 22)
+//
+//                            Spacer()
+//                        }
+//                    }
                     
                     VStack {
                         ForEach(dentistList) { dentist in
@@ -87,7 +124,9 @@ struct HomeView: View {
                     Image("Bar")
                         .padding(.top, 20)
                     
-                    NavigationLink(destination: CommunityMainView()) {
+                    Button(action: {
+                        showCommunityMainView.toggle()
+                    }, label: {
                         HStack {
                             Text("커뮤니티 실시간 인기글")
                                 .font(.custom("Pretendard-SemiBold", size: 18))
@@ -101,7 +140,36 @@ struct HomeView: View {
                             
                             Spacer()
                         }
+                    }).fullScreenCover(isPresented: $showCommunityMainView) {
+                            CommunityMainView()
+                            .gesture(DragGesture(minimumDistance: 50, coordinateSpace: .local)
+                                .onEnded { value in
+                                    if value.translation.height > 0 {
+                                        withAnimation {
+                                            showCommunityMainView.toggle()
+                                        }
+                                    }
+                                }
+                            )
                     }
+                
+//
+//                        HStack {
+//                            Text("커뮤니티 실시간 인기글")
+//                                .font(.custom("Pretendard-SemiBold", size: 18))
+//                                .foregroundColor(.black)
+//                                .padding(.leading, 20)
+//
+//                            Image("Fire")
+//                                .frame(width: 27, height: 27)
+//                            Image("Expand_right")
+//                                .frame(width: 22, height: 22)
+//
+//                            Spacer()
+//                        }.fullScreenCover(isPresented: $showCommunityMainView) {
+//                            CommunityMainView()
+//                        }
+                    
                     .padding(.top, 10)
                     
                     ZStack {
