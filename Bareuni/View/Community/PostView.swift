@@ -42,14 +42,14 @@ struct PostCell: View {
                 
                 HStack(spacing: 0) {
                     Image("Heart")
-                    Text("좋아요 \(postviewModel.posts[index].likeCount)") // Corrected
+                    Text("좋아요 \(postviewModel.posts[index].likeCount)")
                         .font(.custom("Pretendard-Regular", size: 10))
                         .foregroundColor(Color("9Egray"))
                         .padding(.leading, 5)
                     
                     Image("Comment")
                         .padding(.leading, 15)
-                    Text("댓글 \(postviewModel.posts[index].comments)") // Corrected
+                    Text("댓글 \(postviewModel.posts[index].comments)")
                         .font(.custom("Pretendard-Regular", size: 10))
                         .foregroundColor(Color("9Egray"))
                         .padding(.leading, 5)
@@ -128,6 +128,9 @@ struct PostDetailView: View {
                     .font(.custom("Pretendard-Regular", size: 14))
                     .foregroundColor(Color("212B36"))
                     .padding(.all, 8)
+                    .padding(.horizontal, 10)
+                    .multilineTextAlignment(.leading)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 
                 HStack {
                     Button(action: {
