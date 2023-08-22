@@ -16,6 +16,14 @@ struct PostCell: View {
         self.index = index
     }
     
+    var authorNames: [String] = [
+        "바른이",
+        "못난이",
+        "이아파",
+        "토꺵이굴",
+        "교정이",
+    ]
+    
     var body: some View {
         NavigationLink(destination: PostDetailView(postviewModel: postviewModel, index: index)) {
             VStack(alignment: .leading, spacing: 0) {
@@ -25,12 +33,12 @@ struct PostCell: View {
                         .frame(width: 40, height: 40)
                         .clipShape(Circle())
                     
-                    Text("바른이")
+                    Text(authorNames[index])
                         .font(.custom("Pretendard-SemiBold", size: 12))
                         .foregroundColor(Color("212B36"))
                 }
                 
-                Text(postviewModel.posts[index].content)
+                Text(postviewModel.posts[index].content.replacingOccurrences(of: "\n\n", with: " "))
                     .font(.custom("Pretendard-Medium", size: 12))
                     .foregroundColor(Color("TextBlack"))
                     .multilineTextAlignment(.leading)
