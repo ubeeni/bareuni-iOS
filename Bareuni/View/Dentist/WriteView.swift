@@ -421,7 +421,7 @@ struct WriteView2: View {
         .navigationBarItems(leading: Button(action: {
             presentationMode.wrappedValue.dismiss()
         }, label: {
-            Image("Expand_right")
+            Image("Expand_left")
         }), trailing: Button(action: {
 
         }, label: {

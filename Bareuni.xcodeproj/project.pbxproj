@@ -95,6 +95,7 @@
 		3BCB5BB22A8E1C4A00F58C50 /* DentistModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */; };
 		3BCB5BB42A946B3900F58C50 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */; };
 		3BCB5BB62A9470B200F58C50 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */; };
+		3BCB5BB82A949F1F00F58C50 /* TestView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB72A949F1F00F58C50 /* TestView4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +206,7 @@
 		3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistModel2.swift; sourceTree = "<group>"; };
 		3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
+		3BCB5BB72A949F1F00F58C50 /* TestView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
 				3B5AF6522A7095F600A94BF1 /* TestView2.swift */,
 				3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */,
+				3BCB5BB72A949F1F00F58C50 /* TestView4.swift */,
 				3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */,
 			);
 			path = Dentist;
@@ -721,6 +724,7 @@
 				10C82FE12A76764C00ADF34E /* PostView.swift in Sources */,
 				10AB8CEB2A852242009B594E /* CommentViewModel.swift in Sources */,
 				3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */,
+				3BCB5BB82A949F1F00F58C50 /* TestView4.swift in Sources */,
 				327394372A8752AB001A739E /* SavedListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
