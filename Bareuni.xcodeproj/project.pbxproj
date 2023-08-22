@@ -92,6 +92,9 @@
 		3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5B712A83E96700F58C50 /* CityDictionary.swift */; };
 		3BCB5BB02A8E12C700F58C50 /* HiddenTabBarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */; };
 		3BCB5BB22A8E1C4A00F58C50 /* DentistModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */; };
+		3BCB5BB42A946B3900F58C50 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */; };
+		3BCB5BB62A9470B200F58C50 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */; };
+		3BCB5BB82A949F1F00F58C50 /* TestView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB72A949F1F00F58C50 /* TestView4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +202,9 @@
 		3BCB5B712A83E96700F58C50 /* CityDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityDictionary.swift; path = Bareuni/Model/Dentist/CityDictionary.swift; sourceTree = SOURCE_ROOT; };
 		3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenTabBarTest.swift; sourceTree = "<group>"; };
 		3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistModel2.swift; sourceTree = "<group>"; };
+		3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
+		3BCB5BB72A949F1F00F58C50 /* TestView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +266,7 @@
 				3BB0ACE32A5D3C060071D598 /* TestView.swift */,
 				3B5AF6522A7095F600A94BF1 /* TestView2.swift */,
 				3BCB5B6F2A82A70E00F58C50 /* TestView3.swift */,
+				3BCB5BB72A949F1F00F58C50 /* TestView4.swift */,
 				3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */,
 			);
 			path = Dentist;
@@ -281,8 +288,10 @@
 			isa = PBXGroup;
 			children = (
 				3BB0ACE92A6685780071D598 /* DentistModel.swift */,
+				3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */,
 				3BCB5B712A83E96700F58C50 /* CityDictionary.swift */,
 				3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */,
+				3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */,
 				3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */,
 			);
 			path = Dentist;
@@ -662,6 +671,7 @@
 				102166552A6949ED00DC6351 /* CommunityTableViewCell.swift in Sources */,
 				1014A0B32A6E604D00CE8170 /* CommunityMainView.swift in Sources */,
 				32EB16E12A8262A70050F45F /* MyPageMainView.swift in Sources */,
+				3BCB5BB42A946B3900F58C50 /* ReviewModel.swift in Sources */,
 				32EB16CF2A6E37BA0050F45F /* profileGuideViewController.swift in Sources */,
 				32FC442E2A8E01FB00505C99 /* SettingView.swift in Sources */,
 				3273943D2A8757A6001A739E /* PointView.swift in Sources */,
@@ -672,6 +682,7 @@
 				1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */,
 				10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */,
 				10E125BB2A8DEAA000A2805C /* HomeView.swift in Sources */,
+				3BCB5BB62A9470B200F58C50 /* ReviewViewModel.swift in Sources */,
 				3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */,
 				32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */,
 				3BB0ACE82A657FEE0071D598 /* InfoView.swift in Sources */,
@@ -709,6 +720,7 @@
 				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
 				10C82FE12A76764C00ADF34E /* PostView.swift in Sources */,
 				3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */,
+				3BCB5BB82A949F1F00F58C50 /* TestView4.swift in Sources */,
 				327394372A8752AB001A739E /* SavedListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

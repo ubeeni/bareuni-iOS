@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct CityDictionary {
     let cityList = ["서울", "경기", "인천", "부산", "대구", "대전", "광주", "울산", "충남/세종", "충북", "전남", "전북", "경남", "경북", ]
     let cityDic = [
