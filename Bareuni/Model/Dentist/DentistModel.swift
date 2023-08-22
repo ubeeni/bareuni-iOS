@@ -10,9 +10,19 @@ import Foundation
 struct Dentist: Identifiable, Hashable{
     
     var id = UUID()
+//    var area = 0
     var name = ""
     var info = ""
     var star = 0
     var address = ""
-    var reservation:Bool
+    var title = [String]()
+//    var phoneNumber = ""
+//    var description = ""
+    var reservation: Bool
+//    var reviews = [Review]()
+    
+    
+    //    let specialties: [String]
+    //    let openingHours: String
+    //    let websiteURL: URL?
 }
