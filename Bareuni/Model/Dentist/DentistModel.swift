@@ -13,7 +13,7 @@ struct Dentist: Identifiable, Hashable{
 //    var area = 0
     var name = ""
     var info = ""
-    var star = 0
+    var star : Float
     var address = ""
     var title = [String]()
 //    var phoneNumber = ""

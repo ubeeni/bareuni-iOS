@@ -19,7 +19,7 @@ struct MyPageMainView: View {
                         .padding(.leading, 13)
                     
                     VStack(alignment: .leading, spacing: 6){
-                        Text("이아파").font(.custom("Pretendard-SemiBold", size: 18))
+                        Text("바른이").font(.custom("Pretendard-SemiBold", size: 18))
                         Text("교정 0").font(.custom("Pretendard-Medium", size: 13)).foregroundColor(Color(UIColor(red: 0.583, green: 0.583, blue: 0.583, alpha: 1)))
                         
                         Text("5,000p").font(.custom("Pretendard-Medium", size: 13)).foregroundColor(Color(UIColor(red: 0.469, green: 0.751, blue: 0.954, alpha: 1)))

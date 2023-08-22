@@ -99,19 +99,21 @@ struct LocationView: View {
                 Button(action: {
                     //asd
                 }, label: {
-                    NavigationLink(destination: InfoView(), label: {
+                    NavigationLink(destination: InfoView(selectedCities: $selectedCities), label: {
                         ZStack {
-                            Rectangle().frame(width: 370, height: 57)
-                                .cornerRadius(4)
-                                .foregroundColor(selectedCities.count == 0 ? Color(red: 0.85, green: 0.85, blue: 0.85) : .BackgroundBlue)
+                            Rectangle().frame(width: 345, height: 57)
+                                .cornerRadius(8)
+                                .foregroundColor(selectedCities.count == 0 ? Color(red: 0.88, green: 0.88, blue: 0.88) : .BackgroundBlue)
                             
                             Text("내 지역 선택 완료")
                                 .font(
-                                    Font.custom("Pretendard", size: 24)
-                                        .weight(.bold)
+                                    Font.custom("Pretendard", size: 16)
+                                        .weight(.semibold)
                                 )
+                                .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
                         }
+                        .padding(.bottom, 10)
                     })
                 })
                 .disabled(selectedCities.count == 0)

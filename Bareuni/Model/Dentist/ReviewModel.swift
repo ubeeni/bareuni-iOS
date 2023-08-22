@@ -14,7 +14,7 @@ struct Review: Identifiable, Hashable{
     var detail = ""
     var nickName = ""
     var gender = ""
-    var star = 0
+    var star : Float
     var certification: Bool
     var price = 0
     
