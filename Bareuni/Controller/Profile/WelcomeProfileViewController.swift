@@ -11,9 +11,11 @@ class WelcomeProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        welcomeLabel.text = UserDefaults.standard.object(forKey: "nickname") as! String + "님, 환영해요"
         // Do any additional setup after loading the view.
     }
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
           super.viewDidAppear(animated)

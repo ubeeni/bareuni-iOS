@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OWh-v3-HIo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OWh-v3-HIo">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -103,6 +102,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="다음"/>
                                 <connections>
+                                    <action selector="nextBtnDidTap:" destination="QMl-IL-dW5" eventType="touchUpInside" id="7PG-pS-iDY"/>
                                     <segue destination="4OS-P8-Wk6" kind="show" id="7t3-Kh-lFj"/>
                                 </connections>
                             </button>
@@ -184,7 +184,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fOq-XE-M8s"/>
                     <connections>
-                        <outlet property="nextBtn" destination="XqT-XM-wsF" id="4bs-lr-xmF"/>
+                        <outlet property="nextBtn" destination="XqT-XM-wsF" id="EWh-NQ-G28"/>
                         <outlet property="nicknameTextField" destination="Bfi-Zd-sDF" id="CIV-el-xD0"/>
                         <outlet property="profileImageView" destination="Kac-QV-AAc" id="1lp-Wh-5JE"/>
                     </connections>
@@ -524,7 +524,7 @@
                                     <constraint firstItem="BFH-63-Ygs" firstAttribute="top" secondItem="7Bx-7O-SEy" secondAttribute="bottom" constant="40" id="toZ-we-G97"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이아파님, 환영해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW4-wQ-Hnx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바른이님, 환영해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW4-wQ-Hnx">
                                 <rect key="frame" x="106" y="414.66666666666669" width="178" height="28"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -541,6 +541,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gzV-1S-POh"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="iW4-wQ-Hnx" id="BzK-Z1-p1Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPV-a5-4gJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

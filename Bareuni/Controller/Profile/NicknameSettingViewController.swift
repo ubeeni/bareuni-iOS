@@ -37,6 +37,12 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
         self.present(picker, animated: true, completion: nil)
     }
     
+    @IBAction func nextBtnDidTap(_ sender: Any) {
+        // 데이터 저장
+        UserDefaults.standard.set(nicknameTextField.text, forKey: "nickname")
+    }
+
+    
     
     
     @IBOutlet weak var nextBtn: UIButton!
