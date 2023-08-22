@@ -17,13 +17,15 @@ struct MyInfoView: View {
     @State var showNumberSheet = false
     @State var sex = "여성"
     @State var didOrthodontic = "교정 O"
+    @State private var showingImagePicker = false
+    @State var profileImage: Image = Image("Tooth")
     
     var body: some View {
         
         VStack {
             Divider()
             ZStack{
-                Image("Tooth")
+                profileImage
                     .resizable()
                     .aspectRatio(contentMode: .fill).frame(width: 74, height: 74).clipShape(Circle())
                     .overlay(Circle().stroke(Color(UIColor(red: 0.62, green: 0.62, blue: 0.62, alpha: 1).cgColor), lineWidth: 0.5))
@@ -33,9 +35,24 @@ struct MyInfoView: View {
                 })
                 {
                     Image("profile")}
-                .actionSheet(isPresented: $showingProfileImgSheet) {
-                    ActionSheet(title: Text("프로필 이미지 변경"), buttons: [.default(Text("프로필 이미지 변경")), .default(Text("프로필 이미지 삭제")), .cancel(Text("취소"))])
+                .actionSheet(isPresented: $showingProfileImgSheet){
+                    ActionSheet(title: Text("프로필 이미지 변경"), buttons: [.default(Text("프로필 이미지 변경")){
+                        showingImagePicker.toggle()
+                    }, .default(Text("프로필 이미지 삭제")){
+                    profileImage = Image("Tooth")
+                    }, .cancel(Text("취소"))])
                 }
+                .sheet(isPresented: $showingImagePicker) {
+                    ProfileImagePicker(sourceType: .photoLibrary) { (image) in
+                        
+                        self.profileImage = Image(uiImage: image)
+                        print(image)
+                    }
+                }
+//                    ActionSheet(title: Text("프로필 이미지 변경"), buttons: [.default(Text("프로필 이미지 변경")){
+//                        showingImagePicker.toggle()
+//                    }, .default(Text("프로필 이미지 삭제")), .cancel(Text("취소"))])
+                
                 .frame(width: 26, height: 26).offset(x: 37, y: 34)
                 
             }.padding(.top, 50)
@@ -95,7 +112,7 @@ struct MyInfoView: View {
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
                 }).sheet(isPresented: $showNumberSheet){
                     NumberAuthHalfSheet( showSelfSheet: $showingSexSheet).presentationDetents([.height(544), .fraction(0.75)]).presentationDragIndicator(.hidden)
-                            }
+                }
                 
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
@@ -129,6 +146,58 @@ struct MyInfoView: View {
         
         Spacer()
     }
+}
+
+struct ProfileImagePicker: UIViewControllerRepresentable {
+    
+    typealias UIViewControllerType = UIImagePickerController
+    
+    @Environment(\.presentationMode)
+    private var presentationMode // 해당 뷰컨트롤러의 노출 여부
+    let sourceType: UIImagePickerController.SourceType
+    let imagePicked: (UIImage) -> () // 이미지가 선택됐을때 결과 호출
+    
+    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+        
+        let parent: ProfileImagePicker
+        
+        init(parent: ProfileImagePicker) {
+            self.parent = parent
+        }
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
+            if let image = info[.originalImage] as? UIImage {
+                parent.imagePicked(image)
+                parent.presentationMode.wrappedValue.dismiss()
+            }
+            
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            parent.presentationMode.wrappedValue.dismiss()
+        }
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(parent: self)
+    }
+    
+    
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        
+        let picker = UIImagePickerController()
+        
+        picker.delegate = context.coordinator
+        
+        return picker
+        
+    }
+    
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
+        
+    }
+    
 }
 
 //struct MyInfoView_Previews: PreviewProvider {

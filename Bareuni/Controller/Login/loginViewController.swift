@@ -38,10 +38,17 @@ class loginViewController: UIViewController {
             emailWarningLb.isHidden = false
         }
         
-        if(pwTextField.text == ""){
+        else if(pwTextField.text == ""){
             pwWarningLb.text = "비밀번호를 입력해주세요."
             pwWarningLb.isHidden = false
+        }else{
+            let tabbar = UIStoryboard.init(name: "Main", bundle: nil)
+                    guard let tabBarController = tabbar.instantiateViewController(withIdentifier: "TabBarController")as? TabBarController else {return}
+                    
+                    tabBarController.modalPresentationStyle = .fullScreen
+                    self.present(tabBarController, animated: true, completion: nil)
         }
+        
     }
 }
 
