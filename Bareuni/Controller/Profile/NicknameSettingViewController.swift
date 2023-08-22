@@ -7,11 +7,11 @@
 
 import UIKit
 
-class NicknameSettingViewController: UIViewController, UITextFieldDelegate {
-
+class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         nextBtn.layer.cornerRadius = 12
         self.setBackBtn()
         
@@ -19,12 +19,25 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate {
         profileImageView.clipsToBounds = true
         profileImageView.layer.borderWidth = 0.5
         profileImageView.layer.borderColor = UIColor(red: 0.637, green: 0.637, blue: 0.637, alpha: 1).cgColor
-
+        
         nicknameTextField.doViewSetting(paddingWidth: 28, cornerRadius: 12)
         
         nextBtn.changeDisabledState()
         nextBtn.setTitleColor(UIColor.white, for: .normal)
+        
+        self.picker.delegate = self
+        self.picker.sourceType = .photoLibrary
+        self.picker.modalPresentationStyle = .fullScreen
+        
+        
     }
+    let picker = UIImagePickerController()
+    
+    @IBAction func profileImgSelectiBtnDidTap(_ sender: Any) {
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    
     
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -42,7 +55,27 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            self.dismiss(animated: false, completion: {
+                
+                DispatchQueue.main.async {
+                    
+                    self.profileImageView.image = image
+                    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
+                    self.profileImageView.clipsToBounds = true
+                    self.profileImageView.layer.borderWidth = 0.5
+                    self.profileImageView.layer.borderColor = UIColor(red: 0.637, green: 0.637, blue: 0.637, alpha: 1).cgColor
+                    
+                }
+                
+            })
+            
+        }
+        
+    }
 }
+
+
