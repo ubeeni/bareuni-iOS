@@ -13,9 +13,7 @@ struct InfoView: View {
     @State var cities = LocationView().selectedCities
     @StateObject var dentistInfo = DentistViewModel()
     
-    
     var body: some View {
-        NavigationView {
             VStack{
                 HStack{
                     Text("치과 정보")
@@ -24,19 +22,20 @@ struct InfoView: View {
                                 .weight(.medium)
                         )
                         .foregroundColor(.black)
-                        .frame(width: 131, height: 29, alignment: .topLeading)
                         .padding(.leading, 24)
                     
                     Spacer()
-                    
                     
                     NavigationLink(destination: SearchView(), label: {
                         Image("Search_light")
                             .frame(width: 32, height: 32)
                     })
-                    Image("Bell_light")
-                        .frame(width: 32, height: 32)
-                        .padding(.trailing, 24)
+                    
+                    NavigationLink(destination: EmptyView(), label: {
+                        Image("Bell_light")
+                            .frame(width: 32, height: 32)
+                            .padding(.trailing, 24)
+                    })
                 }
                 
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -64,10 +63,8 @@ struct InfoView: View {
                             }
                         }
                     }
-                    
                 }
                 .frame(height: 30)
-                
                 
                 CustomTopTabBar(tabIndex: $tabIndex).padding(.bottom, -5)
                 
@@ -93,8 +90,8 @@ struct InfoView: View {
                         }
                     }
                 }
-            }
-        }.navigationBarBackButtonHidden(true)
+            }            
+            .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -941,6 +938,7 @@ extension View {
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
+        ContentView()
         InfoView()
         ReviewView()
         SearchView()
