@@ -19,7 +19,7 @@ struct Dentist: Identifiable, Hashable{
 //    var phoneNumber = ""
 //    var description = ""
     var reservation: Bool
-    var reviews = [Review]()
+//    var reviews = [Review]()
     
     
     //    let specialties: [String]

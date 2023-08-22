@@ -548,7 +548,8 @@ class ModalState: ObservableObject {
 struct ReviewView: View {
     
     @State private var isPresentingModal = false
-    @StateObject private var modalState = ModalState()
+    @StateObject var reviewInfo = ReviewViewModel()
+//    @StateObject private var modalState = ModalState()
     
     var body: some View{
         VStack{
@@ -774,7 +775,36 @@ struct ReviewView: View {
                         .stroke(Color(red: 0.76, green: 0.76, blue: 0.76), lineWidth: 0.5)
                 )
             }
-        }
+            ScrollView{
+                ForEach(reviewInfo.reviews){ review in
+                    VStack{
+                        HStack{
+                            ZStack{
+                                Circle()
+                                    .stroke().frame(width: 40, height: 40)
+                                    .foregroundColor(.gray)
+                                Image("Tooth")
+                            }
+                            VStack{
+                                Text(review.nickName)
+                                if review.certification == true {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20).stroke(Color.BackgroundBlue).frame(width: 50, height: 17)
+                                        Text("영수증 인증")
+                                          .font(Font.custom("Pretendard", size: 8))
+                                          .foregroundColor(.BackgroundBlue)
+                                    }
+                                }
+                            }
+                            Spacer()
+                            Image("star")
+                            Text(String(review.star))
+                        }
+                        Text(review.detail)
+                    }
+                }
+            }
+        }//vstack
     }
 }
 

@@ -94,6 +94,7 @@
 		3BCB5BB02A8E12C700F58C50 /* HiddenTabBarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */; };
 		3BCB5BB22A8E1C4A00F58C50 /* DentistModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */; };
 		3BCB5BB42A946B3900F58C50 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */; };
+		3BCB5BB62A9470B200F58C50 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,7 @@
 		3BCB5BAF2A8E12C700F58C50 /* HiddenTabBarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenTabBarTest.swift; sourceTree = "<group>"; };
 		3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistModel2.swift; sourceTree = "<group>"; };
 		3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +290,7 @@
 				3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */,
 				3BCB5B712A83E96700F58C50 /* CityDictionary.swift */,
 				3BB0ACEB2A6685AA0071D598 /* DentistViewModel.swift */,
+				3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */,
 				3BCB5BB12A8E1C4A00F58C50 /* DentistModel2.swift */,
 			);
 			path = Dentist;
@@ -679,6 +682,7 @@
 				1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */,
 				10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */,
 				10E125BB2A8DEAA000A2805C /* HomeView.swift in Sources */,
+				3BCB5BB62A9470B200F58C50 /* ReviewViewModel.swift in Sources */,
 				3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */,
 				32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */,
 				3BB0ACE82A657FEE0071D598 /* InfoView.swift in Sources */,
