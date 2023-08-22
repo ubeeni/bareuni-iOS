@@ -64,34 +64,34 @@ struct WritePostView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
-//        .toolbar {
-//            ToolbarItem(placement: .navigationBarLeading) {
-//                Button(action: {
-//                    presentationMode.wrappedValue.dismiss()
-//                }) {
-//                    Image(systemName: "xmark")
-//                        .foregroundColor(Color("TextBlack"))
-//                }
-//            }
-//            ToolbarItem(placement: .navigationBarTrailing) {
-//                Button(action: {
-//                    savePost()
-//                }) {
-//                    Text("게시")
-//                        .font(.custom("Pretendard-Medium", size: 16))
-//                        .padding(.horizontal, 20)
-//                        .padding(.vertical, 8)
-//                        .background(Color.white)
-//                        .foregroundColor(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"))
-//                        .overlay(
-//                            RoundedRectangle(cornerRadius: 8)
-//                                .stroke(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"), lineWidth: 1)
-//                                .opacity(0.6)
-//                        )
-//                        .disabled(postContent.isEmpty)
-//                }
-//            }
-//        }
+        //        .toolbar {
+        //            ToolbarItem(placement: .navigationBarLeading) {
+        //                Button(action: {
+        //                    presentationMode.wrappedValue.dismiss()
+        //                }) {
+        //                    Image(systemName: "xmark")
+        //                        .foregroundColor(Color("TextBlack"))
+        //                }
+        //            }
+        //            ToolbarItem(placement: .navigationBarTrailing) {
+        //                Button(action: {
+        //                    savePost()
+        //                }) {
+        //                    Text("게시")
+        //                        .font(.custom("Pretendard-Medium", size: 16))
+        //                        .padding(.horizontal, 20)
+        //                        .padding(.vertical, 8)
+        //                        .background(Color.white)
+        //                        .foregroundColor(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"))
+        //                        .overlay(
+        //                            RoundedRectangle(cornerRadius: 8)
+        //                                .stroke(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"), lineWidth: 1)
+        //                                .opacity(0.6)
+        //                        )
+        //                        .disabled(postContent.isEmpty)
+        //                }
+        //            }
+        //        }
     }
     
     func savePost() {
@@ -99,7 +99,7 @@ struct WritePostView: View {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd HH:mm"
         let currentTimeString = formatter.string(from: currentDate)
-        let newPost = Post(authorName: "바른이", content: postContent, modificationTime: currentTimeString, likeCount: 0, comments: 0, isLiked: false)
+        let newPost = Post(authorName: "바른이", content: postContent, modificationTime: currentTimeString, likeCount: 0, comments: [] , isLiked: false)
         postviewModel.posts.append(newPost)
         
         presentationMode.wrappedValue.dismiss()

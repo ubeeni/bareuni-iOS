@@ -24,7 +24,6 @@
 		10AB8CE52A851E4A009B594E /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB8CE42A851E4A009B594E /* PostViewModel.swift */; };
 		10AB8CE72A85216D009B594E /* WritePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB8CE62A85216D009B594E /* WritePostView.swift */; };
 		10AB8CE92A8521A3009B594E /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB8CE82A8521A3009B594E /* CommentModel.swift */; };
-		10AB8CEB2A852242009B594E /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB8CEA2A852242009B594E /* CommentViewModel.swift */; };
 		10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEE93C2A70FCD7005833CE /* TalkView.swift */; };
 		10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEE93E2A70FD03005833CE /* FAQView.swift */; };
 		10C82FE12A76764C00ADF34E /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C82FE02A76764B00ADF34E /* PostView.swift */; };
@@ -130,7 +129,6 @@
 		10AB8CE42A851E4A009B594E /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostViewModel.swift; path = Bareuni/Model/Community/PostViewModel.swift; sourceTree = SOURCE_ROOT; };
 		10AB8CE62A85216D009B594E /* WritePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostView.swift; sourceTree = "<group>"; };
 		10AB8CE82A8521A3009B594E /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommentModel.swift; path = Bareuni/Model/Community/CommentModel.swift; sourceTree = SOURCE_ROOT; };
-		10AB8CEA2A852242009B594E /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommentViewModel.swift; path = Bareuni/Model/Community/CommentViewModel.swift; sourceTree = SOURCE_ROOT; };
 		10AEE93C2A70FCD7005833CE /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
 		10AEE93E2A70FD03005833CE /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		10C82FE02A76764B00ADF34E /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -294,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				10AB8CE82A8521A3009B594E /* CommentModel.swift */,
-				10AB8CEA2A852242009B594E /* CommentViewModel.swift */,
 				10AB8CE22A851CC8009B594E /* PostModel.swift */,
 				10AB8CE42A851E4A009B594E /* PostViewModel.swift */,
 			);
@@ -711,7 +708,6 @@
 				3BCB5B702A82A70E00F58C50 /* TestView3.swift in Sources */,
 				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
 				10C82FE12A76764C00ADF34E /* PostView.swift in Sources */,
-				10AB8CEB2A852242009B594E /* CommentViewModel.swift in Sources */,
 				3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */,
 				327394372A8752AB001A739E /* SavedListView.swift in Sources */,
 			);

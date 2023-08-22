@@ -49,7 +49,7 @@ struct PostCell: View {
                     
                     Image("Comment")
                         .padding(.leading, 15)
-                    Text("댓글 \(postviewModel.posts[index].comments)")
+                    Text("댓글 \(postviewModel.posts[index].comments.count)")
                         .font(.custom("Pretendard-Regular", size: 10))
                         .foregroundColor(Color("9Egray"))
                         .padding(.leading, 5)
@@ -75,7 +75,6 @@ struct PostDetailView: View {
     @State private var commentText: String = ""
     
     @ObservedObject var postviewModel: PostViewModel
-    @StateObject private var commentviewModel = CommentViewModel()
     var index: Int
     
     @Environment(\.presentationMode) var presentationMode
@@ -92,12 +91,12 @@ struct PostDetailView: View {
     
     func isCommentOwner(comment: Comment) -> Bool {
         // 댓글 작성자인지 여부를 확인하는 로직
-        return comment.nickname == "바른이" // 예시로 닉네임이 "바른이"인 경우만 본인 댓글로 처리
+        return comment.authorName == "바른이" // 예시로 닉네임이 "바른이"인 경우만 본인 댓글로 처리
     }
     
     func deleteComment(comment: Comment) {
         // 댓글 삭제 로직 추가
-        commentviewModel.comments.removeAll { $0.id == comment.id }
+        postviewModel.posts[index].comments.removeAll { $0.id == comment.id }
     }
     
     
@@ -152,7 +151,7 @@ struct PostDetailView: View {
                         .resizable()
                         .frame(width: 18, height: 18)
                         .padding(.leading, 4)
-                    Text("댓글 \(commentviewModel.comments.count)")
+                    Text("댓글 \(postviewModel.posts[index].comments.count)")
                         .font(.custom("Pretendard-Medium", size: 10))
                         .foregroundColor(Color("9Egray"))
                     
@@ -165,7 +164,7 @@ struct PostDetailView: View {
                 Image("Bar")
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    ForEach(commentviewModel.comments) { comment in
+                    ForEach(postviewModel.posts[index].comments) { comment in
                         VStack {
                             HStack {
                                 Image(comment.profileImageName)
@@ -173,7 +172,7 @@ struct PostDetailView: View {
                                     .frame(width: 30, height: 30)
                                     .clipShape(Circle())
                                 
-                                Text(comment.nickname)
+                                Text(comment.authorName)
                                     .font(.custom("Pretendard-Medium", size: 12))
                                     .foregroundColor(Color("212B36"))
                                 
@@ -190,7 +189,7 @@ struct PostDetailView: View {
                             }
                         }
                         
-                        Text(comment.content)
+                        Text(comment.text)
                             .font(.custom("Pretendard-Regular", size: 14))
                             .foregroundColor(Color.black)
                             .padding(.leading, 8)
@@ -212,11 +211,10 @@ struct PostDetailView: View {
                             .padding(.horizontal, 5)
                             .padding(.top, 5)
                         }
-                        
                         Divider()
-                    }
+                    } // foreach
                     .padding(.horizontal, 10)
-                }
+                }//vstack
             }
             .padding(.top, 10)
         }
@@ -256,8 +254,8 @@ struct PostDetailView: View {
                 
                 Button(action: {
                     if !commentText.isEmpty {
-                        let newComment = Comment(profileImageName: "Tooth", nickname: "바른이", content: commentText, date: Date())
-                        commentviewModel.comments.append(newComment)
+                        let newComment = Comment(profileImageName: "Tooth", authorName: "바른이", text: commentText, date: Date())
+                        postviewModel.posts[index].comments.append(newComment)
                         commentText = ""
                     }
                 }) {

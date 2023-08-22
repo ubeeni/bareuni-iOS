@@ -13,6 +13,6 @@ struct Post: Identifiable {
     var content: String
     var modificationTime: String
     var likeCount: Int
-    var comments: Int
+    var comments: [Comment]
     var isLiked: Bool
 }

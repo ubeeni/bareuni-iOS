@@ -10,7 +10,7 @@ import Foundation
 struct Comment: Identifiable {
     var id = UUID()
     var profileImageName: String
-    var nickname: String
-    var content: String
+    var authorName: String
+    var text: String
     var date: Date
 }
