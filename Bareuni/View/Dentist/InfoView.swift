@@ -866,8 +866,8 @@ struct SearchView: View {
     @Environment(\.presentationMode) private var presentationMode
     
     let items = [
-        "교정", "Item 2", "Item 3", "Item 4",
-        "Item 5", "Item 6", "Item 7", "Item 8"
+        "치아교정", "발치", "유지장치", "상담",
+        "교정", "이시림", "잇몸", "검진"
     ]
     
     @State private var searchText = ""
@@ -956,9 +956,8 @@ struct SearchView: View {
                             //                                }
                             //                            }
                             LazyVGrid(columns: columns,
-                                      alignment: .leading,
-                                      spacing: 8,
-                                      pinnedViews: []) {
+                                      alignment: .center,
+                                      spacing: 8) {
                                 ForEach(items, id: \.self) { item in
                                     Button(action: {
                                         searchText = item
@@ -967,7 +966,8 @@ struct SearchView: View {
                                             .font(Font.custom("Pretendard", size: 16))
                                             .kerning(0.2)
                                             .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
-                                            .padding(8) // Apply padding around each item
+                                            .frame(height: 40)
+                                            .padding(.horizontal, 16)
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 24)
                                                     .stroke(Color(red: 0.62, green: 0.62, blue: 0.62), lineWidth: 0.5)
@@ -975,9 +975,10 @@ struct SearchView: View {
                                     })
                                 }
                             }
+                                      .padding(.leading, -5)
                             
                         }
-                        .padding(.leading, 24)
+                        .padding(.leading, 20)
                     }
                     Spacer()
                     

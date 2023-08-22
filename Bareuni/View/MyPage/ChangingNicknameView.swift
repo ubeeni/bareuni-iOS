@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ChangingNicknameView: View {
-    @State var bfNickname: String = "이아파"
+    @State var bfNickname: String = "바른이"
     @State var bfName: String = "김민지"
-    @State var nickname: String = "이아파"
+    @State var nickname: String = "바른이"
     @State var name: String = "김민지"
     @State var selectedCities: Int = 0
     @State private var isNickNameExisted = false
@@ -35,7 +35,7 @@ struct ChangingNicknameView: View {
                 Text("닉네임").font(.custom("Pretendard-Medium", size: 16)).padding(.leading, 8)
                 
                 
-                TextField("이아파", text: $nickname)
+                TextField("바른이", text: $nickname)
                     .padding(16)
                     .foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     .overlay(

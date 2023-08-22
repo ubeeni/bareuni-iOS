@@ -57,7 +57,7 @@ struct MyInfoView: View {
                 
             }.padding(.top, 50)
             
-            Text("이아파").font(.custom("Pretendard-SemiBold", size: 16)).padding(.top, 8)
+            Text("바른이").font(.custom("Pretendard-SemiBold", size: 16)).padding(.top, 8)
             
             HStack{
                 Text("내 정보").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color(UIColor(red: 0.561, green: 0.561, blue: 0.561, alpha: 1))).padding(.leading, 24)
@@ -70,7 +70,7 @@ struct MyInfoView: View {
                     HStack{
                         Text("닉네임 / 이름").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
                         Spacer()
-                        Text("이아파").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                        Text("바른이").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)}).fullScreenCover(isPresented: $isNameClicked) {
                         ChangingNicknameView()
                     }
