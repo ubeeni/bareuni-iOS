@@ -10,12 +10,10 @@ import SwiftUI
 struct InfoView: View {
     
     @State var tabIndex = 0
-    @State var cities = ContentView().selectedCities
+    @State var cities = LocationView().selectedCities
     @StateObject var dentistInfo = DentistViewModel()
     
-    
     var body: some View {
-        NavigationView {
             VStack{
                 HStack{
                     Text("치과 정보")
@@ -24,19 +22,20 @@ struct InfoView: View {
                                 .weight(.medium)
                         )
                         .foregroundColor(.black)
-                        .frame(width: 131, height: 29, alignment: .topLeading)
                         .padding(.leading, 24)
                     
                     Spacer()
-                    
                     
                     NavigationLink(destination: SearchView(), label: {
                         Image("Search_light")
                             .frame(width: 32, height: 32)
                     })
-                    Image("Bell_light")
-                        .frame(width: 32, height: 32)
-                        .padding(.trailing, 24)
+                    
+                    NavigationLink(destination: EmptyView(), label: {
+                        Image("Bell_light")
+                            .frame(width: 32, height: 32)
+                            .padding(.trailing, 24)
+                    })
                 }
                 
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -51,7 +50,7 @@ struct InfoView: View {
                                 HStack {
                                     Text(city)
                                         .font(
-                                            Font.custom("Public Sans", size: 15)
+                                            Font.custom("Pretendard", size: 15)
                                                 .weight(.medium)
                                         )
                                     
@@ -64,10 +63,8 @@ struct InfoView: View {
                             }
                         }
                     }
-                    
                 }
                 .frame(height: 30)
-                
                 
                 CustomTopTabBar(tabIndex: $tabIndex).padding(.bottom, -5)
                 
@@ -93,8 +90,8 @@ struct InfoView: View {
                         }
                     }
                 }
-            }
-        }.navigationBarBackButtonHidden(true)
+            }            
+            .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -197,7 +194,7 @@ struct TabBarButton2: View {
                     Font.custom("Pretendard", size: 16)
                         .weight(.semibold)
                 )
-                .foregroundColor(isSelected ? Color(red: 0, green: 0.58, blue: 1) : .black)
+                .foregroundColor(isSelected ? .BackgroundBlue : .black)
             
             if isSelected == true {
                 Rectangle()
@@ -226,7 +223,7 @@ struct TabBarButton3: View {
                     Font.custom("Pretendard", size: 16)
                         .weight(.semibold)
                 )
-                .foregroundColor(isSelected ? Color(red: 0, green: 0.58, blue: 1) : .black)
+                .foregroundColor(isSelected ? .BackgroundBlue : .black)
             
             if isSelected == true {
                 Rectangle()
@@ -396,7 +393,7 @@ struct detailDentistView:View {
                     Font.custom("Pretendard", size: 16)
                         .weight(.medium)
                 )
-                .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                .foregroundColor(.BackgroundBlue)
                 .frame(width: 183, height: 29, alignment: .topLeading)
             
             Text(dentist.address)
@@ -476,7 +473,7 @@ struct IntroduceView: View {
                                 Font.custom("Pretendard", size: 14)
                                     .weight(.medium)
                             )
-                            .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                            .foregroundColor(.BackgroundBlue)
                         
                         Text("점심시간 13:00 - 14:00")
                             .font(
@@ -510,7 +507,7 @@ struct IntroduceView: View {
                             Font.custom("Pretendard", size: 14)
                                 .weight(.medium)
                         )
-                        .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                        .foregroundColor(.BackgroundBlue)
                         .frame(width: 298, alignment: .topLeading)
                     
                     Text("교정치료에 사용되는 브라켓, 와이어, 튜브, 밴드, 기구 등, 좋은 재료로 교정치료의 완성도를 높이겠습니다.")
@@ -531,7 +528,7 @@ struct IntroduceView: View {
             ZStack {
                 Text("상담받기")
                     .font(
-                        Font.custom("Public Sans", size: 16)
+                        Font.custom("Pretendard", size: 16)
                             .weight(.semibold)
                     )
                     .foregroundColor(.white)
@@ -695,7 +692,7 @@ struct ReviewView: View {
                                 .weight(.semibold)
                         )
                         .multilineTextAlignment(.center)
-                        .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                        .foregroundColor(.BackgroundBlue)
                 }
                 .padding(.horizontal, 149)
                 .padding(.vertical, 13)
@@ -941,6 +938,7 @@ extension View {
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
+        ContentView()
         InfoView()
         ReviewView()
         SearchView()

@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-
-
-
 struct ContentView: View {
+    var body: some View{
+        LocationView()
+    }
+}
+
+
+struct LocationView: View {
     
     @State var tabIndex = "서울"
     @State var tabIndex2 = ""
@@ -24,61 +28,34 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack{
-                HStack{
-                    Button(action: {
-                        selectedCities.removeAll()
-                    }, label: {
-                        HStack{
-                            Image("reset")
-                                .frame(width: 20, height: 20)
-                                .rotationEffect(.degrees(-90))
-                                .padding(.bottom, 10)
-                                .padding(.leading)
-                            
-                            Text("초기화")
-                                .font(
-                                    Font.custom("Public Sans", size: 15)
-                                        .weight(.medium)
-                                )
-                                .foregroundColor(Color(red: 0.76, green: 0.82, blue: 0.85))
-                                .frame(width: 52, height: 28, alignment: .topLeading)
-                        }
-                    })
-                    
                     ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 20) {
+                        LazyHStack(spacing: 0) {
                             ForEach(selectedCities, id: \.self){ city in
-                                ZStack {
-                                    Rectangle()
-                                        .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                        .frame(width: 113, height: 24)
-                                        .cornerRadius(13)
+                                HStack {
+                                    Text(city)
+                                        .font(Font.custom("Pretendard", size: 16))
+                                        .kerning(0.2)
+                                        .foregroundColor(.BackgroundBlue)
                                     
-                                    HStack {
-                                        Text(city)
-                                            .font(
-                                                Font.custom("Public Sans", size: 15)
-                                                    .weight(.medium)
-                                            )
-                                        
-                                        Button(action: {
-                                            selectedCities.removeAll { $0 == city }
-                                        }, label: {
-                                            Image("Mask")
-                                        })
-                                    }
+                                    Button(action: {
+                                        selectedCities.removeAll { $0 == city }
+                                    }, label: {
+                                        Image("Cancel")
+                                    })
                                 }
+                                .padding(.leading, 16)
+                                .padding(.vertical, 4)
+                                .padding(.trailing, 8)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 24)
+                                        .stroke(Color.BackgroundBlue, lineWidth: 0.5)
+                                )
                             }
+                            .padding(.leading, 20)
+                            .padding(.trailing, -10)
                         }
-
                     }
                     .frame(height: 30)
-                    
-                    Spacer()
-                    
-                }
-                
-                Spacer()
                 
                 Rectangle()
                     .foregroundColor(.clear)
@@ -89,7 +66,6 @@ struct ContentView: View {
                 
                 HStack{
                     VStack{
-                        
                         List(cityList, id: \.self){ city in
                             LocationButton(text: city, isSelected: .constant(tabIndex == city))
                                 .onTapGesture { onButtonTapped(index: city) }
@@ -98,7 +74,6 @@ struct ContentView: View {
                         }
                         .listStyle(.plain)
                         .frame(width: 95)
-                        
                     }
                     
                     Spacer().frame(width: 0)
@@ -107,7 +82,6 @@ struct ContentView: View {
                         .foregroundColor(.clear)
                         .frame(width: 1, height: .infinity)
                         .background(Color(red: 0.91, green: 0.93, blue: 0.94))
-                    
                     
                     VStack {
                         List(cityDic[tabIndex] ?? [], id: \.self) { detailCity in
@@ -121,44 +95,30 @@ struct ContentView: View {
                     }
                 }
                 
-
+                
                 Button(action: {
-                    //아마 API연결
+                    //asd
                 }, label: {
                     NavigationLink(destination: InfoView(), label: {
-                    ZStack {
-                        
-                        if selectedCities.count == 0 {
+                        ZStack {
                             Rectangle().frame(width: 370, height: 57)
                                 .cornerRadius(4)
-                                .foregroundColor(Color(red: 0.85, green: 0.85, blue: 0.85))
+                                .foregroundColor(selectedCities.count == 0 ? Color(red: 0.85, green: 0.85, blue: 0.85) : .BackgroundBlue)
+                            
+                            Text("내 지역 선택 완료")
+                                .font(
+                                    Font.custom("Pretendard", size: 24)
+                                        .weight(.bold)
+                                )
+                                .foregroundColor(.white)
                         }
-                        else{
-                            Rectangle().frame(width: 370, height: 57)
-                                .cornerRadius(4)
-                                .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
-                        }
-//                        RoundedRectangle(4)
-//                            .frame(width: 370, height: 57)
-//                            .foregroundColor(selectedCities.count == 0 ?
-//                                             Color("gray") : Color("blue"))
-                        
-                        Text("내 지역 선택 완료")
-                            .font(
-                                Font.custom("Public Sans", size: 24)
-                                    .weight(.bold)
-                            )
-                            .multilineTextAlignment(.trailing)
-                            .foregroundColor(.white)
-                    }
                     })
                 })
                 .disabled(selectedCities.count == 0)
-                
-                
             }
         }//navigationview
     }
+    
     private func onButtonTapped(index: String) {
         withAnimation { tabIndex = index }
     }
@@ -187,83 +147,44 @@ struct ContentView: View {
     }
 }
 
-struct SelectedLocationButton: View {
-    let text: String
-    @Binding var isSelected: Bool
-    var body: some View {
-        
-        ZStack {
-            Rectangle()
-                .foregroundColor(.gray)
-            
-            HStack{
-                Text("의정부/양주 ")
-                    .font(
-                        Font.custom("Public Sans", size: 15)
-                            .weight(.medium)
-                    )
-                    .foregroundColor(Color(red: 0.13, green: 0.17, blue: 0.21))
-                    .frame(width: 95, height: 28, alignment: .topLeading)
-                
-                Image("Mask")
-            }
-        }
-        
-        
-        Text(text)
-            .font(
-                Font.custom("Public Sans", size: 18)
-                    .weight(.bold)
-            )
-            .foregroundColor(isSelected ? Color(red: 0, green: 0.58, blue: 1) : Color(red: 0.76, green: 0.82, blue: 0.85))
-            .padding(.bottom, 5)
-            .padding(.leading, 5)
-        
-        Circle()
-            .frame(width: 3, height: 3)
-            .foregroundColor(isSelected ? Color(red: 0, green: 0.58, blue: 1) : .white)
-            .padding(.bottom)
-    }
-}
-
-
 
 struct LocationButton: View {
+    
     let text: String
     @Binding var isSelected: Bool
+    
     var body: some View {
         HStack {
-            
             Rectangle()
-                .foregroundColor(isSelected ? Color(red: 0, green: 0.58, blue: 1) : .white)
-                .frame(width: 1, height: 20)
-                .background(Color(red: 0, green: 0.58, blue: 1))
+                .foregroundColor(isSelected ? .BackgroundBlue : .white)
+                .frame(width: 2, height: 25)
+                .background(Color.BackgroundBlue)
             
             
             Text(text)
                 .font(
-                    Font.custom("Public Sans", size: 18)
+                    Font.custom("Pretendard", size: 18)
                         .weight(.bold)
                 )
-                .foregroundColor(isSelected ? Color(red: 0, green: 0.58, blue: 1) : Color(red: 0.76, green: 0.82, blue: 0.85))
-                .padding(.bottom, 5)
-                .padding(.leading, 5)
+                .foregroundColor(isSelected ? .BackgroundBlue : Color(red: 0.76, green: 0.82, blue: 0.85))
+                .padding([.bottom, .leading], 5)
             
             Circle()
                 .frame(width: 3, height: 3)
-                .foregroundColor(isSelected ? Color(red: 0, green: 0.58, blue: 1) : .white)
+                .foregroundColor(isSelected ? .BackgroundBlue : .white)
                 .padding(.bottom)
         }
     }
 }
 
+
 struct DetailLocationButton: View {
+    
     let text: String
     let detailText: String
     @Binding var isSelected: Bool
+    
     var body: some View {
-        
-        
         Button(action: {
             isSelected.toggle()
         }) {
@@ -272,18 +193,35 @@ struct DetailLocationButton: View {
                     .resizable()
                     .frame(width: 20, height: 20)
                 Text(text)
-                    .font(Font.custom("Public Sans", size: 18))
+                    .font(Font.custom("Pretendard", size: 18))
                     .foregroundColor(Color(red: 0.13, green: 0.17, blue: 0.21))
-                    .padding(.bottom, 9)
             }
         }
     }
 }
 
 
+extension Color {
+    static let BackgroundBlue = Color ("BackgroundBlue")
+    static let BackgroundWhite = Color ("BackgroundWhite")
+    static let BAgray = Color ("BAgray")
+    static let disabledBtnColor = Color("disabledBtnColor")
+    static let F4gray = Color ("F4gray")
+    static let SubBlue = Color ("SubBlue")
+    static let TextBlack = Color ("TextBlack")
+    static let TextEditor = Color ("TextEditor")
+    static let coolGrey = Color("coolGrey")
+    //    static let mainYellow = Color ("6Fgray")
+    //    static let Grey = Color ("9Egray")
+    //    static let darkGrey = Color ("61gray")
+    //    static let coolGrey = Color("75gray")
+    //    static let mainYellow = Color ("212B36")
+}
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        //        LocationView()
+        LocationView()
         ContentView()
     }
 }

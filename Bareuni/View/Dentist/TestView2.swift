@@ -116,6 +116,14 @@ Text(currentDate.formatted(date: .abbreviated, time: .shortened))
 }
 
 
+struct RectangleView: View {
+    var body: some View {
+        Text("This is a multiline text view. It has multiple lines of text.")
+            .font(.headline)
+            .multilineTextAlignment(.trailing) // Align text to the right
+            .padding()
+    }
+}
 
 
 
@@ -123,6 +131,7 @@ Text(currentDate.formatted(date: .abbreviated, time: .shortened))
 struct TestView2_Previews: PreviewProvider {
     static var previews: some View {
         ReservationView()
+        RectangleView()
     }
 }
 

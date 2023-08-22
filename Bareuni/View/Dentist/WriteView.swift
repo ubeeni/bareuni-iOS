@@ -41,7 +41,7 @@ struct WriteView: View {
                                             .weight(.medium)
                                     )
                                     .multilineTextAlignment(.center)
-                                    .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                                    .foregroundColor(.BackgroundBlue)
                                     .frame(maxWidth: .infinity, alignment: .top)
                             }
                             .padding(8)
@@ -209,7 +209,7 @@ struct EvaluationButton: View {
                                 .weight(.medium)
                         )
                         .multilineTextAlignment(.center)
-                        .foregroundColor(selectedSatisfaction == "Dissatisfied" ? Color(red: 0, green: 0.58, blue: 1) : Color(red: 0.88, green: 0.88, blue: 0.88))
+                        .foregroundColor(selectedSatisfaction == "Dissatisfied" ? .BackgroundBlue : Color(red: 0.88, green: 0.88, blue: 0.88))
                 }
             })
             
@@ -234,7 +234,7 @@ struct EvaluationButton: View {
                                 .weight(.medium)
                         )
                         .multilineTextAlignment(.center)
-                        .foregroundColor(selectedSatisfaction == "Average" ? Color(red: 0, green: 0.58, blue: 1) : Color(red: 0.88, green: 0.88, blue: 0.88))
+                        .foregroundColor(selectedSatisfaction == "Average" ? .BackgroundBlue : Color(red: 0.88, green: 0.88, blue: 0.88))
                 }
             })
             
@@ -259,7 +259,7 @@ struct EvaluationButton: View {
                                 .weight(.medium)
                         )
                         .multilineTextAlignment(.center)
-                        .foregroundColor(selectedSatisfaction == "Satisfied" ? Color(red: 0, green: 0.58, blue: 1) : Color(red: 0.88, green: 0.88, blue: 0.88))
+                        .foregroundColor(selectedSatisfaction == "Satisfied" ? .BackgroundBlue : Color(red: 0.88, green: 0.88, blue: 0.88))
                 }
             })
         }
@@ -393,7 +393,7 @@ struct WriteView2: View {
                             .resizable()
                             .frame(width: 24, height: 24)
                         Text("개인정보 수집이용 동의 (필수)")
-                            .font(Font.custom("Public Sans", size: 15))
+                            .font(Font.custom("Pretendard", size: 15))
                             .multilineTextAlignment(.center)
                             .foregroundColor(.black)
                     }
@@ -406,7 +406,7 @@ struct WriteView2: View {
                             .resizable()
                             .frame(width: 24, height: 24)
                         Text("민감정보 수집 이용 동의 (필수)")
-                            .font(Font.custom("Public Sans", size: 15))
+                            .font(Font.custom("Pretendard", size: 15))
                             .multilineTextAlignment(.center)
                             .foregroundColor(.black)
                     }
@@ -433,7 +433,7 @@ struct WriteView2: View {
                                 .weight(.medium)
                         )
                         .multilineTextAlignment(.center)
-                        .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                        .foregroundColor(.BackgroundBlue)
                         .frame(maxWidth: .infinity, alignment: .top)
                 }
                 .padding(8)
@@ -465,7 +465,7 @@ struct FinishView: View {
             Text("리뷰 업로드 완료!")
                 .font(Font.custom("Pretendard", size: 20))
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                .foregroundColor(.BackgroundBlue)
             
             Spacer().frame(height: 100)
         }.navigationBarBackButtonHidden(true)

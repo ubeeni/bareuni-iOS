@@ -30,7 +30,7 @@ struct ConsultingView: View {
                         .overlay(
                             RoundedRectangle(cornerRadius: 9)
                                 .inset(by: 0.25)
-                                .stroke(isSelected1 ? Color(red: 0, green: 0.58, blue: 1) : Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 0.5)
+                                .stroke(isSelected1 ? .BackgroundBlue : Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 0.5)
                         )
                     HStack {
                         Image(isSelected1 ? "Ellipse 168" : "Ellipse 166")
@@ -38,7 +38,7 @@ struct ConsultingView: View {
                             .background(.white)
                             .overlay(
                                 Circle()
-                                    .stroke(isSelected1 ? Color(red: 0, green: 0.58, blue: 1) : Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 0.5)
+                                    .stroke(isSelected1 ? .BackgroundBlue : Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 0.5)
                             )
                         VStack {
                             Text("병원에서 전화오면 예약할게요")
@@ -68,7 +68,7 @@ struct ConsultingView: View {
                         .overlay(
                             RoundedRectangle(cornerRadius: 9)
                                 .inset(by: 0.25)
-                                .stroke(isSelected2 ? Color(red: 0, green: 0.58, blue: 1) : Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 0.5)
+                                .stroke(isSelected2 ? .BackgroundBlue : Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 0.5)
                         )
                     HStack {
                         Image(isSelected2 ? "Ellipse 168" : "Ellipse 166")
@@ -76,7 +76,7 @@ struct ConsultingView: View {
                             .background(.white)
                             .overlay(
                                 Circle()
-                                    .stroke(isSelected2 ? Color(red: 0, green: 0.58, blue: 1) : Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 0.5)
+                                    .stroke(isSelected2 ? .BackgroundBlue : Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 0.5)
                             )
                         VStack {
                             Text("앱에서 바로 예약할게요")
@@ -110,7 +110,7 @@ struct ConsultingView: View {
                     Font.custom("Pretendard", size: 12)
                       .weight(.medium)
                   )
-                  .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                  .foregroundColor(.BackgroundBlue)
                   .padding(.trailing, 32)
             }
             .padding(.bottom, 13)
@@ -164,7 +164,7 @@ struct ConsultingView: View {
                 
                 
                 Text("인증")
-                  .foregroundColor(Color(red: 0, green: 0.58, blue: 1))
+                    .foregroundColor(.BackgroundBlue)
                   .frame(width: 72, height: 51)
                   .background(.white)
                   .cornerRadius(8)
