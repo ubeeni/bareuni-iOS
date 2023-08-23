@@ -474,6 +474,7 @@ extension View {
 struct IntroduceView: View {
     
     @Binding var dentist: Dentist
+    @State var isPresentingModal = false
     
     var body: some View {
         //        ScrollView(showsIndicators: false){
@@ -554,19 +555,34 @@ struct IntroduceView: View {
             .background(Color(red: 0.93, green: 0.97, blue: 1))
             .cornerRadius(10)
         }
-        ZStack {
-            Text("상담받기")
-                .font(
-                    Font.custom("Pretendard", size: 16)
-                        .weight(.semibold)
-                )
-                .foregroundColor(.white)
-        }
-        .frame(width: 348, height: 51, alignment: .center)
-        .background(Color(red: 0, green: 0.58, blue: 1))
-        .cornerRadius(9)
-        .padding(.top, 15)
-        .padding(.bottom, 5)
+        
+        
+        Button(action: {
+            isPresentingModal.toggle()
+        }, label: {
+            ZStack {
+                Text("상담받기")
+                    .font(
+                        Font.custom("Pretendard", size: 16)
+                            .weight(.semibold)
+                    )
+                    .foregroundColor(.white)
+            }
+            .frame(width: 348, height: 51, alignment: .center)
+            .background(Color(red: 0, green: 0.58, blue: 1))
+            .cornerRadius(9)
+            .padding(.top, 15)
+            .padding(.bottom, 5)
+            .fullScreenCover(isPresented: $isPresentingModal) {
+                ConsultingView(isPresentingModal: $isPresentingModal)
+            }
+        })
+//        NavigationLink(destination: {
+//            ReservationView()
+//        }, label: {
+            
+//        })
+        
         //        }
     }
 }
