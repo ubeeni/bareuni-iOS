@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct Dentists: Identifiable {
     var id = UUID()
@@ -23,12 +24,8 @@ struct BestCommunity: Identifiable {
     var time: String
 }
 
+
 struct HomeView: View {
-    var dentistList: [Dentists] = [
-        Dentists(name: "옐로우 교정전문치과", address: "서울시 서초구 서초대로00길", photo: "Sample1", number: 1, rating: 5.0),
-        Dentists(name: "그랑치과교정의원", address: "서울시 강남구 도산대로", photo: "Sample2", number: 2, rating: 4.9),
-        Dentists(name: "화이트드림교정치과", address: "서울시 서초구 서초대로00길", photo: "Sample3", number: 3, rating: 4.9)
-    ]
     
     var communityList: [BestCommunity] = [
         BestCommunity(rating: "1.", contents: "저는 치아교정한지 2년 3개월 된 사람입니다. 다름이 아니라 요즘 고민이 있는데요..", time: "12시간 전 (수정됨)"),
@@ -38,8 +35,11 @@ struct HomeView: View {
     ]
     
     @StateObject var dentistInfo = DentistViewModel()
+    @StateObject private var bestdentistViewModel = BestDentistViewModel()
+    
     @State var showCommunityMainView: Bool = false
     @State var showDentistMainView: Bool = false
+    //@State var count = 1
     
     var body: some View {
         NavigationView {
@@ -89,37 +89,22 @@ struct HomeView: View {
                                 }
                             }
                         )
-                }
-                    
-//                    NavigationLink(destination:{
-//                        ScrollView(showsIndicators: false) {
-//                            VStack {
-//                                ForEach(dentistInfo.Dentists){ dentist in
-//                                    recommendedDentistView(dentist: dentist)
-//                                    Spacer().frame(height: 23)
-//                                }
-//                            }
-//                        }
-//                    }) {
-//                        HStack {
-//                            Text("가장 후기가 좋은 교정치과")
-//                                .font(.custom("Pretendard-SemiBold", size: 18))
-//                                .foregroundColor(.black)
-//                                .padding(.leading, 20)
-//
-//                            Image("Expand_right")
-//                                .frame(width: 22, height: 22)
-//
-//                            Spacer()
-//                        }
-//                    }
+                    }
                     
                     VStack {
-                        ForEach(dentistList) { dentist in
+                        /*
+                        ForEach(bestdentistViewModel.bestDentists) { dentist in
+                            DentistCell(dentist: dentist, rank: $count)
+                            count = count + 1
+                        }
+                         */
+                        ForEach(bestdentistViewModel.bestDentists) { dentist in
                             DentistCell(dentist: dentist)
                         }
                     }
                     .padding(.top, 10)
+                    
+                    //Text(String(bestdentistViewModel.bestDentists.count))
                     
                     Image("Bar")
                         .padding(.top, 20)
@@ -141,7 +126,7 @@ struct HomeView: View {
                             Spacer()
                         }
                     }).fullScreenCover(isPresented: $showCommunityMainView) {
-                            CommunityMainView()
+                        CommunityMainView()
                             .gesture(DragGesture(minimumDistance: 50, coordinateSpace: .local)
                                 .onEnded { value in
                                     if value.translation.height > 0 {
@@ -152,24 +137,6 @@ struct HomeView: View {
                                 }
                             )
                     }
-                
-//
-//                        HStack {
-//                            Text("커뮤니티 실시간 인기글")
-//                                .font(.custom("Pretendard-SemiBold", size: 18))
-//                                .foregroundColor(.black)
-//                                .padding(.leading, 20)
-//
-//                            Image("Fire")
-//                                .frame(width: 27, height: 27)
-//                            Image("Expand_right")
-//                                .frame(width: 22, height: 22)
-//
-//                            Spacer()
-//                        }.fullScreenCover(isPresented: $showCommunityMainView) {
-//                            CommunityMainView()
-//                        }
-                    
                     .padding(.top, 10)
                     
                     ZStack {
@@ -203,18 +170,20 @@ struct HomeView: View {
 }
 
 struct DentistCell: View {
-    let dentist: Dentists
+    let dentist: BestDentistResult
+    //@Binding var rank: Int
     
     var body: some View {
         VStack {
             HStack {
                 ZStack(alignment: .topLeading) {
-                    Image(dentist.photo)
+                    Image(dentist.image)
                         .resizable()
                         .frame(width: 87, height: 86)
                         .cornerRadius(10)
                     Image("gray")
-                    Text("\(dentist.number)")
+                    
+                    Text("1")
                         .font(.custom("Pretendard-Bold", size: 12))
                         .foregroundColor(.white)
                         .padding(.horizontal, 10)
@@ -223,7 +192,7 @@ struct DentistCell: View {
                 .padding(.leading, 20)
                 
                 VStack(alignment: .leading, spacing: 0) {
-                    Text(dentist.name)
+                    Text(dentist.hosName)
                         .font(.custom("Pretendard-SemiBold", size: 18))
                         .foregroundColor(.black)
                         .padding(.bottom, 5)
@@ -231,7 +200,7 @@ struct DentistCell: View {
                     HStack {
                         Image("Star")
                             .frame(width: 20, height: 20)
-                        Text(String(format: "%.1f", dentist.rating))
+                        Text(String(format: "%.1f", dentist.score))
                             .font(.custom("Pretendard-SemiBold", size: 12))
                             .foregroundColor(Color("6Fgray"))
                     }
