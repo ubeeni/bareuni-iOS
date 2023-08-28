@@ -37,8 +37,9 @@
 		3273943D2A8757A6001A739E /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273943C2A8757A6001A739E /* PointView.swift */; };
 		3273943F2A8757E9001A739E /* CustomerServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273943E2A8757E9001A739E /* CustomerServiceView.swift */; };
 		327394412A876370001A739E /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327394402A876370001A739E /* FontManager.swift */; };
-		327517302A949DDB008A8B97 /* SignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275172F2A949DDB008A8B97 /* SignUpDataModel.swift */; };
-		327517332A949E88008A8B97 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327517322A949E88008A8B97 /* UserAPI.swift */; };
+		327517362A9B7642008A8B97 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327517352A9B7642008A8B97 /* LoginAPI.swift */; };
+		327517382A9C4E24008A8B97 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327517372A9C4E24008A8B97 /* DataModel.swift */; };
+		3275173B2A9C8E42008A8B97 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3275173A2A9C8E42008A8B97 /* KeychainSwift */; };
 		328254952A9223C900F9428C /* ChangingPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328254942A9223C900F9428C /* ChangingPasswordView.swift */; };
 		328DDE9F2A8E1F64006B82EF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 328DDE9E2A8E1F64006B82EF /* Alamofire */; };
 		32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6C82A557A1800B41644 /* AppDelegate.swift */; };
@@ -147,8 +148,8 @@
 		3273943C2A8757A6001A739E /* PointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
 		3273943E2A8757E9001A739E /* CustomerServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceView.swift; sourceTree = "<group>"; };
 		327394402A876370001A739E /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
-		3275172F2A949DDB008A8B97 /* SignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataModel.swift; sourceTree = "<group>"; };
-		327517322A949E88008A8B97 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		327517352A9B7642008A8B97 /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
+		327517372A9C4E24008A8B97 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		328254942A9223C900F9428C /* ChangingPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingPasswordView.swift; sourceTree = "<group>"; };
 		32A5E6C52A557A1800B41644 /* Bareuni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bareuni.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A5E6C82A557A1800B41644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3275173B2A9C8E42008A8B97 /* KeychainSwift in Frameworks */,
 				3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */,
 				328DDE9F2A8E1F64006B82EF /* Alamofire in Frameworks */,
 			);
@@ -330,13 +332,13 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		327517312A949DEB008A8B97 /* SignUp&Login */ = {
+		327517342A9B7622008A8B97 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				3275172F2A949DDB008A8B97 /* SignUpDataModel.swift */,
-				327517322A949E88008A8B97 /* UserAPI.swift */,
+				327517352A9B7642008A8B97 /* LoginAPI.swift */,
+				327517372A9C4E24008A8B97 /* DataModel.swift */,
 			);
-			path = "SignUp&Login";
+			path = Login;
 			sourceTree = "<group>";
 		};
 		32A5E6BC2A557A1800B41644 = {
@@ -391,7 +393,7 @@
 		32A5E6F82A557A2000B41644 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				327517312A949DEB008A8B97 /* SignUp&Login */,
+				327517342A9B7622008A8B97 /* Login */,
 				10E125B82A8DE58F00A2805C /* Community */,
 				10E125B72A8DE57A00A2805C /* Dentist */,
 			);
@@ -531,6 +533,7 @@
 			packageProductDependencies = (
 				3B5AF6502A708F2900A94BF1 /* BSImagePicker */,
 				328DDE9E2A8E1F64006B82EF /* Alamofire */,
+				3275173A2A9C8E42008A8B97 /* KeychainSwift */,
 			);
 			productName = Bareuni;
 			productReference = 32A5E6C52A557A1800B41644 /* Bareuni.app */;
@@ -607,6 +610,7 @@
 			packageReferences = (
 				3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */,
 				328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 32A5E6C62A557A1800B41644 /* Products */;
 			projectDirPath = "";
@@ -695,6 +699,7 @@
 				3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */,
 				1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */,
 				10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */,
+				327517382A9C4E24008A8B97 /* DataModel.swift in Sources */,
 				10E125BB2A8DEAA000A2805C /* HomeView.swift in Sources */,
 				3BCB5BB62A9470B200F58C50 /* ReviewViewModel.swift in Sources */,
 				3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */,
@@ -703,7 +708,6 @@
 				1026BF412A59A8F000955799 /* TabBarController.swift in Sources */,
 				32EB16ED2A8378AF0050F45F /* NumberAuthHalfSheet.swift in Sources */,
 				32EB16DE2A825F0A0050F45F /* MyPageViewController.swift in Sources */,
-				327517332A949E88008A8B97 /* UserAPI.swift in Sources */,
 				32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */,
 				32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */,
 				3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */,
@@ -730,9 +734,9 @@
 				10AB8CE92A8521A3009B594E /* CommentModel.swift in Sources */,
 				32EB16C02A6A26660050F45F /* ConfirmPWViewController.swift in Sources */,
 				32A5E6CB2A557A1800B41644 /* SceneDelegate.swift in Sources */,
+				327517362A9B7642008A8B97 /* LoginAPI.swift in Sources */,
 				321B89702A60333F00AE45D4 /* loginSelectionViewController.swift in Sources */,
 				3BCB5B702A82A70E00F58C50 /* TestView3.swift in Sources */,
-				327517302A949DDB008A8B97 /* SignUpDataModel.swift in Sources */,
 				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
 				10C82FE12A76764C00ADF34E /* PostView.swift in Sources */,
 				3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */,
@@ -1077,6 +1081,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -1096,6 +1108,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3275173A2A9C8E42008A8B97 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
 		328DDE9E2A8E1F64006B82EF /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */;
