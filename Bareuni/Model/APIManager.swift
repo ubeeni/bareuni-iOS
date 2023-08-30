@@ -15,7 +15,7 @@ enum BareuniAPI {
 
 extension BareuniAPI: TargetType {
     var baseURL: URL {
-        return URL(string: "http://54.180.54.10:8080/")!
+        return URL(string: "https://bareuni.shop/")!
     }
     
     var path: String {
