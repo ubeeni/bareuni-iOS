@@ -37,7 +37,7 @@ struct HomeView: View {
         BestCommunity(rating: "4.", contents: "교정 유지 장치가 갑자기 떨어져 버렸어요.. 이거 어떻게 하는 게 좋을까요?", time: "50분 전")
     ]
     
-    @StateObject var dentistInfo = DentistViewModel()
+    @StateObject var recommendViewModel = RecommendDentistViewModel()
     @State var showCommunityMainView: Bool = false
     @State var showDentistMainView: Bool = false
     
@@ -74,7 +74,7 @@ struct HomeView: View {
                     }).fullScreenCover(isPresented: $showDentistMainView) {
                         ScrollView(showsIndicators: false) {
                             VStack {
-                                ForEach(dentistInfo.Dentists){ dentist in
+                                ForEach(recommendViewModel.recommendedDentists){ dentist in
                                     recommendedDentistView(dentist: dentist)
                                     Spacer().frame(height: 23)
                                 }

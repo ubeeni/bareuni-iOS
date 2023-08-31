@@ -20,6 +20,7 @@ struct LocationView: View {
     @State var tabIndex2 = ""
     @State var isSelected = false
     @State var selectedCities: [String] = []
+    @ObservedObject var recommendDentistViewModel = RecommendDentistViewModel()
     
     
     let cityDic = CityDictionary().cityDic
@@ -95,11 +96,7 @@ struct LocationView: View {
                     }
                 }
                 
-                
-                Button(action: {
-                    //asd
-                }, label: {
-                    NavigationLink(destination: InfoView(selectedCities: $selectedCities), label: {
+                NavigationLink(destination: InfoView(selectedCities: $selectedCities, recommendDentistViewModel: recommendDentistViewModel), label: {
                         ZStack {
                             Rectangle().frame(width: 345, height: 57)
                                 .cornerRadius(8)
@@ -114,9 +111,11 @@ struct LocationView: View {
                                 .foregroundColor(.white)
                         }
                         .padding(.bottom, 10)
-                    })
-                })
-                .disabled(selectedCities.count == 0)
+                    }).disabled(selectedCities.count == 0)
+                    .simultaneousGesture(TapGesture().onEnded{
+                        recommendDentistViewModel.selectedCities = selectedCities
+                        print(recommendDentistViewModel.selectedCities)
+                        })
             }
         }//navigationview
     }
