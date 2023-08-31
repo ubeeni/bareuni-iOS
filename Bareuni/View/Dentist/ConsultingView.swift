@@ -163,8 +163,6 @@ struct ConsultingView: View {
                         .padding(.trailing, 30)
                         .padding(.leading, 43)
                     
-                    
-                    
                     Text("인증")
                         .foregroundColor(.BackgroundBlue)
                       .frame(width: 72, height: 51)
@@ -177,8 +175,7 @@ struct ConsultingView: View {
                       )
                       .padding(.trailing, 25)
                 }.frame(width: 342, height: 51)
-    //        Spacer()
-    //            VStack {
+                
                 NavigationLink(destination: ReservationView( isPresentingModal: $isPresentingModal), label: {
                     ZStack {
                         Rectangle().frame(width: 345, height: 57)
@@ -195,9 +192,6 @@ struct ConsultingView: View {
                     }
                     .padding(.bottom, 10)
                 })
-                    
-    //            }
-                
             }
         }
     }

@@ -10,12 +10,9 @@ import SwiftUI
 struct InfoView: View {
     
     @State var tabIndex = 0
-    @State var cities = LocationView().selectedCities
     @StateObject var dentistInfo = DentistViewModel()
-    @Binding var selectedCities: [String]
-//    @Binding var recommendDentistViewModel: RecommendDentistViewModel
     @ObservedObject var recommendDentistViewModel: RecommendDentistViewModel
-//    @StateObject var recommendDentistViewModel = RecommendDentistViewModel(selectedCities: ["서울-양천구", "서울-관악구"])
+    @Environment(\.presentationMode) var presentationMode
     
     
     var body: some View {
@@ -47,12 +44,20 @@ struct InfoView: View {
                 LazyHStack(spacing: 0) {
                     
                     Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Text("지역선택 다시하기")
+                    })
+                    .padding(.trailing)
+                    
+                    
+                    Button(action: {
                         print(recommendDentistViewModel.selectedCities)
                     }, label: {
                         Text("보기")
                     })
                     
-                    ForEach(selectedCities, id: \.self){ city in
+                    ForEach(recommendDentistViewModel.selectedCities, id: \.self){ city in
                         HStack {
                             Text(city)
                                 .font(Font.custom("Pretendard", size: 16))
@@ -60,7 +65,8 @@ struct InfoView: View {
                                 .foregroundColor(.BackgroundBlue)
                             
                             Button(action: {
-                                selectedCities.removeAll { $0 == city }
+                                recommendDentistViewModel.selectedCities.removeAll { $0 == city }
+                                recommendDentistViewModel.fetchRecommendedDentists()
                             }, label: {
                                 Image("Cancel")
                             })
@@ -260,15 +266,6 @@ struct TabBarButton3: View {
 
 
 struct recommendedDentistView:View {
-    
-    
-//    let hospitalIdx: Int64
-//    let hosName, address: String
-//    let score: Double
-//    let reviewCnt: Int64
-//    let summary: String
-//
-//    var id: Int64 { hospitalIdx } // Using hospitalIdx as the id
     
     @State var dentist: RecommendDentist
     
@@ -1016,10 +1013,8 @@ struct SearchView: View {
                         .padding(.leading, 20)
                     }
                     Spacer()
-                    
                 }
             }
-            
         }.navigationBarBackButtonHidden(true)
     }
 }
@@ -1033,7 +1028,6 @@ struct EmailSearchBar: View {
             VStack{
                 HStack {
                     TextField("치과명 또는 키워드를 검색하세요.", text: $text)
-                    //                        .underlineTextField()
                         .frame(width: 276, height: 46)
                         .background(RoundedRectangle(cornerRadius: 12)
                             .inset(by: 0.5)

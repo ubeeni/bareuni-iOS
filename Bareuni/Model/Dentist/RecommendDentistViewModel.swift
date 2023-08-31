@@ -16,7 +16,7 @@ class RecommendDentistViewModel: ObservableObject {
     @Published var selectedCities = [String]()
     
     init() {
-        fetchRecommendedDentists()
+//        fetchRecommendedDentists()
     }
     
     func fetchRecommendedDentists() {
