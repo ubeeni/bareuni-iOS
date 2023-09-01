@@ -105,6 +105,7 @@ class EmailAuthViewController: UIViewController, UITextFieldDelegate {
             if(self.authCodeTF.text == authCode){
                 self.warngingLb.isHidden = true
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmPWViewController") as? ConfirmPWViewController
+                nextVC!.email = email
                 self.navigationController?.pushViewController(nextVC!, animated: true)
             }else{
                 self.warngingLb.isHidden = false

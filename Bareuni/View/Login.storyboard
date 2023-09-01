@@ -603,7 +603,7 @@
         <!--LoginUI Navigation Controller-->
         <scene sceneID="7Ii-ic-Qdw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iNJ-R7-sdb" customClass="LoginUINavigationController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginUINavigationController" automaticallyAdjustsScrollViewInsets="NO" id="iNJ-R7-sdb" customClass="LoginUINavigationController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9kg-mV-Wdc">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -667,8 +667,7 @@
                                     <color key="titleColor" name="BackgroundWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextBtnDidTap:" destination="9G3-Oj-cfN" eventType="touchUpInside" id="uqP-XD-iLa"/>
-                                    <segue destination="Jae-SY-xra" kind="show" id="HeH-Ub-lEf"/>
+                                    <action selector="nextBtnDidTap:" destination="9G3-Oj-cfN" eventType="touchUpInside" id="mzT-4b-O44"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유효하지 않은 이메일입니다. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8E-QJ-aQb">
@@ -732,9 +731,9 @@
         <!--Terms Of Service View Controller-->
         <scene sceneID="teQ-em-Ioj">
             <objects>
-                <viewController id="Jae-SY-xra" customClass="TermsOfServiceViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsOfServiceViewController" id="Jae-SY-xra" customClass="TermsOfServiceViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TxT-Ec-ai0">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 이용약관에 동의해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMw-LJ-SdM">
@@ -747,7 +746,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAx-Ry-hSf">
-                                <rect key="frame" x="24" y="688" width="342" height="51"/>
+                                <rect key="frame" x="24" y="711" width="342" height="51"/>
                                 <color key="backgroundColor" name="disabledBtnColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="6TM-ko-tqW"/>
@@ -763,7 +762,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZT-er-cxN">
-                                <rect key="frame" x="24" y="172" width="342" height="488"/>
+                                <rect key="frame" x="24" y="172" width="342" height="511"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmH-Sl-8Yr">
                                         <rect key="frame" x="0.0" y="0.0" width="342" height="493"/>

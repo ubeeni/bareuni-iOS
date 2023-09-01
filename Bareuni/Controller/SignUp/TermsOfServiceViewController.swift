@@ -8,6 +8,7 @@
 import UIKit
 
 class TermsOfServiceViewController: UIViewController {
+    var signUpData: SignUpRequest?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,8 +116,18 @@ class TermsOfServiceViewController: UIViewController {
     
     @IBAction func nextBtnDidTap(_ sender: UIButton) {
         let newStoryboard = UIStoryboard(name: "Profile", bundle: nil)
-        let newViewController = newStoryboard.instantiateViewController(identifier: "ProfileNavigationController")
-        self.changeRootViewController(newViewController)
+//        let newViewController = newStoryboard.instantiateViewController(identifier: "ProfileNavigationController")
+//        self.changeRootViewController(newViewController)
+//
+        guard let nextVC = newStoryboard.instantiateViewController(withIdentifier: "profileGuideViewController")
+                      as? profileGuideViewController else {
+                          return
+                  }
+
+        nextVC.signUpData = signUpData
+
+                  let nC = UINavigationController(rootViewController: nextVC)
+                  self.navigationController?.pushViewController(nextVC, animated: true)
     }
            
     

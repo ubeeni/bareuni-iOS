@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 struct EmailCheckResponse: Codable {
     let isSuccess: Bool
@@ -15,16 +16,30 @@ struct EmailCheckResponse: Codable {
     let result: Bool?
 }
 
+struct SignUpRequest {
+    var email: String
+    var password: String
+    var file: UIImage?
+    var nickname: String
+    var gender: String
+    var age: Int
+    var ortho: Bool
+    init() {
+        email = ""
+        password = ""
+        nickname = ""
+        gender = ""
+        age = 0
+        ortho = false
+        file = nil
+        
+    }
+}
 struct SignUpResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    
-    enum CodingKeys: CodingKey {
-        case isSuccess, code, message
-    }
 }
-
 
 
 struct LoginResponse: Codable {
@@ -34,7 +49,6 @@ struct LoginResponse: Codable {
     let result: [Token]?
 
 }
-
 
 struct Token: Codable {
     let types, token, tokenExpriresTime: String
