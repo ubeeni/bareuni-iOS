@@ -40,6 +40,7 @@ class SignUpViewController: UIViewController {
                     self.emailWarningLb.isHidden = true
                     print(result.message)
                     let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "EmailAuthViewController") as? EmailAuthViewController
+                    nextVC!.email = self.emailTF.text!
                     self.navigationController?.pushViewController(nextVC!, animated: true)
                 }
                

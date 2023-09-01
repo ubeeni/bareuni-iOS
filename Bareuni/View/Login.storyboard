@@ -385,10 +385,10 @@
             </objects>
             <point key="canvasLocation" x="2211" y="687"/>
         </scene>
-        <!--Email Auth View Controller-->
+        <!--EmailAuthViewController-->
         <scene sceneID="Mj0-1c-XV1">
             <objects>
-                <viewController storyboardIdentifier="EmailAuthViewController" id="qfG-aT-rNt" customClass="EmailAuthViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmailAuthViewController" title="EmailAuthViewController" id="qfG-aT-rNt" customClass="EmailAuthViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CPA-bB-vGJ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -426,7 +426,6 @@
                                 <state key="normal" title="다음"/>
                                 <connections>
                                     <action selector="nextBtnDidTap:" destination="qfG-aT-rNt" eventType="touchUpInside" id="O9W-YQ-2Bx"/>
-                                    <segue destination="9G3-Oj-cfN" kind="show" id="BCU-QC-CTg"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffO-fb-ltu">
@@ -476,6 +475,12 @@
                                     <action selector="codeTextDidChange:" destination="qfG-aT-rNt" eventType="editingChanged" id="1HH-2L-6YT"/>
                                 </connections>
                             </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="올바른 인증코드 값을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3h-CH-vgG">
+                                <rect key="frame" x="36" y="261.66666666666669" width="168" height="15"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hng-Gd-FCd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -483,6 +488,7 @@
                             <constraint firstItem="zLf-CO-kHd" firstAttribute="leading" secondItem="hng-Gd-FCd" secondAttribute="leading" constant="32" id="2jO-0z-gQh"/>
                             <constraint firstItem="Hem-5S-Yxv" firstAttribute="leading" secondItem="CPA-bB-vGJ" secondAttribute="leading" constant="24" id="5Cr-ic-aQw"/>
                             <constraint firstItem="hng-Gd-FCd" firstAttribute="trailing" secondItem="K76-EN-PFa" secondAttribute="trailing" constant="60" id="61i-pX-hmC"/>
+                            <constraint firstItem="a3h-CH-vgG" firstAttribute="top" secondItem="zLf-CO-kHd" secondAttribute="bottom" constant="8" id="845-cH-Ta8"/>
                             <constraint firstItem="K76-EN-PFa" firstAttribute="top" secondItem="hng-Gd-FCd" secondAttribute="top" constant="30" id="9SK-DT-4oO"/>
                             <constraint firstItem="pg3-Nm-pgL" firstAttribute="top" secondItem="yCl-nQ-LTg" secondAttribute="bottom" constant="15" id="A9b-s5-Faq"/>
                             <constraint firstItem="hng-Gd-FCd" firstAttribute="bottom" secondItem="pg3-Nm-pgL" secondAttribute="bottom" constant="48" id="BJX-7j-e39"/>
@@ -491,6 +497,7 @@
                             <constraint firstItem="hCu-AI-nze" firstAttribute="leading" secondItem="Hem-5S-Yxv" secondAttribute="trailing" constant="31" id="Ne3-ee-S5V"/>
                             <constraint firstItem="pg3-Nm-pgL" firstAttribute="leading" secondItem="hng-Gd-FCd" secondAttribute="leading" constant="24" id="OkN-aD-mNf"/>
                             <constraint firstItem="hng-Gd-FCd" firstAttribute="trailing" secondItem="hCu-AI-nze" secondAttribute="trailing" constant="32" id="bLf-jS-xsh"/>
+                            <constraint firstItem="a3h-CH-vgG" firstAttribute="leading" secondItem="hng-Gd-FCd" secondAttribute="leading" constant="36" id="dFY-r6-OL7"/>
                             <constraint firstAttribute="trailing" secondItem="zLf-CO-kHd" secondAttribute="trailing" constant="33" id="kEW-t5-IQd"/>
                             <constraint firstItem="zLf-CO-kHd" firstAttribute="top" secondItem="Hem-5S-Yxv" secondAttribute="bottom" constant="20" id="lCI-ye-XcQ"/>
                             <constraint firstItem="hng-Gd-FCd" firstAttribute="trailing" secondItem="pg3-Nm-pgL" secondAttribute="trailing" constant="24" id="qnH-X5-kvz"/>
@@ -503,6 +510,7 @@
                         <outlet property="authCodeTF" destination="Hem-5S-Yxv" id="oId-mf-ciB"/>
                         <outlet property="nextBtn" destination="pg3-Nm-pgL" id="bXY-xc-aPo"/>
                         <outlet property="timerLb" destination="hCu-AI-nze" id="lB5-46-hzX"/>
+                        <outlet property="warngingLb" destination="a3h-CH-vgG" id="EmZ-Hs-6of"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGO-Pv-GVF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -613,9 +621,9 @@
         <!--ConfirmPW View Controller-->
         <scene sceneID="Z8n-nN-bNr">
             <objects>
-                <viewController id="9G3-Oj-cfN" customClass="ConfirmPWViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmPWViewController" id="9G3-Oj-cfN" customClass="ConfirmPWViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tf1-FL-gMv">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1I-DE-DIC">
@@ -647,7 +655,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n55-p8-CRn">
-                                <rect key="frame" x="24" y="688" width="342" height="51"/>
+                                <rect key="frame" x="24" y="711" width="342" height="51"/>
                                 <color key="backgroundColor" name="disabledBtnColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="Eqc-Py-zkO"/>
