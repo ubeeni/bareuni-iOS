@@ -8,38 +8,14 @@
 import SwiftUI
 import Alamofire
 
-struct Dentists: Identifiable {
-    var id = UUID()
-    var name: String
-    var address: String
-    var photo: String
-    var number: Int
-    var rating: Double
-}
-
-struct BestCommunity: Identifiable {
-    var id = UUID()
-    var rating: String
-    var contents: String
-    var time: String
-}
-
-
 struct HomeView: View {
     
-    var communityList: [BestCommunity] = [
-        BestCommunity(rating: "1.", contents: "저는 치아교정한지 2년 3개월 된 사람입니다. 다름이 아니라 요즘 고민이 있는데요..", time: "12시간 전 (수정됨)"),
-        BestCommunity(rating: "2.", contents: "교정을 마친 지 3년째인데 혹시 저랑 같은 문제가 생기신 분 계시나요?", time: "2일 전 (수정됨)"),
-        BestCommunity(rating: "3.", contents: "좋은 치과 선생님 좀 소개해 주세요! 저희 아이가 12살인데 지금 교정을 하는 것이 맞을까요?", time: "2시간 전"),
-        BestCommunity(rating: "4.", contents: "교정 유지 장치가 갑자기 떨어져 버렸어요.. 이거 어떻게 하는 게 좋을까요?", time: "50분 전")
-    ]
-    
-    @StateObject var dentistInfo = DentistViewModel()
+    //@StateObject var dentistInfo = DentistViewModel()
     @StateObject private var bestdentistViewModel = BestDentistViewModel()
+    @StateObject private var bestcommunityViewModel = BestCommunityViewModel()
     
     @State var showCommunityMainView: Bool = false
     @State var showDentistMainView: Bool = false
-    //@State var count = 1
     
     var body: some View {
         NavigationView {
@@ -71,40 +47,35 @@ struct HomeView: View {
                             
                             Spacer()
                         }
-                    }).fullScreenCover(isPresented: $showDentistMainView) {
-                        ScrollView(showsIndicators: false) {
-                            VStack {
-                                ForEach(dentistInfo.Dentists){ dentist in
-                                    recommendedDentistView(dentist: dentist)
-                                    Spacer().frame(height: 23)
-                                }
-                            }
-                        }
-                        .gesture(DragGesture(minimumDistance: 50, coordinateSpace: .local)
-                            .onEnded { value in
-                                if value.translation.height > 0 {
-                                    withAnimation {
-                                        showCommunityMainView.toggle()
-                                    }
-                                }
-                            }
-                        )
-                    }
+                    })
+                    /*
+                     }).fullScreenCover(isPresented: $showDentistMainView) {
+                     ScrollView(showsIndicators: false) {
+                     VStack {
+                     ForEach(dentistInfo){ dentist in
+                     recommendedDentistView(dentist: dentist)
+                     Spacer().frame(height: 23)
+                     }
+                     }
+                     }
+                     .gesture(DragGesture(minimumDistance: 50, coordinateSpace: .local)
+                     .onEnded { value in
+                     if value.translation.height > 0 {
+                     withAnimation {
+                     showCommunityMainView.toggle()
+                     }
+                     }
+                     }
+                     )
+                     }
+                     */
                     
                     VStack {
-                        /*
-                        ForEach(bestdentistViewModel.bestDentists) { dentist in
-                            DentistCell(dentist: dentist, rank: $count)
-                            count = count + 1
-                        }
-                         */
-                        ForEach(bestdentistViewModel.bestDentists) { dentist in
-                            DentistCell(dentist: dentist)
+                        ForEach(bestdentistViewModel.bestDentists.indices, id: \.self) { index in
+                            DentistCell(dentist: bestdentistViewModel.bestDentists[index], rank: index + 1)
                         }
                     }
                     .padding(.top, 10)
-                    
-                    //Text(String(bestdentistViewModel.bestDentists.count))
                     
                     Image("Bar")
                         .padding(.top, 20)
@@ -125,20 +96,22 @@ struct HomeView: View {
                             
                             Spacer()
                         }
-                    }).fullScreenCover(isPresented: $showCommunityMainView) {
-                        CommunityMainView()
-                            .gesture(DragGesture(minimumDistance: 50, coordinateSpace: .local)
-                                .onEnded { value in
-                                    if value.translation.height > 0 {
-                                        withAnimation {
-                                            showCommunityMainView.toggle()
-                                        }
-                                    }
-                                }
-                            )
-                    }
-                    .padding(.top, 10)
-                    
+                    })
+                    /*
+                     }).fullScreenCover(isPresented: $showCommunityMainView) {
+                     CommunityMainView()
+                     .gesture(DragGesture(minimumDistance: 50, coordinateSpace: .local)
+                     .onEnded { value in
+                     if value.translation.height > 0 {
+                     withAnimation {
+                     showCommunityMainView.toggle()
+                     }
+                     }
+                     }
+                     )
+                     }
+                     .padding(.top, 10)
+                     */
                     ZStack {
                         Rectangle()
                             .foregroundColor(.clear)
@@ -148,8 +121,8 @@ struct HomeView: View {
                             .shadow(color: .black.opacity(0.1), radius: 9, x: 0, y: 4)
                         
                         VStack {
-                            ForEach(communityList) { community in
-                                CommunityCell(community: community)
+                            ForEach(bestcommunityViewModel.bestCommunity.indices, id: \.self) { index in
+                                CommunityCell(community: bestcommunityViewModel.bestCommunity[index], rank: index + 1)
                             }
                         }
                         .padding(.bottom, 8)
@@ -171,7 +144,7 @@ struct HomeView: View {
 
 struct DentistCell: View {
     let dentist: BestDentistResult
-    //@Binding var rank: Int
+    let rank: Int
     
     var body: some View {
         VStack {
@@ -183,7 +156,7 @@ struct DentistCell: View {
                         .cornerRadius(10)
                     Image("gray")
                     
-                    Text("1")
+                    Text("\(rank)")
                         .font(.custom("Pretendard-Bold", size: 12))
                         .foregroundColor(.white)
                         .padding(.horizontal, 10)
@@ -220,28 +193,58 @@ struct DentistCell: View {
 }
 
 struct CommunityCell: View {
-    let community: BestCommunity
+    let community: BestCommunityResult
+    let rank: Int
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Text(community.rating)
+                Text("\(rank).")
                     .font(.custom("Pretendard-Medium", size: 13))
                     .foregroundColor(Color("BackgroundBlue"))
-                Text(community.contents).lineLimit(1)
+                Text(community.content).lineLimit(1)
                     .font(.custom("Pretendard-Medium", size: 13))
                     .foregroundColor(Color("212B36"))
-                    .frame(width: 310)
+                    .frame(width: 310, alignment: .leading)
             }
             
-            Text(community.time)
+            Text(relativeTime(from: community.createdAt))
                 .font(.custom("Pretendard-Medium", size: 10))
                 .foregroundColor(Color("212B36").opacity(0.7))
-                .padding(.leading, 25)
+                .padding(.leading, 17)
                 .padding(.top, 5)
         }
         .padding(.top, 10)
     }
+}
+
+func relativeTime(from dateString: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    
+    if let date = dateFormatter.date(from: dateString) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date, to: Date())
+        
+        if let year = components.year, year > 0 {
+            return "\(year) years ago"
+        } else if let month = components.month, month > 0 {
+            return "\(month) months ago"
+        } else if let day = components.day, day > 6 {
+            // 일주일 이상이면 주를 기준으로 표시
+            let weeks = day / 7
+            return "\(weeks) weeks ago"
+        } else if let day = components.day, day > 0 {
+            return "\(day) days ago"
+        } else if let hour = components.hour, hour > 0 {
+            return "\(hour) hours ago"
+        } else if let minute = components.minute, minute > 0 {
+            return "\(minute) minutes ago"
+        } else {
+            return "just now"
+        }
+    }
+    return ""
 }
 
 struct HomeView_Previews: PreviewProvider {

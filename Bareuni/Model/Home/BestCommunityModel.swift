@@ -14,8 +14,9 @@ struct BestCommunityModel: Codable {
     let result: [BestCommunityResult]
 }
 
-struct BestCommunityResult: Codable {
-    let communityIdx: Int
+struct BestCommunityResult: Codable, Identifiable {
+    var id: Int64 { communityIdx }
+    let communityIdx: Int64
     let createdAt: String
     //let updatedAt: String
     let content: String
