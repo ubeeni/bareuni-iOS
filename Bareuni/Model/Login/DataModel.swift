@@ -47,6 +47,13 @@ struct CheckEmailResponse: Codable {
     let result: Bool?
 }
 
+struct VerifyEmailResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: String?
+}
+
 struct GeneralResponse: Codable{
     let isSuccess: Bool
     let code: Int

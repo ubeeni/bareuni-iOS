@@ -43,6 +43,34 @@ struct LoginAPI{
             }
         }
     }
+    func verifyEmail(email: String, completion: @escaping (Result<VerifyEmailResponse, Error>) -> Void){
+        let url = "https://bareuni.shop/users/email"
+        let params = ["email": email] as Dictionary
+
+        AF.request(url,
+                   method: .post,
+                   parameters: params,
+                   encoding: JSONEncoding(options: []),
+                   headers: ["Content-Type":"application/json", "Accept":"application/json"])
+        .responseJSON{ response in
+            switch response.result {
+            case .success(let result):
+                // 성공적으로 디코드한 데이터를 처리
+                if let jsonData = try? JSONSerialization.data(withJSONObject: result, options: []),
+                   let rtn = try? JSONDecoder().decode(VerifyEmailResponse.self, from: jsonData) {
+                    // 성공적으로 디코드한 데이터를 처리
+                    completion(.success(rtn))
+                }
+                else {
+                    let error = NSError(domain: "DecodingError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Decoding failed"])
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                // 실패 시 에러 처리
+                completion(.failure(error))
+            }
+        }
+    }
     
     func signUp(photo: UIImage?, email: String, password: String, nickname: String, gender: String, age: Int, ortho: Bool, completion: @escaping (Result<SignUpResponse, Error>) -> Void){
         let url = "http://54.180.54.10:8080/users/join"
