@@ -43,7 +43,7 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailedProfileSettingViewController") as? DetailedProfileSettingViewController
         
         if(isImageChanged == true){
-            signUpData?.file = profileImageView.image
+            signUpData?.file = profileImageView.image!
         }
         signUpData?.nickname = nicknameTextField.text!
         nextVC!.signUpData = signUpData

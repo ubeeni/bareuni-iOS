@@ -77,21 +77,30 @@ struct LoginAPI{
         
         let params = ["userJoinReq.email": email, "userJoinReq.age": age, "userJoinReq.password": password, "userJoinReq.nickname": nickname, "userJoinReq.gender": gender,  "userJoinReq.ortho": ortho, "userJoinReq.provider": "일반"] as Dictionary
         
+        let header : HTTPHeaders = [
+                    "Content-Type" : "multipart/form-data" ]
+        
         //multipart 업로드
         AF.upload(multipartFormData: { (multipart) in
             if(photo != nil){
                 //이미지 데이터를 POST할 데이터에 덧붙임
-                if let imageData = photo!.jpegData(compressionQuality: 1) {
-                    multipart.append(imageData, withName: "file", fileName: "photo.jpg", mimeType: "image/jpeg")
+//                if let imageData = photo!.pngData(self: photo){
+//                    multipart.append(imageData, withName: "file", fileName: "photo.png", mimeType: "image/png")
+//                }
+                if let image = photo!.jpegData(compressionQuality: 1) {
+                    multipart.append(image, withName: "file", fileName: "\(nickname).jpg", mimeType: "image/jpeg") // jpeg 파일로 전송
                 }
             }
             //이미지 데이터 외에 같이 전달할 데이터 (여기서는 user, emoji, date, content 등)
             for (key, value) in params {
                 multipart.append("\(value)".data(using: .utf8, allowLossyConversion: false)!, withName: "\(key)")
             }
+            print("upload: \(multipart)")
         }, to: url
                   ,method: .post        //전달 방식
-                  ,headers: ["Content-Type" : "multipart/form-data", "Accept":"application/json" ]).responseJSON{ response in
+                  ,headers: header).responseJSON{ response in
+            print(response)
+
             switch response.result {
             case .success(let result):
                 // 성공적으로 디코드한 데이터를 처리
