@@ -40,6 +40,13 @@ struct Token: Codable {
     let types, token, tokenExpriresTime: String
 }
 
+struct CheckEmailResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: Bool?
+}
+
 struct GeneralResponse: Codable{
     let isSuccess: Bool
     let code: Int
@@ -51,5 +58,7 @@ struct ReissueResponse: Codable {
     let message: String
     let result: [Token]?
 }
+
+
 
 
