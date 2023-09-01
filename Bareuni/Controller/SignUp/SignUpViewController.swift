@@ -26,6 +26,29 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func nextBtnDidTap(_ sender: Any) {
+        LoginAPI.shared.checkEmail(email: self.emailTF.text!, completion: {result in
+            switch result {
+            case .success(let result):
+                if(result.code == 1000){ // 중복된 이메일
+                    print("이메일 중복")
+                    self.emailWarningLb.text = "이미 가입된 이메일입니다."
+                    self.emailWarningLb.isHidden = false
+                    print(result.message)
+                    
+                }
+                else if(result.code == 2018){
+                    self.emailWarningLb.isHidden = true
+                    print(result.message)
+                    let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "EmailAuthViewController") as? EmailAuthViewController
+                    self.navigationController?.pushViewController(nextVC!, animated: true)
+                }
+               
+                
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        })
+    
         UserDefaults.standard.set(emailTF.text, forKey: "email")
     }
     
@@ -37,9 +60,10 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nicknameWarningLb: UILabel!
     
     @objc func emailTFDidChange(_sender: Any) {
-        if(self.emailTF.checkEmail() == false){
+        if(self.emailTF.checkEmailValid() == false){
             emailWarningLb.isHidden = false
             nextBtn.isEnabled = false
+            
         }
         else{
             emailWarningLb.isHidden = true
@@ -55,4 +79,9 @@ class SignUpViewController: UIViewController {
 //            nicknameWarningLb.isHidden = true
 //        }
 //    }
+    func isValidEmail(email: String) -> Bool{
+        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", regex)
+        return emailTest.evaluate(with: email)
+    }
 }

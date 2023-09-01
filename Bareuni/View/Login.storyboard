@@ -312,7 +312,6 @@
                                 <state key="normal" title="다음"/>
                                 <connections>
                                     <action selector="nextBtnDidTap:" destination="Jua-N7-0bj" eventType="touchUpInside" id="MDQ-tD-yyJ"/>
-                                    <segue destination="qfG-aT-rNt" kind="show" id="eDs-rD-c5b"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSD-hW-Mtp">
@@ -389,19 +388,19 @@
         <!--Email Auth View Controller-->
         <scene sceneID="Mj0-1c-XV1">
             <objects>
-                <viewController id="qfG-aT-rNt" customClass="EmailAuthViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmailAuthViewController" id="qfG-aT-rNt" customClass="EmailAuthViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CPA-bB-vGJ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일로 코드를 보내드렸어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K76-EN-PFa">
-                                <rect key="frame" x="32" y="121" width="298" height="28"/>
+                                <rect key="frame" x="32" y="77" width="298" height="28"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCu-AI-nze">
-                                <rect key="frame" x="323" y="226.66666666666666" width="35" height="18.666666666666657"/>
+                                <rect key="frame" x="323" y="182.66666666666666" width="35" height="18.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="BJ8-Cn-Mnw"/>
                                 </constraints>
@@ -410,7 +409,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bareuni@naver.com으로 받은 인증 코드를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLf-CO-kHd">
-                                <rect key="frame" x="32" y="282" width="325" height="15.666666666666686"/>
+                                <rect key="frame" x="32" y="238" width="325" height="15.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="13"/>
                                 <color key="textColor" name="75grey"/>
                                 <nil key="highlightedColor"/>
@@ -467,7 +466,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="인증코드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hem-5S-Yxv">
-                                <rect key="frame" x="24" y="210" width="268" height="52"/>
+                                <rect key="frame" x="24" y="166" width="268" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="dhQ-tx-LG6"/>
                                 </constraints>
@@ -616,17 +615,17 @@
             <objects>
                 <viewController id="9G3-Oj-cfN" customClass="ConfirmPWViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tf1-FL-gMv">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1I-DE-DIC">
-                                <rect key="frame" x="32" y="121" width="235" height="28"/>
+                                <rect key="frame" x="32" y="77" width="235" height="28"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wQ-TW-230">
-                                <rect key="frame" x="24" y="210" width="342" height="52"/>
+                                <rect key="frame" x="24" y="166" width="342" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="6ds-QM-r61"/>
                                 </constraints>
@@ -637,7 +636,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-Lf-Dvy">
-                                <rect key="frame" x="24" y="291" width="342" height="52"/>
+                                <rect key="frame" x="24" y="247" width="342" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="vKv-70-oSP"/>
                                 </constraints>
@@ -648,7 +647,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n55-p8-CRn">
-                                <rect key="frame" x="24" y="711" width="342" height="51"/>
+                                <rect key="frame" x="24" y="688" width="342" height="51"/>
                                 <color key="backgroundColor" name="disabledBtnColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="Eqc-Py-zkO"/>
@@ -665,19 +664,19 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유효하지 않은 이메일입니다. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8E-QJ-aQb">
-                                <rect key="frame" x="36" y="351" width="136.33333333333334" height="14"/>
+                                <rect key="frame" x="36" y="307" width="136.33333333333334" height="14"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호는 최소 8자 이상이어야 합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fF2-KR-bZ7">
-                                <rect key="frame" x="36.000000000000014" y="270" width="188.33333333333337" height="14"/>
+                                <rect key="frame" x="36.000000000000014" y="226" width="188.33333333333337" height="14"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKt-Et-bBO">
-                                <rect key="frame" x="25" y="398" width="342" height="31"/>
+                                <rect key="frame" x="25" y="354" width="342" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="7Gh-oA-bYh"/>
                                 </constraints>
@@ -727,11 +726,11 @@
             <objects>
                 <viewController id="Jae-SY-xra" customClass="TermsOfServiceViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TxT-Ec-ai0">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 이용약관에 동의해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMw-LJ-SdM">
-                                <rect key="frame" x="32" y="121" width="198" height="77"/>
+                                <rect key="frame" x="32" y="77" width="198" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77" id="7PN-Mk-tHB"/>
                                 </constraints>
@@ -740,7 +739,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAx-Ry-hSf">
-                                <rect key="frame" x="24" y="711" width="342" height="51"/>
+                                <rect key="frame" x="24" y="688" width="342" height="51"/>
                                 <color key="backgroundColor" name="disabledBtnColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="6TM-ko-tqW"/>
@@ -756,7 +755,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZT-er-cxN">
-                                <rect key="frame" x="24" y="216" width="342" height="467"/>
+                                <rect key="frame" x="24" y="172" width="342" height="488"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmH-Sl-8Yr">
                                         <rect key="frame" x="0.0" y="0.0" width="342" height="493"/>
@@ -992,7 +991,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="7OE-I0-gIs"/>
-        <segue reference="TDo-uB-KF8"/>
+        <segue reference="SwC-AL-UGu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlueLogo" width="111" height="61"/>
