@@ -39,7 +39,6 @@
 		327394412A876370001A739E /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327394402A876370001A739E /* FontManager.swift */; };
 		327517362A9B7642008A8B97 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327517352A9B7642008A8B97 /* LoginAPI.swift */; };
 		327517382A9C4E24008A8B97 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327517372A9C4E24008A8B97 /* DataModel.swift */; };
-		3275173B2A9C8E42008A8B97 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3275173A2A9C8E42008A8B97 /* KeychainSwift */; };
 		328254952A9223C900F9428C /* ChangingPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328254942A9223C900F9428C /* ChangingPasswordView.swift */; };
 		328DDE9F2A8E1F64006B82EF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 328DDE9E2A8E1F64006B82EF /* Alamofire */; };
 		32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5E6C82A557A1800B41644 /* AppDelegate.swift */; };
@@ -217,7 +216,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3275173B2A9C8E42008A8B97 /* KeychainSwift in Frameworks */,
 				3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */,
 				328DDE9F2A8E1F64006B82EF /* Alamofire in Frameworks */,
 			);
@@ -533,7 +531,6 @@
 			packageProductDependencies = (
 				3B5AF6502A708F2900A94BF1 /* BSImagePicker */,
 				328DDE9E2A8E1F64006B82EF /* Alamofire */,
-				3275173A2A9C8E42008A8B97 /* KeychainSwift */,
 			);
 			productName = Bareuni;
 			productReference = 32A5E6C52A557A1800B41644 /* Bareuni.app */;
@@ -610,7 +607,6 @@
 			packageReferences = (
 				3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */,
 				328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */,
-				327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 32A5E6C62A557A1800B41644 /* Products */;
 			projectDirPath = "";
@@ -1081,14 +1077,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -1108,11 +1096,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3275173A2A9C8E42008A8B97 /* KeychainSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */;
-			productName = KeychainSwift;
-		};
 		328DDE9E2A8E1F64006B82EF /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */;
