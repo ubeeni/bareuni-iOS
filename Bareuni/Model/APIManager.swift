@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import KeychainSwift
 
 enum BareuniAPI {
     case getBestDentist
@@ -55,7 +56,9 @@ extension BareuniAPI: TargetType {
     }
     
     var headers: [String: String]? {
-        return nil
+        return ["Content-Type": "application/json",
+                "Accept": "application/json",
+                "atk": KeychainSwift().get("accessToken") ?? ""]
     }
     
 }
