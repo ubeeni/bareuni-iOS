@@ -8,13 +8,18 @@
 import UIKit
 
 class DetailedProfileSettingViewController: UIViewController {
+    
+    var signUpData: SignUpRequest?
     var sexBtnArr: [UIButton] = []
     var ageBtnArr: [UIButton] = []
     var toothBtnArr: [UIButton] = []
-
+    var gender: String?
+    var age: Int?
+    var ortho: Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.setBackBtn()
         nextBtn.changeDisabledState()
         nextBtn.layer.cornerRadius = 12
@@ -55,9 +60,11 @@ class DetailedProfileSettingViewController: UIViewController {
     }
     
     @IBAction func manBtnDidTap(_ sender: UIButton) {
+        gender = "MALE"
         setSexBtnSelected(sender, sender.isSelected)
     }
     @IBAction func womanBtnDidTap(_ sender: UIButton) {
+        gender = "FEMALE"
         setSexBtnSelected(sender, sender.isSelected)
     }
     func setSexBtnSelected(_ clickedButton: UIButton, _ isSelected: Bool){ // 성별 버튼 처리 이벤트 함수
@@ -80,22 +87,28 @@ class DetailedProfileSettingViewController: UIViewController {
     }
     
     @IBAction func age10BtnDidTap(_ sender: UIButton) {
+        age = 10
         setAgeBtnSelected(sender, sender.isSelected)
     }
     @IBAction func age20BtnDidTap(_ sender: UIButton) {
+        age = 20
         setAgeBtnSelected(sender, sender.isSelected)
     }
     
     @IBAction func age30BtnDidTap(_ sender: UIButton) {
+        age = 30
         setAgeBtnSelected(sender, sender.isSelected)
     }
     @IBAction func age40BtnDidTap(_ sender: UIButton) {
+        age = 40
         setAgeBtnSelected(sender, sender.isSelected)
     }
     @IBAction func age50BtnDidTap(_ sender: UIButton) {
+        age = 50
         setAgeBtnSelected(sender, sender.isSelected)
     }
     @IBAction func age60BtnDidTap(_ sender: UIButton) {
+        age = 60
         setAgeBtnSelected(sender, sender.isSelected)
     }
     
@@ -119,10 +132,12 @@ class DetailedProfileSettingViewController: UIViewController {
     }
     
     @IBAction func yesBtnDidTap(_ sender: UIButton) {
+        ortho = true
         setToothBtnSelected(sender, sender.isSelected)
     }
     
     @IBAction func noBtnDidTap(_ sender: UIButton) {
+        ortho = false
         setToothBtnSelected(sender, sender.isSelected)
     }
     
@@ -165,9 +180,19 @@ class DetailedProfileSettingViewController: UIViewController {
         }
     }
     @IBAction func confirmBtnDidTap(_ sender: Any) {
-        let newStoryboard = UIStoryboard(name: "Profile", bundle: nil)
-        let newViewController = newStoryboard.instantiateViewController(identifier: "WelcomeProfileViewController")
-        self.changeRootViewController(newViewController)
         
+        LoginAPI.shared.signUp(photo: signUpData!.file, email: signUpData!.email, password: signUpData!.password, nickname: signUpData!.nickname, gender: gender!, age: age!, ortho: ortho!, completion: {
+            result in
+            switch result{
+            case .success(let result):
+                print("success")
+                let newViewController = self.storyboard!.instantiateViewController(identifier: "WelcomeProfileViewController")
+                self.changeRootViewController(newViewController)
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        })
     }
+    
 }
+
