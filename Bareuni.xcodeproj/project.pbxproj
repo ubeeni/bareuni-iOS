@@ -330,13 +330,13 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		327517342A9B7622008A8B97 /* Login */ = {
+		327517342A9B7622008A8B97 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				327517352A9B7642008A8B97 /* LoginAPI.swift */,
 				327517372A9C4E24008A8B97 /* DataModel.swift */,
 			);
-			path = Login;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		32A5E6BC2A557A1800B41644 = {
@@ -391,7 +391,7 @@
 		32A5E6F82A557A2000B41644 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				327517342A9B7622008A8B97 /* Login */,
+				327517342A9B7622008A8B97 /* SignUp */,
 				10E125B82A8DE58F00A2805C /* Community */,
 				10E125B72A8DE57A00A2805C /* Dentist */,
 			);
