@@ -73,6 +73,12 @@ struct GeneralResponse: Codable{
     let code: Int
     let message, result: String
 }
+struct LogoutResponse: Codable{
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: String?
+}
 struct ReissueResponse: Codable {
     let isSuccess: Bool
     let code: Int

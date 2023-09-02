@@ -150,17 +150,17 @@ struct LoginAPI{
         
     }
     
-    func logout(completion: @escaping (Result<GeneralResponse, Error>) -> Void){
-        let url = "\(serverDir)/users/logout"
-        let accessToken = UserDefaults.standard.string(forKey: "accessToken")!
+    func logout(completion: @escaping (Result<LogoutResponse, Error>) -> Void){
+        let url = "https://bareuni.shop/users/logout"
         AF.request(url,
-                   method: .delete,
+                   method: .post,
                    headers: ["Content-Type":"application/json", "Accept":"application/json", "atk": KeychainSwift().get("accessToken")!])
         .responseJSON{ response in
                 switch response.result {
                 case .success(let data):
+                    print(data)
                     if let jsonData = try? JSONSerialization.data(withJSONObject: data, options: []),
-                       let rtn = try? JSONDecoder().decode(GeneralResponse.self, from: jsonData) {
+                       let rtn = try? JSONDecoder().decode(LogoutResponse.self, from: jsonData) {
                         // 성공적으로 디코드한 데이터를 처리
                         completion(.success(rtn))
                     }
