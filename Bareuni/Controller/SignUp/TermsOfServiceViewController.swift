@@ -123,6 +123,7 @@ class TermsOfServiceViewController: UIViewController {
                       as? profileGuideViewController else {
                           return
                   }
+        signUpData?.reception = serviceMessageAgreeBtn.isSelected
 
         nextVC.signUpData = signUpData
 

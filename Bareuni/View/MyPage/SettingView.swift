@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct SettingView: View {
     @State var isLocked: Bool = true
     @State var isShowLogoutAlert: Bool = false
     @State var showingDeletingUser: Bool = false
+    @State var showSignUpView: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading){
             Divider()
@@ -149,21 +152,35 @@ struct SettingView: View {
                                 Image("ArrowBack").frame(width: 15, height: 15)
                                 
                             }.padding(.top, 25).padding(.trailing, 20)
-                        }).alert(isPresented: $isShowLogoutAlert) {
-                            Alert(
-                                        title: Text("로그아웃 하시겠습니까?"),
-                                        message: Text(""),
-                                        primaryButton: .destructive(
-                                            Text("네")
-                                        , action: {
-                                            print("첫 번째 버튼이 눌렸습니다.")
-                                        }),
-                                        secondaryButton: .default(
-                                            Text("아니요").foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
-                                            , action: {
-                                                print("두 번째 버튼이 눌렸습니다.")
-                                            })
-                                    )
+                        }).fullScreenCover(isPresented: $showSignUpView) {
+                            SignUpView()
+                        }.alert(isPresented: $isShowLogoutAlert) {
+                            
+                            let SomeButton1 = Alert.Button.default(Text("네").foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
+                            ) {
+                                LoginAPI.shared.logout(completion: {
+                                    result in
+                                    switch result {
+                                    case .success(let result):
+                                        if(result.code == 1000){
+                                            print("로그아웃 성공")
+                                            showSignUpView = true
+                                        }
+                                        print("code: \(result.code),  message: \(result.message)")
+                                        
+                                        
+                                    case .failure(let error):
+                                        print("Error: \(error)")
+                                    }
+                                    
+                                })
+                            }
+                            let SomeButton2 = Alert.Button.cancel(Text("아니오")) {
+                                print("secondary button pressed")
+                            }
+                            return Alert(title: Text("로그아웃 하시겠습니까?"),
+                                         message: Text(""),
+                                         primaryButton: SomeButton1, secondaryButton: SomeButton2)
                         }
                       
                         Button(action: {
@@ -203,6 +220,21 @@ struct SettingView: View {
             }
     }
     
+}
+struct SignUpView : UIViewControllerRepresentable {
+    
+    typealias UIViewControllerType = loginSelectionViewController
+    
+    // MARK: UIViewController를 생성합니다.
+    func makeUIViewController(context: Context) -> UIViewControllerType {
+        let viewcontroller = loginSelectionViewController()
+        return viewcontroller    // MARK: ScreenShareViewController의 UIViewController를 호출합니다.
+    }
+    
+    // MARK: UIViewController를 변경하였을때 수행합니다.
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        //
+    }
 }
 
 struct SettingView_Previews: PreviewProvider {

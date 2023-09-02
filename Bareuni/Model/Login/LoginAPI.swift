@@ -72,10 +72,10 @@ struct LoginAPI{
         }
     }
     
-    func signUp(photo: UIImage?, email: String, password: String, nickname: String, gender: String, age: Int, ortho: Bool, completion: @escaping (Result<SignUpResponse, Error>) -> Void){
+    func signUp(photo: UIImage?, email: String, password: String, nickname: String, gender: String, age: Int, ortho: Bool, reception: Bool, completion: @escaping (Result<SignUpResponse, Error>) -> Void){
         let url = "https://bareuni.shop/users/join"
         
-        let params = ["userJoinReq.email": email, "userJoinReq.age": age, "userJoinReq.password": password, "userJoinReq.nickname": nickname, "userJoinReq.gender": gender,  "userJoinReq.ortho": ortho, "userJoinReq.provider": "일반"] as Dictionary
+        let params = ["userJoinReq.email": email, "userJoinReq.age": age, "userJoinReq.password": password, "userJoinReq.nickname": nickname, "userJoinReq.gender": gender,  "userJoinReq.ortho": ortho, "userJoinReq.provider": "일반", "userJoinReq.reception": reception] as Dictionary
         
         let header : HTTPHeaders = [
                     "Content-Type" : "multipart/form-data" ]
@@ -104,6 +104,7 @@ struct LoginAPI{
             switch response.result {
             case .success(let result):
                 // 성공적으로 디코드한 데이터를 처리
+                print(result)
                 if let jsonData = try? JSONSerialization.data(withJSONObject: result, options: []),
                    let rtn = try? JSONDecoder().decode(SignUpResponse.self, from: jsonData) {
                     // 성공적으로 디코드한 데이터를 처리
@@ -150,17 +151,17 @@ struct LoginAPI{
         
     }
     
-    func logout(completion: @escaping (Result<GeneralResponse, Error>) -> Void){
-        let url = "\(serverDir)/users/logout"
-        let accessToken = UserDefaults.standard.string(forKey: "accessToken")!
+    func logout(completion: @escaping (Result<LogoutResponse, Error>) -> Void){
+        let url = "https://bareuni.shop/users/logout"
         AF.request(url,
-                   method: .delete,
+                   method: .post,
                    headers: ["Content-Type":"application/json", "Accept":"application/json", "atk": KeychainSwift().get("accessToken")!])
         .responseJSON{ response in
                 switch response.result {
                 case .success(let data):
+                    print(data)
                     if let jsonData = try? JSONSerialization.data(withJSONObject: data, options: []),
-                       let rtn = try? JSONDecoder().decode(GeneralResponse.self, from: jsonData) {
+                       let rtn = try? JSONDecoder().decode(LogoutResponse.self, from: jsonData) {
                         // 성공적으로 디코드한 데이터를 처리
                         completion(.success(rtn))
                     }
@@ -175,30 +176,31 @@ struct LoginAPI{
             }
     }
     
-    func reissue(completion: @escaping (Result<ReissueResponse, Error>) -> Void){
-        let url = "\(serverDir)/users/logout"
+    func reissue(completion: @escaping (Result<LoginResponse, Error>) -> Void){
+        let url = "https://bareuni.shop/users/reissue"
         let accessToken = UserDefaults.standard.string(forKey: "accessToken")
         AF.request(url,
                    method: .post,
-                   headers: ["Content-Type":"application/json", "Accept":"application/json", "atk":KeychainSwift().get("accessToken")!])
+                   headers: ["Content-Type":"application/json", "Accept":"application/json", "rtk":KeychainSwift().get("refreshToken")!])
         .responseJSON{ response in
-                switch response.result {
-                case .success(let data):
-                    if let jsonData = try? JSONSerialization.data(withJSONObject: data, options: []),
-                       let rtn = try? JSONDecoder().decode(ReissueResponse.self, from: jsonData) {
-                        // 성공적으로 디코드한 데이터를 처리
-                        completion(.success(rtn))
-                    }
-                    else {
-                        let error = NSError(domain: "DecodingError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Decoding failed"])
-                        completion(.failure(error))
-                    }
-                case .failure(let error):
-                    // 실패 시 에러 처리
+            switch response.result {
+            case .success(let data):
+                print(data)
+                if let jsonData = try? JSONSerialization.data(withJSONObject: data, options: []),
+                   let rtn = try? JSONDecoder().decode(LoginResponse.self, from: jsonData) {
+                    // 성공적으로 디코드한 데이터를 처리
+                    completion(.success(rtn))
+                }
+                else {
+                    let error = NSError(domain: "DecodingError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Decoding failed"])
                     completion(.failure(error))
                 }
+            case .failure(let error):
+                // 실패 시 에러 처리
+                completion(.failure(error))
             }
-
+        }
+        
     }
 }
 

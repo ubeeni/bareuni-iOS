@@ -24,6 +24,7 @@ struct SignUpRequest {
     var gender: String
     var age: Int
     var ortho: Bool
+    var reception: Bool
     init() {
         email = ""
         password = ""
@@ -31,6 +32,7 @@ struct SignUpRequest {
         gender = ""
         age = 0
         ortho = false
+        reception = false
         file = nil
         
     }
@@ -48,6 +50,12 @@ struct LoginResponse: Codable {
     let message: String
     let result: [Token]?
 
+}
+struct ReissueResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [Token]?
 }
 
 struct Token: Codable {
@@ -73,12 +81,13 @@ struct GeneralResponse: Codable{
     let code: Int
     let message, result: String
 }
-struct ReissueResponse: Codable {
+struct LogoutResponse: Codable{
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: [Token]?
+    let result: String?
 }
+
 
 
 
