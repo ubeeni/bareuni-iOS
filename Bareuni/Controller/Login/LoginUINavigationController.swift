@@ -11,11 +11,11 @@ class LoginUINavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 다른 UIViewController를 인스턴스화
-            let secondViewController = loginSelectionViewController() // SecondViewController는 여러분의 뷰 컨트롤러 클래스명입니다.
-            
-            // present 메서드를 사용하여 두 번째 뷰 컨트롤러를 표시
-        self.present(secondViewController, animated: true, completion: nil)
+//        // 다른 UIViewController를 인스턴스화
+//            let secondViewController = loginSelectionViewController() // SecondViewController는 여러분의 뷰 컨트롤러 클래스명입니다.
+//
+//            // present 메서드를 사용하여 두 번째 뷰 컨트롤러를 표시
+//        self.present(secondViewController, animated: true, completion: nil)
     }
     
 

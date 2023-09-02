@@ -176,7 +176,7 @@ struct LoginAPI{
             }
     }
     
-    func reissue(completion: @escaping (Result<LoginResponse, Error>) -> Void){
+    func reissue(completion: @escaping (Result<ReissueResponse, Error>) -> Void){
         let url = "https://bareuni.shop/users/reissue"
         let accessToken = UserDefaults.standard.string(forKey: "accessToken")
         AF.request(url,
@@ -185,9 +185,9 @@ struct LoginAPI{
         .responseJSON{ response in
             switch response.result {
             case .success(let data):
-                print(data)
+                print("reissue result: \(data)")
                 if let jsonData = try? JSONSerialization.data(withJSONObject: data, options: []),
-                   let rtn = try? JSONDecoder().decode(LoginResponse.self, from: jsonData) {
+                   let rtn = try? JSONDecoder().decode(ReissueResponse.self, from: jsonData) {
                     // 성공적으로 디코드한 데이터를 처리
                     completion(.success(rtn))
                 }
