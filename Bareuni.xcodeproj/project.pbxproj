@@ -104,10 +104,6 @@
 		3BCB5BB42A946B3900F58C50 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */; };
 		3BCB5BB62A9470B200F58C50 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */; };
 		3BCB5BB82A949F1F00F58C50 /* TestView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB72A949F1F00F58C50 /* TestView4.swift */; };
-		3BCB5C202A9C562300F58C50 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C1F2A9C562300F58C50 /* CombineMoya */; };
-		3BCB5C222A9C562300F58C50 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C212A9C562300F58C50 /* Moya */; };
-		3BCB5C242A9C562300F58C50 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C232A9C562300F58C50 /* ReactiveMoya */; };
-		3BCB5C262A9C562300F58C50 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C252A9C562300F58C50 /* RxMoya */; };
 		3BCB5C282A9C56CE00F58C50 /* MoyaAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5C272A9C56CE00F58C50 /* MoyaAPIManager.swift */; };
 		3BCB5C322A9C5CFD00F58C50 /* APITestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5C312A9C5CFD00F58C50 /* APITestView.swift */; };
 		3BCB5C662A9C835100F58C50 /* RecommendDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5C642A9C835000F58C50 /* RecommendDentistViewModel.swift */; };
@@ -264,6 +260,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100DC1982AA3015900D06291 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		1014A0AF2A6E592500CE8170 /* Community */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +426,7 @@
 		32A5E6F82A557A2000B41644 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				100DC1982AA3015900D06291 /* Login */,
 				1017E3012A9C77BA00254EFD /* APIManager.swift */,
 				1017E2EF2A9B30EA00254EFD /* Home */,
 				10E125B82A8DE58F00A2805C /* Community */,
@@ -1146,14 +1150,6 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1186,26 +1182,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */;
 			productName = BSImagePicker;
-		};
-		3BCB5C1F2A9C562300F58C50 /* CombineMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = CombineMoya;
-		};
-		3BCB5C212A9C562300F58C50 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		3BCB5C232A9C562300F58C50 /* ReactiveMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = ReactiveMoya;
-		};
-		3BCB5C252A9C562300F58C50 /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
