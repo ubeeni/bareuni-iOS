@@ -8,6 +8,8 @@
 import UIKit
 
 class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    var signUpData: SignUpRequest?
+    var isImageChanged: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +40,14 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
     }
     
     @IBAction func nextBtnDidTap(_ sender: Any) {
-        // 데이터 저장
-        UserDefaults.standard.set(nicknameTextField.text, forKey: "nickname")
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailedProfileSettingViewController") as? DetailedProfileSettingViewController
+        
+        if(isImageChanged == true){
+            signUpData?.file = profileImageView.image!
+        }
+        signUpData?.nickname = nicknameTextField.text!
+        nextVC!.signUpData = signUpData
+        self.navigationController?.pushViewController(nextVC!, animated: true)
     }
 
     
@@ -68,7 +76,7 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
             self.dismiss(animated: false, completion: {
                 
                 DispatchQueue.main.async {
-                    
+                    self.isImageChanged = true
                     self.profileImageView.image = image
                     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
                     self.profileImageView.contentMode = .scaleToFill
