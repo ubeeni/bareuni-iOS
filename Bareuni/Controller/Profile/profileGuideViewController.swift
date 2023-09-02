@@ -8,7 +8,6 @@
 import UIKit
 
 class profileGuideViewController: UIViewController {
-    var signUpData: SignUpRequest?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +17,6 @@ class profileGuideViewController: UIViewController {
     }
     
     @IBOutlet weak var nextBtn: UIButton!
-    
-    
-    @IBAction func nextBtnDidTap(_ sender: Any) {
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "NicknameSettingViewController") as? NicknameSettingViewController
-        nextVC!.signUpData = signUpData
-        self.navigationController?.pushViewController(nextVC!, animated: true)
-    }
     
     /*
     // MARK: - Navigation

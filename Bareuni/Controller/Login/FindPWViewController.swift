@@ -30,7 +30,7 @@ class FindPWViewController: UIViewController {
     @IBOutlet weak var confirmBtn: UIButton!
     
     @objc func textFieldDidChange(_sender: Any) {
-        if(self.findEmailTF.checkEmailValid() == false){
+        if(self.findEmailTF.checkEmail() == false){
             explainLb.layer.borderColor = UIColor(red: 1, green: 0.314, blue: 0.314, alpha: 1).cgColor
             
             warningLb.text = "이메일을 확인해주세요."
@@ -48,7 +48,7 @@ class FindPWViewController: UIViewController {
 }
 
 extension UITextField {
-    public func checkEmailValid() -> Bool {
+    public func checkEmail() -> Bool {
         let str =  self.text
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)

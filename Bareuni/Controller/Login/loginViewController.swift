@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import KeychainSwift
 
 class loginViewController: UIViewController {
 
@@ -34,9 +33,6 @@ class loginViewController: UIViewController {
     @IBOutlet weak var pwWarningLb: UILabel!
     
     @IBAction func loginBtnDidTap(_ sender: Any) {
-        emailWarningLb.isHidden = true
-        pwWarningLb.isHidden = true
-        
         if(emailTextField.text == ""){
             emailWarningLb.text = "이메일을 입력해주세요."
             emailWarningLb.isHidden = false
@@ -46,34 +42,11 @@ class loginViewController: UIViewController {
             pwWarningLb.text = "비밀번호를 입력해주세요."
             pwWarningLb.isHidden = false
         }else{
-            let email: String = "wltjd3459@naver.com"
-            let password: String = "@yoon1515"
-            LoginAPI.shared.login(email: emailTextField.text!, password: pwTextField.text!, completion: {result in
-                switch result {
-                case .success(let result):
-                    if(result.code == 1000){
-                        print("로그인 성공")
-                        KeychainSwift().set(result.result![1].token, forKey: "accessToken")
-                        KeychainSwift().set(result.result![0].token, forKey: "refreshToken")
-
-                        
-                        //메인화면으로 화면전환
-                        let tabbar = UIStoryboard.init(name: "Main", bundle: nil)
-                        guard let tabBarController = tabbar.instantiateViewController(withIdentifier: "TabBarController")as? TabBarController else {return}
-                        
-                        tabBarController.modalPresentationStyle = .fullScreen
-                        self.present(tabBarController, animated: true, completion: nil)
-                    }
-                    else if(result.code == 3014){
-                        self.pwWarningLb.text = "아이디와 비밀번호를 다시 확인해주세요!"
-                        self.pwWarningLb.isHidden = false
-                    }
-                   
+            let tabbar = UIStoryboard.init(name: "Main", bundle: nil)
+                    guard let tabBarController = tabbar.instantiateViewController(withIdentifier: "TabBarController")as? TabBarController else {return}
                     
-                case .failure(let error):
-                    print("Error: \(error)")
-                }
-            })
+                    tabBarController.modalPresentationStyle = .fullScreen
+                    self.present(tabBarController, animated: true, completion: nil)
         }
         
     }

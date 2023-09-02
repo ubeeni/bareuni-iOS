@@ -8,7 +8,6 @@
 import UIKit
 
 class ConfirmPWViewController: UIViewController, UITextFieldDelegate{
-    var email: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +21,7 @@ class ConfirmPWViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func nextBtnDidTap(_ sender: Any) {
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as? TermsOfServiceViewController
-        var signUpData = SignUpRequest.init()
-        signUpData.email = email
-        signUpData.password = pwTextField.text!
-        nextVC!.signUpData = signUpData
-        self.navigationController?.pushViewController(nextVC!, animated: true)
+        UserDefaults.standard.set(pwTextField.text, forKey: "password")
     }
     
     
@@ -82,7 +76,6 @@ class ConfirmPWViewController: UIViewController, UITextFieldDelegate{
         }
         
     }
-    
 }
 
 extension UIButton{

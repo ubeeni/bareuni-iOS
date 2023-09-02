@@ -8,23 +8,27 @@
 import UIKit
 
 class WelcomeProfileViewController: UIViewController {
-    var signUpData: SignUpRequest?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        welcomeLabel.text = UserDefaults.standard.object(forKey: "nickname") as! String + "님, 환영해요"
+        // Do any additional setup after loading the view.
     }
-        
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
     override func viewDidAppear(_ animated: Bool) {
           super.viewDidAppear(animated)
         
        
-        let newStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        let newViewController = newStoryboard.instantiateViewController(identifier: "LoginUINavigationController")
-
+        let tabbar = UIStoryboard.init(name: "Main", bundle: nil)
+                guard let tabBarController = tabbar.instantiateViewController(withIdentifier: "TabBarController")as? TabBarController else {return}
+                
+                tabBarController.modalPresentationStyle = .fullScreen
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
           // 1초 후 실행될 부분
-            self.changeRootViewController(newViewController)
+            self.present(tabBarController, animated: true, completion: nil)
         }
 
        }

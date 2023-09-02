@@ -155,14 +155,10 @@ struct SettingView: View {
                                         message: Text(""),
                                         primaryButton: .destructive(
                                             Text("네")
-                                        , action: {
-                                            print("첫 번째 버튼이 눌렸습니다.")
-                                        }),
+                                        ),
                                         secondaryButton: .default(
                                             Text("아니요").foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
-                                            , action: {
-                                                print("두 번째 버튼이 눌렸습니다.")
-                                            })
+                                        )
                                     )
                         }
                       

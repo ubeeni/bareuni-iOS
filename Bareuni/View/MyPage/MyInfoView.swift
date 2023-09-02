@@ -66,8 +66,7 @@ struct MyInfoView: View {
             }.padding(.top, 34)
             
             VStack{
-                Button(action: {self.isNameClicked.toggle()
-                }, label: {
+                Button(action: {self.isNameClicked.toggle()}, label: {
                     HStack{
                         Text("닉네임 / 이름").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
                         Spacer()

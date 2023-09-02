@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class loginSelectionViewController: UIViewController {
     
@@ -30,16 +29,6 @@ class loginSelectionViewController: UIViewController {
         
         self.setBackBtn()
     }
-    @IBAction func test(_ sender: Any) {
-        
-        
-        
-    }
-    
-    @IBAction func appleLoginDidTap(_ sender: Any) {
-        
-    }
-    
     
     @IBOutlet weak var kakaoSignupBtn: UIButton!
     @IBOutlet weak var appleSignupBtn: UIButton!
