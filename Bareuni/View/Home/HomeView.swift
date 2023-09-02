@@ -227,21 +227,21 @@ func relativeTime(from dateString: String) -> String {
         let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date, to: Date())
         
         if let year = components.year, year > 0 {
-            return "\(year) years ago"
+            return "\(year)년 전"
         } else if let month = components.month, month > 0 {
-            return "\(month) months ago"
+            return "\(month)개월 전"
         } else if let day = components.day, day > 6 {
             // 일주일 이상이면 주를 기준으로 표시
             let weeks = day / 7
-            return "\(weeks) weeks ago"
+            return "\(weeks)주 전"
         } else if let day = components.day, day > 0 {
-            return "\(day) days ago"
+            return "\(day)일 전"
         } else if let hour = components.hour, hour > 0 {
-            return "\(hour) hours ago"
+            return "\(hour)시간 전"
         } else if let minute = components.minute, minute > 0 {
-            return "\(minute) minutes ago"
+            return "\(minute)분 전"
         } else {
-            return "just now"
+            return "방금 전"
         }
     }
     return ""
