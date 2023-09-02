@@ -19,8 +19,7 @@ struct LocationView: View {
     @State var tabIndex = "서울"
     @State var tabIndex2 = ""
     @State var isSelected = false
-    @State var selectedCities: [String] = []
-    
+    @ObservedObject var recommendDentistViewModel = RecommendDentistViewModel()
     
     let cityDic = CityDictionary().cityDic
     let cityList = CityDictionary().cityList
@@ -30,7 +29,7 @@ struct LocationView: View {
             VStack{
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 0) {
-                            ForEach(selectedCities, id: \.self){ city in
+                            ForEach(recommendDentistViewModel.selectedCities, id: \.self){ city in
                                 HStack {
                                     Text(city)
                                         .font(Font.custom("Pretendard", size: 16))
@@ -38,7 +37,7 @@ struct LocationView: View {
                                         .foregroundColor(.BackgroundBlue)
                                     
                                     Button(action: {
-                                        selectedCities.removeAll { $0 == city }
+                                        recommendDentistViewModel.selectedCities.removeAll { $0 == city }
                                     }, label: {
                                         Image("Cancel")
                                     })
@@ -95,15 +94,11 @@ struct LocationView: View {
                     }
                 }
                 
-                
-                Button(action: {
-                    //asd
-                }, label: {
-                    NavigationLink(destination: InfoView(selectedCities: $selectedCities), label: {
+                NavigationLink(destination: InfoView(recommendDentistViewModel: recommendDentistViewModel), label: {
                         ZStack {
                             Rectangle().frame(width: 345, height: 57)
                                 .cornerRadius(8)
-                                .foregroundColor(selectedCities.count == 0 ? Color(red: 0.88, green: 0.88, blue: 0.88) : .BackgroundBlue)
+                                .foregroundColor(recommendDentistViewModel.selectedCities.count == 0 ? Color(red: 0.88, green: 0.88, blue: 0.88) : .BackgroundBlue)
                             
                             Text("내 지역 선택 완료")
                                 .font(
@@ -114,9 +109,11 @@ struct LocationView: View {
                                 .foregroundColor(.white)
                         }
                         .padding(.bottom, 10)
-                    })
-                })
-                .disabled(selectedCities.count == 0)
+                }).disabled(recommendDentistViewModel.selectedCities.count == 0)
+                    .simultaneousGesture(TapGesture().onEnded{//나중에 없앨 코드
+                        print(recommendDentistViewModel.selectedCities)
+                        recommendDentistViewModel.fetchRecommendedDentists()
+                        })
             }
         }//navigationview
     }
@@ -126,23 +123,23 @@ struct LocationView: View {
     }
     
     private func onButtonTapped2(index: String) {
-        if selectedCities.contains(index) {
-            selectedCities.removeAll { $0 == index }
+        if recommendDentistViewModel.selectedCities.contains(index) {
+            recommendDentistViewModel.selectedCities.removeAll { $0 == index }
         } else {
-            selectedCities.append(index)
+            recommendDentistViewModel.selectedCities.append(index)
         }
     }
     
     private func bindingForSelection(_ detailCity: String) -> Binding<Bool> {
         Binding<Bool>(
             get: {
-                selectedCities.contains(detailCity)
+                recommendDentistViewModel.selectedCities.contains(detailCity)
             },
             set: { isSelected in
                 if isSelected {
-                    selectedCities.append(detailCity)
+                    recommendDentistViewModel.selectedCities.append(detailCity)
                 } else {
-                    selectedCities.removeAll { $0 == detailCity }
+                    recommendDentistViewModel.selectedCities.removeAll { $0 == detailCity }
                 }
             }
         )

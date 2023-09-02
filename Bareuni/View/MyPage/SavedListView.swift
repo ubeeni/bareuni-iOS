@@ -24,10 +24,10 @@ struct SavedListView: View {
                 ScrollView {
                     LazyVStack {
                         
-                        ForEach(dentistList){ dentist in
-                            recommendedDentistView(dentist: dentist)
-                            Spacer().frame(height: 23)
-                        }
+//                        ForEach(dentistList){ dentist in
+//                            recommendedDentistView(dentist: dentist)
+//                            Spacer().frame(height: 23)
+//                        }
                         
                     }.scrollContentBackground(.hidden).listStyle(.plain)
                 }

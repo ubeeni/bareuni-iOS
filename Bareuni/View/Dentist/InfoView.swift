@@ -10,9 +10,9 @@ import SwiftUI
 struct InfoView: View {
     
     @State var tabIndex = 0
-    @State var cities = LocationView().selectedCities
     @StateObject var dentistInfo = DentistViewModel()
-    @Binding var selectedCities: [String]
+    @ObservedObject var recommendDentistViewModel: RecommendDentistViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     
     var body: some View {
@@ -42,7 +42,22 @@ struct InfoView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 0) {
-                    ForEach(selectedCities, id: \.self){ city in
+                    
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Text("지역선택 다시하기")
+                    })
+                    .padding(.trailing)
+                    
+                    
+                    Button(action: {
+                        print(recommendDentistViewModel.selectedCities)
+                    }, label: {
+                        Text("보기")
+                    })
+                    
+                    ForEach(recommendDentistViewModel.selectedCities, id: \.self){ city in
                         HStack {
                             Text(city)
                                 .font(Font.custom("Pretendard", size: 16))
@@ -50,7 +65,8 @@ struct InfoView: View {
                                 .foregroundColor(.BackgroundBlue)
                             
                             Button(action: {
-                                selectedCities.removeAll { $0 == city }
+                                recommendDentistViewModel.selectedCities.removeAll { $0 == city }
+                                recommendDentistViewModel.fetchRecommendedDentists()
                             }, label: {
                                 Image("Cancel")
                             })
@@ -75,7 +91,7 @@ struct InfoView: View {
                 Spacer().frame(height: 0)
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        ForEach(dentistInfo.Dentists){ dentist in
+                        ForEach(recommendDentistViewModel.recommendedDentists){ dentist in
                             recommendedDentistView(dentist: dentist)
                             Spacer().frame(height: 23)
                         }
@@ -86,7 +102,7 @@ struct InfoView: View {
                 Spacer().frame(height: 0)
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        ForEach(dentistInfo.Dentists){ dentist in
+                        ForEach(recommendDentistViewModel.recommendedDentists){ dentist in
                             recommendedDentistView(dentist: dentist)
                             Spacer().frame(height: 23)
                         }
@@ -251,7 +267,7 @@ struct TabBarButton3: View {
 
 struct recommendedDentistView:View {
     
-    @State var dentist: Dentist
+    @State var dentist: RecommendDentist
     
     var body: some View{
         NavigationLink(destination: {
@@ -273,7 +289,7 @@ struct recommendedDentistView:View {
                 VStack(alignment: .leading) {
                     HStack {
                         Spacer().frame(width: 23)
-                        Text(dentist.name)
+                        Text(dentist.hosName)
                             .font(
                                 Font.custom("Pretendard", size: 20)
                                     .weight(.semibold)
@@ -286,7 +302,7 @@ struct recommendedDentistView:View {
                         Image("star")
                             .padding(.top, 10)
                         
-                        Text(String(dentist.star))
+                        Text(String(dentist.score))
                             .font(
                                 Font.custom("Pretendard", size: 12)
                                     .weight(.medium)
@@ -303,7 +319,7 @@ struct recommendedDentistView:View {
                             .padding(.top, 10)
                     }
                     
-                    Text(dentist.info)
+                    Text(dentist.summary)
                         .font(
                             Font.custom("Pretendard", size: 12)
                                 .weight(.medium)
@@ -366,7 +382,7 @@ struct nearDentistView:View {
 
 struct detailDentistView:View {
     
-    @Binding var dentist: Dentist
+    @Binding var dentist: RecommendDentist
     @State var tabIndex = 0
     @State var bookMark = false
     
@@ -379,10 +395,10 @@ struct detailDentistView:View {
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 41.6875, height: 17.25)
-                        .background(dentist.reservation ? Color(red: 0.2, green: 0.47, blue: 1) : .red)
+//                        .background(dentist.reservation ? Color(red: 0.2, green: 0.47, blue: 1) : .red)
                         .cornerRadius(8)
                     
-                    Text(dentist.reservation ? "예약가능" : "예약불가")
+//                    Text(dentist.reservation ? "예약가능" : "예약불가")
                         .font(
                             Font.custom("Biennale", size: 8)
                                 .weight(.semibold)
@@ -392,7 +408,7 @@ struct detailDentistView:View {
                         .frame(width: 32, height: 12, alignment: .center)
                 }
                 
-                Text(dentist.name)
+                Text(dentist.hosName)
                     .font(
                         Font.custom("Pretendard", size: 24)
                             .weight(.semibold)
@@ -473,7 +489,7 @@ extension View {
 
 struct IntroduceView: View {
     
-    @Binding var dentist: Dentist
+    @Binding var dentist: RecommendDentist
     @State var isPresentingModal = false
     
     var body: some View {
@@ -997,10 +1013,8 @@ struct SearchView: View {
                         .padding(.leading, 20)
                     }
                     Spacer()
-                    
                 }
             }
-            
         }.navigationBarBackButtonHidden(true)
     }
 }
@@ -1014,7 +1028,6 @@ struct EmailSearchBar: View {
             VStack{
                 HStack {
                     TextField("치과명 또는 키워드를 검색하세요.", text: $text)
-                    //                        .underlineTextField()
                         .frame(width: 276, height: 46)
                         .background(RoundedRectangle(cornerRadius: 12)
                             .inset(by: 0.5)
