@@ -23,7 +23,7 @@
         <!--Login Selection View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="loginSelectionViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginSelectionViewController" id="Y6W-OH-hqX" customClass="loginSelectionViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -998,7 +998,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="7OE-I0-gIs"/>
-        <segue reference="SwC-AL-UGu"/>
+        <segue reference="TDo-uB-KF8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlueLogo" width="111" height="61"/>

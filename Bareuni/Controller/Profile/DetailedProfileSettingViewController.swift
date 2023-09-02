@@ -180,8 +180,7 @@ class DetailedProfileSettingViewController: UIViewController {
         }
     }
     @IBAction func confirmBtnDidTap(_ sender: Any) {
-        
-        LoginAPI.shared.signUp(photo: signUpData!.file, email: signUpData!.email, password: signUpData!.password, nickname: signUpData!.nickname, gender: gender!, age: age!, ortho: ortho!, completion: {
+        LoginAPI.shared.signUp(photo: signUpData!.file, email: signUpData!.email, password: signUpData!.password, nickname: signUpData!.nickname, gender: gender!, age: age!, ortho: ortho!, reception: signUpData!.reception, completion:{
             result in
             switch result{
             case .success(let result):

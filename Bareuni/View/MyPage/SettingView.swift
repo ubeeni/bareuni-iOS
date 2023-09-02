@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct SettingView: View {
     @State var isLocked: Bool = true
@@ -152,7 +153,6 @@ struct SettingView: View {
                                 
                             }.padding(.top, 25).padding(.trailing, 20)
                         }).fullScreenCover(isPresented: $showSignUpView) {
-                            // 모달 화면을 정의합니다.
                             SignUpView()
                         }.alert(isPresented: $isShowLogoutAlert) {
                             
@@ -223,11 +223,12 @@ struct SettingView: View {
 }
 struct SignUpView : UIViewControllerRepresentable {
     
-    typealias UIViewControllerType = LoginUINavigationController
+    typealias UIViewControllerType = loginSelectionViewController
     
     // MARK: UIViewController를 생성합니다.
     func makeUIViewController(context: Context) -> UIViewControllerType {
-        return LoginUINavigationController()      // MARK: ScreenShareViewController의 UIViewController를 호출합니다.
+        let viewcontroller = loginSelectionViewController()
+        return viewcontroller    // MARK: ScreenShareViewController의 UIViewController를 호출합니다.
     }
     
     // MARK: UIViewController를 변경하였을때 수행합니다.
