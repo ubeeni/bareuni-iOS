@@ -96,6 +96,7 @@ struct HomeView: View {
                             
                             Spacer()
                         }
+                        .padding(.top, 10)
                     })
                     /*
                      }).fullScreenCover(isPresented: $showCommunityMainView) {
