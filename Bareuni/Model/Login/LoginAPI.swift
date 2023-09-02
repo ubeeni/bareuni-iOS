@@ -202,5 +202,30 @@ struct LoginAPI{
         }
         
     }
+    
+    func findPassword(email: String, completion: @escaping (Result<FindPasswordResponse, Error>) -> Void){
+        let url = "https://bareuni.shop/users/password"
+        let params = ["email": email] as Dictionary
+
+        AF.request(url,
+                   method: .post,
+                   parameters: params,
+                   encoding: JSONEncoding(options: []),
+                   headers: ["Content-Type":"application/json", "Accept":"application/json"])
+        .responseDecodable(of: FindPasswordResponse.self){ response in
+            print(response)
+            switch response.result {
+            case .success(let result):
+                print(result)
+                // 성공적으로 디코드한 데이터를 처리
+                print("비밀번호 찾기 결과: \(result.message)")
+                    completion(.success(result))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    
 }
 

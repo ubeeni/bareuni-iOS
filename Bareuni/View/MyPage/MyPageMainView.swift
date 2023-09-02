@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import KeychainSwift
 
 struct MyPageMainView: View {
     var body: some View {
@@ -99,7 +100,19 @@ struct MyPageMainView: View {
                         .font(.custom("Pretendard-Medium", size: 24))
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {print("Button1")}){
+                    Button(action: {
+                        LoginAPI.shared.reissue(completion: {
+                            result in
+                            switch result{
+                            case .success(let result):
+                                print("reissue 결과: \(result.message)")
+                                KeychainSwift().set(result.result![1].token, forKey: "accessToken")
+                                KeychainSwift().set(result.result![0].token, forKey: "refreshToken")
+                            case .failure(let error):
+                                print("Error: \(error)")
+                            }
+                        })
+                    }){
                         Image("icon_bell")
                             .resizable()
                             .frame(width: 32, height: 32)

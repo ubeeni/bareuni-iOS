@@ -30,20 +30,41 @@ class FindPWViewController: UIViewController {
     @IBOutlet weak var confirmBtn: UIButton!
     
     @objc func textFieldDidChange(_sender: Any) {
-        if(self.findEmailTF.checkEmailValid() == false){
+        
+        if(self.findEmailTF.text!.count == 0){
+            self.confirmBtn.isEnabled = false
+            self.confirmBtn.backgroundColor = UIColor(named: "disabledBtnColor")
+            
+        }
+        else if(self.findEmailTF.checkEmailValid() == false){
             explainLb.layer.borderColor = UIColor(red: 1, green: 0.314, blue: 0.314, alpha: 1).cgColor
             
             warningLb.text = "이메일을 확인해주세요."
             warningLb.textColor = UIColor(red: 1, green: 0.314, blue: 0.314, alpha: 1)
-            confirmBtn.backgroundColor = UIColor(red: 0.821, green: 0.821, blue: 0.821, alpha: 1)
+            self.confirmBtn.isEnabled = false
+            self.confirmBtn.backgroundColor = UIColor(named: "disabledBtnColor")
         }
         else{
             findEmailTF.doViewSetting(paddingWidth: 28, cornerRadius: 12)
             warningLb.text = "대소문자를 구분하여 입력해주세요."
             warningLb.textColor = UIColor(red: 0.459, green: 0.459, blue: 0.459, alpha: 1)
+            self.confirmBtn.isEnabled = true
             confirmBtn.backgroundColor = UIColor(named: "BackgroundBlue")
         }
     }
+    
+    @IBAction func confirmBtnDidTap(_ sender: Any) {
+        LoginAPI.shared.findPassword(email: self.findEmailTF.text!, completion: {
+            result in
+            switch result{
+            case .success(let result):
+                print("비밀번호 찾기에 성공!: \(result.message)")
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        })
+    }
+    
     
 }
 

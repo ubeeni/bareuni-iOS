@@ -31,6 +31,8 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
         self.picker.sourceType = .photoLibrary
         self.picker.modalPresentationStyle = .fullScreen
         
+        nicknameTextField.delegate = self
+        
         
     }
     let picker = UIImagePickerController()
@@ -50,7 +52,10 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
         self.navigationController?.pushViewController(nextVC!, animated: true)
     }
 
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newLength = (textField.text?.count)! + string.count - range.length
+            return !(newLength > 9)
+    }
     
     
     @IBOutlet weak var nextBtn: UIButton!

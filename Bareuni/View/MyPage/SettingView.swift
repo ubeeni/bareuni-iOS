@@ -153,7 +153,7 @@ struct SettingView: View {
                                 
                             }.padding(.top, 25).padding(.trailing, 20)
                         }).fullScreenCover(isPresented: $showSignUpView) {
-                            SignUpView()
+                            FirstUIViewControllerWrapper()
                         }.alert(isPresented: $isShowLogoutAlert) {
                             
                             let SomeButton1 = Alert.Button.default(Text("네").foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
@@ -235,6 +235,18 @@ struct SignUpView : UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         //
     }
+}
+
+struct FirstUIViewControllerWrapper: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UINavigationController {
+            let rootViewController = LoginUINavigationController()
+            let navigationController = UINavigationController(rootViewController: rootViewController)
+            return navigationController
+        }
+
+        func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
+            // 업데이트 로직 추가 (옵셔널)
+        }
 }
 
 struct SettingView_Previews: PreviewProvider {

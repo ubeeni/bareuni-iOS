@@ -16,6 +16,7 @@ class loginViewController: UIViewController {
         // uiview 설정
         emailTextField.doViewSetting(paddingWidth: 28, cornerRadius: 12)
         pwTextField.doViewSetting(paddingWidth: 28, cornerRadius: 12)
+        pwTextField.isSecureTextEntry = true
         
         loginSubmitBtn.layer.cornerRadius = 12
         
@@ -32,6 +33,19 @@ class loginViewController: UIViewController {
     
     @IBOutlet weak var emailWarningLb: UILabel!
     @IBOutlet weak var pwWarningLb: UILabel!
+    
+    @IBOutlet weak var hideBtn: UIButton!
+    
+    @IBAction func hideBtnDidTap(_ sender: Any) {
+        if(self.pwTextField.isSecureTextEntry == true){
+            self.pwTextField.isSecureTextEntry = false
+            hideBtn.setImage(UIImage(named: "unhide"), for: .normal)
+        }else{
+            self.pwTextField.isSecureTextEntry = true
+            hideBtn.setImage(UIImage(named: "hide"), for: .normal)
+
+        }
+    }
     
     @IBAction func loginBtnDidTap(_ sender: Any) {
         emailWarningLb.isHidden = true

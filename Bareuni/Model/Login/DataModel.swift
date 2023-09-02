@@ -68,6 +68,12 @@ struct CheckEmailResponse: Codable {
     let message: String
     let result: Bool?
 }
+struct FindPasswordResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: Bool?
+}
 
 struct VerifyEmailResponse: Codable {
     let isSuccess: Bool
