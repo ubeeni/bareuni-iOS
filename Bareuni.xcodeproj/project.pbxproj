@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100DC1A02AA3389F00D06291 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DC19F2AA3389F00D06291 /* APIManager.swift */; };
 		1014A0B32A6E604D00CE8170 /* CommunityMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1014A0B22A6E604D00CE8170 /* CommunityMainView.swift */; };
 		1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1014A0B42A6E61C500CE8170 /* CommunityViewController.swift */; };
 		1017E2F12A9B312800254EFD /* BestDentistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1017E2F02A9B312800254EFD /* BestDentistModel.swift */; };
@@ -14,7 +15,6 @@
 		1017E2FC2A9C777D00254EFD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 1017E2FB2A9C777D00254EFD /* Moya */; };
 		1017E2FE2A9C777D00254EFD /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 1017E2FD2A9C777D00254EFD /* ReactiveMoya */; };
 		1017E3002A9C777D00254EFD /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 1017E2FF2A9C777D00254EFD /* RxMoya */; };
-		1017E3022A9C77BA00254EFD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1017E3012A9C77BA00254EFD /* APIManager.swift */; };
 		1017E3042A9C794B00254EFD /* BestDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1017E3032A9C794B00254EFD /* BestDentistViewModel.swift */; };
 		102166532A69492A00DC6351 /* CommunityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102166522A69492A00DC6351 /* CommunityData.swift */; };
 		102166552A6949ED00DC6351 /* CommunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102166542A6949ED00DC6351 /* CommunityTableViewCell.swift */; };
@@ -107,10 +107,6 @@
 		3BCB5BB42A946B3900F58C50 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */; };
 		3BCB5BB62A9470B200F58C50 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */; };
 		3BCB5BB82A949F1F00F58C50 /* TestView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB72A949F1F00F58C50 /* TestView4.swift */; };
-		3BCB5C202A9C562300F58C50 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C1F2A9C562300F58C50 /* CombineMoya */; };
-		3BCB5C222A9C562300F58C50 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C212A9C562300F58C50 /* Moya */; };
-		3BCB5C242A9C562300F58C50 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C232A9C562300F58C50 /* ReactiveMoya */; };
-		3BCB5C262A9C562300F58C50 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C252A9C562300F58C50 /* RxMoya */; };
 		3BCB5C282A9C56CE00F58C50 /* MoyaAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5C272A9C56CE00F58C50 /* MoyaAPIManager.swift */; };
 		3BCB5C322A9C5CFD00F58C50 /* APITestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5C312A9C5CFD00F58C50 /* APITestView.swift */; };
 		3BCB5C662A9C835100F58C50 /* RecommendDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5C642A9C835000F58C50 /* RecommendDentistViewModel.swift */; };
@@ -135,10 +131,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100DC19F2AA3389F00D06291 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		1014A0B22A6E604D00CE8170 /* CommunityMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityMainView.swift; sourceTree = "<group>"; };
 		1014A0B42A6E61C500CE8170 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		1017E2F02A9B312800254EFD /* BestDentistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestDentistModel.swift; sourceTree = "<group>"; };
-		1017E3012A9C77BA00254EFD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		1017E3032A9C794B00254EFD /* BestDentistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestDentistViewModel.swift; sourceTree = "<group>"; };
 		102166522A69492A00DC6351 /* CommunityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityData.swift; sourceTree = "<group>"; };
 		102166542A6949ED00DC6351 /* CommunityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTableViewCell.swift; sourceTree = "<group>"; };
@@ -438,7 +434,7 @@
 		32A5E6F82A557A2000B41644 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1017E3012A9C77BA00254EFD /* APIManager.swift */,
+				100DC19F2AA3389F00D06291 /* APIManager.swift */,
 				1017E2EF2A9B30EA00254EFD /* Home */,
 				327517342A9B7622008A8B97 /* Login */,
 				10E125B82A8DE58F00A2805C /* Community */,
@@ -730,6 +726,7 @@
 				32FC44302A8E0C6A00505C99 /* AccountInfoView.swift in Sources */,
 				3273943B2A875769001A739E /* ReservationHIstoryView.swift in Sources */,
 				3BCB5BB02A8E12C700F58C50 /* HiddenTabBarTest.swift in Sources */,
+				100DC1A02AA3389F00D06291 /* APIManager.swift in Sources */,
 				10AB8CE32A851CC8009B594E /* PostModel.swift in Sources */,
 				3BB0ACE42A5D3C060071D598 /* TestView.swift in Sources */,
 				1026BF4D2A5AA5C700955799 /* HomeViewController.swift in Sources */,
@@ -749,7 +746,6 @@
 				32FC442E2A8E01FB00505C99 /* SettingView.swift in Sources */,
 				3273943D2A8757A6001A739E /* PointView.swift in Sources */,
 				32A5E6CD2A557A1800B41644 /* ViewController.swift in Sources */,
-				1017E3022A9C77BA00254EFD /* APIManager.swift in Sources */,
 				32EB16D32A6E3F850050F45F /* NicknameSettingViewController.swift in Sources */,
 				3BB0ACEA2A6685780071D598 /* DentistModel.swift in Sources */,
 				3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */,
@@ -979,7 +975,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9R3T6AUA7X;
+				DEVELOPMENT_TEAM = R62RZ89ZRU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bareuni/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1007,7 +1003,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9R3T6AUA7X;
+				DEVELOPMENT_TEAM = R62RZ89ZRU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bareuni/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1142,20 +1138,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		1017E2F82A9C777D00254EFD /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 15.0.0;
+			};
+		};
+		327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 		328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -1172,14 +1168,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.0.0;
-			};
-		};
-		3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				branch = master;
-				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1219,26 +1207,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */;
 			productName = BSImagePicker;
-		};
-		3BCB5C1F2A9C562300F58C50 /* CombineMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = CombineMoya;
-		};
-		3BCB5C212A9C562300F58C50 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		3BCB5C232A9C562300F58C50 /* ReactiveMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = ReactiveMoya;
-		};
-		3BCB5C252A9C562300F58C50 /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

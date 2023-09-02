@@ -12,6 +12,7 @@ import KeychainSwift
 enum BareuniAPI {
     case getBestDentist
     case getBestCommunity
+    case getCommunity
 }
 
 extension BareuniAPI: TargetType {
@@ -25,6 +26,8 @@ extension BareuniAPI: TargetType {
             return "hospital/best"
         case .getBestCommunity:
             return "community/best"
+        case .getCommunity:
+            return "community"
         }
     }
     
@@ -33,6 +36,8 @@ extension BareuniAPI: TargetType {
         case .getBestDentist:
             return .get
         case .getBestCommunity:
+            return .get
+        case .getCommunity:
             return .get
         }
     }
@@ -43,6 +48,8 @@ extension BareuniAPI: TargetType {
             return Data()
         case .getBestCommunity:
             return Data()
+        case .getCommunity:
+            return Data()
         }
     }
     
@@ -52,13 +59,22 @@ extension BareuniAPI: TargetType {
             return .requestPlain
         case .getBestCommunity:
             return .requestPlain
+        case .getCommunity:
+            return .requestPlain
         }
     }
     
     var headers: [String: String]? {
-        return ["Content-Type": "application/json",
-                "Accept": "application/json",
-                "atk": KeychainSwift().get("accessToken") ?? ""]
+        switch self {
+        case .getBestDentist:
+            return nil
+        case .getBestCommunity:
+            return nil
+        case .getCommunity:
+            return ["Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "atk": KeychainSwift().get("accessToken") ?? ""]
+        }
     }
     
 }
