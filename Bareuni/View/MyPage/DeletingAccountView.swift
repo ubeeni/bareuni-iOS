@@ -90,7 +90,15 @@ struct DeletingAccountView: View {
 
                 
                 Button(action: {
-                    dismiss()
+                    LoginAPI.shared.deleteUser(completion: {result in
+                        switch result{
+                        case .success(let result):
+                            print("result: \(result.message)")
+                            dismiss()
+                        case .failure(let error):
+                            print("Error: \(error)")
+                        }
+                    })
                 }, label: {
                         ZStack {
                                 Rectangle().frame( height: 51)

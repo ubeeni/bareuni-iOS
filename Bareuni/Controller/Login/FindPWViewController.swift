@@ -58,7 +58,13 @@ class FindPWViewController: UIViewController {
             result in
             switch result{
             case .success(let result):
-                print("비밀번호 찾기에 성공!: \(result.message)")
+                if(result.code == 1000){
+                    self.navigationController?.popViewController(animated: true)
+                }
+                else if (result.code == 2018){
+                    self.warningLb.text = "존재하지 않는 이메일입니다."
+                    self.warningLb.textColor = .red
+                }
             case .failure(let error):
                 print("error: \(error)")
             }

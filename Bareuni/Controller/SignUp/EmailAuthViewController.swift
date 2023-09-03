@@ -18,7 +18,7 @@ class EmailAuthViewController: UIViewController, UITextFieldDelegate {
         nextBtn.isEnabled = false
         authCodeTF.delegate = self
         self.setBackBtn()
-        
+        guideLabel.text = "\(email)으로 받은 인증 코드를 입력해주세요"
         LoginAPI.shared.verifyEmail(email: email, completion: {result in
             switch result {
             case .success(let result):
@@ -41,6 +41,8 @@ class EmailAuthViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var authCodeTF: UITextField!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var warngingLb: UILabel!
+    
+    @IBOutlet weak var guideLabel: UILabel!
     
     var countDownTime: Int = 180
     var timer: Timer?

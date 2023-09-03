@@ -94,6 +94,14 @@ struct LogoutResponse: Codable{
     let result: String?
 }
 
+struct DeleteUserResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: String?
+}
+
+
 
 
 
