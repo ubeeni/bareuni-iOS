@@ -20,7 +20,7 @@ struct DentistReview: Codable {
     let reviewIdx: Int
     let createdAt: String
 //    let updatedAt: JSONNull?
-    let user: User
+    let user: dentistUser
     let content: String
     let totalScore: Int
     let receipt: Bool
@@ -28,7 +28,7 @@ struct DentistReview: Codable {
 }
 
 // MARK: - User
-struct User: Codable {
+struct dentistUser: Codable {
     let userIdx: Int
     let nickName: String
 //    let profile: JSONNull?

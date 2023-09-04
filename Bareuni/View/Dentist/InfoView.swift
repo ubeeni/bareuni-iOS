@@ -117,7 +117,7 @@ struct InfoView: View {
 struct CustomTopTabBar: View {
     @Binding var tabIndex: Int
     @Namespace var animation
-    @ObservedObject var test = NearDentistViewModel()
+  //  @ObservedObject var test = NearDentistViewModel()
     
     var body: some View {
         HStack {
@@ -129,7 +129,7 @@ struct CustomTopTabBar: View {
             
             TabBarButton(text: "내 주변 치과", isSelected: .constant(tabIndex == 1))
                 .onTapGesture { onButtonTapped(index: 1)
-                    print(test.currentAddress)
+                    //print(test.currentAddress)
                 }
             
             Spacer()

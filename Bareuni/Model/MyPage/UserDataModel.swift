@@ -11,10 +11,10 @@ struct GetUserInfro: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: User?
+    let result: mypageUser?
 }
 
-struct User: Codable {
+struct mypageUser: Codable {
     let email, nickname: String
     let gender: String?
     let age: Int

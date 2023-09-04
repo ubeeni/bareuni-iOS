@@ -103,7 +103,6 @@
 		3B09A1092AA55A4A0067D337 /* DentistReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B09A1082AA55A4A0067D337 /* DentistReviewModel.swift */; };
 		3B09A10B2AA55AAA0067D337 /* DentistReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B09A10A2AA55AAA0067D337 /* DentistReviewViewModel.swift */; };
 		3B3142382AA3185A0000F2C1 /* NearDentistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3142372AA3185A0000F2C1 /* NearDentistModel.swift */; };
-		3B3142542AA31C100000F2C1 /* NearDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3142532AA31C100000F2C1 /* NearDentistViewModel.swift */; };
 		3B3142562AA323B10000F2C1 /* DetailDentistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3142552AA323B10000F2C1 /* DetailDentistModel.swift */; };
 		3B3142582AA323B80000F2C1 /* DetailDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3142572AA323B80000F2C1 /* DetailDentistViewModel.swift */; };
 		3B31425A2AA32CD00000F2C1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3142592AA32CD00000F2C1 /* Model.swift */; };
@@ -125,10 +124,6 @@
 		3BCB5BB42A946B3900F58C50 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB32A946B3900F58C50 /* ReviewModel.swift */; };
 		3BCB5BB62A9470B200F58C50 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB52A9470B200F58C50 /* ReviewViewModel.swift */; };
 		3BCB5BB82A949F1F00F58C50 /* TestView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5BB72A949F1F00F58C50 /* TestView4.swift */; };
-		3BCB5C202A9C562300F58C50 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C1F2A9C562300F58C50 /* CombineMoya */; };
-		3BCB5C222A9C562300F58C50 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C212A9C562300F58C50 /* Moya */; };
-		3BCB5C242A9C562300F58C50 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C232A9C562300F58C50 /* ReactiveMoya */; };
-		3BCB5C262A9C562300F58C50 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCB5C252A9C562300F58C50 /* RxMoya */; };
 		3BCB5C282A9C56CE00F58C50 /* MoyaAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5C272A9C56CE00F58C50 /* MoyaAPIManager.swift */; };
 		3BCB5C322A9C5CFD00F58C50 /* APITestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5C312A9C5CFD00F58C50 /* APITestView.swift */; };
 		3BCB5C662A9C835100F58C50 /* RecommendDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5C642A9C835000F58C50 /* RecommendDentistViewModel.swift */; };
@@ -247,7 +242,6 @@
 		3B09A1082AA55A4A0067D337 /* DentistReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistReviewModel.swift; sourceTree = "<group>"; };
 		3B09A10A2AA55AAA0067D337 /* DentistReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistReviewViewModel.swift; sourceTree = "<group>"; };
 		3B3142372AA3185A0000F2C1 /* NearDentistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearDentistModel.swift; sourceTree = "<group>"; };
-		3B3142532AA31C100000F2C1 /* NearDentistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearDentistViewModel.swift; path = "../../../../../../.Trash/bareuni-iOS 오후 3.44.57/Bareuni/Model/Dentist/NearDentistViewModel.swift"; sourceTree = "<group>"; };
 		3B3142552AA323B10000F2C1 /* DetailDentistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDentistModel.swift; sourceTree = "<group>"; };
 		3B3142572AA323B80000F2C1 /* DetailDentistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDentistViewModel.swift; sourceTree = "<group>"; };
 		3B3142592AA32CD00000F2C1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -384,7 +378,6 @@
 				3B3142552AA323B10000F2C1 /* DetailDentistModel.swift */,
 				3B3142572AA323B80000F2C1 /* DetailDentistViewModel.swift */,
 				3B3142372AA3185A0000F2C1 /* NearDentistModel.swift */,
-				3B3142532AA31C100000F2C1 /* NearDentistViewModel.swift */,
 				3B09A1082AA55A4A0067D337 /* DentistReviewModel.swift */,
 				3B09A10A2AA55AAA0067D337 /* DentistReviewViewModel.swift */,
 				3BCB5C312A9C5CFD00F58C50 /* APITestView.swift */,
@@ -485,7 +478,6 @@
 			isa = PBXGroup;
 			children = (
 				32A7AD572AA5B6AC00EE1A35 /* MyPage */,
-				1017E3012A9C77BA00254EFD /* APIManager.swift */,
 				100DC19F2AA3389F00D06291 /* APIManager.swift */,
 				1017E2EF2A9B30EA00254EFD /* Home */,
 				327517342A9B7622008A8B97 /* Login */,
@@ -845,7 +837,6 @@
 				32EB16ED2A8378AF0050F45F /* NumberAuthHalfSheet.swift in Sources */,
 				32EB16DE2A825F0A0050F45F /* MyPageViewController.swift in Sources */,
 				32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */,
-				3B3142542AA31C100000F2C1 /* NearDentistViewModel.swift in Sources */,
 				32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */,
 				3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */,
 				327394412A876370001A739E /* FontManager.swift in Sources */,
@@ -1231,20 +1222,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		1017E2F82A9C777D00254EFD /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 15.0.0;
+			};
+		};
+		327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 		328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -1261,14 +1252,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.0.0;
-			};
-		};
-		3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				branch = master;
-				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1308,26 +1291,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */;
 			productName = BSImagePicker;
-		};
-		3BCB5C1F2A9C562300F58C50 /* CombineMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = CombineMoya;
-		};
-		3BCB5C212A9C562300F58C50 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		3BCB5C232A9C562300F58C50 /* ReactiveMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = ReactiveMoya;
-		};
-		3BCB5C252A9C562300F58C50 /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCB5C1E2A9C562300F58C50 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
