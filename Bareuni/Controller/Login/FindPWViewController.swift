@@ -61,7 +61,7 @@ class FindPWViewController: UIViewController {
                 if(result.code == 1000){
                     self.navigationController?.popViewController(animated: true)
                 }
-                else if (result.code == 2018){
+                else if (result.code == 3014){
                     self.warningLb.text = "존재하지 않는 이메일입니다."
                     self.warningLb.textColor = .red
                 }

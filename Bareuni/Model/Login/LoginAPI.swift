@@ -227,22 +227,17 @@ struct LoginAPI{
     func deleteUser( completion: @escaping (Result<DeleteUserResponse, Error>) -> Void){
         let url = "https://bareuni.shop/users/delete"
         AF.request(url,
-                   method: .delete,
+                   method: .post,
                    encoding: JSONEncoding(options: []),
                    headers: ["Content-Type":"application/json", "Accept":"application/json", "atk": KeychainSwift().get("accessToken")!])
         .responseDecodable(of: DeleteUserResponse.self){ response in
-            print(response)
             switch response.result {
             case .success(let result):
-                print(result)
                 // 성공적으로 디코드한 데이터를 처리
-                print("회원탈퇴 결과: \(result.message)")
                     completion(.success(result))
             case .failure(let error):
                 completion(.failure(error))
             }
         }
     }
-    
 }
-

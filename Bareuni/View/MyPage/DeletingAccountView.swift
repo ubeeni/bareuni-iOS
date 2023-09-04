@@ -16,6 +16,8 @@ struct DeletingAccountView: View {
     @State var deletingReason_4: Bool = false
     @State var deletingReason_5: Bool = false
     
+    @State var showSignUpView: Bool = false
+    
     @State var otherDeletingReason: String = ""
     
     @State var allInformationDeleting: Bool = false
@@ -105,13 +107,34 @@ struct DeletingAccountView: View {
                                     .cornerRadius(4)
                                     .foregroundColor(isEnabledBtn() ? Color("BackgroundBlue") : Color("disabledBtnColor"))
                             
-                            Text("바른이 탈퇴하기")
-                                .font(
-                                    Font.custom("Pretendard-SemiBold", size: 16)
-                                        .weight(.bold)
-                                )
-                                .multilineTextAlignment(.trailing)
-                                .foregroundColor(.white)
+                            Button(action: {
+                                LoginAPI.shared.deleteUser(completion: {
+                                    result in
+                                    switch result {
+                                    case .success(let result):
+                                        if(result.code == 1000){
+                                            print("회원탈퇴 성공")
+                                            showSignUpView = true
+                                        }
+                                        print("code: \(result.code),  message: \(result.message)")
+                                        
+                                        
+                                    case .failure(let error):
+                                        print("Error: \(error)")
+                                    }
+                                    
+                                })
+                            }, label: {
+                                Text("바른이 탈퇴하기")
+                                    .font(
+                                        Font.custom("Pretendard-SemiBold", size: 16)
+                                            .weight(.bold)
+                                    )
+                                    .multilineTextAlignment(.trailing)
+                                    .foregroundColor(.white)
+                            }).fullScreenCover(isPresented: $showSignUpView) {
+                                StoryboardViewController()
+                            }
                         }
                 }).padding(25).padding(.top, 20)
 
