@@ -153,7 +153,7 @@ struct SettingView: View {
                                 
                             }.padding(.top, 25).padding(.trailing, 20)
                         }).fullScreenCover(isPresented: $showSignUpView) {
-                            FirstUIViewControllerWrapper()
+                            StoryboardViewController()
                         }.alert(isPresented: $isShowLogoutAlert) {
                             
                             let SomeButton1 = Alert.Button.default(Text("네").foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
@@ -221,32 +221,17 @@ struct SettingView: View {
     }
     
 }
-struct SignUpView : UIViewControllerRepresentable {
-    
-    typealias UIViewControllerType = loginSelectionViewController
-    
-    // MARK: UIViewController를 생성합니다.
-    func makeUIViewController(context: Context) -> UIViewControllerType {
-        let viewcontroller = loginSelectionViewController()
-        return viewcontroller    // MARK: ScreenShareViewController의 UIViewController를 호출합니다.
+
+struct StoryboardViewController: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> some UIViewController {
+        let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(identifier: "LoginUINavigationController")
+        return controller
     }
     
-    // MARK: UIViewController를 변경하였을때 수행합니다.
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        //
+        
     }
-}
-
-struct FirstUIViewControllerWrapper: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> UINavigationController {
-            let rootViewController = LoginUINavigationController()
-            let navigationController = UINavigationController(rootViewController: rootViewController)
-            return navigationController
-        }
-
-        func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
-            // 업데이트 로직 추가 (옵셔널)
-        }
 }
 
 struct SettingView_Previews: PreviewProvider {
