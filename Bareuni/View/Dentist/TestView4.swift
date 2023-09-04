@@ -8,14 +8,54 @@
 import SwiftUI
 
 struct TestView4: View {
-  var body: some View {
-    HStack(spacing: 0) {
-      Text("상세 내용")
-          .foregroundColor(.gray)
-      Spacer()
-      ExpandableTextView("내 앞에 있는 안내 근무자의 안내를 받아 한 자리에 두 분씩 한 보트에 열 분이서 머리 젖습니다 옷도 젖습니다 신발 젖습니다 양말까지 젖습니다", lineLimit: 2)
+    @ObservedObject var viewModel = DetailDentistViewModel()
+        
+        var body: some View {
+            VStack {
+                Text("Dentist Name: \(viewModel.detailDentist?.hosName ?? "N/A")")
+                Text("Address: \(viewModel.detailDentist?.address ?? "N/A")")
+                // Add more Text views or UI elements to display other properties
+            }
+        }
+}
+
+
+struct TestView5: View {
+    @State private var items = ["Banana", "Apple", "Cherry", "Date"]
+    @State private var newItem = ""
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(items, id: \.self) { item in
+                    Text(item)
+                }
+                .onDelete(perform: deleteItem)
+            }
+            .navigationBarTitle("Dynamic List")
+            .navigationBarItems(leading: EditButton(), trailing: addButton)
+        }
     }
-  }
+
+    func deleteItem(at offsets: IndexSet) {
+        items.remove(atOffsets: offsets)
+    }
+
+    var addButton: some View {
+        HStack {
+            TextField("New Item", text: $newItem)
+            Button(action: addItem) {
+                Text("Add")
+            }
+        }
+    }
+
+    func addItem() {
+        if !newItem.isEmpty {
+            items.append(newItem)
+            newItem = ""
+        }
+    }
 }
 
 struct ExpandableTextView: View {
@@ -122,5 +162,6 @@ struct ExpandableTextView: View {
 struct TestView4_Previews: PreviewProvider {
     static var previews: some View {
         TestView4()
+        TestView5()
     }
 }

@@ -117,6 +117,8 @@ struct InfoView: View {
 struct CustomTopTabBar: View {
     @Binding var tabIndex: Int
     @Namespace var animation
+    @ObservedObject var test = NearDentistViewModel()
+    
     var body: some View {
         HStack {
             Spacer().frame(width: 32)
@@ -126,7 +128,9 @@ struct CustomTopTabBar: View {
             Spacer().frame(width: 13)
             
             TabBarButton(text: "내 주변 치과", isSelected: .constant(tabIndex == 1))
-                .onTapGesture { onButtonTapped(index: 1) }
+                .onTapGesture { onButtonTapped(index: 1)
+                    print(test.currentAddress)
+                }
             
             Spacer()
         }
@@ -268,10 +272,12 @@ struct TabBarButton3: View {
 struct recommendedDentistView:View {
     
     @State var dentist: RecommendDentist
+    @StateObject var detailDentist = DetailDentistViewModel()
+    @State var selectedHospitalIdx = 0
     
     var body: some View{
         NavigationLink(destination: {
-            detailDentistView(dentist: $dentist)
+            detailDentistView(dentist: $dentist, detailDentist: detailDentist, selectedHospitalIdx: $selectedHospitalIdx)
         }, label: {
             ZStack {
                 Rectangle()
@@ -371,6 +377,19 @@ struct recommendedDentistView:View {
             }
             .frame(width: 339, height: 203)
         })
+        .simultaneousGesture(TapGesture().onEnded{
+            
+//            print(dentist.hospitalIdx)
+//            selectedHospitalIdx = Int(dentist.hospitalIdx)
+            detailDentist.hospitalIdx = Int(dentist.hospitalIdx)
+            print(detailDentist.hospitalIdx)
+
+            detailDentist.fetchDetailDentists()
+//            detailDentist.updateHospitalIdx(newHospitalIdx: Int(dentist.hospitalIdx))
+//                        print(detailDentist.hospitalIdx)
+            
+            
+            })
     }
 }
 
@@ -385,20 +404,34 @@ struct detailDentistView:View {
     @Binding var dentist: RecommendDentist
     @State var tabIndex = 0
     @State var bookMark = false
-    
+    @StateObject var detailDentist: DetailDentistViewModel
     @Environment(\.presentationMode) var presentationMode
+    @Binding var selectedHospitalIdx: Int
+
     
     var body: some View{
         ScrollView {
             VStack{
+//                Button(action: {
+//                    print(detailDentist.hospitalIdx)
+//                }, label: {
+//                    Text("asd")
+//                })
+//
+//                VStack {
+//                    Text("Dentist Name: \(detailDentist.detailDentist?.hosName ?? "N/A")")
+//                    Text("Address: \(detailDentist.detailDentist?.address ?? "N/A")")
+//                    // Add more Text views or UI elements to display other properties
+//                }
+                
                 ZStack {
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 41.6875, height: 17.25)
-//                        .background(dentist.reservation ? Color(red: 0.2, green: 0.47, blue: 1) : .red)
+                    //                        .background(dentist.reservation ? Color(red: 0.2, green: 0.47, blue: 1) : .red)
                         .cornerRadius(8)
                     
-//                    Text(dentist.reservation ? "예약가능" : "예약불가")
+                    //                    Text(dentist.reservation ? "예약가능" : "예약불가")
                         .font(
                             Font.custom("Biennale", size: 8)
                                 .weight(.semibold)
@@ -408,15 +441,15 @@ struct detailDentistView:View {
                         .frame(width: 32, height: 12, alignment: .center)
                 }
                 
-                Text(dentist.hosName)
+                Text(detailDentist.detailDentist?.hosName ?? "N/A")
                     .font(
                         Font.custom("Pretendard", size: 24)
                             .weight(.semibold)
                     )
                     .foregroundColor(.black)
                     .frame(width: 350, height: 29, alignment: .leading)
-                
-                Text("진료중 (점심시간 13:00 - 14:00)")
+
+                Text(detailDentist.detailDentist?.todayClosed ?? true == true ? "오늘 휴무" : "오늘 영업")
                     .font(
                         Font.custom("Pretendard", size: 16)
                             .weight(.medium)
@@ -424,7 +457,7 @@ struct detailDentistView:View {
                     .foregroundColor(.BackgroundBlue)
                     .frame(width: 350, height: 29, alignment: .leading)
                 
-                Text(dentist.address)
+                Text(detailDentist.detailDentist?.address ?? "N/A")
                     .font(
                         Font.custom("Pretendard", size: 14)
                             .weight(.medium)
@@ -445,16 +478,11 @@ struct detailDentistView:View {
                             .cornerRadius(20)
                     )
                     .padding(.vertical, 10)
-                //                Image("Sample" + String(Int.random(in: 1...3)))
-                //                    .resizable()
-                //                    .aspectRatio(contentMode: .fill)
-                //                    .cornerRadius(20)
-                //                    .frame(width: .infinity, height: 100)
                 
                 CustomTopTabBar2(tabIndex: $tabIndex)
                 
                 if tabIndex == 0 {
-                    IntroduceView(dentist: $dentist)
+                    IntroduceView(dentist: $dentist, detailDentist: detailDentist)
                 }
                 else if tabIndex == 1 {
                     ReviewView()
@@ -491,6 +519,7 @@ struct IntroduceView: View {
     
     @Binding var dentist: RecommendDentist
     @State var isPresentingModal = false
+    @StateObject var detailDentist: DetailDentistViewModel
     
     var body: some View {
         //        ScrollView(showsIndicators: false){
@@ -504,28 +533,36 @@ struct IntroduceView: View {
                 .padding(.top, 15)
             
             ZStack {
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("매일 09:00 - 20:00")
-                        .font(
-                            Font.custom("Pretendard", size: 14)
-                                .weight(.semibold)
-                        )
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.black)
-                    
-                    Text("일요일 휴무")
-                        .font(
-                            Font.custom("Pretendard", size: 14)
-                                .weight(.medium)
-                        )
-                        .foregroundColor(.BackgroundBlue)
-                    
-                    Text("점심시간 13:00 - 14:00")
-                        .font(
-                            Font.custom("Pretendard", size: 14)
-                                .weight(.medium)
-                        )
-                        .foregroundColor(.black)
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 10) {
+    //                    Text("매일 09:00 - 20:00")
+    //                        .font(
+    //                            Font.custom("Pretendard", size: 14)
+    //                                .weight(.semibold)
+    //                        )
+    //                        .multilineTextAlignment(.center)
+    //                        .foregroundColor(.black)
+    //
+    //                    Text("일요일 휴무")
+    //                        .font(
+    //                            Font.custom("Pretendard", size: 14)
+    //                                .weight(.medium)
+    //                        )
+    //                        .foregroundColor(.BackgroundBlue)
+    //
+    //                    Text("점심시간 13:00 - 14:00")
+    //                        .font(
+    //                            Font.custom("Pretendard", size: 14)
+    //                                .weight(.medium)
+    //                        )
+    //                        .foregroundColor(.black)
+                        
+                        Text(detailDentist.detailDentist?.openTime ?? "N/A")
+                        
+                        Text("점심시간")
+                        
+                        Text(detailDentist.detailDentist?.lunchTime ?? "N/A")
+                    }
                 }
             }
             .frame(width: 338, height: 112)
@@ -540,34 +577,47 @@ struct IntroduceView: View {
                 .foregroundColor(.black)
                 .padding(.top, 15)
             
-            VStack(alignment: .leading, spacing: 10) {
-                Text("대한민국 1.7% 교정과 전문의")
-                    .font(
-                        Font.custom("Pretendard", size: 14)
-                            .weight(.medium)
-                    )
-                    .foregroundColor(.black)
-                
-                Text("보건복지부 인증 치과교정과 전문 3인이 모든 진료 과정을 함께합니다.")
-                    .font(
-                        Font.custom("Pretendard", size: 14)
-                            .weight(.medium)
-                    )
-                    .foregroundColor(.BackgroundBlue)
-                    .frame(width: 298, alignment: .topLeading)
-                
-                Text("교정치료에 사용되는 브라켓, 와이어, 튜브, 밴드, 기구 등, 좋은 재료로 교정치료의 완성도를 높이겠습니다.")
-                    .font(
-                        Font.custom("Pretendard", size: 14)
-                            .weight(.medium)
-                    )
-                    .foregroundColor(.black)
-                    .frame(width: 298, alignment: .topLeading)
+//            ScrollView {
+//                VStack(alignment: .leading, spacing: 10) {
+//    //                Text("대한민국 1.7% 교정과 전문의")
+//    //                    .font(
+//    //                        Font.custom("Pretendard", size: 14)
+//    //                            .weight(.medium)
+//    //                    )
+//    //                    .foregroundColor(.black)
+//    //
+//    //                Text("보건복지부 인증 치과교정과 전문 3인이 모든 진료 과정을 함께합니다.")
+//    //                    .font(
+//    //                        Font.custom("Pretendard", size: 14)
+//    //                            .weight(.medium)
+//    //                    )
+//    //                    .foregroundColor(.BackgroundBlue)
+//    //                    .frame(width: 298, alignment: .topLeading)
+//    //
+//    //                Text("교정치료에 사용되는 브라켓, 와이어, 튜브, 밴드, 기구 등, 좋은 재료로 교정치료의 완성도를 높이겠습니다.")
+//    //                    .font(
+//    //                        Font.custom("Pretendard", size: 14)
+//    //                            .weight(.medium)
+//    //                    )
+//    //                    .foregroundColor(.black)
+//    //                    .frame(width: 298, alignment: .topLeading)
+//                    Text(detailDentist.detailDentist?.content ?? "N/A")
+//                }
+//                .padding(.leading, 22)
+//                .padding(.trailing, 18)
+//                .padding(.top, 18)
+//                .padding(.bottom, 15)
+//                .background(Color(red: 0.93, green: 0.97, blue: 1))
+//            .cornerRadius(10)
+//            }
+            ZStack {
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text(detailDentist.detailDentist?.content ?? "N/A")
+                    }
+                }
             }
-            .padding(.leading, 22)
-            .padding(.trailing, 18)
-            .padding(.top, 18)
-            .padding(.bottom, 15)
+            .frame(width: 338, height: 112)
             .background(Color(red: 0.93, green: 0.97, blue: 1))
             .cornerRadius(10)
         }
@@ -593,11 +643,11 @@ struct IntroduceView: View {
                 ConsultingView(isPresentingModal: $isPresentingModal)
             }
         })
-//        NavigationLink(destination: {
-//            ReservationView()
-//        }, label: {
-            
-//        })
+        //        NavigationLink(destination: {
+        //            ReservationView()
+        //        }, label: {
+        
+        //        })
         
         //        }
     }
@@ -615,7 +665,7 @@ struct ReviewView: View {
     @State private var showFullText = false
     
     @State var gender = "성별"
-    @State var sort = "최신순"
+    @State var sort = "평점순"
     
     var body: some View{
         VStack{
@@ -805,6 +855,9 @@ struct ReviewView: View {
                 )
                 ZStack {
                     Menu(gender) {
+                        Button("전체") {
+                            gender = "전체"
+                        }
                         Button("남자") {
                             gender = "남자"
                         }
@@ -848,46 +901,48 @@ struct ReviewView: View {
                 .padding(.bottom, 10)
             
             //            ScrollView{
-            ForEach(reviewInfo.reviews){ review in
-                VStack{
-                    HStack{
-                        ZStack{
-                            Circle()
-                                .stroke().frame(width: 40, height: 40)
-                                .foregroundColor(.gray)
-                            Image("Tooth")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 26, height: 29)
-                                .clipped()
-                        }
-                        .padding(.leading, 20)
-                        VStack{
-                            Text(review.nickName)
-                                .font(Font.custom("Pretendard", size: 14).weight(.semibold))
-                                .padding(.leading, -2)
-                                .padding(.bottom, -3)
-                            if review.certification == true {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 20).stroke(Color.BackgroundBlue).frame(width: 50, height: 17)
-                                    Text("영수증 인증")
-                                        .font(Font.custom("Pretendard", size: 8))
-                                        .foregroundColor(.BackgroundBlue)
+//            List {
+            ForEach(reviewInfo.reviews.sorted(by: { $0.star > $1.star }), id: \.self){ review in
+                    VStack{
+                        HStack{
+                            ZStack{
+                                Circle()
+                                    .stroke().frame(width: 40, height: 40)
+                                    .foregroundColor(.gray)
+                                Image("Tooth")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 26, height: 29)
+                                    .clipped()
+                            }
+                            .padding(.leading, 20)
+                            VStack{
+                                Text(review.nickName)
+                                    .font(Font.custom("Pretendard", size: 14).weight(.semibold))
+                                    .padding(.leading, -2)
+                                    .padding(.bottom, -3)
+                                if review.certification == true {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20).stroke(Color.BackgroundBlue).frame(width: 50, height: 17)
+                                        Text("영수증 인증")
+                                            .font(Font.custom("Pretendard", size: 8))
+                                            .foregroundColor(.BackgroundBlue)
+                                    }
                                 }
                             }
+                            Spacer()
+                            Image("YStar")
+                            Text(String(review.star))
+                                .padding(.trailing, 30)
                         }
-                        Spacer()
-                        Image("YStar")
-                        Text(String(review.star))
-                            .padding(.trailing, 30)
+                        VStack {
+                            ExpandableTextView(review.detail, lineLimit: 3)
+                                .padding(.horizontal, 20)
+                        }
+                        Image("Bar")
                     }
-                    VStack {
-                        ExpandableTextView(review.detail, lineLimit: 3)
-                            .padding(.horizontal, 20)
-                    }
-                    Image("Bar")
                 }
-            } //foreach
+//            } //foreach
             //            }
         }//vstack
     }

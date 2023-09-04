@@ -8,16 +8,12 @@
 //import SwiftUI
 //
 //struct APITestView: View {
-//    @ObservedObject var viewModel = NearDentistViewModel()
-//
+//    @ObservedObject var locationViewModel = LocationViewModel()
+//    
 //    var body: some View {
 //        VStack {
-//            Text(viewModel.currentLocation)
-//                .font(.title)
-//
-//            Button("Fetch Near Dentists") {
-//                viewModel.fetchNearDentists()
-//            }
+//            Text("Current Address: \(locationViewModel.currentAddress ?? "Unknown")")
+//                .padding()
 //        }
 //    }
 //}
