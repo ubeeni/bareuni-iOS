@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Alamofire
 
 struct HomeView: View {
     
@@ -96,6 +95,7 @@ struct HomeView: View {
                             
                             Spacer()
                         }
+                        .padding(.top, 10)
                     })
                     /*
                      }).fullScreenCover(isPresented: $showCommunityMainView) {

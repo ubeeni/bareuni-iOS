@@ -7,10 +7,13 @@
 
 import Foundation
 import Moya
+import KeychainSwift
 
 enum BareuniAPI {
     case getBestDentist
     case getBestCommunity
+    case getCommunity
+    case postWrite(content: String)
 }
 
 extension BareuniAPI: TargetType {
@@ -24,6 +27,10 @@ extension BareuniAPI: TargetType {
             return "hospital/best"
         case .getBestCommunity:
             return "community/best"
+        case .getCommunity:
+            return "community"
+        case .postWrite:
+            return "community"
         }
     }
     
@@ -33,6 +40,10 @@ extension BareuniAPI: TargetType {
             return .get
         case .getBestCommunity:
             return .get
+        case .getCommunity:
+            return .get
+        case .postWrite:
+            return .post
         }
     }
     
@@ -41,6 +52,10 @@ extension BareuniAPI: TargetType {
         case .getBestDentist:
             return Data()
         case .getBestCommunity:
+            return Data()
+        case .getCommunity:
+            return Data()
+        case .postWrite:
             return Data()
         }
     }
@@ -51,11 +66,29 @@ extension BareuniAPI: TargetType {
             return .requestPlain
         case .getBestCommunity:
             return .requestPlain
+        case .getCommunity:
+            return .requestPlain
+        case .postWrite(let content):
+            let parameters: [String: Any] = ["content": content]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     
     var headers: [String: String]? {
-        return nil
+        switch self {
+        case .getBestDentist:
+            return nil
+        case .getBestCommunity:
+            return nil
+        case .getCommunity:
+            return ["Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "atk": KeychainSwift().get("accessToken") ?? ""]
+        case .postWrite:
+            return ["Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "atk": KeychainSwift().get("accessToken") ?? ""]
+        }
     }
     
 }
