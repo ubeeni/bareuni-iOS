@@ -7,12 +7,22 @@
 
 import Foundation
 
-struct Post: Identifiable {
-    var id = UUID()
-    var authorName: String
-    var content: String
-    var modificationTime: String
-    var likeCount: Int
-    var comments: [Comment]
-    var isLiked: Bool
+struct PostModel: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: PostResult?
+}
+
+struct PostResult: Codable {
+    let communityIdx: Int
+    let user: User
+    let content: String
+    let commentList: [CommentList]?
+}
+
+struct CommentList: Codable {
+    let communityIdx, commentIdx: Int
+    let user: User
+    let comment, commentCreatedAt: String
 }

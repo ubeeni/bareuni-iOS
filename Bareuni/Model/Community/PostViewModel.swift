@@ -6,7 +6,59 @@
 //
 
 import Foundation
+import Combine
+import Moya
 
+class PostViewModel: ObservableObject {
+    @Published var posts: PostResult?
+    private let provider = MoyaProvider<BareuniAPI>()
+
+    init() {
+
+    }
+
+    func createPost(content: String, completion: @escaping (Bool) -> Void) {
+        provider.request(.postWrite(content: content)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let postResponse = try response.map(PostModel.self)
+                    self.posts = postResponse.result
+                    completion(true)
+                } catch {
+                    print("Error parsing response: \(error)")
+                    completion(false)
+                }
+
+            case let .failure(error):
+                print("Network request failed: \(error)")
+                completion(false)
+            }
+        }
+    }
+    
+    /*
+    func fetchPost() {
+        provider.request(.getCommunity) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let postResponse = try response.map(PostModel.self)
+                    self.posts = postResponse.result
+                } catch {
+                    print("애러야Error parsing response: \(error)")
+                }
+            case let .failure(error):
+                print("Network request failed: \(error)")
+            }
+        }
+    }
+    */
+
+}
+
+
+/*
 class PostViewModel: ObservableObject {
     @Published var posts: [Post] = [] 
     
@@ -24,3 +76,4 @@ class PostViewModel: ObservableObject {
         ]
     }
 }
+*/
