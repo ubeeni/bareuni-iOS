@@ -42,12 +42,13 @@ struct MyPageMainView: View {
                             Text("저장 목록").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color.black)
                         }.frame(width: 66, height: 54)
                     }
+                    /*
                     NavigationLink(destination: PostHistroyView()) {
                         VStack {
                             Image("pencil")
                             Text("작성 내역").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color.black)
                         }.frame(width: 66, height: 54)
-                    }
+                    }*/
                     Button(action: {}) {
                         NavigationLink(destination: ReservationHIstoryView()) {
                             VStack {

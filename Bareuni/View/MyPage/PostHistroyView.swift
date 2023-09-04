@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/*
 struct PostHistroyView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var slideBarLocation: Int = 1
@@ -99,3 +100,4 @@ struct PostHistroyView_Previews: PreviewProvider {
         PostHistroyView()
     }
 }
+*/
