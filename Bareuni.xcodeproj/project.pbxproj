@@ -71,6 +71,8 @@
 		32A7AD512AA5A2B600EE1A35 /* terms4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7AD502AA5A2B600EE1A35 /* terms4ViewController.swift */; };
 		32A7AD532AA5A2C000EE1A35 /* terms5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7AD522AA5A2C000EE1A35 /* terms5ViewController.swift */; };
 		32A7AD562AA5A6AF00EE1A35 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7AD552AA5A6AF00EE1A35 /* LoginView.swift */; };
+		32A7AD592AA5B6DE00EE1A35 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7AD582AA5B6DE00EE1A35 /* MyPageAPI.swift */; };
+		32A7AD5B2AA5BCE400EE1A35 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7AD5A2AA5BCE400EE1A35 /* UserDataModel.swift */; };
 		32B5FE022A663AEC00DBC993 /* LoginUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */; };
 		32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE052A66423D00DBC993 /* FindPWViewController.swift */; };
 		32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE072A6654C300DBC993 /* SignUpViewController.swift */; };
@@ -199,6 +201,8 @@
 		32A7AD502AA5A2B600EE1A35 /* terms4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = terms4ViewController.swift; sourceTree = "<group>"; };
 		32A7AD522AA5A2C000EE1A35 /* terms5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = terms5ViewController.swift; sourceTree = "<group>"; };
 		32A7AD552AA5A6AF00EE1A35 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		32A7AD582AA5B6DE00EE1A35 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
+		32A7AD5A2AA5BCE400EE1A35 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUINavigationController.swift; sourceTree = "<group>"; };
 		32B5FE052A66423D00DBC993 /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
 		32B5FE072A6654C300DBC993 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -446,6 +450,7 @@
 		32A5E6F82A557A2000B41644 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				32A7AD572AA5B6AC00EE1A35 /* MyPage */,
 				1017E3012A9C77BA00254EFD /* APIManager.swift */,
 				1017E2EF2A9B30EA00254EFD /* Home */,
 				327517342A9B7622008A8B97 /* Login */,
@@ -519,6 +524,15 @@
 				32A7AD552AA5A6AF00EE1A35 /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		32A7AD572AA5B6AC00EE1A35 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				32A7AD582AA5B6DE00EE1A35 /* MyPageAPI.swift */,
+				32A7AD5A2AA5BCE400EE1A35 /* UserDataModel.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		32EB16BA2A6921E10050F45F /* SignUp */ = {
@@ -763,6 +777,7 @@
 				327394392A875741001A739E /* PostHistroyView.swift in Sources */,
 				102166552A6949ED00DC6351 /* CommunityTableViewCell.swift in Sources */,
 				1014A0B32A6E604D00CE8170 /* CommunityMainView.swift in Sources */,
+				32A7AD592AA5B6DE00EE1A35 /* MyPageAPI.swift in Sources */,
 				32EB16E12A8262A70050F45F /* MyPageMainView.swift in Sources */,
 				3BCB5BB42A946B3900F58C50 /* ReviewModel.swift in Sources */,
 				1017E2F12A9B312800254EFD /* BestDentistModel.swift in Sources */,
@@ -775,6 +790,7 @@
 				32EB16D32A6E3F850050F45F /* NicknameSettingViewController.swift in Sources */,
 				3BB0ACEA2A6685780071D598 /* DentistModel.swift in Sources */,
 				3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */,
+				32A7AD5B2AA5BCE400EE1A35 /* UserDataModel.swift in Sources */,
 				1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */,
 				32A7AD562AA5A6AF00EE1A35 /* LoginView.swift in Sources */,
 				10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */,

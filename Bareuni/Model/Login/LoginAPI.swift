@@ -12,9 +12,7 @@ import KeychainSwift
 
 
 struct LoginAPI{
-    static let shared = LoginAPI()
-    let serverDir = "http://54.180.54.10:8080"
-    
+    static let shared = LoginAPI()    
     func checkEmail(email: String, completion: @escaping (Result<CheckEmailResponse, Error>) -> Void){
         let url = "https://bareuni.shop/users/join/check-email"
         
