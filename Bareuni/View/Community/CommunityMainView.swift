@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CommunityMainView: View {
-    @StateObject private var postviewModel = PostViewModel()
     @StateObject private var bestcommunityViewModel = BestCommunityViewModel()
     
     var body: some View {

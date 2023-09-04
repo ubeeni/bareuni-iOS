@@ -8,16 +8,10 @@
 import SwiftUI
 
 struct PostCell: View {
-    @ObservedObject private var postviewModel: PostViewModel
-    var index: Int
-    
-    init(postviewModel: PostViewModel, index: Int) {
-        self._postviewModel = ObservedObject(wrappedValue: postviewModel)
-        self.index = index
-    }
-    
+    var post: CommunityResult
+
     var body: some View {
-        NavigationLink(destination: PostDetailView(postviewModel: postviewModel, index: index)) {
+        NavigationLink(destination: PostDetailView(post: post)) {
             VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: 10) {
                     Image("Tooth")
@@ -25,12 +19,12 @@ struct PostCell: View {
                         .frame(width: 40, height: 40)
                         .clipShape(Circle())
                     
-                    Text(postviewModel.posts[index].authorName)
+                    Text(post.user.nickName)
                         .font(.custom("Pretendard-SemiBold", size: 12))
                         .foregroundColor(Color("212B36"))
                 }
                 
-                Text(postviewModel.posts[index].content.replacingOccurrences(of: "\n\n", with: " "))
+                Text(post.content.replacingOccurrences(of: "\n\n", with: " "))
                     .font(.custom("Pretendard-Medium", size: 12))
                     .foregroundColor(Color("TextBlack"))
                     .multilineTextAlignment(.leading)
@@ -42,23 +36,30 @@ struct PostCell: View {
                 
                 HStack(spacing: 0) {
                     Image("Heart")
-                    Text("좋아요 \(postviewModel.posts[index].likeCount)")
+                    Text("좋아요 \(post.like)")
                         .font(.custom("Pretendard-Regular", size: 10))
                         .foregroundColor(Color("9Egray"))
                         .padding(.leading, 5)
                     
                     Image("Comment")
                         .padding(.leading, 15)
-                    Text("댓글 \(postviewModel.posts[index].comments.count)")
+                    
+                    Text("댓글")
                         .font(.custom("Pretendard-Regular", size: 10))
                         .foregroundColor(Color("9Egray"))
                         .padding(.leading, 5)
-                    
+                    /*
+                     Text("댓글 \(post.comments.count)")
+                     .font(.custom("Pretendard-Regular", size: 10))
+                     .foregroundColor(Color("9Egray"))
+                     .padding(.leading, 5)
+                     */
                     Spacer()
                     
-                    Text(postviewModel.posts[index].modificationTime)
+                    Text(formatDate(post.createdAt))
                         .font(.custom("Pretendard-Regular", size: 11))
                         .foregroundColor(Color("9Egray"))
+                    
                 }
                 .padding(.top, 15)
             }
@@ -69,227 +70,14 @@ struct PostCell: View {
     }
 }
 
-struct PostDetailView: View {
-    @State private var isLiked: Bool = false
-    @State private var likeCount: Int = 0
-    @State private var commentText: String = ""
+func formatDate(_ dateString: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     
-    @ObservedObject var postviewModel: PostViewModel
-    var index: Int
-    
-    @Environment(\.presentationMode) var presentationMode
-    @State private var showMoreOptions = false
-    
-    @State private var showCommentOptions = false
-    @State private var selectedComment: Comment?
-    
-    var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        return formatter
-    }
-    
-    func isCommentOwner(comment: Comment) -> Bool {
-        // 댓글 작성자인지 여부를 확인하는 로직
-        return comment.authorName == "바른이" // 예시로 닉네임이 "바른이"인 경우만 본인 댓글로 처리
-    }
-    
-    func deleteComment(comment: Comment) {
-        // 댓글 삭제 로직 추가
-        postviewModel.posts[index].comments.removeAll { $0.id == comment.id }
-    }
-    
-    
-    var body: some View {
-        ScrollView {
-            VStack {
-                HStack(spacing: 10) {
-                    Image("Tooth")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
-                    
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(postviewModel.posts[index].authorName)
-                            .font(.custom("Pretendard-Medium", size: 12))
-                        Text(postviewModel.posts[index].modificationTime)
-                            .font(.custom("Pretendard-Regular", size: 12))
-                            .foregroundColor(Color("9Egray"))
-                    }
-                    .padding(.leading, 10)
-                    
-                    Spacer()
-                }
-                .padding(.horizontal, 10)
-                .padding(.top, 10)
-                
-                Text(postviewModel.posts[index].content)
-                    .font(.custom("Pretendard-Regular", size: 14))
-                    .foregroundColor(Color("212B36"))
-                    .padding(.all, 8)
-                    .padding(.horizontal, 10)
-                    .multilineTextAlignment(.leading)
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                
-                HStack {
-                    Button(action: {
-                        postviewModel.posts[index].isLiked.toggle()
-                        if postviewModel.posts[index].isLiked {
-                            postviewModel.posts[index].likeCount += 1
-                        } else {
-                            postviewModel.posts[index].likeCount -= 1
-                        }
-                    }) {
-                        Image(systemName: postviewModel.posts[index].isLiked ? "heart.fill" : "heart")
-                            .foregroundColor(postviewModel.posts[index].isLiked ? Color.red : Color("9Egray"))
-                    }
-                    Text("좋아요 \(postviewModel.posts[index].likeCount)")
-                        .font(.custom("Pretendard-Medium", size: 10))
-                        .foregroundColor(Color("9Egray"))
-                    
-                    Image("Comment")
-                        .resizable()
-                        .frame(width: 18, height: 18)
-                        .padding(.leading, 4)
-                    Text("댓글 \(postviewModel.posts[index].comments.count)")
-                        .font(.custom("Pretendard-Medium", size: 10))
-                        .foregroundColor(Color("9Egray"))
-                    
-                    Spacer()
-                }
-                .padding(.horizontal, 10)
-                .padding(.bottom, 10)
-                .padding(.leading, 10)
-                
-                Image("Bar")
-                
-                VStack(alignment: .leading, spacing: 10) {
-                    ForEach(postviewModel.posts[index].comments) { comment in
-                        VStack {
-                            HStack {
-                                Image(comment.profileImageName)
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .clipShape(Circle())
-                                
-                                Text(comment.authorName)
-                                    .font(.custom("Pretendard-Medium", size: 12))
-                                    .foregroundColor(Color("212B36"))
-                                
-                                Spacer()
-                                
-                                Button(action: {
-                                    selectedComment = comment
-                                    showCommentOptions.toggle()
-                                }) {
-                                    Image(systemName: "ellipsis")
-                                        .font(.caption)
-                                        .foregroundColor(Color("9Egray"))
-                                }
-                            }
-                        }
-                        
-                        Text(comment.text)
-                            .font(.custom("Pretendard-Regular", size: 14))
-                            .foregroundColor(Color.black)
-                            .padding(.leading, 8)
-                        
-                        HStack {
-                            Text(self.dateFormatter.string(from: comment.date))
-                                .font(.custom("Pretendard-Regular", size: 10))
-                                .foregroundColor(Color("9Egray"))
-                                .padding(.top, 5)
-                                .padding(.leading, 8)
-                            
-                            Button(action: {
-                                // 답글 달기 버튼 동작 추가
-                            }) {
-                                Text("답글 달기")
-                                    .font(.custom("Pretendard-Regular", size: 10))
-                                    .foregroundColor(Color.gray)
-                            }
-                            .padding(.horizontal, 5)
-                            .padding(.top, 5)
-                        }
-                        Divider()
-                    } // foreach
-                    .padding(.horizontal, 10)
-                }//vstack
-            }
-            .padding(.top, 10)
-        }
-        .navigationBarItems(
-            trailing: HStack {
-                Button(action: {
-                    showMoreOptions.toggle()
-                }) {
-                    Image(systemName: "ellipsis")
-                        .font(.title2)
-                }
-                .actionSheet(isPresented: $showMoreOptions) {
-                    ActionSheet(
-                        title: Text("본인 글 선택"),
-                        buttons: [
-                            .default(Text("글 수정하기"), action: {
-                                // 글 수정하기 버튼 눌렀을 때 동작 추가
-                            }),
-                            .destructive(Text("삭제하기"), action: {
-                                // 글 삭제하기 버튼 눌렀을 때 동작 추가
-                            }),
-                            .cancel(Text("취소"))
-                        ]
-                    )
-                }
-                
-                Spacer()
-            }
-        )
-        
-        .overlay(
-            HStack {
-                TextField("댓글을 입력하세요.", text: $commentText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(height: 44)
-                    .padding(.leading, 10)
-                
-                Button(action: {
-                    if !commentText.isEmpty {
-                        let newComment = Comment(profileImageName: "Tooth", authorName: "바른이", text: commentText, date: Date())
-                        postviewModel.posts[index].comments.append(newComment)
-                        commentText = ""
-                    }
-                }) {
-                    Image("Send")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .padding(.trailing, 10)
-                }
-                .disabled(commentText.isEmpty)
-                .padding(.trailing, 10)
-            }
-                .frame(maxWidth: .infinity)
-                .background(Color.white)
-            , alignment: .bottom
-        )
-        .actionSheet(isPresented: $showCommentOptions) {
-            if let selectedComment = selectedComment {
-                return ActionSheet(
-                    title: Text(isCommentOwner(comment: selectedComment) ? "내 댓글 옵션" : "타인 댓글 옵션"),
-                    buttons: isCommentOwner(comment: selectedComment)
-                    ? [
-                        .destructive(Text("삭제하기"), action: { deleteComment(comment: selectedComment) }),
-                        .cancel(Text("취소"))
-                    ]
-                    : [
-                        .destructive(Text("신고하기"), action: {
-                            // 댓글 신고하기 동작 추가
-                        }),
-                        .cancel(Text("취소"))
-                    ]
-                )
-            } else {
-                return ActionSheet(title: Text("댓글 옵션"), buttons: [])
-            }
-        }
+    if let date = dateFormatter.date(from: dateString) {
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        return dateFormatter.string(from: date)
+    } else {
+        return "Invalid Date"
     }
 }

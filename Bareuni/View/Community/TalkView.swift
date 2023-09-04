@@ -14,8 +14,9 @@ struct TalkView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @StateObject private var postviewModel = PostViewModel()
-    
+    @StateObject var communityViewModel = CommunityViewModel()
+    @StateObject var postViewModel = PostViewModel()
+
     var body: some View {
         VStack {
             HStack {
@@ -52,10 +53,10 @@ struct TalkView: View {
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
                 ScrollView {
                     LazyVStack {
-                        ForEach(Array(postviewModel.posts.enumerated()), id: \.element.id) { index, post in
-                            NavigationLink(destination: PostDetailView(postviewModel: postviewModel, index: index)) {
+                        ForEach(Array(communityViewModel.community.enumerated()), id: \.element.communityIdx) { index, post in
+                            NavigationLink(destination: PostDetailView(post: post)) {
                                 VStack {
-                                    PostCell(postviewModel: postviewModel, index: index)
+                                    PostCell(post: post)
                                     Image("Line")
                                 }
                             }
@@ -89,10 +90,8 @@ struct TalkView: View {
                             .padding(.horizontal, 20)
                             .padding(.bottom, 10)
                     }).fullScreenCover(isPresented: $showWritePostView) {
-                        WritePostView(postviewModel: postviewModel)
+                        WritePostView(postviewModel: postViewModel)
                     }
-                    
-                    
                 }
             }
             .navigationBarTitle("자유수다", displayMode: .inline)
@@ -116,3 +115,8 @@ struct TalkView: View {
     }
 }
 
+struct TalkView_Previews: PreviewProvider {
+    static var previews: some View {
+        TalkView()
+    }
+}
