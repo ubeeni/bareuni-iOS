@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iNJ-R7-sdb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jae-SY-xra">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Inter-VariableFont_slnt,wght.ttf">
+            <string>Inter-Regular</string>
+        </array>
         <array key="Pretendard-Medium.otf">
             <string>Pretendard-Medium</string>
         </array>
@@ -36,7 +39,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'바른' 교정 정보 보러가기 🦷  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0l-rU-sud">
-                                <rect key="frame" x="112.00000000000001" y="326" width="166.33333333333337" height="24"/>
+                                <rect key="frame" x="109.33333333333333" y="326" width="171.33333333333337" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="urJ-pu-atH"/>
                                 </constraints>
@@ -491,7 +494,7 @@
                                 </connections>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="올바른 인증코드 값을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3h-CH-vgG">
-                                <rect key="frame" x="36" y="261.66666666666669" width="168" height="15"/>
+                                <rect key="frame" x="36" y="261.66666666666669" width="167.66666666666666" height="14"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -818,23 +821,8 @@
                                                     <constraint firstItem="LtL-I6-OO7" firstAttribute="top" secondItem="Szx-u6-1pu" secondAttribute="top" constant="13" id="ubQ-3g-ggc"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바른이 전자금융거래 기본약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxd-bf-Sjq">
-                                                <rect key="frame" x="8" y="341.66666666666663" width="228" height="38.333333333333314"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="228" id="EvI-B6-LW2"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 혜택 정보 수신 (선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgF-vR-IeW">
-                                                <rect key="frame" x="8" y="424" width="179.33333333333334" height="18.666666666666686"/>
-                                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMX-Tp-Uyh">
-                                                <rect key="frame" x="287" y="86.333333333333314" width="28" height="28"/>
+                                                <rect key="frame" x="287" y="74.333333333333343" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="IrM-ve-d7k"/>
                                                     <constraint firstAttribute="width" constant="28" id="Z9B-Mc-rD8"/>
@@ -847,7 +835,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An6-3D-XSV">
-                                                <rect key="frame" x="287" y="149" width="28" height="28"/>
+                                                <rect key="frame" x="287" y="137" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="59q-Ax-JDQ"/>
                                                     <constraint firstAttribute="width" constant="28" id="QEz-Ko-wzY"/>
@@ -860,7 +848,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCh-y8-7aW">
-                                                <rect key="frame" x="287" y="211.66666666666669" width="28" height="28"/>
+                                                <rect key="frame" x="287" y="199.66666666666669" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="Fuy-PF-m7l"/>
                                                     <constraint firstAttribute="height" constant="28" id="xYG-Zb-twR"/>
@@ -873,7 +861,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt9-dT-e0f">
-                                                <rect key="frame" x="287" y="274.33333333333331" width="28" height="28"/>
+                                                <rect key="frame" x="287" y="255.33333333333331" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="2sR-v8-QkR"/>
                                                     <constraint firstAttribute="width" constant="28" id="TGO-KU-V8j"/>
@@ -886,7 +874,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWQ-2e-hqS">
-                                                <rect key="frame" x="287" y="347" width="28" height="28"/>
+                                                <rect key="frame" x="287" y="321" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="C9o-9q-BkM"/>
                                                     <constraint firstAttribute="height" constant="28" id="MPg-bF-fGq"/>
@@ -899,7 +887,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZU-sJ-jLh">
-                                                <rect key="frame" x="287" y="419.33333333333337" width="28" height="28"/>
+                                                <rect key="frame" x="287" y="393.33333333333337" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="Gpi-GS-hKC"/>
                                                     <constraint firstAttribute="width" constant="28" id="Xqn-cz-gIz"/>
@@ -911,46 +899,95 @@
                                                     <action selector="serviceMessageAgreeBtnDidTap:" destination="Jae-SY-xra" eventType="touchUpInside" id="vu0-HJ-zW3"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDm-hb-E5q">
+                                                <rect key="frame" x="0.0" y="72" width="213.33333333333334" height="32.666666666666657"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="바른이 서비스 이용약관 (필수)">
+                                                    <fontDescription key="titleFontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="TaF-KK-dht" kind="presentation" id="rLZ-6H-v7C"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdE-4C-6NJ">
+                                                <rect key="frame" x="0.0" y="134.66666666666669" width="231" height="32.666666666666657"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="개인정보 수집 및 이용동의 (필수)">
+                                                    <fontDescription key="titleFontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="nm9-2F-Z4X" kind="presentation" id="iq7-m6-UCh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3L-tP-ENb">
+                                                <rect key="frame" x="0.0" y="197.33333333333331" width="227" height="32.666666666666657"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="위치정보 수집 및 이용동의(필수)">
+                                                    <fontDescription key="titleFontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="I34-Gn-NvC" kind="presentation" id="eWm-6i-Vsa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbi-Wo-kiy">
+                                                <rect key="frame" x="0.0" y="308.66666666666669" width="250" height="52.333333333333314"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="qke-Ow-2hF"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="바른이 전자금융거래 기본약관 동의 (필수)">
+                                                    <fontDescription key="titleFontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="Avf-Fo-ExB" kind="presentation" id="Jmb-Ku-tGJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5R-53-7wY">
+                                                <rect key="frame" x="0.0" y="391" width="203.33333333333334" height="32.666666666666686"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="서비스 혜택 정보 수신 (선택)">
+                                                    <fontDescription key="titleFontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="hnw-R9-gCp" kind="presentation" id="zqY-0y-ZP9"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Szx-u6-1pu" secondAttribute="trailing" id="0av-rY-QL3"/>
                                             <constraint firstAttribute="trailing" secondItem="OZU-sJ-jLh" secondAttribute="trailing" constant="27" id="1Sv-E5-LOP"/>
-                                            <constraint firstItem="OZU-sJ-jLh" firstAttribute="centerY" secondItem="tgF-vR-IeW" secondAttribute="centerY" id="2Gu-Iu-PWx"/>
                                             <constraint firstAttribute="trailing" secondItem="An6-3D-XSV" secondAttribute="trailing" constant="27" id="5O7-i0-Yac"/>
-                                            <constraint firstItem="tgF-vR-IeW" firstAttribute="top" secondItem="jxd-bf-Sjq" secondAttribute="bottom" constant="44" id="6eO-O9-lWc"/>
                                             <constraint firstAttribute="trailing" secondItem="zt9-dT-e0f" secondAttribute="trailing" constant="27" id="7eW-Iq-Z4f"/>
+                                            <constraint firstItem="rdE-4C-6NJ" firstAttribute="leading" secondItem="pmH-Sl-8Yr" secondAttribute="leading" id="8bq-3x-EUd"/>
                                             <constraint firstAttribute="trailing" secondItem="WMX-Tp-Uyh" secondAttribute="trailing" constant="27" id="A7e-b2-lss"/>
-                                            <constraint firstItem="JWQ-2e-hqS" firstAttribute="centerY" secondItem="jxd-bf-Sjq" secondAttribute="centerY" id="GZE-Hr-ckx"/>
+                                            <constraint firstItem="a5R-53-7wY" firstAttribute="top" secondItem="bbi-Wo-kiy" secondAttribute="bottom" constant="30" id="AVc-eF-sDd"/>
+                                            <constraint firstItem="a5R-53-7wY" firstAttribute="centerY" secondItem="OZU-sJ-jLh" secondAttribute="centerY" id="BBh-qZ-CDh"/>
+                                            <constraint firstItem="n3L-tP-ENb" firstAttribute="centerY" secondItem="xCh-y8-7aW" secondAttribute="centerY" id="BfX-as-vhf"/>
+                                            <constraint firstItem="bbi-Wo-kiy" firstAttribute="leading" secondItem="pmH-Sl-8Yr" secondAttribute="leading" id="GCL-Pc-1qA"/>
+                                            <constraint firstItem="bbi-Wo-kiy" firstAttribute="centerY" secondItem="JWQ-2e-hqS" secondAttribute="centerY" id="Hja-9X-Qk4"/>
+                                            <constraint firstItem="n3L-tP-ENb" firstAttribute="top" secondItem="rdE-4C-6NJ" secondAttribute="bottom" constant="30" id="NnP-Ni-pgZ"/>
+                                            <constraint firstItem="a5R-53-7wY" firstAttribute="leading" secondItem="pmH-Sl-8Yr" secondAttribute="leading" id="Tyo-p9-QBz"/>
+                                            <constraint firstItem="rdE-4C-6NJ" firstAttribute="centerY" secondItem="An6-3D-XSV" secondAttribute="centerY" id="V2r-Ic-8Xr"/>
+                                            <constraint firstItem="uDm-hb-E5q" firstAttribute="leading" secondItem="pmH-Sl-8Yr" secondAttribute="leading" id="WKG-my-NbV"/>
                                             <constraint firstAttribute="trailing" secondItem="xCh-y8-7aW" secondAttribute="trailing" constant="27" id="XAu-Cd-IG2"/>
                                             <constraint firstAttribute="height" constant="493" id="cJX-gr-uN6"/>
-                                            <constraint firstItem="jxd-bf-Sjq" firstAttribute="leading" secondItem="pmH-Sl-8Yr" secondAttribute="leading" constant="8" id="fM8-mv-QgL"/>
+                                            <constraint firstItem="n3L-tP-ENb" firstAttribute="leading" secondItem="pmH-Sl-8Yr" secondAttribute="leading" id="dbK-sk-QdG"/>
+                                            <constraint firstItem="uDm-hb-E5q" firstAttribute="top" secondItem="Szx-u6-1pu" secondAttribute="bottom" constant="20" id="eNY-8k-U05"/>
                                             <constraint firstItem="Szx-u6-1pu" firstAttribute="top" secondItem="pmH-Sl-8Yr" secondAttribute="top" id="gG7-uv-Zw0"/>
+                                            <constraint firstItem="rdE-4C-6NJ" firstAttribute="top" secondItem="uDm-hb-E5q" secondAttribute="bottom" constant="30" id="iGX-li-wqQ"/>
                                             <constraint firstItem="Szx-u6-1pu" firstAttribute="leading" secondItem="pmH-Sl-8Yr" secondAttribute="leading" id="ozr-R8-WuC"/>
-                                            <constraint firstItem="tgF-vR-IeW" firstAttribute="leading" secondItem="pmH-Sl-8Yr" secondAttribute="leading" constant="8" id="zfs-UM-fRH"/>
+                                            <constraint firstItem="uDm-hb-E5q" firstAttribute="centerY" secondItem="WMX-Tp-Uyh" secondAttribute="centerY" id="wNs-AB-YrF"/>
                                             <constraint firstAttribute="trailing" secondItem="JWQ-2e-hqS" secondAttribute="trailing" constant="27" id="zvz-fX-UU0"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바른이 서비스 이용약관 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlD-UJ-7uL">
-                                        <rect key="frame" x="8" y="91" width="189.33333333333334" height="18.666666666666671"/>
-                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 수집 및 이용동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4Q-0e-wSY">
-                                        <rect key="frame" x="8" y="153.66666666666669" width="207" height="18.666666666666657"/>
-                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치정보 수집 및 이용동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFT-4d-7RE">
-                                        <rect key="frame" x="8" y="216.33333333333331" width="207" height="18.666666666666657"/>
-                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="만 14세 이상 확인 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mry-0q-41q">
-                                        <rect key="frame" x="8" y="279" width="160" height="18.666666666666686"/>
+                                        <rect key="frame" x="13" y="260" width="160" height="18.666666666666686"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="crC-IV-Hrf"/>
                                         </constraints>
@@ -960,23 +997,14 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="WMX-Tp-Uyh" firstAttribute="centerY" secondItem="OlD-UJ-7uL" secondAttribute="centerY" id="10K-ln-spZ"/>
-                                    <constraint firstItem="z4Q-0e-wSY" firstAttribute="leading" secondItem="aD7-6j-IV2" secondAttribute="leading" constant="8" id="24W-ZV-bmf"/>
-                                    <constraint firstItem="xCh-y8-7aW" firstAttribute="centerY" secondItem="WFT-4d-7RE" secondAttribute="centerY" id="70F-qK-bpi"/>
                                     <constraint firstItem="pmH-Sl-8Yr" firstAttribute="trailing" secondItem="11G-qU-Tec" secondAttribute="trailing" id="81D-zX-xvN"/>
-                                    <constraint firstItem="WFT-4d-7RE" firstAttribute="leading" secondItem="aD7-6j-IV2" secondAttribute="leading" constant="8" id="8Pt-27-Ipb"/>
-                                    <constraint firstItem="mry-0q-41q" firstAttribute="leading" secondItem="aD7-6j-IV2" secondAttribute="leading" constant="8" id="BUB-6Q-5fc"/>
+                                    <constraint firstItem="mry-0q-41q" firstAttribute="leading" secondItem="aD7-6j-IV2" secondAttribute="leading" constant="13" id="BUB-6Q-5fc"/>
                                     <constraint firstItem="pmH-Sl-8Yr" firstAttribute="bottom" secondItem="11G-qU-Tec" secondAttribute="bottom" id="L2b-IG-RSx"/>
                                     <constraint firstItem="zt9-dT-e0f" firstAttribute="centerY" secondItem="mry-0q-41q" secondAttribute="centerY" id="Nt9-S9-Br6"/>
                                     <constraint firstItem="pmH-Sl-8Yr" firstAttribute="leading" secondItem="11G-qU-Tec" secondAttribute="leading" id="OvN-iS-dLg"/>
+                                    <constraint firstItem="bbi-Wo-kiy" firstAttribute="top" secondItem="mry-0q-41q" secondAttribute="bottom" constant="30" id="SCg-fj-ThT"/>
                                     <constraint firstItem="pmH-Sl-8Yr" firstAttribute="width" secondItem="aD7-6j-IV2" secondAttribute="width" id="Woh-fN-3Ke"/>
-                                    <constraint firstItem="OlD-UJ-7uL" firstAttribute="leading" secondItem="aD7-6j-IV2" secondAttribute="leading" constant="8" id="dY2-XV-YA4"/>
-                                    <constraint firstItem="jxd-bf-Sjq" firstAttribute="top" secondItem="mry-0q-41q" secondAttribute="bottom" constant="44" id="fW2-fr-Fit"/>
-                                    <constraint firstItem="WFT-4d-7RE" firstAttribute="top" secondItem="z4Q-0e-wSY" secondAttribute="bottom" constant="44" id="hDy-SO-Yii"/>
-                                    <constraint firstItem="An6-3D-XSV" firstAttribute="centerY" secondItem="z4Q-0e-wSY" secondAttribute="centerY" id="kOL-me-9Bc"/>
-                                    <constraint firstItem="OlD-UJ-7uL" firstAttribute="top" secondItem="Szx-u6-1pu" secondAttribute="bottom" constant="39" id="nCf-0d-Yp1"/>
-                                    <constraint firstItem="z4Q-0e-wSY" firstAttribute="top" secondItem="OlD-UJ-7uL" secondAttribute="bottom" constant="44" id="nnI-64-d1x"/>
-                                    <constraint firstItem="mry-0q-41q" firstAttribute="top" secondItem="WFT-4d-7RE" secondAttribute="bottom" constant="44" id="rSr-F6-cWB"/>
+                                    <constraint firstItem="mry-0q-41q" firstAttribute="top" secondItem="n3L-tP-ENb" secondAttribute="bottom" constant="30" id="Ya8-ue-p06"/>
                                     <constraint firstItem="pmH-Sl-8Yr" firstAttribute="top" secondItem="11G-qU-Tec" secondAttribute="top" id="rwD-vT-3TD"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="11G-qU-Tec"/>
@@ -1014,6 +1042,723 @@
             </objects>
             <point key="canvasLocation" x="5125" y="687"/>
         </scene>
+        <!--Terms1 View Controller-->
+        <scene sceneID="Z9p-35-WTX">
+            <objects>
+                <viewController id="TaF-KK-dht" customClass="terms1ViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RhU-Dq-aBS">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qsu-OZ-WJR">
+                                <rect key="frame" x="343" y="67" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="Xky-hM-LQt"/>
+                                    <constraint firstAttribute="height" constant="24" id="vtW-EY-ypk"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="navyXmark"/>
+                                <connections>
+                                    <action selector="cancelDidTap:" destination="TaF-KK-dht" eventType="touchUpInside" id="erT-5K-f8n"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바른이 서비스 이용약관 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xi-zi-dug">
+                                <rect key="frame" x="24" y="109" width="225" height="23"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제 1조 (목적)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vur-9S-yX7">
+                                <rect key="frame" x="24" y="152" width="72" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-iB-tvH">
+                                <rect key="frame" x="24" y="185" width="326" height="71.666666666666686"/>
+                                <string key="text">이 이용약관(이하 "약관"이라 합니다)은 주식회사 바른이(이하 "회사" 또는 "바른이")이 제공하는 바른이 및 바른이 관련 제반 서비스(이하 "바른이" 또는 "서비스"라 합니다. 영문명 Bareuni)의 이용과 관련하여 회사와 일반회원과의 권리, 의무 및 책임사항, 서비스의 이용조건 및 절차, 기타 필요한 사항을 규정함을 목적으로 합니다.</string>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제 2 조 (정의)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tal-yI-kFQ">
+                                <rect key="frame" x="24" y="290.66666666666669" width="77" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. &quot;서비스&quot;라 함은 구현되는 단말기(PC, 휴대형단말기 등의 각종 유무선 장치를 포함)와 상관없이 &quot;일반회원&quot;이 이용할 수 있는 바른이 및 바른이 관련 제반 서비스를 의미합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzj-AY-vMS">
+                                <rect key="frame" x="24" y="323.66666666666669" width="326" height="43"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. &quot;일반회원&quot;이라 함은 회사의 &quot;서비스&quot;에 접속하여 이 약관에 따라 &quot;회사&quot;와 이용계약을 체결하고 &quot;회사&quot;가 제공하는 &quot;서비스&quot;를 이용하는 고객을 말합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJU-mi-YsP">
+                                <rect key="frame" x="24" y="386.66666666666669" width="326" height="43"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. &quot;판매일반회원&quot;이라 함은 호사의 &quot;서비스&quot;에 접속하여 &quot;미리결제 서비스 이용 약관&quot;에 따라 &quot;회사&quot;와 이용 계약을 체결하여 &quot;회사&quot;가 제공하는 미리결제 서비스를 이용해 해당 서비스 이용권을 판매하는 고객을 말합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAO-my-bZM">
+                                <rect key="frame" x="24" y="449.66666666666669" width="326" height="57.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. &quot;비일반회원&quot;이라 함은 이용 계약을 체결하지 않고 회사가 제공하는 서비스를 이용하는 자를 말합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acu-Oj-nh0">
+                                <rect key="frame" x="24" y="527" width="326" height="28.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. &quot;닉네임&quot;이라 함은 &quot;일반회원&quot;의 식별과 &quot;서비스&quot; 이용을 위하여 &quot;일반회원&quot;이 정하고 &quot;회사&quot;가 승인하는 문자와 숫자의 조합을 의미합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsY-Rf-YaH">
+                                <rect key="frame" x="24" y="575.66666666666663" width="326" height="43"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6. &quot;비밀번호&quot;라 함은 &quot;일반회원&quot;이 부여 받은 &quot;아이디와 일치되는 &quot;일반회원&quot;임을 확인하고 비밀보호를 위해 &quot;일반회원&quot; 자신이 정한 문자 또는 숫자의 조합을 의미합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zH-md-EzR">
+                                <rect key="frame" x="24" y="638.66666666666663" width="326" height="43"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MdE-HZ-fT9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6xi-zi-dug" firstAttribute="leading" secondItem="MdE-HZ-fT9" secondAttribute="leading" constant="24" id="0sI-Ig-0Hy"/>
+                            <constraint firstItem="OQv-iB-tvH" firstAttribute="leading" secondItem="MdE-HZ-fT9" secondAttribute="leading" constant="24" id="3Ol-n0-jcQ"/>
+                            <constraint firstItem="5zH-md-EzR" firstAttribute="leading" secondItem="MdE-HZ-fT9" secondAttribute="leading" constant="24" id="5iZ-VB-BUy"/>
+                            <constraint firstItem="IsY-Rf-YaH" firstAttribute="leading" secondItem="MdE-HZ-fT9" secondAttribute="leading" constant="24" id="7Ba-tX-Sqs"/>
+                            <constraint firstItem="5zH-md-EzR" firstAttribute="top" secondItem="IsY-Rf-YaH" secondAttribute="bottom" constant="20" id="Atu-i1-I1L"/>
+                            <constraint firstItem="Vur-9S-yX7" firstAttribute="top" secondItem="6xi-zi-dug" secondAttribute="bottom" constant="20" id="Dbe-Vg-8QC"/>
+                            <constraint firstItem="Qsu-OZ-WJR" firstAttribute="top" secondItem="MdE-HZ-fT9" secondAttribute="top" constant="20" id="DcT-jD-6ik"/>
+                            <constraint firstItem="sJU-mi-YsP" firstAttribute="leading" secondItem="MdE-HZ-fT9" secondAttribute="leading" constant="24" id="DoU-wz-zMt"/>
+                            <constraint firstItem="MdE-HZ-fT9" firstAttribute="trailing" secondItem="acu-Oj-nh0" secondAttribute="trailing" constant="40" id="G4z-xk-bB1"/>
+                            <constraint firstItem="Tal-yI-kFQ" firstAttribute="leading" secondItem="MdE-HZ-fT9" secondAttribute="leading" constant="24" id="GHK-Pw-muI"/>
+                            <constraint firstItem="CAO-my-bZM" firstAttribute="top" secondItem="sJU-mi-YsP" secondAttribute="bottom" constant="20" id="QtQ-0o-QjO"/>
+                            <constraint firstItem="OQv-iB-tvH" firstAttribute="top" secondItem="Vur-9S-yX7" secondAttribute="bottom" constant="16" id="Qtb-jt-6Ek"/>
+                            <constraint firstItem="IsY-Rf-YaH" firstAttribute="top" secondItem="acu-Oj-nh0" secondAttribute="bottom" constant="20" id="RXR-9Z-H8O"/>
+                            <constraint firstAttribute="trailing" secondItem="OQv-iB-tvH" secondAttribute="trailing" constant="40" id="Vkg-7q-h0p"/>
+                            <constraint firstItem="Vur-9S-yX7" firstAttribute="leading" secondItem="MdE-HZ-fT9" secondAttribute="leading" constant="24" id="Yfz-Oo-VjX"/>
+                            <constraint firstItem="MdE-HZ-fT9" firstAttribute="trailing" secondItem="Qsu-OZ-WJR" secondAttribute="trailing" constant="23" id="Zvn-bK-Tjq"/>
+                            <constraint firstItem="CAO-my-bZM" firstAttribute="leading" secondItem="MdE-HZ-fT9" secondAttribute="leading" constant="24" id="aNz-sw-hYq"/>
+                            <constraint firstItem="jzj-AY-vMS" firstAttribute="leading" secondItem="MdE-HZ-fT9" secondAttribute="leading" constant="24" id="bUx-E6-Wpn"/>
+                            <constraint firstItem="jzj-AY-vMS" firstAttribute="top" secondItem="Tal-yI-kFQ" secondAttribute="bottom" constant="16" id="bV8-Qm-rtI"/>
+                            <constraint firstItem="MdE-HZ-fT9" firstAttribute="trailing" secondItem="5zH-md-EzR" secondAttribute="trailing" constant="40" id="bav-yG-5Mk"/>
+                            <constraint firstItem="Tal-yI-kFQ" firstAttribute="top" secondItem="OQv-iB-tvH" secondAttribute="bottom" constant="34" id="bs8-yA-Rra"/>
+                            <constraint firstItem="6xi-zi-dug" firstAttribute="top" secondItem="Qsu-OZ-WJR" secondAttribute="bottom" constant="18" id="cxR-2Y-Gdc"/>
+                            <constraint firstAttribute="trailing" secondItem="jzj-AY-vMS" secondAttribute="trailing" constant="40" id="dd4-MP-xej"/>
+                            <constraint firstItem="MdE-HZ-fT9" firstAttribute="trailing" secondItem="Qsu-OZ-WJR" secondAttribute="trailing" constant="23" id="fjG-Ps-Mqa"/>
+                            <constraint firstItem="sJU-mi-YsP" firstAttribute="top" secondItem="jzj-AY-vMS" secondAttribute="bottom" constant="20" id="i2q-Ku-oIT"/>
+                            <constraint firstItem="MdE-HZ-fT9" firstAttribute="trailing" secondItem="IsY-Rf-YaH" secondAttribute="trailing" constant="40" id="mks-3s-FoV"/>
+                            <constraint firstItem="acu-Oj-nh0" firstAttribute="leading" secondItem="MdE-HZ-fT9" secondAttribute="leading" constant="24" id="pnV-Fi-sXy"/>
+                            <constraint firstItem="MdE-HZ-fT9" firstAttribute="trailing" secondItem="sJU-mi-YsP" secondAttribute="trailing" constant="40" id="v31-EB-mYz"/>
+                            <constraint firstItem="MdE-HZ-fT9" firstAttribute="trailing" secondItem="CAO-my-bZM" secondAttribute="trailing" constant="40" id="y4f-FQ-JNd"/>
+                            <constraint firstItem="acu-Oj-nh0" firstAttribute="top" secondItem="CAO-my-bZM" secondAttribute="bottom" constant="20" id="yaF-fm-HDz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="X9a-ry-SSw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p6s-30-e6L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6314" y="200"/>
+        </scene>
+        <!--Terms3 View Controller-->
+        <scene sceneID="Jgg-Ul-CPh">
+            <objects>
+                <viewController id="I34-Gn-NvC" customClass="terms3ViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ho-Uo-TN2">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgK-Z2-LLx">
+                                <rect key="frame" x="343" y="67" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="qia-h5-Om6"/>
+                                    <constraint firstAttribute="width" constant="24" id="sS9-uM-Bnk"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="navyXmark"/>
+                                <connections>
+                                    <action selector="cancelDidTap:" destination="I34-Gn-NvC" eventType="touchUpInside" id="rZb-wo-Apk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치정보 수집 및 이용동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAO-OY-DT9">
+                                <rect key="frame" x="24" y="109" width="246" height="23"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(주)바른이(이하 회사)는 아래와 같이 회원의 개인정보를 제3자에게 제공함에 있어 회원의 동의를 받고자 합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoy-62-KLH">
+                                <rect key="frame" x="24" y="148" width="319" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9RC-3V-4Qw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제1조 (위치기반서비스의 내용)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaq-3l-F1o">
+                                <rect key="frame" x="24" y="211" width="144.33333333333334" height="14.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회사는 위치정보사업자로부터 제공받은 위치정보수집대상의 위치정보를 이용하여 다음 각 호와 같은 내용의 위치기반서비스를 제공합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foy-uV-Cft">
+                                <rect key="frame" x="24" y="248.33333333333337" width="319" height="43"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 위치를 활용한 검색결과 제공: 개인위치정보주체의 현 위치를   기준으로 근거리 및 배달이 가능한 음식점 등의 검색결과를 제공합니다." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6G-9K-g5E">
+                                <rect key="frame" x="32" y="307.33333333333331" width="311" height="43"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="○" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65c-MF-z3r">
+                                <rect key="frame" x="-33" y="508" width="11" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c65-8k-dP5">
+                                <rect key="frame" x="24" y="307.33333333333331" width="5" height="14"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제2조 (위치정보 수집방법)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tX-JT-J1c">
+                                <rect key="frame" x="23.999999999999993" y="370.33333333333331" width="125.33333333333331" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회사는 다음과 같은 방식으로 개인위치정보를 수집합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAj-hE-pvF">
+                                <rect key="frame" x="24" y="400.66666666666669" width="319" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="① 휴대폰 단말기를 이용한 기지국 기반(Cell ID방식)의 실시간 위치정보 수집" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWT-zY-b5r">
+                                <rect key="frame" x="28" y="425" width="332" height="13.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="② GPS칩이 내장된 전용 단말기를 통해 수집되는 GPS 정보를 통한 위치정보 수집" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1S-lQ-qoo">
+                                <rect key="frame" x="28" y="443.33333333333331" width="342" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="④ 기타 위치를 식별할 수 있는 장치를 통해 수집되는 위치정보 수집" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioe-Fi-Trm">
+                                <rect key="frame" x="28" y="505.99999999999994" width="332" height="13.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="③ Wi-Fi칩이 내장된 전용 단말기를 통해 수집되는 WPS 정보를 통한 위치정보 수집" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hst-ZH-bcp">
+                                <rect key="frame" x="28" y="474.66666666666669" width="332" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제3조 (위치기반서비스의 이용)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9v-Qm-uPV">
+                                <rect key="frame" x="24" y="549.33333333333337" width="146.66666666666666" height="14.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmZ-2q-kNZ">
+                                <rect key="frame" x="24" y="579.66666666666663" width="336" height="52.666666666666629"/>
+                                <string key="text">① 위치기반서비스의 이용은 연중무휴 1일 24시간을 원칙으로 합니다. 다만, 회사의 업무상이나 기술상의 이유로 서비스가 일지 중지될 수 있고, 또한 운영상의 목적으로 회사가 정한 기간에는 서비스가 일시 중지될 수 있습니다. 이러한 경우 회사는 사전 또는 사후에 이를 공지합니다.</string>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="② 회사는 위치기반서비스를 일정범위로 분할하여 각 범위 별로" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rh7-K4-15T">
+                                <rect key="frame" x="24" y="642.33333333333337" width="266.66666666666669" height="13.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ACr-Rz-Hma"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rh7-K4-15T" firstAttribute="top" secondItem="CmZ-2q-kNZ" secondAttribute="bottom" constant="10" id="8pm-Bl-Hdt"/>
+                            <constraint firstItem="vAO-OY-DT9" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="24" id="9I3-Qv-e5B"/>
+                            <constraint firstItem="q6G-9K-g5E" firstAttribute="leading" secondItem="c65-8k-dP5" secondAttribute="trailing" constant="3" id="9Ye-eE-gdL"/>
+                            <constraint firstItem="xoy-62-KLH" firstAttribute="top" secondItem="vAO-OY-DT9" secondAttribute="bottom" constant="16" id="ABl-iw-An8"/>
+                            <constraint firstItem="ACr-Rz-Hma" firstAttribute="trailing" secondItem="fgK-Z2-LLx" secondAttribute="trailing" constant="23" id="BSq-BQ-qs7"/>
+                            <constraint firstItem="Ioe-Fi-Trm" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="28" id="Bov-Px-S2H"/>
+                            <constraint firstItem="BWT-zY-b5r" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="28" id="Cdc-DV-qfa"/>
+                            <constraint firstItem="S1S-lQ-qoo" firstAttribute="top" secondItem="BWT-zY-b5r" secondAttribute="bottom" constant="5" id="Gns-1f-I8P"/>
+                            <constraint firstItem="eaq-3l-F1o" firstAttribute="leading" secondItem="2ho-Uo-TN2" secondAttribute="leading" constant="24" id="H5W-53-Dxv"/>
+                            <constraint firstItem="Foy-uV-Cft" firstAttribute="leading" secondItem="2ho-Uo-TN2" secondAttribute="leading" constant="24" id="Iz9-WJ-2Ac"/>
+                            <constraint firstItem="ACr-Rz-Hma" firstAttribute="trailing" secondItem="Ioe-Fi-Trm" secondAttribute="trailing" constant="30" id="K3y-oj-qHP"/>
+                            <constraint firstItem="Foy-uV-Cft" firstAttribute="top" secondItem="eaq-3l-F1o" secondAttribute="bottom" constant="23" id="KW8-Tk-Bdd"/>
+                            <constraint firstItem="ACr-Rz-Hma" firstAttribute="trailing" secondItem="jAj-hE-pvF" secondAttribute="trailing" constant="47" id="NF6-vf-ykG"/>
+                            <constraint firstItem="q6G-9K-g5E" firstAttribute="top" secondItem="Foy-uV-Cft" secondAttribute="bottom" constant="16" id="PZR-nt-pMz"/>
+                            <constraint firstItem="M9v-Qm-uPV" firstAttribute="top" secondItem="Ioe-Fi-Trm" secondAttribute="bottom" constant="30" id="PZs-wn-Vud"/>
+                            <constraint firstItem="Rh7-K4-15T" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="24" id="R8B-tq-oHC"/>
+                            <constraint firstItem="ACr-Rz-Hma" firstAttribute="trailing" secondItem="hst-ZH-bcp" secondAttribute="trailing" constant="30" id="SPi-j3-KA4"/>
+                            <constraint firstItem="c65-8k-dP5" firstAttribute="top" secondItem="Foy-uV-Cft" secondAttribute="bottom" constant="16" id="abz-Yb-M9k"/>
+                            <constraint firstItem="jAj-hE-pvF" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="24" id="afK-ZX-ecb"/>
+                            <constraint firstItem="jAj-hE-pvF" firstAttribute="top" secondItem="0tX-JT-J1c" secondAttribute="bottom" constant="16" id="ah8-M0-UQ9"/>
+                            <constraint firstItem="hst-ZH-bcp" firstAttribute="top" secondItem="S1S-lQ-qoo" secondAttribute="bottom" constant="5" id="asK-dU-e0c"/>
+                            <constraint firstItem="ACr-Rz-Hma" firstAttribute="trailing" secondItem="BWT-zY-b5r" secondAttribute="trailing" constant="30" id="bmc-YE-v6S"/>
+                            <constraint firstAttribute="trailing" secondItem="q6G-9K-g5E" secondAttribute="trailing" constant="47" id="cd0-yz-DMG"/>
+                            <constraint firstItem="ACr-Rz-Hma" firstAttribute="trailing" secondItem="S1S-lQ-qoo" secondAttribute="trailing" constant="20" id="eQ5-HB-lIY"/>
+                            <constraint firstItem="vAO-OY-DT9" firstAttribute="top" secondItem="fgK-Z2-LLx" secondAttribute="bottom" constant="18" id="hIA-pp-ZGF"/>
+                            <constraint firstItem="ACr-Rz-Hma" firstAttribute="trailing" secondItem="CmZ-2q-kNZ" secondAttribute="trailing" constant="30" id="iAx-r1-312"/>
+                            <constraint firstItem="M9v-Qm-uPV" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="24" id="jD8-bS-7NK"/>
+                            <constraint firstAttribute="trailing" secondItem="xoy-62-KLH" secondAttribute="trailing" constant="47" id="jGl-EV-DFh"/>
+                            <constraint firstItem="CmZ-2q-kNZ" firstAttribute="top" secondItem="M9v-Qm-uPV" secondAttribute="bottom" constant="16" id="jbE-Jb-7rG"/>
+                            <constraint firstItem="0tX-JT-J1c" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="24" id="nap-SJ-RbF"/>
+                            <constraint firstItem="BWT-zY-b5r" firstAttribute="top" secondItem="jAj-hE-pvF" secondAttribute="bottom" constant="10" id="qVG-EH-ewU"/>
+                            <constraint firstItem="eaq-3l-F1o" firstAttribute="top" secondItem="xoy-62-KLH" secondAttribute="bottom" constant="23" id="rRb-Ff-6T9"/>
+                            <constraint firstItem="xoy-62-KLH" firstAttribute="leading" secondItem="2ho-Uo-TN2" secondAttribute="leading" constant="24" id="sQC-7a-L7y"/>
+                            <constraint firstItem="hst-ZH-bcp" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="28" id="stL-5c-BMk"/>
+                            <constraint firstItem="CmZ-2q-kNZ" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="24" id="ugw-um-d0R"/>
+                            <constraint firstItem="0tX-JT-J1c" firstAttribute="top" secondItem="q6G-9K-g5E" secondAttribute="bottom" constant="20" id="vd7-2D-PFN"/>
+                            <constraint firstItem="ACr-Rz-Hma" firstAttribute="trailing" secondItem="Foy-uV-Cft" secondAttribute="trailing" constant="47" id="wSF-iw-gNv"/>
+                            <constraint firstItem="Ioe-Fi-Trm" firstAttribute="top" secondItem="hst-ZH-bcp" secondAttribute="bottom" constant="5" id="yf1-Z9-CYj"/>
+                            <constraint firstItem="S1S-lQ-qoo" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="28" id="z1u-Mz-YR3"/>
+                            <constraint firstItem="c65-8k-dP5" firstAttribute="leading" secondItem="ACr-Rz-Hma" secondAttribute="leading" constant="24" id="zgl-Jh-krN"/>
+                            <constraint firstItem="fgK-Z2-LLx" firstAttribute="top" secondItem="ACr-Rz-Hma" secondAttribute="top" constant="20" id="zkV-u4-l4W"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Raa-Kt-ZzJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLn-pO-IvS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7137" y="926"/>
+        </scene>
+        <!--Terms2 View Controller-->
+        <scene sceneID="puu-a9-VBd">
+            <objects>
+                <viewController id="nm9-2F-Z4X" customClass="terms2ViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ek3-qO-fWh">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzS-TV-fbG">
+                                <rect key="frame" x="343" y="67" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="ESw-i2-GXh"/>
+                                    <constraint firstAttribute="width" constant="24" id="TgF-KP-rXP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="navyXmark"/>
+                                <connections>
+                                    <action selector="cancelDidTap:" destination="nm9-2F-Z4X" eventType="touchUpInside" id="wme-6i-S0o"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 수집 및 이용 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgr-3h-Ino">
+                                <rect key="frame" x="24" y="109" width="250" height="23"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(주)바른이(이하 회사)는 아래와 같이 회원의 개인정보를 제3자에게 제공함에 있어 회원의 동의를 받고자 합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nj5-Zl-Yik">
+                                <rect key="frame" x="24" y="148" width="316" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JLQ-Ed-wrv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 개인정보를 제공받는 자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMI-bn-6WR">
+                                <rect key="frame" x="24.000000000000007" y="211" width="120.66666666666669" height="14"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. 개인정보를 제공받는 자의 개인정보 이용 목적" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-Wk-WID">
+                                <rect key="frame" x="24" y="274" width="225" height="14"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바른이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13u-oZ-bae">
+                                <rect key="frame" x="24" y="235" width="32" height="14"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="12"/>
+                                <color key="textColor" name="BackgroundBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내원 상담여부 확인, 내원 예약 및 안내 등을 위한 전화 발신 또는 SMS/채팅 연락" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abm-YK-pCx">
+                                <rect key="frame" x="24" y="298" width="319" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. 제공하는 개인정보의 항목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GL9-Pj-Rpr">
+                                <rect key="frame" x="24" y="351.66666666666669" width="134" height="14"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. 개인정보를 제공받는 자의 개인정보 보유 및 이용 기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09D-2O-VXG">
+                                <rect key="frame" x="24" y="507.66666666666674" width="262" height="14"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 일반 상담 신청의 경우" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLq-x5-Ijo">
+                                <rect key="frame" x="24" y="375.66666666666669" width="319" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름, 성별, 휴대폰번호, 출생년도, 상담을 신청한 이벤트 정보, 희망연락시간대, 예약일시(앱으로 예약시)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwj-w6-DeO">
+                                <rect key="frame" x="24" y="394" width="319" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름, 성별, 휴대폰번호, 출생년도, 상담을 신청한 이벤트 정보, 희망연락시간대, 예약일시(앱으로 예약시)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdN-An-Uel">
+                                <rect key="frame" x="24" y="454" width="319" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내원 상담여부 확인, 내원 예약 및 안내 등을 위한 전화 발신 또는 SMS/채팅 연락" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXB-A8-QLI">
+                                <rect key="frame" x="24" y="531.66666666666663" width="319" height="28.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 채팅상담신청 및 전화상담 신청의 경우 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzT-7N-Xcv">
+                                <rect key="frame" x="24" y="434.66666666666669" width="319" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내원 상담여부 확인, 내원 예약 및 안내 등을 위한 전화 발신 또는 SMS/채팅 연락" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tic-sJ-dgn">
+                                <rect key="frame" x="24" y="624" width="292" height="28.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. 도의를 거부할 권리가 있다는 사실 및 동의 거부에 따른 불이익이 있는 경우에는 그 불이익의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsO-iL-n5A">
+                                <rect key="frame" x="24" y="585.33333333333337" width="336" height="28.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fU5-kW-Nbs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Abm-YK-pCx" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="1lG-io-972"/>
+                            <constraint firstAttribute="trailing" secondItem="ZsO-iL-n5A" secondAttribute="trailing" constant="30" id="3Dd-Uc-6zu"/>
+                            <constraint firstItem="fU5-kW-Nbs" firstAttribute="trailing" secondItem="Gwj-w6-DeO" secondAttribute="trailing" constant="47" id="3F4-V8-2C4"/>
+                            <constraint firstItem="Kgr-3h-Ino" firstAttribute="top" secondItem="wzS-TV-fbG" secondAttribute="bottom" constant="18" id="3wp-6w-RuE"/>
+                            <constraint firstItem="09D-2O-VXG" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="63N-rR-ifa"/>
+                            <constraint firstItem="qzT-7N-Xcv" firstAttribute="top" secondItem="Gwj-w6-DeO" secondAttribute="bottom" constant="12" id="6eB-Fq-oC6"/>
+                            <constraint firstItem="dLq-x5-Ijo" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="B3Y-IR-BIz"/>
+                            <constraint firstItem="09D-2O-VXG" firstAttribute="top" secondItem="gdN-An-Uel" secondAttribute="bottom" constant="25" id="BO9-0V-I4l"/>
+                            <constraint firstItem="wzS-TV-fbG" firstAttribute="top" secondItem="fU5-kW-Nbs" secondAttribute="top" constant="20" id="CSR-aa-cIW"/>
+                            <constraint firstItem="Gwj-w6-DeO" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="I7Q-Ho-RLL"/>
+                            <constraint firstItem="fU5-kW-Nbs" firstAttribute="trailing" secondItem="dLq-x5-Ijo" secondAttribute="trailing" constant="47" id="ICW-nw-cFL"/>
+                            <constraint firstItem="FXB-A8-QLI" firstAttribute="top" secondItem="09D-2O-VXG" secondAttribute="bottom" constant="10" id="Jox-tU-Hge"/>
+                            <constraint firstItem="eDD-Wk-WID" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="LDZ-OE-TPt"/>
+                            <constraint firstItem="ZsO-iL-n5A" firstAttribute="top" secondItem="FXB-A8-QLI" secondAttribute="bottom" constant="25" id="La8-ER-JQ6"/>
+                            <constraint firstItem="fU5-kW-Nbs" firstAttribute="trailing" secondItem="qzT-7N-Xcv" secondAttribute="trailing" constant="47" id="N8F-Sy-z32"/>
+                            <constraint firstItem="Abm-YK-pCx" firstAttribute="top" secondItem="eDD-Wk-WID" secondAttribute="bottom" constant="10" id="Nk8-KC-XJm"/>
+                            <constraint firstItem="qzT-7N-Xcv" firstAttribute="leading" secondItem="ek3-qO-fWh" secondAttribute="leading" constant="24" id="QYG-Ff-nZl"/>
+                            <constraint firstItem="Gwj-w6-DeO" firstAttribute="top" secondItem="dLq-x5-Ijo" secondAttribute="bottom" constant="4" id="QhQ-aT-s9Z"/>
+                            <constraint firstItem="dLq-x5-Ijo" firstAttribute="top" secondItem="GL9-Pj-Rpr" secondAttribute="bottom" constant="10" id="U7o-ts-g1p"/>
+                            <constraint firstItem="tic-sJ-dgn" firstAttribute="leading" secondItem="ek3-qO-fWh" secondAttribute="leading" constant="24" id="ZZ2-7k-PyJ"/>
+                            <constraint firstItem="13u-oZ-bae" firstAttribute="top" secondItem="JMI-bn-6WR" secondAttribute="bottom" constant="10" id="Zzv-an-hhb"/>
+                            <constraint firstItem="JMI-bn-6WR" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="cjH-6F-GmX"/>
+                            <constraint firstItem="fU5-kW-Nbs" firstAttribute="trailing" secondItem="wzS-TV-fbG" secondAttribute="trailing" constant="23" id="dn9-03-aCb"/>
+                            <constraint firstItem="13u-oZ-bae" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="f5r-Wp-g8T"/>
+                            <constraint firstItem="fU5-kW-Nbs" firstAttribute="trailing" secondItem="tic-sJ-dgn" secondAttribute="trailing" constant="74" id="fdQ-du-kXe"/>
+                            <constraint firstItem="Nj5-Zl-Yik" firstAttribute="top" secondItem="Kgr-3h-Ino" secondAttribute="bottom" constant="16" id="gll-bJ-H6J"/>
+                            <constraint firstAttribute="trailing" secondItem="Nj5-Zl-Yik" secondAttribute="trailing" constant="50" id="iCx-yD-EFo"/>
+                            <constraint firstItem="eDD-Wk-WID" firstAttribute="top" secondItem="13u-oZ-bae" secondAttribute="bottom" constant="25" id="joP-oV-7wk"/>
+                            <constraint firstItem="fU5-kW-Nbs" firstAttribute="trailing" secondItem="gdN-An-Uel" secondAttribute="trailing" constant="47" id="jpw-Hk-Lj0"/>
+                            <constraint firstItem="GL9-Pj-Rpr" firstAttribute="top" secondItem="Abm-YK-pCx" secondAttribute="bottom" constant="25" id="ko2-D4-7u7"/>
+                            <constraint firstItem="gdN-An-Uel" firstAttribute="top" secondItem="qzT-7N-Xcv" secondAttribute="bottom" constant="5" id="m37-gM-N1k"/>
+                            <constraint firstAttribute="trailing" secondItem="Abm-YK-pCx" secondAttribute="trailing" constant="47" id="oOI-IC-DgU"/>
+                            <constraint firstItem="GL9-Pj-Rpr" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="ocJ-c2-0bn"/>
+                            <constraint firstItem="ZsO-iL-n5A" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="olF-VT-rVP"/>
+                            <constraint firstItem="tic-sJ-dgn" firstAttribute="top" secondItem="ZsO-iL-n5A" secondAttribute="bottom" constant="10" id="p9s-OD-Djf"/>
+                            <constraint firstItem="FXB-A8-QLI" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="qIt-LF-4Xi"/>
+                            <constraint firstItem="gdN-An-Uel" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="sY3-Cp-inq"/>
+                            <constraint firstItem="Nj5-Zl-Yik" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="sme-TO-Ood"/>
+                            <constraint firstAttribute="trailing" secondItem="FXB-A8-QLI" secondAttribute="trailing" constant="47" id="uMl-C1-nGM"/>
+                            <constraint firstItem="Kgr-3h-Ino" firstAttribute="leading" secondItem="fU5-kW-Nbs" secondAttribute="leading" constant="24" id="wyX-rO-bY0"/>
+                            <constraint firstItem="JMI-bn-6WR" firstAttribute="top" secondItem="Nj5-Zl-Yik" secondAttribute="bottom" constant="23" id="xEo-c4-E0Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RUv-JG-6ah"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7d-uc-IfO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7137" y="200"/>
+        </scene>
+        <!--Terms4 View Controller-->
+        <scene sceneID="1xx-WO-5f5">
+            <objects>
+                <viewController id="Avf-Fo-ExB" customClass="terms4ViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JGX-6r-X5u">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJo-kh-FwO">
+                                <rect key="frame" x="343" y="67" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="0S2-KM-vkc"/>
+                                    <constraint firstAttribute="width" constant="24" id="NMS-12-Fgh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="navyXmark"/>
+                                <connections>
+                                    <action selector="cancelDidTap:" destination="Avf-Fo-ExB" eventType="touchUpInside" id="ATd-lw-XVB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바른이 전자금융거래 기본약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkL-A9-y05">
+                                <rect key="frame" x="24" y="109" width="311.66666666666669" height="23"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(주)바른이(이하 회사)는 아래와 같이 회원의 개인정보를 제3자에게 제공함에 있어 회원의 동의를 받고자 합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBc-Th-c0Z">
+                                <rect key="frame" x="24" y="148" width="341" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vXp-7w-Qzx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제1조(목적)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XR3-kL-FdM">
+                                <rect key="frame" x="23.999999999999996" y="218" width="55.666666666666657" height="14.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 약관은 국민은행(이하 &quot;은행&quot;이라 합니다.)과 이용자 사이의 전자금융거래에 관한 기본적인 사항을 정함으로써, 거래의 신속하고 효율적인 처리를 도모하고 거래당사자 상호간의 이해관계를 합리적으로 조정하는 것을 목적으로 합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zd-Up-5tq">
+                                <rect key="frame" x="24" y="245.33333333333334" width="336" height="57.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제2조(용어의 정의)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJT-K2-uZZ">
+                                <rect key="frame" x="23.999999999999993" y="332.66666666666669" width="91.333333333333314" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. &quot;전자금융거래&quot;라 함은 은행이 전자적 장치를 통하여 제공하는 금융상품 및 서비스를 이용자가 전자적 장치를 통하여 비대면·자동화된 방식으로 직접 이용하는 거래를 말합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5j-1t-p2Z">
+                                <rect key="frame" x="24" y="359" width="336" height="43"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 2. &quot;이용자&quot;라 함은 전자금융거래를 위하여 은행과 체결한 계약(이하 &quot;전자금융거래계약&quot;이라 합니다.)에 따라 전자금융거래를 이용하는 고객을 말합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wC-1y-GUc">
+                                <rect key="frame" x="24" y="412" width="336" height="43"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. &quot;지급인&quot;이라 함은 전자금융거래에 의하여 자금이 출금되는 계좌(이하 &quot;출금계좌&quot;라 합니다.)의 명의인을 말합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tas-RG-bhE">
+                                <rect key="frame" x="24" y="467" width="336" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. &quot;전자적 장치&quot;라 함은 현금자동지급기, 자동입출금기, 지급용단말기, 컴퓨터, 전화기 그 밖에 전자적 방법으로 전자금융거래정보를 전송하거나 처리하는데 이용되는 장치를 말합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pp-hn-v0Q">
+                                <rect key="frame" x="24" y="507.66666666666674" width="336" height="43"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6. &quot;접근매체&quot;라 함은 전자금융거래에 있어서 거래지시를 하거나 이용자 및 거래내용의 진정성을 확보하기 위하여 사용되는 다음 각목의 어느 하나에 해당하는 수단 또는 정보를 말합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43o-lQ-sdc">
+                                <rect key="frame" x="24" y="562.66666666666663" width="336" height="43"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9rM-a8-Ihr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I5j-1t-p2Z" firstAttribute="top" secondItem="LJT-K2-uZZ" secondAttribute="bottom" constant="12" id="4ga-hx-92O"/>
+                            <constraint firstItem="tas-RG-bhE" firstAttribute="leading" secondItem="9rM-a8-Ihr" secondAttribute="leading" constant="24" id="7Qd-EY-bEW"/>
+                            <constraint firstItem="43o-lQ-sdc" firstAttribute="top" secondItem="5pp-hn-v0Q" secondAttribute="bottom" constant="12" id="9pK-xt-H3u"/>
+                            <constraint firstItem="BJo-kh-FwO" firstAttribute="top" secondItem="9rM-a8-Ihr" secondAttribute="top" constant="20" id="F2y-wX-acj"/>
+                            <constraint firstItem="5pp-hn-v0Q" firstAttribute="leading" secondItem="9rM-a8-Ihr" secondAttribute="leading" constant="24" id="JYn-yR-V5C"/>
+                            <constraint firstItem="9rM-a8-Ihr" firstAttribute="trailing" secondItem="43o-lQ-sdc" secondAttribute="trailing" constant="30" id="KPi-ZA-A8h"/>
+                            <constraint firstItem="9rM-a8-Ihr" firstAttribute="trailing" secondItem="5pp-hn-v0Q" secondAttribute="trailing" constant="30" id="MgI-BJ-a6O"/>
+                            <constraint firstAttribute="trailing" secondItem="I5j-1t-p2Z" secondAttribute="trailing" constant="30" id="OP5-ue-aru"/>
+                            <constraint firstAttribute="trailing" secondItem="PBc-Th-c0Z" secondAttribute="trailing" constant="25" id="Qdu-2v-onn"/>
+                            <constraint firstItem="9rM-a8-Ihr" firstAttribute="trailing" secondItem="3wC-1y-GUc" secondAttribute="trailing" constant="30" id="UbQ-Qa-O6r"/>
+                            <constraint firstItem="9rM-a8-Ihr" firstAttribute="trailing" secondItem="tas-RG-bhE" secondAttribute="trailing" constant="30" id="W97-Ef-we1"/>
+                            <constraint firstItem="PBc-Th-c0Z" firstAttribute="leading" secondItem="9rM-a8-Ihr" secondAttribute="leading" constant="24" id="Zkh-5y-hFj"/>
+                            <constraint firstItem="PBc-Th-c0Z" firstAttribute="top" secondItem="BkL-A9-y05" secondAttribute="bottom" constant="16" id="bJX-Eq-j7c"/>
+                            <constraint firstItem="3wC-1y-GUc" firstAttribute="leading" secondItem="9rM-a8-Ihr" secondAttribute="leading" constant="24" id="bbG-oB-H56"/>
+                            <constraint firstItem="tas-RG-bhE" firstAttribute="top" secondItem="3wC-1y-GUc" secondAttribute="bottom" constant="12" id="ceH-dI-4yY"/>
+                            <constraint firstItem="3wC-1y-GUc" firstAttribute="top" secondItem="I5j-1t-p2Z" secondAttribute="bottom" constant="10" id="ces-lY-ddt"/>
+                            <constraint firstItem="XR3-kL-FdM" firstAttribute="top" secondItem="PBc-Th-c0Z" secondAttribute="bottom" constant="30" id="cgT-bM-JA9"/>
+                            <constraint firstItem="LJT-K2-uZZ" firstAttribute="top" secondItem="0zd-Up-5tq" secondAttribute="bottom" constant="30" id="cmh-HD-OeS"/>
+                            <constraint firstItem="I5j-1t-p2Z" firstAttribute="leading" secondItem="9rM-a8-Ihr" secondAttribute="leading" constant="24" id="geU-5g-ScX"/>
+                            <constraint firstItem="LJT-K2-uZZ" firstAttribute="leading" secondItem="9rM-a8-Ihr" secondAttribute="leading" constant="24" id="hFq-lR-xNA"/>
+                            <constraint firstItem="BkL-A9-y05" firstAttribute="top" secondItem="BJo-kh-FwO" secondAttribute="bottom" constant="18" id="iAD-8V-YhV"/>
+                            <constraint firstItem="BkL-A9-y05" firstAttribute="leading" secondItem="9rM-a8-Ihr" secondAttribute="leading" constant="24" id="ipF-al-PqI"/>
+                            <constraint firstItem="0zd-Up-5tq" firstAttribute="leading" secondItem="9rM-a8-Ihr" secondAttribute="leading" constant="24" id="jNX-4F-cok"/>
+                            <constraint firstAttribute="trailing" secondItem="0zd-Up-5tq" secondAttribute="trailing" constant="30" id="nq2-Gg-wVA"/>
+                            <constraint firstItem="9rM-a8-Ihr" firstAttribute="trailing" secondItem="BJo-kh-FwO" secondAttribute="trailing" constant="23" id="oti-tP-JcU"/>
+                            <constraint firstItem="XR3-kL-FdM" firstAttribute="leading" secondItem="9rM-a8-Ihr" secondAttribute="leading" constant="24" id="qkh-AN-NBT"/>
+                            <constraint firstItem="5pp-hn-v0Q" firstAttribute="top" secondItem="tas-RG-bhE" secondAttribute="bottom" constant="12" id="ros-97-hJg"/>
+                            <constraint firstItem="0zd-Up-5tq" firstAttribute="top" secondItem="XR3-kL-FdM" secondAttribute="bottom" constant="13" id="x1P-1I-W8H"/>
+                            <constraint firstItem="43o-lQ-sdc" firstAttribute="leading" secondItem="9rM-a8-Ihr" secondAttribute="leading" constant="24" id="zaX-CC-fns"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="roC-9K-RE1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hsz-JZ-wPz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6315" y="927"/>
+        </scene>
+        <!--Terms5 View Controller-->
+        <scene sceneID="YG7-6H-1Vl">
+            <objects>
+                <viewController id="hnw-R9-gCp" customClass="terms5ViewController" customModule="Bareuni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zPw-iL-rAa">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IU4-0w-8Vk">
+                                <rect key="frame" x="343" y="67" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="Gje-NW-fs7"/>
+                                    <constraint firstAttribute="height" constant="24" id="tpg-TQ-16D"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="navyXmark"/>
+                                <connections>
+                                    <action selector="cancelDidTap:" destination="hnw-R9-gCp" eventType="touchUpInside" id="PoY-xC-Yb1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 혜택 정보 수신 (선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvG-tH-QCn">
+                                <rect key="frame" x="24" y="109" width="213" height="23"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 수집·이용 목적" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0E-gd-Xnh">
+                                <rect key="frame" x="24" y="182" width="326" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LzV-sO-b6a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 바른이에서 진행하는 병원 이벤트 정보 전달" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyJ-QT-MsL">
+                                <rect key="frame" x="25" y="247" width="325" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 맞춤 서비스 제공 및 마케팅" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tt9-cp-dVi">
+                                <rect key="frame" x="25" y="277.33333333333331" width="134.33333333333334" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 신규 서비스 및 기능 알림" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXx-m4-7M8">
+                                <rect key="frame" x="25" y="307.66666666666669" width="124" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수집하려는 개인 정보의 항목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBm-Z8-nXe">
+                                <rect key="frame" x="24" y="372" width="156" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IjJ-oI-1Cz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 이메일, 핸드폰번호" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9H-n5-zb9">
+                                <rect key="frame" x="23.999999999999993" y="432" width="97.333333333333314" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보의 보유 및 이용기간" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8s-qr-RT8">
+                                <rect key="frame" x="24" y="496.33333333333326" width="156" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="key-XH-wnR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 회원 탈퇴 후 31일 이내 또는 관계 법령에 따른 보존 기간" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGt-gr-Hnr">
+                                <rect key="frame" x="25" y="556.33333333333337" width="335" height="14.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 이벤트 알림 수신 동의를 거부하실 수 있으며, 비동의 시에도 바비톡 서비스를 이용하실 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw9-jF-Y5B">
+                                <rect key="frame" x="24" y="600.66666666666663" width="336" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lmj-DV-7BS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="BackgroundBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Eph-wb-R8h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Eph-wb-R8h" firstAttribute="trailing" secondItem="ZGt-gr-Hnr" secondAttribute="trailing" constant="30" id="1AN-xU-mvA"/>
+                            <constraint firstItem="IvG-tH-QCn" firstAttribute="leading" secondItem="Eph-wb-R8h" secondAttribute="leading" constant="24" id="1j1-Wl-R6c"/>
+                            <constraint firstItem="ZGt-gr-Hnr" firstAttribute="top" secondItem="c8s-qr-RT8" secondAttribute="bottom" constant="20" id="4zo-i7-KZW"/>
+                            <constraint firstItem="F9H-n5-zb9" firstAttribute="leading" secondItem="Eph-wb-R8h" secondAttribute="leading" constant="24" id="7Wr-yv-FDD"/>
+                            <constraint firstItem="F9H-n5-zb9" firstAttribute="top" secondItem="TBm-Z8-nXe" secondAttribute="bottom" constant="20" id="8Ju-f0-cqh"/>
+                            <constraint firstItem="c8s-qr-RT8" firstAttribute="top" secondItem="F9H-n5-zb9" secondAttribute="bottom" constant="50" id="Ayq-sR-TQ1"/>
+                            <constraint firstItem="tt9-cp-dVi" firstAttribute="leading" secondItem="Eph-wb-R8h" secondAttribute="leading" constant="25" id="Eu4-7j-Phe"/>
+                            <constraint firstItem="Iw9-jF-Y5B" firstAttribute="top" secondItem="ZGt-gr-Hnr" secondAttribute="bottom" constant="30" id="FPj-tr-DJH"/>
+                            <constraint firstItem="Iw9-jF-Y5B" firstAttribute="leading" secondItem="Eph-wb-R8h" secondAttribute="leading" constant="24" id="KIa-5y-MbU"/>
+                            <constraint firstItem="UyJ-QT-MsL" firstAttribute="leading" secondItem="Eph-wb-R8h" secondAttribute="leading" constant="25" id="M12-lu-z6k"/>
+                            <constraint firstItem="TBm-Z8-nXe" firstAttribute="leading" secondItem="Eph-wb-R8h" secondAttribute="leading" constant="24" id="MM0-tX-JkJ"/>
+                            <constraint firstItem="Eph-wb-R8h" firstAttribute="trailing" secondItem="IU4-0w-8Vk" secondAttribute="trailing" constant="23" id="OK4-RR-0uM"/>
+                            <constraint firstItem="aXx-m4-7M8" firstAttribute="leading" secondItem="Eph-wb-R8h" secondAttribute="leading" constant="25" id="QS0-Od-eNQ"/>
+                            <constraint firstItem="TBm-Z8-nXe" firstAttribute="top" secondItem="aXx-m4-7M8" secondAttribute="bottom" constant="50" id="azz-6z-Qv9"/>
+                            <constraint firstItem="w0E-gd-Xnh" firstAttribute="top" secondItem="IvG-tH-QCn" secondAttribute="bottom" constant="50" id="bMH-7o-MqQ"/>
+                            <constraint firstItem="UyJ-QT-MsL" firstAttribute="top" secondItem="w0E-gd-Xnh" secondAttribute="bottom" constant="25" id="brc-H4-al3"/>
+                            <constraint firstItem="c8s-qr-RT8" firstAttribute="leading" secondItem="Eph-wb-R8h" secondAttribute="leading" constant="24" id="byp-fI-lha"/>
+                            <constraint firstItem="Eph-wb-R8h" firstAttribute="trailing" secondItem="UyJ-QT-MsL" secondAttribute="trailing" constant="40" id="et3-Nb-XTT"/>
+                            <constraint firstItem="Eph-wb-R8h" firstAttribute="trailing" secondItem="Iw9-jF-Y5B" secondAttribute="trailing" constant="30" id="l2w-j9-BdH"/>
+                            <constraint firstItem="IU4-0w-8Vk" firstAttribute="top" secondItem="Eph-wb-R8h" secondAttribute="top" constant="20" id="lai-wk-LZ7"/>
+                            <constraint firstItem="w0E-gd-Xnh" firstAttribute="trailing" secondItem="Eph-wb-R8h" secondAttribute="trailing" constant="-40" id="oq7-CW-DDL"/>
+                            <constraint firstItem="aXx-m4-7M8" firstAttribute="top" secondItem="tt9-cp-dVi" secondAttribute="bottom" constant="16" id="rEs-Ip-KVC"/>
+                            <constraint firstItem="IvG-tH-QCn" firstAttribute="top" secondItem="IU4-0w-8Vk" secondAttribute="bottom" constant="18" id="ruh-DN-rUV"/>
+                            <constraint firstItem="ZGt-gr-Hnr" firstAttribute="leading" secondItem="Eph-wb-R8h" secondAttribute="leading" constant="25" id="vAN-gH-eBu"/>
+                            <constraint firstItem="w0E-gd-Xnh" firstAttribute="leading" secondItem="Eph-wb-R8h" secondAttribute="leading" constant="24" id="vM9-OD-NkN"/>
+                            <constraint firstItem="tt9-cp-dVi" firstAttribute="top" secondItem="UyJ-QT-MsL" secondAttribute="bottom" constant="16" id="xkP-x4-HK4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ybo-jg-Hrl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vtr-QB-CbR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5125" y="1445"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Esq-hX-RNw"/>
@@ -1025,6 +1770,7 @@
         <image name="checkNoFill" width="28" height="28"/>
         <image name="hide" width="19" height="19"/>
         <image name="kakaoLogo" width="19" height="19"/>
+        <image name="navyXmark" width="24" height="24"/>
         <namedColor name="75grey">
             <color red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
