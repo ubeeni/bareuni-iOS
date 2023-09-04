@@ -1,35 +1,25 @@
+////
+////  APITestView.swift
+////  Bareuni
+////
+////  Created by 황인성 on 2023/08/28.
+////
 //
-//  APITestView.swift
-//  Bareuni
+//import SwiftUI
 //
-//  Created by 황인성 on 2023/08/28.
+//struct APITestView: View {
+//    @ObservedObject var locationViewModel = LocationViewModel()
+//    
+//    var body: some View {
+//        VStack {
+//            Text("Current Address: \(locationViewModel.currentAddress ?? "Unknown")")
+//                .padding()
+//        }
+//    }
+//}
 //
-
-import SwiftUI
-
-struct APITestView: View {
-    
-    @State var selectedCities: [String] = []  // Your selected cities here
-    
-    var body: some View {
-        // Use a NavigationView or any other appropriate view structure
-        NavigationView {
-            VStack {
-                // Your UI components here
-                
-                // Example of calling the ViewModel with selectedCities as path parameter
-                Button("Fetch Dentists") {
-                    let viewModel = RecommendDentistViewModel()
-                    viewModel.fetchRecommendedDentists()
-                }
-            }
-            .navigationBarTitle("Dentist Recommendations")
-        }
-    }
-}
-
-struct APITestView_Previews: PreviewProvider {
-    static var previews: some View {
-        APITestView()
-    }
-}
+//struct APITestView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        APITestView()
+//    }
+//}

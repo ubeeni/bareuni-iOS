@@ -11,6 +11,9 @@ import Moya
 
 enum DentistAPI {
     case getRecommendDentist(cityPath: String)
+    case getDetailDentist(hospitalIdx: Int)
+    case getNearDentist(address: String)
+    case getDentistReview
 }
 
 extension DentistAPI: TargetType{
@@ -20,14 +23,26 @@ extension DentistAPI: TargetType{
     
     var path: String {
         switch self {
-                case .getRecommendDentist(let cityPath):  // Use the parameter here
+                case .getRecommendDentist(let cityPath):
                     return "hospital/recommend/\(cityPath)"
-                }
+        case .getDetailDentist(let hospitalIdx):
+            return "hospital/\(hospitalIdx)"
+        case .getNearDentist:
+            return "/hospital/near"
+        case .getDentistReview:
+            return "/reviews"
+        }
     }
     
     var method: Moya.Method {
         switch self{
         case .getRecommendDentist:
+            return .get
+        case .getDetailDentist:
+            return .get
+        case .getNearDentist:
+            return .get
+        case .getDentistReview:
             return .get
         }
     }
@@ -36,12 +51,24 @@ extension DentistAPI: TargetType{
         switch self{
         case .getRecommendDentist:
             return Data()
+        case .getDetailDentist:
+            return Data()
+        case .getNearDentist:
+            return Data()
+        case .getDentistReview:
+            return Data()
         }
     }
     
     var task: Moya.Task {
         switch self {
         case .getRecommendDentist:
+            return .requestPlain
+        case .getDetailDentist:
+            return .requestPlain
+        case .getNearDentist(let address):
+            return .requestParameters(parameters: ["address": address], encoding: URLEncoding.queryString)
+        case .getDentistReview:
             return .requestPlain
         }
     }
