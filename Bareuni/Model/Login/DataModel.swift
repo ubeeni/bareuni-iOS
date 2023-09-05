@@ -106,6 +106,12 @@ struct ChangePasswordResponse: Codable {
     let message: String
     let result: String?
 }
+struct ChangeInfoResponse: Codable{
+    let isSuccess: Bool?
+    let code: Int
+    let message: String
+    let result: String?
+}
 
 
 

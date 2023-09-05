@@ -21,10 +21,10 @@ struct MyInfoView: View {
     @State var nickname = ""
     @State var didOrthodontic = false
     @State private var showingImagePicker = false
-    @State var profileImage: Image = Image("Tooth")
+    @State var basicImage: Image = Image("Tooth")
     @State var imageURL = ""
     
-    @State private var userInfo = MyPageUserViewModel() // 사용자 정보를 저장하는 속성
+    @ObservedObject var userInfo = MyPageUserViewModel() // 사용자 정보를 저장하는 속성
 
     
     var body: some View {
@@ -32,7 +32,7 @@ struct MyInfoView: View {
         VStack {
             Divider()
             ZStack{
-                profileImage
+              basicImage
                     .resizable()
                     .aspectRatio(contentMode: .fill).frame(width: 74, height: 74).clipShape(Circle())
                     .overlay(Circle().stroke(Color(UIColor(red: 0.62, green: 0.62, blue: 0.62, alpha: 1).cgColor), lineWidth: 0.5))
@@ -46,13 +46,13 @@ struct MyInfoView: View {
                     ActionSheet(title: Text("프로필 이미지 변경"), buttons: [.default(Text("프로필 이미지 변경")){
                         showingImagePicker.toggle()
                     }, .default(Text("프로필 이미지 삭제")){
-                    profileImage = Image("Tooth")
+                    basicImage = Image("Tooth")
                     }, .cancel(Text("취소"))])
                 }
                 .sheet(isPresented: $showingImagePicker) {
                     ProfileImagePicker(sourceType: .photoLibrary) { (image) in
                         
-                        self.profileImage = Image(uiImage: image)
+                        self.basicImage = Image(uiImage: image)
                         print(image)
                     }
                 }
@@ -80,7 +80,7 @@ struct MyInfoView: View {
                         Spacer()
                         Text(userInfo.user?.nickname ?? "안됨").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)}).fullScreenCover(isPresented: $isNameClicked) {
-                        ChangingNicknameView()
+                        ChangingNicknameView(userInfo: userInfo)
                     }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
@@ -150,6 +150,9 @@ struct MyInfoView: View {
                 Text("내 정보")
                     .font(.custom("Pretendard-Medium", size: 20))
             }
+        }
+        .onAppear{
+            userInfo.fetchData()
         }
         
         Spacer()
