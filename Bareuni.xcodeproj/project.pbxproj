@@ -78,6 +78,7 @@
 		32A7AD592AA5B6DE00EE1A35 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7AD582AA5B6DE00EE1A35 /* MyPageAPI.swift */; };
 		32A7AD5B2AA5BCE400EE1A35 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7AD5A2AA5BCE400EE1A35 /* UserDataModel.swift */; };
 		32A7AD5D2AA6CDFC00EE1A35 /* MyPageUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7AD5C2AA6CDFC00EE1A35 /* MyPageUserViewModel.swift */; };
+		32A7AD602AA745AC00EE1A35 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 32A7AD5F2AA745AC00EE1A35 /* URLImage */; };
 		32B5FE022A663AEC00DBC993 /* LoginUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE012A663AEC00DBC993 /* LoginUINavigationController.swift */; };
 		32B5FE062A66423D00DBC993 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE052A66423D00DBC993 /* FindPWViewController.swift */; };
 		32B5FE082A6654C300DBC993 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5FE072A6654C300DBC993 /* SignUpViewController.swift */; };
@@ -283,6 +284,7 @@
 				328DDE9F2A8E1F64006B82EF /* Alamofire in Frameworks */,
 				1017E2FC2A9C777D00254EFD /* Moya in Frameworks */,
 				1017E2FE2A9C777D00254EFD /* ReactiveMoya in Frameworks */,
+				32A7AD602AA745AC00EE1A35 /* URLImage in Frameworks */,
 				1017E2FA2A9C777D00254EFD /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,6 +656,7 @@
 				1017E2FD2A9C777D00254EFD /* ReactiveMoya */,
 				1017E2FF2A9C777D00254EFD /* RxMoya */,
 				3275173A2A9C8E42008A8B97 /* KeychainSwift */,
+				32A7AD5F2AA745AC00EE1A35 /* URLImage */,
 			);
 			productName = Bareuni;
 			productReference = 32A5E6C52A557A1800B41644 /* Bareuni.app */;
@@ -732,6 +735,7 @@
 				328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1017E2F82A9C777D00254EFD /* XCRemoteSwiftPackageReference "Moya" */,
 				327517392A9C8E42008A8B97 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				32A7AD5E2AA745AC00EE1A35 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 32A5E6C62A557A1800B41644 /* Products */;
 			projectDirPath = "";
@@ -1254,6 +1258,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		32A7AD5E2AA745AC00EE1A35 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		3B5AF64F2A708F2900A94BF1 /* XCRemoteSwiftPackageReference "BSImagePicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mikaoj/BSImagePicker.git";
@@ -1294,6 +1306,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 328DDE9D2A8E1F64006B82EF /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		32A7AD5F2AA745AC00EE1A35 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32A7AD5E2AA745AC00EE1A35 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
 		};
 		3B5AF6502A708F2900A94BF1 /* BSImagePicker */ = {
 			isa = XCSwiftPackageProductDependency;
