@@ -105,13 +105,13 @@
 		32FC44362A8E0D1C00505C99 /* DeletingAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC44352A8E0D1C00505C99 /* DeletingAccountView.swift */; };
 		3B09A1092AA55A4A0067D337 /* DentistReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B09A1082AA55A4A0067D337 /* DentistReviewModel.swift */; };
 		3B09A10B2AA55AAA0067D337 /* DentistReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B09A10A2AA55AAA0067D337 /* DentistReviewViewModel.swift */; };
-		3B118FAF2AA7467D00D8DDC8 /* SearchDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B118FAD2AA7467D00D8DDC8 /* SearchDentistViewModel.swift */; };
-		3B118FB02AA7467D00D8DDC8 /* SearchDentistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B118FAE2AA7467D00D8DDC8 /* SearchDentistModel.swift */; };
-		3B118FB82AA748B400D8DDC8 /* NearDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B118FB72AA748B400D8DDC8 /* NearDentistViewModel.swift */; };
+		3B118FB62AA7485900D8DDC8 /* NearDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B118FB52AA7485900D8DDC8 /* NearDentistViewModel.swift */; };
 		3B3142382AA3185A0000F2C1 /* NearDentistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3142372AA3185A0000F2C1 /* NearDentistModel.swift */; };
 		3B3142562AA323B10000F2C1 /* DetailDentistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3142552AA323B10000F2C1 /* DetailDentistModel.swift */; };
 		3B3142582AA323B80000F2C1 /* DetailDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3142572AA323B80000F2C1 /* DetailDentistViewModel.swift */; };
 		3B31425A2AA32CD00000F2C1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3142592AA32CD00000F2C1 /* Model.swift */; };
+		3B59A8C82AA74E340080C458 /* SearchDentistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59A8C72AA74E340080C458 /* SearchDentistModel.swift */; };
+		3B59A8CA2AA74E410080C458 /* SearchDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59A8C92AA74E410080C458 /* SearchDentistViewModel.swift */; };
 		3B5AF6512A708F2900A94BF1 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5AF6502A708F2900A94BF1 /* BSImagePicker */; };
 		3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6522A7095F600A94BF1 /* TestView2.swift */; };
 		3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */; };
@@ -249,13 +249,13 @@
 		32FC44352A8E0D1C00505C99 /* DeletingAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletingAccountView.swift; sourceTree = "<group>"; };
 		3B09A1082AA55A4A0067D337 /* DentistReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistReviewModel.swift; sourceTree = "<group>"; };
 		3B09A10A2AA55AAA0067D337 /* DentistReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentistReviewViewModel.swift; sourceTree = "<group>"; };
-		3B118FAD2AA7467D00D8DDC8 /* SearchDentistViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchDentistViewModel.swift; path = "../../../../../../Desktop/bareuni-iOS/Bareuni/Model/Dentist/SearchDentistViewModel.swift"; sourceTree = "<group>"; };
-		3B118FAE2AA7467D00D8DDC8 /* SearchDentistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchDentistModel.swift; path = "../../../../../../Desktop/bareuni-iOS/Bareuni/Model/Dentist/SearchDentistModel.swift"; sourceTree = "<group>"; };
-		3B118FB72AA748B400D8DDC8 /* NearDentistViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NearDentistViewModel.swift; path = ../../../../../../Downloads/NearDentistViewModel.swift; sourceTree = "<group>"; };
+		3B118FB52AA7485900D8DDC8 /* NearDentistViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NearDentistViewModel.swift; path = ../../../../../../Downloads/NearDentistViewModel.swift; sourceTree = "<group>"; };
 		3B3142372AA3185A0000F2C1 /* NearDentistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearDentistModel.swift; sourceTree = "<group>"; };
 		3B3142552AA323B10000F2C1 /* DetailDentistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDentistModel.swift; sourceTree = "<group>"; };
 		3B3142572AA323B80000F2C1 /* DetailDentistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDentistViewModel.swift; sourceTree = "<group>"; };
 		3B3142592AA32CD00000F2C1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3B59A8C72AA74E340080C458 /* SearchDentistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDentistModel.swift; sourceTree = "<group>"; };
+		3B59A8C92AA74E410080C458 /* SearchDentistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDentistViewModel.swift; sourceTree = "<group>"; };
 		3B5AF6522A7095F600A94BF1 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		3B5AF6542A72B5B000A94BF1 /* ConsultingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultingView.swift; sourceTree = "<group>"; };
 		3B9CB7172A5C508600AC56D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -390,11 +390,11 @@
 				3B3142552AA323B10000F2C1 /* DetailDentistModel.swift */,
 				3B3142572AA323B80000F2C1 /* DetailDentistViewModel.swift */,
 				3B3142372AA3185A0000F2C1 /* NearDentistModel.swift */,
-				3B118FB72AA748B400D8DDC8 /* NearDentistViewModel.swift */,
+				3B118FB52AA7485900D8DDC8 /* NearDentistViewModel.swift */,
 				3B09A1082AA55A4A0067D337 /* DentistReviewModel.swift */,
 				3B09A10A2AA55AAA0067D337 /* DentistReviewViewModel.swift */,
-				3B118FAE2AA7467D00D8DDC8 /* SearchDentistModel.swift */,
-				3B118FAD2AA7467D00D8DDC8 /* SearchDentistViewModel.swift */,
+				3B59A8C72AA74E340080C458 /* SearchDentistModel.swift */,
+				3B59A8C92AA74E410080C458 /* SearchDentistViewModel.swift */,
 				3BCB5C312A9C5CFD00F58C50 /* APITestView.swift */,
 			);
 			path = Dentist;
@@ -807,7 +807,7 @@
 				10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */,
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
 				3BCB5BB22A8E1C4A00F58C50 /* DentistModel2.swift in Sources */,
-				3B118FB82AA748B400D8DDC8 /* NearDentistViewModel.swift in Sources */,
+				3B118FB62AA7485900D8DDC8 /* NearDentistViewModel.swift in Sources */,
 				10AB8CE32A851CC8009B594E /* PostModel.swift in Sources */,
 				10AEE93D2A70FCD7005833CE /* TalkView.swift in Sources */,
 				1052C3ED2A6701EC00CD6508 /* DentistData.swift in Sources */,
@@ -823,6 +823,7 @@
 				32EB16E92A8358E50050F45F /* ChangingAgeView.swift in Sources */,
 				3BCB5C322A9C5CFD00F58C50 /* APITestView.swift in Sources */,
 				32B5FE022A663AEC00DBC993 /* LoginUINavigationController.swift in Sources */,
+				3B59A8C82AA74E340080C458 /* SearchDentistModel.swift in Sources */,
 				32EB16C42A6BF3830050F45F /* TermsOfServiceViewController.swift in Sources */,
 				3B118FB02AA7467D00D8DDC8 /* SearchDentistModel.swift in Sources */,
 				1052C3EF2A6702B400CD6508 /* DentistTableViewCell.swift in Sources */,
@@ -901,6 +902,7 @@
 				3B9CB71A2A5C528500AC56D0 /* InfoViewController.swift in Sources */,
 				32A7AD4F2AA5A2AC00EE1A35 /* terms3ViewController.swift in Sources */,
 				10C82FE12A76764C00ADF34E /* PostView.swift in Sources */,
+				3B59A8CA2AA74E410080C458 /* SearchDentistViewModel.swift in Sources */,
 				3B3142562AA323B10000F2C1 /* DetailDentistModel.swift in Sources */,
 				3B9CB7182A5C508600AC56D0 /* ContentView.swift in Sources */,
 				3BCB5BB82A949F1F00F58C50 /* TestView4.swift in Sources */,
