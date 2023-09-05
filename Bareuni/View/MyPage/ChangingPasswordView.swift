@@ -116,7 +116,17 @@ struct ChangingPasswordView: View {
             }.padding(.top, 50)
             
             Button(action: {
-                dismiss()
+                MypageAPI.shared.changePassword(currentPW: currentPW, newPW: newPW, completion: {
+                    result in
+                    switch result{
+                    case .success(let result):
+                        print("결과:: \(result.message)")
+                        dismiss()
+
+                    case .failure(let error):
+                        print("에러: \(error)")
+                    }
+                })
             }, label: {
                     ZStack {
                             Rectangle().frame( height: 51)

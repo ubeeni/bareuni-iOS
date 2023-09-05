@@ -13,14 +13,14 @@ import KeychainSwift
 
 class MypageAPI: ObservableObject{
     static let shared = MypageAPI()
-    func getUserInfro(completion: @escaping (Result<GetUserInfro, Error>) -> Void){
+    func getUserInfro(completion: @escaping (Result<GetUserInfoResponse, Error>) -> Void){
         let url = "https://bareuni.shop/users/info"
         
         AF.request(url,
                    method: .get,
                    encoding: JSONEncoding(options: []),
                    headers: ["Content-Type":"application/json", "Accept":"application/json", "atk": KeychainSwift().get("accessToken") ?? ""])
-        .responseDecodable(of: GetUserInfro.self){ response in
+        .responseDecodable(of: GetUserInfoResponse.self){ response in
             switch response.result {
             case .success(let result):
                 // 성공적으로 디코드한 데이터를 처리
@@ -33,14 +33,14 @@ class MypageAPI: ObservableObject{
     }
 
     func changePassword(currentPW: String, newPW: String, completion: @escaping (Result<ChangePasswordResponse, Error>) -> Void){
-        let url = "https://bareuni.shop/users/join/check-email"
+        let url = "https://bareuni.shop/mypage/users/password"
         
         let params = ["currentPassword": currentPW, "newPassword": newPW] as Dictionary
         AF.request(url,
-                   method: .post,
+                   method: .patch,
                    parameters: params,
                    encoding: JSONEncoding(options: []),
-                   headers: ["Content-Type":"application/json", "Accept":"application/json"])
+                   headers: ["Content-Type":"application/json", "Accept":"application/json", "atk": KeychainSwift().get("accessToken") ?? ""])
         .responseDecodable(of: ChangePasswordResponse.self){ response in
             switch response.result {
             case .success(let result):

@@ -7,18 +7,17 @@
 
 import Foundation
 
-struct GetUserInfro: Codable {
+struct GetUserInfoResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: mypageUser?
+    let result: MypageUser?
 }
 
-struct mypageUser: Codable {
+struct MypageUser: Codable {
     let email, nickname: String
-    let gender: String?
+    let gender: String
     let age: Int
     let ortho: Bool
     let profile: String?
-    
 }

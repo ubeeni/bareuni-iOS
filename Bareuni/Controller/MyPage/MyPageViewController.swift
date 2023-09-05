@@ -12,7 +12,15 @@ class MyPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        MypageAPI.shared.getUserInfro(completion: {result in
+            switch result{
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+        )
         // Do any additional setup after loading the view.
     }
     
