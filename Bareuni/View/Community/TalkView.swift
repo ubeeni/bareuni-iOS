@@ -49,6 +49,7 @@ struct TalkView: View {
             }
             .padding(.leading, 250)
             .padding(.trailing, 0)
+            .padding(.bottom, 1)
             
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
                 ScrollView {

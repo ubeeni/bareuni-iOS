@@ -22,11 +22,13 @@ struct WritePostView: View {
                 }) {
                     Image(systemName: "xmark")
                         .foregroundColor(Color("TextBlack"))
-                }.padding(.leading, 24)
+                }
+                .padding(.leading, 24)
+                
                 Spacer()
+                
                 Button(action: {
                     savePost()
-                    
                 }) {
                     Text("게시")
                         .font(.custom("Pretendard-Medium", size: 16))
@@ -39,8 +41,9 @@ struct WritePostView: View {
                                 .stroke(postContent.isEmpty ? Color("61gray") : Color("BackgroundBlue"), lineWidth: 1)
                                 .opacity(0.6)
                         )
-                        .disabled(postContent.isEmpty)
-                }.padding(.trailing, 24)
+                }
+                .padding(.trailing, 24)
+                .disabled(postContent.isEmpty)
             }.frame(height: 30)
             
             Text("글 작성")
