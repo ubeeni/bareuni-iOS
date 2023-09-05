@@ -26,4 +26,3 @@ struct SearchDentist: Codable, Identifiable, Hashable {
     
     var id: Int64 { hospitalIdx } // Using hospitalIdx as the id
 }
-
