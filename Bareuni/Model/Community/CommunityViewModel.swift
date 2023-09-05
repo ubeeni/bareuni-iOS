@@ -12,11 +12,11 @@ import Moya
 class CommunityViewModel: ObservableObject {
     @Published var community = [CommunityResult]()
     private let provider = MoyaProvider<BareuniAPI>()
-
+    
     init() {
         fetchCommunity()
     }
-
+    
     func fetchCommunity() {
         provider.request(.getCommunity) { result in
             switch result {
@@ -27,14 +27,10 @@ class CommunityViewModel: ObservableObject {
                 } catch {
                     print("에러 Error parsing response: \(error)")
                 }
-
+                
             case let .failure(error):
                 print("Network request failed: \(error)")
             }
         }
-    }
-    
-    func refreshPosts() {
-        fetchCommunity()
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100281FD2AA6369F00B87F63 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100281FC2AA6369F00B87F63 /* DetailViewModel.swift */; };
 		100DC1A02AA3389F00D06291 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DC19F2AA3389F00D06291 /* APIManager.swift */; };
 		100DC1A22AA3B22800D06291 /* CommunityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DC1A12AA3B22800D06291 /* CommunityModel.swift */; };
 		100DC1A42AA3B32F00D06291 /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DC1A32AA3B32F00D06291 /* CommunityViewModel.swift */; };
@@ -148,6 +149,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100281FC2AA6369F00B87F63 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		100DC19F2AA3389F00D06291 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		100DC1A12AA3B22800D06291 /* CommunityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityModel.swift; sourceTree = "<group>"; };
 		100DC1A32AA3B32F00D06291 /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				10AB8CE42A851E4A009B594E /* PostViewModel.swift */,
 				100DC1A12AA3B22800D06291 /* CommunityModel.swift */,
 				100DC1A32AA3B32F00D06291 /* CommunityViewModel.swift */,
+				100281FC2AA6369F00B87F63 /* DetailViewModel.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -822,6 +825,7 @@
 				3B5AF6532A7095F600A94BF1 /* TestView2.swift in Sources */,
 				32A7AD5B2AA5BCE400EE1A35 /* UserDataModel.swift in Sources */,
 				1014A0B52A6E61C500CE8170 /* CommunityViewController.swift in Sources */,
+				100281FD2AA6369F00B87F63 /* DetailViewModel.swift in Sources */,
 				32A7AD562AA5A6AF00EE1A35 /* LoginView.swift in Sources */,
 				10AEE93F2A70FD03005833CE /* FAQView.swift in Sources */,
 				327517382A9C4E24008A8B97 /* DataModel.swift in Sources */,
