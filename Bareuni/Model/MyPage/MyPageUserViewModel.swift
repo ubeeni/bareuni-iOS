@@ -12,40 +12,43 @@ import Combine
 import KeychainSwift
 
 class MyPageUserViewModel: ObservableObject {
-    @Published var data: MypageUser?
+    @Published var user: MypageUser?
     @Published var errorMessage: String?
-
-    private var cancellables: Set<AnyCancellable> = []
-
-    func fetchData() {
+    
+  //  private var cancellables: Set<AnyCancellable> = []
+        
+    init() {
+        fetchTodos()
+    }
+    
+    func fetchTodos() {
+      getUserInfro(completion: {
+          result in
+          switch result {
+          case .success(let response):
+              self.user = response.result
+          case .failure(let error):
+              print("error: \(error)")
+          }
+      })
+    }
+    
+    func getUserInfro(completion: @escaping (Result<GetUserInfoResponse, Error>) -> Void){
         let url = "https://bareuni.shop/users/info"
-        let header: HTTPHeaders = [
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "atk": KeychainSwift().get("accessToken") ?? ""
-        ]
-
-        AF.request(url, method: .get, headers: header)
-            .validate()
-            .publishDecodable(type: GetUserInfoResponse.self)
-            .sink(receiveCompletion: { [weak self] completion in
-                guard let self = self else { return }
-
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    self.errorMessage = "데이터 가져오기 실패: \(error)"
-                }
-            }, receiveValue: { [weak self] response in
-                guard let self = self else { return }
-
-                if let result = response.value?.result {
-                    self.data = result
-                } else {
-                    self.errorMessage = "데이터 파싱 실패"
-                }
-            })
-            .store(in: &cancellables)
+        
+        AF.request(url,
+                   method: .get,
+                   encoding: JSONEncoding(options: []),
+                   headers: ["Content-Type":"application/json", "Accept":"application/json", "atk": KeychainSwift().get("accessToken") ?? ""])
+        .responseDecodable(of: GetUserInfoResponse.self){ response in
+            switch response.result {
+            case .success(let result):
+                // 성공적으로 디코드한 데이터를 처리
+                print("유저 정보 요청 결과: \(result.message)")
+                completion(.success(result))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MyInfoView: View {
-    @ObservedObject var userInfo = MyPageUserViewModel()
 
     @State var showingProfileImgSheet = false
     @State var showingSexSheet = false
@@ -18,9 +17,15 @@ struct MyInfoView: View {
     @State var isAgeClicked = false
     @State var showNumberSheet = false
     @State var sex = "여성"
-    @State var didOrthodontic = "false"
+    @State var age = 0
+    @State var nickname = ""
+    @State var didOrthodontic = false
     @State private var showingImagePicker = false
     @State var profileImage: Image = Image("Tooth")
+    @State var imageURL = ""
+    
+    @State private var userInfo = MyPageUserViewModel() // 사용자 정보를 저장하는 속성
+
     
     var body: some View {
         
@@ -59,7 +64,7 @@ struct MyInfoView: View {
                 
             }.padding(.top, 50)
             
-            Text("바른이").font(.custom("Pretendard-SemiBold", size: 16)).padding(.top, 8)
+            Text(userInfo.user?.nickname ?? "안됨").font(.custom("Pretendard-SemiBold", size: 16)).padding(.top, 8)
             
             HStack{
                 Text("내 정보").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color(UIColor(red: 0.561, green: 0.561, blue: 0.561, alpha: 1))).padding(.leading, 24)
@@ -73,7 +78,7 @@ struct MyInfoView: View {
                     HStack{
                         Text("닉네임 / 이름").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
                         Spacer()
-                        Text(userInfo.data?.nickname ?? "").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                        Text(userInfo.user?.nickname ?? "안됨").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)}).fullScreenCover(isPresented: $isNameClicked) {
                         ChangingNicknameView()
                     }
@@ -86,7 +91,7 @@ struct MyInfoView: View {
                     HStack{
                         Text("성별").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
                         Spacer()
-                        Text(userInfo.data?.gender ?? "").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                        Text(userInfo.user?.gender ?? "아돈노").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
                 }).actionSheet(isPresented: $showingSexSheet){
                     ActionSheet(title: Text("성별 변경"), buttons: [.default(Text("남성"), action: {sex = "남성"}), .default(Text("여성"), action: {sex = "여성"}), .cancel(Text("취소"))])
@@ -98,7 +103,7 @@ struct MyInfoView: View {
                     HStack{
                         Text("연령대").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
                         Spacer()
-                        Text(String(userInfo.data?.age ?? 0) + "대").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                        Text(String(userInfo.user?.age ?? 0) + "대").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)}).fullScreenCover(isPresented: $isAgeClicked) {
                         ChangingAgeView()
                     }
@@ -118,18 +123,18 @@ struct MyInfoView: View {
 //                }
                 
                 
-                Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
-                
+//                Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
+//
                 Button(action: {
                     self.showingOrthodonticSheet = true
                 }, label: {
                     HStack{
                         Text("교정 여부").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
                         Spacer()
-                        Text(userInfo.data?.ortho ?? false ? "교정 O" : "교정 X").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                        Text(userInfo.user?.ortho ?? false ? "교정 O" : "교정 X").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
                 }).actionSheet(isPresented: $showingOrthodonticSheet){
-                    ActionSheet(title: Text("교정 여부"), buttons: [.default(Text("교정 O"), action: {didOrthodontic = "교정 O"}), .default(Text("교정 X"), action: {didOrthodontic = "교정 X"}), .cancel(Text("취소"))])
+                    ActionSheet(title: Text("교정 여부"), buttons: [.default(Text("교정 O"), action: {didOrthodontic = true}), .default(Text("교정 X"), action: {didOrthodontic = false}), .cancel(Text("취소"))])
                 }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
