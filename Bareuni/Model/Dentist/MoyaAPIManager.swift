@@ -14,6 +14,7 @@ enum DentistAPI {
     case getDetailDentist(hospitalIdx: Int)
     case getNearDentist(address: String)
     case getDentistReview
+    case getSearchDentist(keyword: String)
 }
 
 extension DentistAPI: TargetType{
@@ -28,9 +29,11 @@ extension DentistAPI: TargetType{
         case .getDetailDentist(let hospitalIdx):
             return "hospital/\(hospitalIdx)"
         case .getNearDentist:
-            return "/hospital/near"
+            return "hospital/near"
         case .getDentistReview:
-            return "/reviews"
+            return "reviews"
+        case .getSearchDentist:
+            return "hospital/search"
         }
     }
     
@@ -43,6 +46,8 @@ extension DentistAPI: TargetType{
         case .getNearDentist:
             return .get
         case .getDentistReview:
+            return .get
+        case .getSearchDentist:
             return .get
         }
     }
@@ -57,6 +62,8 @@ extension DentistAPI: TargetType{
             return Data()
         case .getDentistReview:
             return Data()
+        case .getSearchDentist:
+            return Data()
         }
     }
     
@@ -70,6 +77,8 @@ extension DentistAPI: TargetType{
             return .requestParameters(parameters: ["address": address], encoding: URLEncoding.queryString)
         case .getDentistReview:
             return .requestPlain
+        case .getSearchDentist(keyword: let keyword):
+            return .requestParameters(parameters: ["keyword": keyword], encoding: URLEncoding.default)
         }
     }
     
