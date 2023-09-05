@@ -13,6 +13,7 @@ enum BareuniAPI {
     case getBestDentist
     case getBestCommunity
     case getCommunity
+    case getCommunityDetail
     case postWrite(content: String)
 }
 
@@ -29,6 +30,8 @@ extension BareuniAPI: TargetType {
             return "community/best"
         case .getCommunity:
             return "community"
+        case .getCommunityDetail:
+            return "community/{communityIdx}"
         case .postWrite:
             return "community"
         }
@@ -41,6 +44,8 @@ extension BareuniAPI: TargetType {
         case .getBestCommunity:
             return .get
         case .getCommunity:
+            return .get
+        case .getCommunityDetail:
             return .get
         case .postWrite:
             return .post
@@ -55,6 +60,8 @@ extension BareuniAPI: TargetType {
             return Data()
         case .getCommunity:
             return Data()
+        case .getCommunityDetail:
+            return Data()
         case .postWrite:
             return Data()
         }
@@ -67,6 +74,8 @@ extension BareuniAPI: TargetType {
         case .getBestCommunity:
             return .requestPlain
         case .getCommunity:
+            return .requestPlain
+        case .getCommunityDetail:
             return .requestPlain
         case .postWrite(let content):
             let parameters: [String: Any] = ["content": content]
@@ -81,6 +90,10 @@ extension BareuniAPI: TargetType {
         case .getBestCommunity:
             return nil
         case .getCommunity:
+            return ["Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "atk": KeychainSwift().get("accessToken") ?? ""]
+        case .getCommunityDetail:
             return ["Content-Type": "application/json",
                     "Accept": "application/json",
                     "atk": KeychainSwift().get("accessToken") ?? ""]

@@ -14,9 +14,9 @@ struct TalkView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @StateObject var communityViewModel = CommunityViewModel()
-    @StateObject var postViewModel = PostViewModel()
-
+    @ObservedObject var communityViewModel = CommunityViewModel()
+    @ObservedObject var postViewModel = PostViewModel()
+    
     var body: some View {
         VStack {
             HStack {
@@ -90,7 +90,7 @@ struct TalkView: View {
                             .padding(.horizontal, 20)
                             .padding(.bottom, 10)
                     }).fullScreenCover(isPresented: $showWritePostView) {
-                        WritePostView(postviewModel: postViewModel)
+                        WritePostView(postviewModel: postViewModel, communityViewModel: communityViewModel)
                     }
                 }
             }

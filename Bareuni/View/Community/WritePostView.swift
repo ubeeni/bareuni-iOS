@@ -12,11 +12,7 @@ struct WritePostView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var postviewModel: PostViewModel
-    //@StateObject var communityViewModel = CommunityViewModel()
-    
-    init(postviewModel: PostViewModel) {
-        self.postviewModel = postviewModel
-    }
+    @ObservedObject var communityViewModel: CommunityViewModel
     
     var body: some View {
         VStack() {
@@ -30,6 +26,7 @@ struct WritePostView: View {
                 Spacer()
                 Button(action: {
                     savePost()
+                    
                 }) {
                     Text("게시")
                         .font(.custom("Pretendard-Medium", size: 16))
@@ -71,10 +68,9 @@ struct WritePostView: View {
     }
     
     func savePost() {
-        // PostViewModel을 사용하여 서버로 게시물 생성
         postviewModel.createPost(content: postContent) { success in
             if success {
-                //communityViewModel.refreshPosts()
+                communityViewModel.fetchCommunity() // 새로고침
                 presentationMode.wrappedValue.dismiss()
             } else {
                 // 게시물 생성 실패 처리
