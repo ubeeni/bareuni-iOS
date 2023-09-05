@@ -968,6 +968,8 @@ struct SearchView: View {
     
     @State var tabIndex = 0
     
+    @StateObject var searchDentistViewModel = SearchDentistViewModel()
+    
     var body: some View {
         NavigationView {
             ZStack {
