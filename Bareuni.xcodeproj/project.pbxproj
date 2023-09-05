@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		100281FD2AA6369F00B87F63 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100281FC2AA6369F00B87F63 /* DetailViewModel.swift */; };
 		100282092AA7A4D300B87F63 /* NearDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100282082AA7A4D300B87F63 /* NearDentistViewModel.swift */; };
+		1002820B2AA7AEE700B87F63 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002820A2AA7AEE700B87F63 /* HideKeyboardExtension.swift */; };
 		100DC1A02AA3389F00D06291 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DC19F2AA3389F00D06291 /* APIManager.swift */; };
 		100DC1A22AA3B22800D06291 /* CommunityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DC1A12AA3B22800D06291 /* CommunityModel.swift */; };
 		100DC1A42AA3B32F00D06291 /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DC1A32AA3B32F00D06291 /* CommunityViewModel.swift */; };
@@ -156,6 +157,7 @@
 /* Begin PBXFileReference section */
 		100281FC2AA6369F00B87F63 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		100282082AA7A4D300B87F63 /* NearDentistViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearDentistViewModel.swift; sourceTree = "<group>"; };
+		1002820A2AA7AEE700B87F63 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		100DC19F2AA3389F00D06291 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		100DC1A12AA3B22800D06291 /* CommunityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityModel.swift; sourceTree = "<group>"; };
 		100DC1A32AA3B32F00D06291 /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 				32A5E6C82A557A1800B41644 /* AppDelegate.swift */,
 				32A5E6CA2A557A1800B41644 /* SceneDelegate.swift */,
 				32A5E6D12A557A1900B41644 /* Assets.xcassets */,
+				1002820A2AA7AEE700B87F63 /* HideKeyboardExtension.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -886,6 +889,7 @@
 				32FC44362A8E0D1C00505C99 /* DeletingAccountView.swift in Sources */,
 				32EB16DB2A77D0610050F45F /* WelcomeProfileViewController.swift in Sources */,
 				32EB16E32A8291DE0050F45F /* MyInfoView.swift in Sources */,
+				1002820B2AA7AEE700B87F63 /* HideKeyboardExtension.swift in Sources */,
 				3273943F2A8757E9001A739E /* CustomerServiceView.swift in Sources */,
 				32A7AD4B2AA5A28200EE1A35 /* terms1ViewController.swift in Sources */,
 				32EB16D92A77CEDE0050F45F /* ProfileNavigationController.swift in Sources */,

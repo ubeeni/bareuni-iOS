@@ -68,6 +68,7 @@ struct WritePostView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
+        .onAppear (perform : UIApplication.shared.hideKeyboard)
     }
     
     func savePost() {
