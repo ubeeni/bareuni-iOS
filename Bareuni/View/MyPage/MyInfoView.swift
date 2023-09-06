@@ -91,10 +91,31 @@ struct MyInfoView: View {
                     HStack{
                         Text("성별").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
                         Spacer()
-                        Text(userInfo.user?.gender ?? "아돈노").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                        Text((userInfo.user?.gender ?? "MALE") == "MALE" ? "남성" : "여성").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
                 }).actionSheet(isPresented: $showingSexSheet){
-                    ActionSheet(title: Text("성별 변경"), buttons: [.default(Text("남성"), action: {sex = "남성"}), .default(Text("여성"), action: {sex = "여성"}), .cancel(Text("취소"))])
+                    ActionSheet(title: Text("성별 변경"), buttons: [.default(Text("남성"), action: {sex = "남성"
+                        MypageAPI.shared.changeGender(gender: "MALE", completion: {
+                            result in
+                            switch result{
+                            case .success(let response):
+                                print(response.message)
+                            case .failure(let error):
+                                print("성별 변경: \(error)")
+                            }
+                        })
+                    }), .default(Text("여성"), action: {sex = "여성"
+                        MypageAPI.shared.changeGender(gender: "FEMALE", completion: {
+                            result in
+                            switch result{
+                            case .success(let response):
+                                print(response.message)
+                            case .failure(let error):
+                                print("성별 변경: \(error)")
+                            }
+                        })
+                        
+                    }), .cancel(Text("취소"))])
                 }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
@@ -134,7 +155,29 @@ struct MyInfoView: View {
                         Text(userInfo.user?.ortho ?? false ? "교정 O" : "교정 X").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
                 }).actionSheet(isPresented: $showingOrthodonticSheet){
-                    ActionSheet(title: Text("교정 여부"), buttons: [.default(Text("교정 O"), action: {didOrthodontic = true}), .default(Text("교정 X"), action: {didOrthodontic = false}), .cancel(Text("취소"))])
+                    ActionSheet(title: Text("교정 여부"), buttons: [.default(Text("교정 O"), action: {didOrthodontic = true
+                        MypageAPI.shared.changeOrtho(ortho: didOrthodontic, completion: {
+                            result in
+                            switch result{
+                            case .success(let response):
+                                print(response.message)
+                            case .failure(let error):
+                                print(error)
+                            }
+                        })
+                    }), .default(Text("교정 X"), action: {
+                        didOrthodontic = false
+                        
+                        MypageAPI.shared.changeOrtho(ortho: didOrthodontic, completion: {
+                            result in
+                            switch result{
+                            case .success(let response):
+                                print(response.message)
+                            case .failure(let error):
+                                print(error)
+                            }
+                        })
+                    }), .cancel(Text("취소"))])
                 }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))

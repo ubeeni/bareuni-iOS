@@ -104,7 +104,7 @@ class MypageAPI: ObservableObject{
         }
     }
     
-    func changeGender(gender: String,completion: @escaping (Result<ChangeInfoResponse, Error>) -> Void){
+    func changeGender(gender: String, completion: @escaping (Result<ChangeInfoResponse, Error>) -> Void){
         let url = "https://bareuni.shop/mypage/users"
         let params = ["myUpdateReq.gender": gender] as Dictionary
         
@@ -113,8 +113,7 @@ class MypageAPI: ObservableObject{
             for (key, value) in params {
                 MultipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
             }
-        }, to: url,
-                  method: .patch, headers: ["Content-Type":"multipart/form-data", "atk": KeychainSwift().get("accessToken") ?? ""]).responseDecodable(of: ChangeInfoResponse.self){ response in
+        }, to: url, method: .patch, headers: ["Content-Type":"multipart/form-data", "atk": KeychainSwift().get("accessToken") ?? ""]).responseDecodable(of: ChangeInfoResponse.self){ response in
             print(response)
             switch response.result {
             case .success(let result):

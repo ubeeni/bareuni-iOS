@@ -31,6 +31,7 @@ struct ChangingAgeView: View {
                 
                 HStack{
                     Button(action: {
+                        selectedAge = 10
                         selectAgeBtn(1)
                     }) {
                         Text("10대")
@@ -45,6 +46,7 @@ struct ChangingAgeView: View {
                     }.padding(.trailing, 14)
                     
                     Button(action: {
+                        selectedAge = 20
                         selectAgeBtn(2)
                     }) {
                         Text("20대")
@@ -62,6 +64,7 @@ struct ChangingAgeView: View {
                 
                 HStack{
                     Button(action: {
+                        selectedAge = 30
                         selectAgeBtn(3)
                     }) {
                         Text("30대")
@@ -76,6 +79,7 @@ struct ChangingAgeView: View {
                     }.padding(.trailing, 14)
                     
                     Button(action: {
+                        selectedAge = 40
                         selectAgeBtn(4)
                     }) {
                         Text("40대")
@@ -93,6 +97,7 @@ struct ChangingAgeView: View {
                 
                 HStack{
                     Button(action: {
+                        selectedAge = 50
                         selectAgeBtn(5)
                     }) {
                         Text("50대")
@@ -107,6 +112,7 @@ struct ChangingAgeView: View {
                     }.padding(.trailing, 14)
                     
                     Button(action: {
+                        selectedAge = 60
                         selectAgeBtn(6)
                     }) {
                         Text("60대")
@@ -123,7 +129,16 @@ struct ChangingAgeView: View {
                 }.padding(.top, 14)
                 
                 Button(action: {
-                    dismiss()
+                    MypageAPI.shared.changeAge(age: selectedAge, completion: {
+                        result in
+                        switch result{
+                        case .success(let response):
+                            print(response.message)
+                            dismiss()
+                        case .failure(let error):
+                            print("나이 변경: \(error)")
+                        }
+                    })
                 }, label: {
                         ZStack {
                                 Rectangle().frame( height: 51)
