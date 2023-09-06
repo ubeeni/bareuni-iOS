@@ -29,7 +29,7 @@ struct MyPageMainView: View {
                         Text("6,000p").font(.custom("Pretendard-Medium", size: 13)).foregroundColor(Color(UIColor(red: 0.469, green: 0.751, blue: 0.954, alpha: 1)))
                     }
                     Spacer()
-                    NavigationLink(destination: MyInfoView()) { // $ 표시로 Binding으로 전달
+                    NavigationLink(destination: MyInfoView().environmentObject(userInfo)) { // $ 표시로 Binding으로 전달
                         Text("내 정보 수정").font(.custom("Pretendard-Medium", size: 12)).foregroundColor(Color(UIColor(red: 0.442, green: 0.442, blue: 0.442, alpha: 1))).frame(width: 73, height: 25).background(Color(UIColor(red: 0.913, green: 0.913, blue: 0.913, alpha: 1)))
                             .cornerRadius(8).padding(.trailing, 13)
                     }

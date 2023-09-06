@@ -24,7 +24,7 @@ struct MyInfoView: View {
     @State var basicImage: Image = Image("Tooth")
     @State var imageURL = ""
     
-    @ObservedObject var userInfo = MyPageUserViewModel() // 사용자 정보를 저장하는 속성
+    @EnvironmentObject var userInfo: MyPageUserViewModel // 사용자 정보를 저장하는 속성
 
     
     var body: some View {
@@ -78,9 +78,9 @@ struct MyInfoView: View {
                     HStack{
                         Text("닉네임 / 이름").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(.black)
                         Spacer()
-                        Text(userInfo.user?.nickname ?? "안됨").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
+                        Text(userInfo.user?.nickname ?? "").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)}).fullScreenCover(isPresented: $isNameClicked) {
-                        ChangingNicknameView(userInfo: userInfo)
+                        ChangingNicknameView().environmentObject(userInfo)
                     }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
@@ -95,16 +95,20 @@ struct MyInfoView: View {
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
                 }).actionSheet(isPresented: $showingSexSheet){
                     ActionSheet(title: Text("성별 변경"), buttons: [.default(Text("남성"), action: {sex = "남성"
+                        userInfo.user!.gender = "MALE"
                         MypageAPI.shared.changeGender(gender: "MALE", completion: {
                             result in
                             switch result{
                             case .success(let response):
                                 print(response.message)
+                                print(userInfo.user?.gender ?? "안됨")
                             case .failure(let error):
                                 print("성별 변경: \(error)")
                             }
                         })
                     }), .default(Text("여성"), action: {sex = "여성"
+                        userInfo.user!.gender = "FEMALE"
+
                         MypageAPI.shared.changeGender(gender: "FEMALE", completion: {
                             result in
                             switch result{
@@ -126,7 +130,7 @@ struct MyInfoView: View {
                         Spacer()
                         Text(String(userInfo.user?.age ?? 0) + "대").font(.custom("Pretendard-Regular", size: 16)).foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)))
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)}).fullScreenCover(isPresented: $isAgeClicked) {
-                        ChangingAgeView()
+                        ChangingAgeView().environmentObject(userInfo)
                     }
                 
                 Rectangle().frame(height: 1).foregroundColor(Color(UIColor(red: 0.906, green: 0.933, blue: 0.941, alpha: 1)))
@@ -156,6 +160,8 @@ struct MyInfoView: View {
                     }.padding(.leading, 24).padding(.trailing, 24).frame(height: 46)
                 }).actionSheet(isPresented: $showingOrthodonticSheet){
                     ActionSheet(title: Text("교정 여부"), buttons: [.default(Text("교정 O"), action: {didOrthodontic = true
+                        userInfo.user!.ortho = true
+
                         MypageAPI.shared.changeOrtho(ortho: didOrthodontic, completion: {
                             result in
                             switch result{
@@ -167,6 +173,7 @@ struct MyInfoView: View {
                         })
                     }), .default(Text("교정 X"), action: {
                         didOrthodontic = false
+                        userInfo.user!.ortho = false
                         
                         MypageAPI.shared.changeOrtho(ortho: didOrthodontic, completion: {
                             result in

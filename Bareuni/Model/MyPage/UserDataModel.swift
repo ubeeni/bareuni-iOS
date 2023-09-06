@@ -15,9 +15,10 @@ struct GetUserInfoResponse: Codable {
 }
 
 struct MypageUser: Codable {
-    var email, nickname: String
-    let gender: String
-    let age: Int
-    let ortho: Bool
-    let profile: String?
+    var email: String
+    var nickname: String
+    var gender: String
+    var age: Int
+    var ortho: Bool
+    var profile: String?
 }

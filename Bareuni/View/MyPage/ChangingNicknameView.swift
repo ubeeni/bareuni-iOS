@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChangingNicknameView: View {
-    @ObservedObject var userInfo = MyPageUserViewModel() // 사용자 정보를 저장하는 속성
+    @EnvironmentObject var userInfo: MyPageUserViewModel // 사용자 정보를 저장하는 속성
     @State private var isNickNameExisted = false
     @State var newNickname = ""
     @State var isEditing = false
@@ -57,7 +57,7 @@ struct ChangingNicknameView: View {
                     case .success(let response):
                         print(response.message)
                         print(newNickname)
-
+                        userInfo.user!.nickname = newNickname
                         dismiss()
                     case .failure(let error):
                         print("닉네임 변경: \(error)")

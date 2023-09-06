@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ChangingAgeView: View {
+    @EnvironmentObject var userInfo: MyPageUserViewModel // 사용자 정보를 저장하는 속성
+
     @State var isSelected: [Bool] = Array(repeating: false, count: 6)
     @State var selectedAge: Int = 10
     @Environment(\.dismiss) var dismiss
@@ -31,7 +33,7 @@ struct ChangingAgeView: View {
                 
                 HStack{
                     Button(action: {
-                        selectedAge = 10
+                        userInfo.user!.age = 10
                         selectAgeBtn(1)
                     }) {
                         Text("10대")
@@ -46,7 +48,7 @@ struct ChangingAgeView: View {
                     }.padding(.trailing, 14)
                     
                     Button(action: {
-                        selectedAge = 20
+                        userInfo.user!.age = 20
                         selectAgeBtn(2)
                     }) {
                         Text("20대")
@@ -64,7 +66,7 @@ struct ChangingAgeView: View {
                 
                 HStack{
                     Button(action: {
-                        selectedAge = 30
+                        userInfo.user!.age = 30
                         selectAgeBtn(3)
                     }) {
                         Text("30대")
@@ -79,7 +81,7 @@ struct ChangingAgeView: View {
                     }.padding(.trailing, 14)
                     
                     Button(action: {
-                        selectedAge = 40
+                        userInfo.user!.age = 40
                         selectAgeBtn(4)
                     }) {
                         Text("40대")
@@ -97,7 +99,7 @@ struct ChangingAgeView: View {
                 
                 HStack{
                     Button(action: {
-                        selectedAge = 50
+                        userInfo.user!.age = 50
                         selectAgeBtn(5)
                     }) {
                         Text("50대")
@@ -112,7 +114,7 @@ struct ChangingAgeView: View {
                     }.padding(.trailing, 14)
                     
                     Button(action: {
-                        selectedAge = 60
+                        userInfo.user!.age = 60
                         selectAgeBtn(6)
                     }) {
                         Text("60대")
@@ -129,7 +131,7 @@ struct ChangingAgeView: View {
                 }.padding(.top, 14)
                 
                 Button(action: {
-                    MypageAPI.shared.changeAge(age: selectedAge, completion: {
+                    MypageAPI.shared.changeAge(age: userInfo.user!.age, completion: {
                         result in
                         switch result{
                         case .success(let response):
@@ -172,8 +174,4 @@ struct ChangingAgeView: View {
 }
 
 
-struct ChangingAgeView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChangingAgeView()
-    }
-}
+
