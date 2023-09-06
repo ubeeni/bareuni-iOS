@@ -41,6 +41,29 @@ struct LoginAPI{
             }
         }
     }
+    
+    func checkNickname(nickname: String, completion: @escaping (Result<CheckNicknameResponse, Error>) -> Void){
+        let url = "https://bareuni.shop/users/join/check-nickname"
+        let params = ["nickname": nickname] as Dictionary
+
+        AF.request(url,
+                   method: .post,
+                   parameters: params,
+                   encoding: JSONEncoding(options: []),
+                   headers: ["Content-Type":"application/json", "Accept":"application/json"])
+        .responseDecodable(of: CheckNicknameResponse.self){ response in
+            switch response.result {
+            case .success(let result):
+                // 성공적으로 디코드한 데이터를 처리
+                print("닉네임 중복 체크 결과: \(result.message)")
+                    completion(.success(result))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+        
+    }
+    
     func verifyEmail(email: String, completion: @escaping (Result<VerifyEmailResponse, Error>) -> Void){
         let url = "https://bareuni.shop/users/email"
         let params = ["email": email] as Dictionary

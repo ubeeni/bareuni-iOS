@@ -55,8 +55,7 @@ struct ChangingNicknameView: View {
                     result in
                     switch result{
                     case .success(let response):
-                        print(response.message)
-                        print(newNickname)
+
                         userInfo.user!.nickname = newNickname
                         dismiss()
                     case .failure(let error):
