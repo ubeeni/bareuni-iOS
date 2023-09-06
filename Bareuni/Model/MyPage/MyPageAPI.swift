@@ -58,28 +58,28 @@ class MypageAPI: ObservableObject{
         }
     }
     
-    func changeProfile(profile: Image, completion: @escaping (Result<ChangeInfoResponse, Error>) -> Void){
-        let url = "https://bareuni.shop/mypage/users"
-        
-        AF.upload(multipartFormData: { MultipartFormData in
-           
-            //img 추가
-            if let image = imageData?.pngData() {
-                MultipartFormData.append(profile, withName: "img", fileName: "\(userName).jpg", mimeType: "image/jpg")
-            }
-        }, to: url,
-                  method: .patch, headers: ["Content-Type":"multipart/form-data", "atk": KeychainSwift().get("accessToken") ?? ""]).responseDecodable(of: ChangeInfoResponse.self){ response in
-            print(response)
-            switch response.result {
-            case .success(let result):
-                // 성공적으로 디코드한 데이터를 처리
-                print("프로필 변경 결과: \(result.message)")
-                completion(.success(result))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
+//    func changeProfile(profile: UIImage, completion: @escaping (Result<ChangeInfoResponse, Error>) -> Void){
+//        let url = "https://bareuni.shop/mypage/users"
+//        
+//        AF.upload(multipartFormData: { MultipartFormData in
+//           
+//            //img 추가
+//            if let image = profile.pngData() {
+//                MultipartFormData.append(profile, withName: "img", fileName: "profile.jpg", mimeType: "image/jpg")
+//            }
+//        }, to: url,
+//                  method: .patch, headers: ["Content-Type":"multipart/form-data", "atk": KeychainSwift().get("accessToken") ?? ""]).responseDecodable(of: ChangeInfoResponse.self){ response in
+//            print(response)
+//            switch response.result {
+//            case .success(let result):
+//                // 성공적으로 디코드한 데이터를 처리
+//                print("프로필 변경 결과: \(result.message)")
+//                completion(.success(result))
+//            case .failure(let error):
+//                completion(.failure(error))
+//            }
+//        }
+//    }
     
     func changeAge(age: Int,completion: @escaping (Result<ChangeInfoResponse, Error>) -> Void){
         let url = "https://bareuni.shop/mypage/users"

@@ -64,7 +64,7 @@ struct MyInfoView: View {
                 
             }.padding(.top, 50)
             
-            Text(userInfo.user?.nickname ?? "안됨").font(.custom("Pretendard-SemiBold", size: 16)).padding(.top, 8)
+            Text(userInfo.user?.nickname ?? "").font(.custom("Pretendard-SemiBold", size: 16)).padding(.top, 8)
             
             HStack{
                 Text("내 정보").font(.custom("Pretendard-Medium", size: 14)).foregroundColor(Color(UIColor(red: 0.561, green: 0.561, blue: 0.561, alpha: 1))).padding(.leading, 24)
