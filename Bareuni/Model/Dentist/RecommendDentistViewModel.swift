@@ -14,6 +14,7 @@ class RecommendDentistViewModel: ObservableObject {
     @Published var recommendedDentists = [RecommendDentist]()
     private let provider = MoyaProvider<DentistAPI>()
     @Published var selectedCities = [String]()
+    @Published var isSuccess = true
     
     init() {
 //        fetchRecommendedDentists()
@@ -27,8 +28,10 @@ class RecommendDentistViewModel: ObservableObject {
                 do {
                     let recommendDentistResponse = try response.map(RecommendDentistResponse.self)
                     self.recommendedDentists = recommendDentistResponse.result
+                    self.isSuccess = true
                 } catch {
                     print("Error parsing response: \(error)")
+                    self.isSuccess = false
                 }
                 
             case let .failure(error):
