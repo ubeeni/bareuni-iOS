@@ -63,8 +63,7 @@ struct WritePostView: View {
             }
             .padding(.horizontal, 20)
             .padding(.top, 15)
-            .padding(.bottom, 200)
-            Spacer()
+            .padding(.bottom, 20)
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()

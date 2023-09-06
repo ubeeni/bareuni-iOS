@@ -10,6 +10,8 @@
 		100281FD2AA6369F00B87F63 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100281FC2AA6369F00B87F63 /* DetailViewModel.swift */; };
 		100282092AA7A4D300B87F63 /* NearDentistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100282082AA7A4D300B87F63 /* NearDentistViewModel.swift */; };
 		1002820B2AA7AEE700B87F63 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002820A2AA7AEE700B87F63 /* HideKeyboardExtension.swift */; };
+		1002820D2AA7B4C100B87F63 /* DeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002820C2AA7B4C100B87F63 /* DeleteModel.swift */; };
+		1002820F2AA7B58500B87F63 /* DeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002820E2AA7B58500B87F63 /* DeleteViewModel.swift */; };
 		100DC1A02AA3389F00D06291 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DC19F2AA3389F00D06291 /* APIManager.swift */; };
 		100DC1A22AA3B22800D06291 /* CommunityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DC1A12AA3B22800D06291 /* CommunityModel.swift */; };
 		100DC1A42AA3B32F00D06291 /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DC1A32AA3B32F00D06291 /* CommunityViewModel.swift */; };
@@ -158,6 +160,8 @@
 		100281FC2AA6369F00B87F63 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		100282082AA7A4D300B87F63 /* NearDentistViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearDentistViewModel.swift; sourceTree = "<group>"; };
 		1002820A2AA7AEE700B87F63 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
+		1002820C2AA7B4C100B87F63 /* DeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteModel.swift; sourceTree = "<group>"; };
+		1002820E2AA7B58500B87F63 /* DeleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteViewModel.swift; sourceTree = "<group>"; };
 		100DC19F2AA3389F00D06291 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		100DC1A12AA3B22800D06291 /* CommunityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityModel.swift; sourceTree = "<group>"; };
 		100DC1A32AA3B32F00D06291 /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
@@ -411,6 +415,8 @@
 				100DC1A12AA3B22800D06291 /* CommunityModel.swift */,
 				100DC1A32AA3B32F00D06291 /* CommunityViewModel.swift */,
 				100281FC2AA6369F00B87F63 /* DetailViewModel.swift */,
+				1002820C2AA7B4C100B87F63 /* DeleteModel.swift */,
+				1002820E2AA7B58500B87F63 /* DeleteViewModel.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -853,6 +859,7 @@
 				10E125BB2A8DEAA000A2805C /* HomeView.swift in Sources */,
 				3BCB5C282A9C56CE00F58C50 /* MoyaAPIManager.swift in Sources */,
 				3BCB5BB62A9470B200F58C50 /* ReviewViewModel.swift in Sources */,
+				1002820D2AA7B4C100B87F63 /* DeleteModel.swift in Sources */,
 				3BCB5B722A83E96700F58C50 /* CityDictionary.swift in Sources */,
 				3BCB5C672A9C835100F58C50 /* RecommendDentistModel.swift in Sources */,
 				32EB16BC2A6922430050F45F /* EmailAuthViewController.swift in Sources */,
@@ -867,6 +874,7 @@
 				3B5AF6552A72B5B000A94BF1 /* ConsultingView.swift in Sources */,
 				327394412A876370001A739E /* FontManager.swift in Sources */,
 				32EB16D52A6E4AB80050F45F /* DetailedProfileSettingViewController.swift in Sources */,
+				1002820F2AA7B58500B87F63 /* DeleteViewModel.swift in Sources */,
 				100DC1A22AA3B22800D06291 /* CommunityModel.swift in Sources */,
 				321B89722A60351E00AE45D4 /* loginViewController.swift in Sources */,
 				32A5E6C92A557A1800B41644 /* AppDelegate.swift in Sources */,

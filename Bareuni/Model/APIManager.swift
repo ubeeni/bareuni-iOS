@@ -15,6 +15,7 @@ enum BareuniAPI {
     case getCommunity
     case getCommunityDetail
     case postWrite(content: String)
+    case deletePost
 }
 
 extension BareuniAPI: TargetType {
@@ -34,6 +35,8 @@ extension BareuniAPI: TargetType {
             return "community/{communityIdx}"
         case .postWrite:
             return "community"
+        case .deletePost:
+            return "/community/{communityIdx}"
         }
     }
     
@@ -49,6 +52,8 @@ extension BareuniAPI: TargetType {
             return .get
         case .postWrite:
             return .post
+        case .deletePost:
+            return .delete
         }
     }
     
@@ -63,6 +68,8 @@ extension BareuniAPI: TargetType {
         case .getCommunityDetail:
             return Data()
         case .postWrite:
+            return Data()
+        case .deletePost:
             return Data()
         }
     }
@@ -80,6 +87,8 @@ extension BareuniAPI: TargetType {
         case .postWrite(let content):
             let parameters: [String: Any] = ["content": content]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .deletePost:
+            return .requestPlain
         }
     }
     
@@ -90,14 +99,16 @@ extension BareuniAPI: TargetType {
         case .getBestCommunity:
             return nil
         case .getCommunity:
-            return ["Content-Type": "application/json",
-                    "Accept": "application/json",
-                    "atk": KeychainSwift().get("accessToken") ?? ""]
+            return nil
         case .getCommunityDetail:
             return ["Content-Type": "application/json",
                     "Accept": "application/json",
                     "atk": KeychainSwift().get("accessToken") ?? ""]
         case .postWrite:
+            return ["Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "atk": KeychainSwift().get("accessToken") ?? ""]
+        case .deletePost:
             return ["Content-Type": "application/json",
                     "Accept": "application/json",
                     "atk": KeychainSwift().get("accessToken") ?? ""]

@@ -170,7 +170,7 @@ struct PostDetailView: View {
                                 // 글 수정하기 버튼 눌렀을 때 동작 추가
                             }),
                             .destructive(Text("삭제하기"), action: {
-                                // 글 삭제하기 버튼 눌렀을 때 동작 추가
+                                //deleteviewModel.deletePost()
                             }),
                             .cancel(Text("취소"))
                         ]
