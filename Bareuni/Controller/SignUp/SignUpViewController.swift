@@ -22,6 +22,8 @@ class SignUpViewController: UIViewController {
         
         nextBtn.isEnabled = false
         self.setBackBtn()
+        
+        emailTF.delegate = self
     }
     
     
@@ -84,5 +86,10 @@ class SignUpViewController: UIViewController {
         let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", regex)
         return emailTest.evaluate(with: email)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newLength = (textField.text?.count)! + string.count - range.length
+            return !(newLength > 254)
     }
 }
