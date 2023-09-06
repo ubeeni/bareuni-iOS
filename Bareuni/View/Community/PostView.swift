@@ -75,8 +75,14 @@ func formatDate(_ dateString: String) -> String {
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     
     if let date = dateFormatter.date(from: dateString) {
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        return dateFormatter.string(from: date)
+        let calendar = Calendar.current
+        if calendar.isDateInToday(date) {
+            dateFormatter.dateFormat = "MM.dd HH:mm"
+            return dateFormatter.string(from: date)
+        } else {
+            dateFormatter.dateFormat = "yyyy.MM.dd"
+            return dateFormatter.string(from: date)
+        }
     } else {
         return "Invalid Date"
     }
