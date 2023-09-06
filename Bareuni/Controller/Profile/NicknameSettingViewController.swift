@@ -33,6 +33,8 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
         
         nicknameTextField.delegate = self
         
+        self.hideKeyboardWhenTappedAround() 
+        
         
     }
     let picker = UIImagePickerController()

@@ -24,6 +24,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.setBackBtn()
         
         emailTF.delegate = self
+        self.hideKeyboardWhenTappedAround() 
     }
     
     

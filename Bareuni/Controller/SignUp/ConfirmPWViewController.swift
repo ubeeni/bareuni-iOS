@@ -22,6 +22,8 @@ class ConfirmPWViewController: UIViewController, UITextFieldDelegate{
         
         pwTextField.delegate = self
         anotherPWTextField.delegate = self
+        
+        self.hideKeyboardWhenTappedAround() 
     }
     
     @IBAction func nextBtnDidTap(_ sender: Any) {

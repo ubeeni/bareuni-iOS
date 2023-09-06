@@ -50,7 +50,6 @@ class MypageAPI: ObservableObject{
             switch response.result {
             case .success(let result):
                 // 성공적으로 디코드한 데이터를 처리
-                print("닉네임 변경 결과: \(result.message)")
                 completion(.success(result))
             case .failure(let error):
                 completion(.failure(error))
@@ -96,7 +95,6 @@ class MypageAPI: ObservableObject{
             switch response.result {
             case .success(let result):
                 // 성공적으로 디코드한 데이터를 처리
-                print("닉네임 변경 결과: \(result.message)")
                 completion(.success(result))
             case .failure(let error):
                 completion(.failure(error))
@@ -118,7 +116,6 @@ class MypageAPI: ObservableObject{
             switch response.result {
             case .success(let result):
                 // 성공적으로 디코드한 데이터를 처리
-                print("닉네임 변경 결과: \(result.message)")
                 completion(.success(result))
             case .failure(let error):
                 completion(.failure(error))
@@ -141,7 +138,6 @@ class MypageAPI: ObservableObject{
             switch response.result {
             case .success(let result):
                 // 성공적으로 디코드한 데이터를 처리
-                print("닉네임 변경 결과: \(result.message)")
                 completion(.success(result))
             case .failure(let error):
                 completion(.failure(error))

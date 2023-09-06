@@ -20,6 +20,7 @@ class FindPWViewController: UIViewController {
         confirmBtn.backgroundColor = UIColor(red: 0.821, green: 0.821, blue: 0.821, alpha: 1)
         confirmBtn.layer.cornerRadius = 12
         self.setBackBtn()
+        self.hideKeyboardWhenTappedAround() 
         
     }
     
@@ -86,4 +87,19 @@ extension UITextField {
         let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])(?=.*[0-9])[A-Za-z\\d$@$!%*?&]{8,64}"
         return  NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: str)
     }
+}
+
+// 키보드 숨기기
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+
+    }
+
 }

@@ -17,6 +17,8 @@ class TermsOfServiceViewController: UIViewController {
         nextBtn.changeDisabledState()
         serviceAgreeBtn.backgroundColor = .none
         self.setBackBtn()
+        
+        self.hideKeyboardWhenTappedAround() 
     }
     
     
