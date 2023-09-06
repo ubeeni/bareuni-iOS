@@ -11,7 +11,7 @@ struct InfoView: View {
     
     @State var tabIndex = 0
     @StateObject var dentistInfo = DentistViewModel()
-    @ObservedObject var recommendDentistViewModel: RecommendDentistViewModel
+    @StateObject var recommendDentistViewModel: RecommendDentistViewModel
     @Environment(\.presentationMode) var presentationMode
     
     
@@ -53,6 +53,7 @@ struct InfoView: View {
                     
                     Button(action: {
                         print(recommendDentistViewModel.selectedCities)
+                        print(recommendDentistViewModel.isSuccess)
                     }, label: {
                         Text("보기")
                     })
@@ -67,6 +68,10 @@ struct InfoView: View {
                             Button(action: {
                                 recommendDentistViewModel.selectedCities.removeAll { $0 == city }
                                 recommendDentistViewModel.fetchRecommendedDentists()
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                    print(recommendDentistViewModel.isSuccess)
+                                }
                             }, label: {
                                 Image("Cancel")
                             })
@@ -89,14 +94,20 @@ struct InfoView: View {
             
             if tabIndex == 0 {
                 Spacer().frame(height: 0)
-                ScrollView(showsIndicators: false) {
-                    VStack {
-                        ForEach(recommendDentistViewModel.recommendedDentists){ dentist in
-                            recommendedDentistView(dentist: dentist)
-                            Spacer().frame(height: 23)
+                
+                    ScrollView(showsIndicators: false) {
+                        VStack {
+                            if recommendDentistViewModel.isSuccess == false {
+                                Text("치과 없음")
+                            }
+                            else{
+                                ForEach(recommendDentistViewModel.recommendedDentists){ dentist in
+                                    recommendedDentistView(dentist: dentist)
+                                    Spacer().frame(height: 23)
+                                }
+                            }
                         }
                     }
-                }
             }
             else if tabIndex == 1 {
                 Spacer().frame(height: 0)
@@ -969,6 +980,7 @@ struct SearchView: View {
     @State var tabIndex = 0
     
     @StateObject var searchDentistViewModel = SearchDentistViewModel()
+    @StateObject var searchReviewViewModel = SearchReviewViewModel()
     
     var body: some View {
         NavigationView {
@@ -992,29 +1004,77 @@ struct SearchView: View {
                         CustomTopTabBar3(tabIndex: $tabIndex)
                         
                         if tabIndex == 0 {
-                            Text("치과 리뷰")
+
+                            List{
+                                if searchReviewViewModel.isSuccess == false {
+                                    Text("검색결과 없음")
+                                }
+                                else{
+                                    ForEach(searchReviewViewModel.searchReviews, id: \.self){ review in
+//                                        VStack{
+//                                            Text(dentist.hosName)
+//                                            HStack{
+//                                                Text(String(dentist.score))
+//                                                Text(String(dentist.reviewCnt))
+//                                            }
+//                                            Text(dentist.address)
+//                                        }
+                                        Text(review.content)
+                                    }
+                                }
+                            }.listStyle(.plain)
+                                .onChange(of: searchText) { newKeyword in
+                                    // When keyword changes, fetch the data
+                                    searchReviewViewModel.keyword = newKeyword
+                                    searchReviewViewModel.fetchSearchReviews()
+                                    print(searchText)
+                                    print(searchDentistViewModel.keyword)
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                        print(searchReviewViewModel.isSuccess)
+                                        print(searchReviewViewModel.searchReviews.count)
+                                    }
+                                    
+                                }
+                            //                            }
                         }
                         else if tabIndex == 1 {
-                            Text("치과명")
+                            
+                            //                            if searchDentistViewModel.isSuccess == false {
+                            //                                Text("검색결과 없음")
+                            //                            }
+                            //
+                            //                            else{
+                            List{
+                                if searchDentistViewModel.isSuccess == false {
+                                    Text("검색결과 없음")
+                                }
+                                else{
+                                    ForEach(searchDentistViewModel.searchDentists, id: \.self){ dentist in
+                                        VStack{
+                                            Text(dentist.hosName)
+                                            HStack{
+                                                Text(String(dentist.score))
+                                                Text(String(dentist.reviewCnt))
+                                            }
+                                            Text(dentist.address)
+                                        }
+                                    }
+                                }
+                            }.listStyle(.plain)
+                                .onChange(of: searchText) { newKeyword in
+                                    // When keyword changes, fetch the data
+                                    searchDentistViewModel.keyword = newKeyword
+                                    searchDentistViewModel.fetchSearchDentists()
+                                    print(searchText)
+                                    print(searchDentistViewModel.keyword)
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                        print(searchDentistViewModel.isSuccess)
+                                        print(searchDentistViewModel.searchDentists.count)
+                                    }
+                                    
+                                }
+                            //                            }
                         }
-                        //                        List {
-                        //                            ForEach(array.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {searchText in
-                        //
-                        //                                ZStack(alignment: .leading) {
-                        //                                    Rectangle().foregroundColor(Color(red: 0.96, green: 0.96, blue: 0.96)).cornerRadius(8).frame(height: 55)
-                        //
-                        //                                    HStack {
-                        //                                        Image(systemName: "person.circle.fill").resizable().frame(width: 37, height: 37)
-                        //                                        Text(searchText)
-                        //                                    }.listRowSeparator(.hidden)
-                        //                                }.listRowSeparator(.hidden)
-                        //                            }.listRowInsets(EdgeInsets(top: 0, leading: 12, bottom: 12, trailing: 12))
-                        //                        } //리스트의 스타일 수정
-                        //                        .listStyle(PlainListStyle())
-                        //                        //화면 터치시 키보드 숨김
-                        //                        .onTapGesture {
-                        //                            hideKeyboard()
-                        //                        }
                     }
                     else {
                         VStack(alignment: .leading) {
@@ -1027,23 +1087,6 @@ struct SearchView: View {
                                 .kerning(0.2)
                                 .foregroundColor(.black)
                             
-                            //                            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 4), spacing: 8) {
-                            //                                ForEach(items, id: \.self) { item in
-                            //                                    Button(action: {
-                            //                                        searchText = item
-                            //                                    }, label: {
-                            //                                        Text(item)
-                            //                                            .font(Font.custom("Pretendard", size: 16))
-                            //                                            .kerning(0.2)
-                            //                                            .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
-                            //                                            .padding(8) // Apply padding around each item
-                            //                                            .overlay(
-                            //                                                RoundedRectangle(cornerRadius: 24)
-                            //                                                    .stroke(Color(red: 0.62, green: 0.62, blue: 0.62), lineWidth: 0.5)
-                            //                                            )
-                            //                                    })
-                            //                                }
-                            //                            }
                             LazyVGrid(columns: columns,
                                       alignment: .center,
                                       spacing: 8) {

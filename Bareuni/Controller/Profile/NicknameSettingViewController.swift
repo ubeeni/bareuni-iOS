@@ -11,6 +11,8 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
     var signUpData: SignUpRequest?
     var isImageChanged: Bool = false
     
+    @IBOutlet weak var warningLb: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +35,8 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
         
         nicknameTextField.delegate = self
         
+        self.hideKeyboardWhenTappedAround() 
+        
         
     }
     let picker = UIImagePickerController()
@@ -49,7 +53,23 @@ class NicknameSettingViewController: UIViewController, UITextFieldDelegate, UIIm
         }
         signUpData?.nickname = nicknameTextField.text!
         nextVC!.signUpData = signUpData
-        self.navigationController?.pushViewController(nextVC!, animated: true)
+        
+        LoginAPI.shared.checkNickname(nickname: nicknameTextField.text!, completion: {
+            result in
+            switch result{
+            case .success(let response):
+                print("닉네임 중복 체크: \(response.message)")
+                if response.code == 2019 {
+                    self.navigationController?.pushViewController(nextVC!, animated: true)
+
+                }
+                else if response.code == 1000{
+                    self.warningLb.isHidden = false
+                }
+            case .failure(let error):
+                print("닉네임 중복 에러: \(error)")
+            }
+        })
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

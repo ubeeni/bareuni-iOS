@@ -9,6 +9,9 @@ import SwiftUI
 import KeychainSwift
 
 struct MyPageMainView: View {
+    
+    @ObservedObject var userInfo = MyPageUserViewModel() // 사용자 정보를 저장하는 속성
+
     var body: some View {
         NavigationView {
             VStack{
@@ -20,13 +23,13 @@ struct MyPageMainView: View {
                         .padding(.leading, 13)
                     
                     VStack(alignment: .leading, spacing: 6){
-                        Text("바른이").font(.custom("Pretendard-SemiBold", size: 18))
-                        Text("교정 0").font(.custom("Pretendard-Medium", size: 13)).foregroundColor(Color(UIColor(red: 0.583, green: 0.583, blue: 0.583, alpha: 1)))
+                        Text(userInfo.user?.nickname ?? "").font(.custom("Pretendard-SemiBold", size: 18))
+                        Text(userInfo.user?.ortho ?? false ? "교정 O" : "교정 X").font(.custom("Pretendard-Medium", size: 13)).foregroundColor(Color(UIColor(red: 0.583, green: 0.583, blue: 0.583, alpha: 1)))
                         
-                        Text("5,000p").font(.custom("Pretendard-Medium", size: 13)).foregroundColor(Color(UIColor(red: 0.469, green: 0.751, blue: 0.954, alpha: 1)))
+                        Text("6,000p").font(.custom("Pretendard-Medium", size: 13)).foregroundColor(Color(UIColor(red: 0.469, green: 0.751, blue: 0.954, alpha: 1)))
                     }
                     Spacer()
-                    NavigationLink(destination: MyInfoView()) { // $ 표시로 Binding으로 전달
+                    NavigationLink(destination: MyInfoView().environmentObject(userInfo)) { // $ 표시로 Binding으로 전달
                         Text("내 정보 수정").font(.custom("Pretendard-Medium", size: 12)).foregroundColor(Color(UIColor(red: 0.442, green: 0.442, blue: 0.442, alpha: 1))).frame(width: 73, height: 25).background(Color(UIColor(red: 0.913, green: 0.913, blue: 0.913, alpha: 1)))
                             .cornerRadius(8).padding(.trailing, 13)
                     }

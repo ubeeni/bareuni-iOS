@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChangingNicknameView: View {
-    @ObservedObject var userInfo = MyPageUserViewModel() // 사용자 정보를 저장하는 속성
+    @EnvironmentObject var userInfo: MyPageUserViewModel // 사용자 정보를 저장하는 속성
     @State private var isNickNameExisted = false
     @State var newNickname = ""
     @State var isEditing = false
@@ -51,16 +51,33 @@ struct ChangingNicknameView: View {
             
             
             Button(action: {
-                MypageAPI.shared.changeNickname(nickname: newNickname, completion: {
+                LoginAPI.shared.checkNickname(nickname: newNickname, completion: { // 닉네임 중복체크 API
                     result in
                     switch result{
                     case .success(let response):
-                        print(response.message)
-                        dismiss()
+                        print("닉네임 중복 체크: \(response.message)")
+                        if response.code == 2019 { // 중복되지 않을 때 닉네임 변경 API 호출
+                            
+                            MypageAPI.shared.changeNickname(nickname: newNickname, completion: { // 닉네임 변경 API
+                                result in
+                                switch result{
+                                case .success(let response):
+
+                                    userInfo.user!.nickname = newNickname
+                                    dismiss()
+                                case .failure(let error):
+                                    print("닉네임 변경: \(error)")
+                                }
+                            })
+                        }
+                        else if response.code == 1000{ // 닉네임 중복될 때
+                            isNickNameExisted = true
+                        }
                     case .failure(let error):
-                        print("닉네임 변경: \(error)")
+                        print("닉네임 중복 에러: \(error)")
                     }
                 })
+                
                 
             }, label: {
                     ZStack {
