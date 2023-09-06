@@ -43,6 +43,7 @@ class MyPageUserViewModel: ObservableObject {
             case .success(let result):
                 // 성공적으로 디코드한 데이터를 처리
                 completion(.success(result))
+                print("유저 정보 가져와짐")
             case .failure(let error):
                 completion(.failure(error))
             }

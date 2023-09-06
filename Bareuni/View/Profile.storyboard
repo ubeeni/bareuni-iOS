@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OWh-v3-HIo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OWh-v3-HIo">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -159,6 +158,12 @@
                                     <action selector="profileImgSelectiBtnDidTap:" destination="QMl-IL-dW5" eventType="touchUpInside" id="tTU-8E-yzA"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 존재하는 닉네임입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66a-Ww-0b5">
+                                <rect key="frame" x="36" y="441" width="133.66666666666666" height="14"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Ia-Aa-rCQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -168,6 +173,8 @@
                             <constraint firstItem="hzE-Ke-yc4" firstAttribute="trailing" secondItem="Kac-QV-AAc" secondAttribute="trailing" id="8X6-zL-ULn"/>
                             <constraint firstItem="KsC-6G-DcO" firstAttribute="top" secondItem="Bfi-Zd-sDF" secondAttribute="bottom" constant="31" id="8tu-q9-SC4"/>
                             <constraint firstItem="KsC-6G-DcO" firstAttribute="leading" secondItem="9Ia-Aa-rCQ" secondAttribute="leading" constant="32" id="M67-sl-OGI"/>
+                            <constraint firstItem="66a-Ww-0b5" firstAttribute="leading" secondItem="ksQ-Ry-2iD" secondAttribute="leading" constant="36" id="PNv-VI-Heg"/>
+                            <constraint firstItem="66a-Ww-0b5" firstAttribute="top" secondItem="Bfi-Zd-sDF" secondAttribute="bottom" constant="8" id="Pto-XI-XRF"/>
                             <constraint firstItem="d4U-li-jze" firstAttribute="trailing" secondItem="Bfi-Zd-sDF" secondAttribute="trailing" constant="-18" id="Umu-Cm-oMl"/>
                             <constraint firstItem="Bfi-Zd-sDF" firstAttribute="leading" secondItem="9Ia-Aa-rCQ" secondAttribute="leading" constant="24" id="XPw-Fm-tHc"/>
                             <constraint firstAttribute="trailing" secondItem="KsC-6G-DcO" secondAttribute="trailing" constant="32" id="YMX-ee-tGt"/>
@@ -187,6 +194,7 @@
                         <outlet property="nextBtn" destination="XqT-XM-wsF" id="EWh-NQ-G28"/>
                         <outlet property="nicknameTextField" destination="Bfi-Zd-sDF" id="CIV-el-xD0"/>
                         <outlet property="profileImageView" destination="Kac-QV-AAc" id="1lp-Wh-5JE"/>
+                        <outlet property="warningLb" destination="66a-Ww-0b5" id="H41-mF-tAS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmZ-eG-X7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -576,6 +584,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

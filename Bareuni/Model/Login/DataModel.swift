@@ -82,10 +82,11 @@ struct VerifyEmailResponse: Codable {
     let result: String?
 }
 
-struct GeneralResponse: Codable{
+struct CheckNicknameResponse: Codable{
     let isSuccess: Bool
     let code: Int
-    let message, result: String
+    let message: String
+    let result: Bool?
 }
 struct LogoutResponse: Codable{
     let isSuccess: Bool

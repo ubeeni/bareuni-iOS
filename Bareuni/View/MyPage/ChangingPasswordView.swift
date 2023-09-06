@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ChangingPasswordView: View {
     @Environment(\.dismiss) var dismiss
@@ -84,7 +85,7 @@ struct ChangingPasswordView: View {
                     }).padding(.bottom, 12)
                 }.padding(.top, 15).padding(.leading, 5)
                 
-                Text("i.영문, 숫자, 특수문자를 모두 포함하여 8~20자로 입력해주세요.")
+                Text("i.영문자(대,소문자), 숫자, 특수문자를 포함하여 8자 이상, 64자 이하 비밀번호를 입력해주세요.")
                   .font(Font.custom("Pretendard", size: 12))
                   .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62)).lineLimit(2).padding(.leading, 5)
                 
@@ -116,6 +117,7 @@ struct ChangingPasswordView: View {
             }.padding(.top, 50)
             
             Button(action: {
+                
                 MypageAPI.shared.changePassword(currentPW: currentPW, newPW: newPW, completion: {
                     result in
                     switch result{
@@ -163,7 +165,7 @@ extension String {
         }
     }
     func validatePassword() -> Bool {
-        let regex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}"
+        let regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])(?=.*[0-9])[A-Za-z\\d$@$!%*?&]{8,64}"
         
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)
     }
@@ -196,3 +198,4 @@ struct ChangingPasswordView_Previews: PreviewProvider {
         ChangingPasswordView()
     }
 }
+
