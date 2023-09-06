@@ -19,6 +19,9 @@ class ConfirmPWViewController: UIViewController, UITextFieldDelegate{
         nextBtn.layer.cornerRadius = 12
         nextBtn.changeDisabledState()
         self.setBackBtn()
+        
+        pwTextField.delegate = self
+        anotherPWTextField.delegate = self
     }
     
     @IBAction func nextBtnDidTap(_ sender: Any) {
@@ -81,6 +84,10 @@ class ConfirmPWViewController: UIViewController, UITextFieldDelegate{
 
         }
         
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newLength = (textField.text?.count)! + string.count - range.length
+            return !(newLength > 64)
     }
     
 }

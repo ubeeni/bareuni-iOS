@@ -83,7 +83,7 @@ extension UITextField {
     public func checkPW() -> Bool {
         // 최소 8자, 최소 하나의 문자 및 하나의 숫자
         let str =  self.text
-        let passwordRegex = "(?=.*[A-Za-z])(?=.*[0-9]).{8,20}"
+        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])(?=.*[0-9])[A-Za-z\\d$@$!%*?&]{8,64}"
         return  NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: str)
     }
 }
