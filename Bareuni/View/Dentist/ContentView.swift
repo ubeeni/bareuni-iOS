@@ -19,7 +19,7 @@ struct LocationView: View {
     @State var tabIndex = "서울"
     @State var tabIndex2 = ""
     @State var isSelected = false
-    @ObservedObject var recommendDentistViewModel = RecommendDentistViewModel()
+    @StateObject var recommendDentistViewModel = RecommendDentistViewModel()
     
     let cityDic = CityDictionary().cityDic
     let cityList = CityDictionary().cityList
@@ -113,6 +113,7 @@ struct LocationView: View {
                     .simultaneousGesture(TapGesture().onEnded{//나중에 없앨 코드
                         print(recommendDentistViewModel.selectedCities)
                         recommendDentistViewModel.fetchRecommendedDentists()
+//                        recommendDentistViewModel.isSuccess = true
                         })
             }
         }//navigationview
