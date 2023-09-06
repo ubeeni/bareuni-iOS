@@ -225,7 +225,7 @@ struct LoginAPI{
     func deleteUser( completion: @escaping (Result<DeleteUserResponse, Error>) -> Void){
         let url = "https://bareuni.shop/users/delete"
         AF.request(url,
-                   method: .post,
+                   method: .delete,
                    encoding: JSONEncoding(options: []),
                    headers: ["Content-Type":"application/json", "Accept":"application/json", "atk": KeychainSwift().get("accessToken")!])
         .responseDecodable(of: DeleteUserResponse.self){ response in
