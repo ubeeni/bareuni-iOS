@@ -113,8 +113,8 @@ struct LocationView: View {
                     .simultaneousGesture(TapGesture().onEnded{//나중에 없앨 코드
                         print(recommendDentistViewModel.selectedCities)
                         recommendDentistViewModel.fetchRecommendedDentists()
-//                        recommendDentistViewModel.isSuccess = true
-//                        recommendDentistViewModel.fetchNearDentists()
+                        recommendDentistViewModel.isSuccess1 = true
+                        recommendDentistViewModel.fetchNearDentists()
                         })
             }
         }//navigationview

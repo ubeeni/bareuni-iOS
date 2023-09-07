@@ -72,7 +72,7 @@ struct InfoView: View {
                                 recommendDentistViewModel.fetchRecommendedDentists()
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                    print(recommendDentistViewModel.isSuccess)
+                                    print(recommendDentistViewModel.isSuccess1)
                                 }
                             }, label: {
                                 Image("Cancel")
@@ -99,7 +99,7 @@ struct InfoView: View {
                 
                     ScrollView(showsIndicators: false) {
                         VStack {
-                            if recommendDentistViewModel.isSuccess == false {
+                            if recommendDentistViewModel.isSuccess1 == false {
                                 Text("치과 없음")
                             }
                             else{

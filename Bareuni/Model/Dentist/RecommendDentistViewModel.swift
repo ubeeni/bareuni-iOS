@@ -15,7 +15,8 @@ class RecommendDentistViewModel: NSObject, ObservableObject, CLLocationManagerDe
     @Published var recommendedDentists = [RecommendDentist]()
     private let provider = MoyaProvider<DentistAPI>()
     @Published var selectedCities = [String]()
-    @Published var isSuccess = true
+    @Published var isSuccess1 = true
+    @Published var isSuccess2 = true
     
     private var locationManager = CLLocationManager()
     
@@ -39,10 +40,10 @@ class RecommendDentistViewModel: NSObject, ObservableObject, CLLocationManagerDe
                 do {
                     let recommendDentistResponse = try response.map(RecommendDentistResponse.self)
                     self.recommendedDentists = recommendDentistResponse.result
-                    self.isSuccess = true
+                    self.isSuccess1 = true
                 } catch {
                     print("Error parsing response: \(error)")
-                    self.isSuccess = false
+                    self.isSuccess1 = false
                 }
                 
             case let .failure(error):
