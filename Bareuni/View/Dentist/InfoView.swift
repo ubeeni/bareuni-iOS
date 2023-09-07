@@ -979,8 +979,9 @@ struct SearchView: View {
     
     @State var tabIndex = 0
     
-    @StateObject var searchDentistViewModel = SearchDentistViewModel()
-    @StateObject var searchReviewViewModel = SearchReviewViewModel()
+//    @StateObject var searchDentistViewModel = SearchDentistViewModel()
+//    @StateObject var searchReviewViewModel = SearchReviewViewModel()
+    @StateObject var searchViewModel = SearchViewModel()
     
     var body: some View {
         NavigationView {
@@ -1006,11 +1007,11 @@ struct SearchView: View {
                         if tabIndex == 0 {
 
                             List{
-                                if searchReviewViewModel.isSuccess == false {
+                                if searchViewModel.isSuccessReview == false {
                                     Text("검색결과 없음")
                                 }
                                 else{
-                                    ForEach(searchReviewViewModel.searchReviews, id: \.self){ review in
+                                    ForEach(searchViewModel.searchReviews, id: \.id){ review in
 //                                        VStack{
 //                                            Text(dentist.hosName)
 //                                            HStack{
@@ -1025,13 +1026,14 @@ struct SearchView: View {
                             }.listStyle(.plain)
                                 .onChange(of: searchText) { newKeyword in
                                     // When keyword changes, fetch the data
-                                    searchReviewViewModel.keyword = newKeyword
-                                    searchReviewViewModel.fetchSearchReviews()
+                                    searchViewModel.keyword = newKeyword
+                                    searchViewModel.fetchSearchReviews()
+                                    searchViewModel.fetchSearchDentists()
                                     print(searchText)
-                                    print(searchDentistViewModel.keyword)
+                                    print(searchViewModel.keyword)
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        print(searchReviewViewModel.isSuccess)
-                                        print(searchReviewViewModel.searchReviews.count)
+                                        print(searchViewModel.isSuccessReview)
+                                        print(searchViewModel.searchReviews.count)
                                     }
                                     
                                 }
@@ -1045,11 +1047,11 @@ struct SearchView: View {
                             //
                             //                            else{
                             List{
-                                if searchDentistViewModel.isSuccess == false {
+                                if searchViewModel.isSuccessDentist == false {
                                     Text("검색결과 없음")
                                 }
                                 else{
-                                    ForEach(searchDentistViewModel.searchDentists, id: \.self){ dentist in
+                                    ForEach(searchViewModel.searchDentists, id: \.self){ dentist in
                                         VStack{
                                             Text(dentist.hosName)
                                             HStack{
@@ -1063,13 +1065,14 @@ struct SearchView: View {
                             }.listStyle(.plain)
                                 .onChange(of: searchText) { newKeyword in
                                     // When keyword changes, fetch the data
-                                    searchDentistViewModel.keyword = newKeyword
-                                    searchDentistViewModel.fetchSearchDentists()
+                                    searchViewModel.keyword = newKeyword
+                                    searchViewModel.fetchSearchDentists()
+                                    searchViewModel.fetchSearchReviews()
                                     print(searchText)
-                                    print(searchDentistViewModel.keyword)
+                                    print(searchViewModel.keyword)
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        print(searchDentistViewModel.isSuccess)
-                                        print(searchDentistViewModel.searchDentists.count)
+                                        print(searchViewModel.isSuccessDentist)
+                                        print(searchViewModel.searchDentists.count)
                                     }
                                     
                                 }

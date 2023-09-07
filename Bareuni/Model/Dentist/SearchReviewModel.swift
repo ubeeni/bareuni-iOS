@@ -16,12 +16,12 @@ struct SearchReviewResponse: Codable {
 }
 
 // MARK: - Result
-struct SearchReview: Codable, Hashable, Identifiable, Equatable {
+struct SearchReview: Codable, Identifiable {
     let reviewIdx: Int64
     let hospitalIdx: Int64
     let createdAt: String
 //    let updatedAt: JSONNull?
-//    let user: SearchReviewUser
+    let user: SearchReviewUser
     let content: String
     let totalScore: Int
     let receipt: Bool
