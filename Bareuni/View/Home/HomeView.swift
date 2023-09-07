@@ -41,9 +41,10 @@ struct HomeView: View {
                                 .foregroundColor(.black)
                                 .padding(.leading, 20)
                             
+                            /*
                             Image("Expand_right")
                                 .frame(width: 22, height: 22)
-                            
+                            */
                             Spacer()
                         }
                     })
@@ -90,9 +91,10 @@ struct HomeView: View {
                             
                             Image("Fire")
                                 .frame(width: 27, height: 27)
+                            /*
                             Image("Expand_right")
                                 .frame(width: 22, height: 22)
-                            
+                            */
                             Spacer()
                         }
                         .padding(.top, 10)
@@ -150,7 +152,7 @@ struct DentistCell: View {
         VStack {
             HStack {
                 ZStack(alignment: .topLeading) {
-                    Image(dentist.image)
+                    Image(dentist.images)
                         .resizable()
                         .frame(width: 87, height: 86)
                         .cornerRadius(10)
