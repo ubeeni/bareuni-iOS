@@ -114,6 +114,7 @@ struct LocationView: View {
                         print(recommendDentistViewModel.selectedCities)
                         recommendDentistViewModel.fetchRecommendedDentists()
 //                        recommendDentistViewModel.isSuccess = true
+//                        recommendDentistViewModel.fetchNearDentists()
                         })
             }
         }//navigationview

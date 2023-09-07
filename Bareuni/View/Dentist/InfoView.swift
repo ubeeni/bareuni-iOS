@@ -52,10 +52,12 @@ struct InfoView: View {
                     
                     
                     Button(action: {
-                        print(recommendDentistViewModel.selectedCities)
-                        print(recommendDentistViewModel.isSuccess)
+//                        print(recommendDentistViewModel.selectedCities)
+//                        print(recommendDentistViewModel.isSuccess)
+                        recommendDentistViewModel.fetchNearDentists()
+                        print(recommendDentistViewModel.nearDentists)
                     }, label: {
-                        Text("보기")
+                        Text("지역")
                     })
                     
                     ForEach(recommendDentistViewModel.selectedCities, id: \.self){ city in
@@ -113,8 +115,8 @@ struct InfoView: View {
                 Spacer().frame(height: 0)
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        ForEach(recommendDentistViewModel.recommendedDentists){ dentist in
-                            recommendedDentistView(dentist: dentist)
+                        ForEach(recommendDentistViewModel.nearDentists){ dentist in
+                            nearDentistView(dentist: dentist)
                             Spacer().frame(height: 23)
                         }
                     }
@@ -405,8 +407,126 @@ struct recommendedDentistView:View {
 }
 
 struct nearDentistView:View {
+    
+    @State var dentist: RecommendDentist
+    @StateObject var detailDentist = DetailDentistViewModel()
+    @State var selectedHospitalIdx = 0
+    
     var body: some View{
-        Text("내 주변 치과 화면")
+        NavigationLink(destination: {
+            detailDentistView(dentist: $dentist, detailDentist: detailDentist, selectedHospitalIdx: $selectedHospitalIdx)
+        }, label: {
+            ZStack {
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 339, height: 203)
+                    .background(.white)
+                    .cornerRadius(14)
+                    .shadow(color: .black.opacity(0.1), radius: 6, x: 2, y: 2)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14)
+                            .inset(by: 0.25)
+                            .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
+                    )
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Spacer().frame(width: 23)
+                        Text(dentist.hosName)
+                            .font(
+                                Font.custom("Pretendard", size: 20)
+                                    .weight(.semibold)
+                            )
+                            .foregroundColor(.black)
+                            .padding(.top, 10)
+                        
+                        Spacer().frame(width: 8)
+                        
+                        Image("star")
+                            .padding(.top, 10)
+                        
+                        Text(String(dentist.score))
+                            .font(
+                                Font.custom("Pretendard", size: 12)
+                                    .weight(.medium)
+                            )
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color(red: 0.43, green: 0.43, blue: 0.43))
+                            .padding(.top, 10)
+                        
+                        Spacer()
+                        
+                        Image("Expand_right")
+                            .frame(width: 27, height: 27)
+                            .padding(.trailing, 12)
+                            .padding(.top, 10)
+                    }
+                    
+                    Text(dentist.summary)
+                        .font(
+                            Font.custom("Pretendard", size: 12)
+                                .weight(.medium)
+                        )
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color(red: 0.63, green: 0.63, blue: 0.63))
+                        .padding(.horizontal, 23)
+                    
+                    HStack {
+                        Spacer().frame(width: 23)
+                        Image("Pin_alt_light")
+                            .frame(width: 19, height: 19)
+                        
+                        Text(dentist.address)
+                            .font(
+                                Font.custom("Pretendard", size: 12)
+                                    .weight(.medium)
+                            )
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color(red: 0.43, green: 0.43, blue: 0.43))
+                    }
+                    
+                    HStack {
+                        Spacer().frame(width: 23)
+                        
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 108, height: 86)
+                            .padding(.trailing, 12)
+                            .background(
+                                Image("SampleImage" +  String(Int.random(in: 1...6)))
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 108, height: 86)
+                                    .clipped()
+                            )
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 108, height: 86)
+                            .background(
+                                Image("SampleImage" +  String(Int.random(in: 1...6)))
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 108, height: 86)
+                                    .clipped()
+                            )
+                    }
+                }
+            }
+            .frame(width: 339, height: 203)
+        })
+        .simultaneousGesture(TapGesture().onEnded{
+            
+//            print(dentist.hospitalIdx)
+//            selectedHospitalIdx = Int(dentist.hospitalIdx)
+            detailDentist.hospitalIdx = Int(dentist.hospitalIdx)
+            print(detailDentist.hospitalIdx)
+
+            detailDentist.fetchDetailDentists()
+//            detailDentist.updateHospitalIdx(newHospitalIdx: Int(dentist.hospitalIdx))
+//                        print(detailDentist.hospitalIdx)
+            
+            
+            })
     }
 }
 

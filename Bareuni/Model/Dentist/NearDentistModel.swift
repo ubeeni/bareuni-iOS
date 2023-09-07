@@ -16,11 +16,13 @@ struct NearDentistResponse: Codable {
 }
 
 // MARK: - Result
-struct NearDentist: Codable {
-    let hospitalIdx: Int
+struct NearDentist: Codable, Identifiable {
+    let hospitalIdx: Int64
     let hosName, address: String
     let score: Double
     let reviewCnt: Int
     let summary: String
 //    let image: String
+    
+    var id: Int64 { hospitalIdx }
 }
