@@ -150,7 +150,7 @@ struct DentistCell: View {
         VStack {
             HStack {
                 ZStack(alignment: .topLeading) {
-                    Image(dentist.image)
+                    Image("sampleimage")
                         .resizable()
                         .frame(width: 87, height: 86)
                         .cornerRadius(10)

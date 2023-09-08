@@ -21,5 +21,5 @@ struct BestDentistResult: Codable, Identifiable {
     let score: Double
     let reviewCnt: Int64
 //    let summary: String
-    let image: String
+    let images: String
 }

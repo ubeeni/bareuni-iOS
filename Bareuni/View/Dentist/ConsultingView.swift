@@ -18,10 +18,13 @@ struct ConsultingView: View {
     var body: some View {
         NavigationView {
             VStack{
+                
                 Divider().padding(.bottom, 41)
+                    .padding(.top, -30)
                 
                 Button(action: {
-                    isSelected1.toggle()
+                    isSelected1 = true
+                    isSelected2 = false
                 }, label: {
                     ZStack{
                         Rectangle()
@@ -59,7 +62,8 @@ struct ConsultingView: View {
                 }).padding(.bottom, 20)
                 
                 Button(action: {
-                    isSelected2.toggle()
+                    isSelected1 = false
+                    isSelected2 = true
                 }, label: {
                     ZStack{
                         Rectangle()
@@ -98,115 +102,145 @@ struct ConsultingView: View {
                 
                 HStack{
                     Text("상담받는 분 ")
-                      .font(
-                        Font.custom("Pretendard", size: 18)
-                          .weight(.semibold)
-                      )
-                      .foregroundColor(.black)
-                      .padding(.leading, 32)
+                        .font(
+                            Font.custom("Pretendard", size: 18)
+                                .weight(.semibold)
+                        )
+                        .foregroundColor(.black)
+                        .padding(.leading, 32)
                     
                     Spacer()
                     
                     Text("개인정보 인증이 필요해요")
-                      .font(
-                        Font.custom("Pretendard", size: 12)
-                          .weight(.medium)
-                      )
-                      .foregroundColor(.BackgroundBlue)
-                      .padding(.trailing, 32)
+                        .font(
+                            Font.custom("Pretendard", size: 12)
+                                .weight(.medium)
+                        )
+                        .foregroundColor(.BackgroundBlue)
+                        .padding(.trailing, 32)
                 }
                 .padding(.bottom, 13)
                 
                 Rectangle()
-                  .foregroundColor(.clear)
-                  .frame(width: 390, height: 1)
-                  .background(Color(red: 0.91, green: 0.93, blue: 0.94))
-                  .padding(.bottom, 27)
-                
-                HStack {
-                    Text("이름")
-                      .font(
-                        Font.custom("Pretendard", size: 16)
-                          .weight(.medium)
-                      )
-                  .foregroundColor(.black)
-                  .padding(.leading, 32)
-                    Spacer()
-                }
-                
-                TextField("", text: $name)
-                    .frame(width: 290, height: 51)
-                    .background(RoundedRectangle(cornerRadius: 12)
-                        .inset(by: 0.5)
-                        .stroke(Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 1)
-                    .frame(width: 342, height: 51))
-                
-                HStack {
-                    Text("연락처")
-                      .font(
-                        Font.custom("Pretendard", size: 16)
-                          .weight(.medium)
-                      )
-                  .foregroundColor(.black)
-                  .padding(.leading, 32)
-                    
-                    Spacer()
-                }
-                
-                HStack {
-                    TextField("", text: $phoneNumber)
-                        .frame(width: 220, height: 51)
-                        .overlay(RoundedRectangle(cornerRadius: 12)
-                            .inset(by: 0.5)
-                            .stroke(Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 1)
-                        .frame(width: 256, height: 51))
-                        .padding(.trailing, 30)
-                        .padding(.leading, 43)
-                    
-                    Text("인증")
-                        .foregroundColor(.BackgroundBlue)
-                      .frame(width: 72, height: 51)
-                      .background(.white)
-                      .cornerRadius(8)
-                      .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                          .inset(by: 0.5)
-                          .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 1)
-                      )
-                      .padding(.trailing, 25)
-                }.frame(width: 342, height: 51)
-                
-                NavigationLink(destination: ReservationView( isPresentingModal: $isPresentingModal), label: {
-                    ZStack {
-                        Rectangle().frame(width: 345, height: 57)
-                            .cornerRadius(8)
-                            .foregroundColor(.BackgroundBlue)
-                        
-                        Text("내 지역 선택 완료")
+                    .foregroundColor(.clear)
+                    .frame(width: 390, height: 1)
+                    .background(Color(red: 0.91, green: 0.93, blue: 0.94))
+                    .padding(.bottom, 27)
+                VStack{
+                    HStack {
+                        Text("이름")
                             .font(
                                 Font.custom("Pretendard", size: 16)
-                                    .weight(.semibold)
+                                    .weight(.medium)
                             )
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
+                            .padding(.leading, 32)
+                        Spacer()
                     }
-                    .padding(.bottom, 10)
-                })
+                    
+                    TextField("", text: $name)
+                        .frame(width: 290, height: 51)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .inset(by: 0.5)
+                            .stroke(Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 1)
+                            .frame(width: 342, height: 51))
+                    
+                    HStack {
+                        Text("연락처")
+                            .font(
+                                Font.custom("Pretendard", size: 16)
+                                    .weight(.medium)
+                            )
+                            .foregroundColor(.black)
+                            .padding(.leading, 32)
+                        
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        TextField("", text: $phoneNumber)
+                            .frame(width: 220, height: 51)
+                            .overlay(RoundedRectangle(cornerRadius: 12)
+                                .inset(by: 0.5)
+                                .stroke(Color(red: 0.88, green: 0.88, blue: 0.88), lineWidth: 1)
+                                .frame(width: 256, height: 51))
+                            .padding(.trailing, 30)
+                            .padding(.leading, 43)
+                        
+                        Text("인증")
+                            .foregroundColor(.BackgroundBlue)
+                            .frame(width: 72, height: 51)
+                            .background(.white)
+                            .cornerRadius(8)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .inset(by: 0.5)
+                                    .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 1)
+                            )
+                            .padding(.trailing, 25)
+                    }.frame(width: 342, height: 51)
+                    
+                    NavigationLink(destination: ReservationView( isPresentingModal: $isPresentingModal), label: {
+                        ZStack {
+                            Rectangle().frame(width: 345, height: 57)
+                                .cornerRadius(8)
+                                .foregroundColor(isSelected1 == false && isSelected2 == false ? .gray : .BackgroundBlue)
+                            
+                            Text("다음")
+                                .font(
+                                    Font.custom("Pretendard", size: 16)
+                                        .weight(.semibold)
+                                )
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                        }
+                        .padding(.top)
+                    }).disabled(isSelected1 == false && isSelected2 == false)
+                }
             }
+            .navigationBarTitle("상담받기", displayMode: .inline)
+            .navigationBarItems(leading:
+                                    Button(action: {
+                                    isPresentingModal.toggle()
+                                }) {
+                                    Image("Expand_left")
+                                }
+                            )
         }
     }
 }
 
 struct ConsultingView2: View {
     
-    var body: some View{
-        Text("asd")
+    var body: some View {
+        VStack {
+            HStack {
+                Button(action: {
+    //                isPresentingModal.toggle()
+                }) {
+                    Image("Expand_left")
+                }
+                
+                Spacer() // Pushes the button to the left
+                
+                Text("상담받기")
+                    .font(
+                        Font.custom("Pretendard", size: 20)
+                            .weight(.medium)
+                    )
+                    .foregroundColor(.black)
+                
+                Spacer() // Pushes the text to the center
+            }
+            Spacer()
+        }
+
     }
 }
 
 struct ConsultingView_Previews: PreviewProvider {
     static var previews: some View {
-//        ConsultingView()
+        ContentView()
         ConsultingView2()
     }
 }

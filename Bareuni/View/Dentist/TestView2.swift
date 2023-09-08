@@ -73,7 +73,7 @@ struct ReservationView: View {
                         .cornerRadius(8)
                         .foregroundColor(.BackgroundBlue)
                     
-                    Text("내 지역 선택 완료")
+                    Text("다음")
                         .font(
                             Font.custom("Pretendard", size: 16)
                                 .weight(.semibold)
@@ -84,7 +84,15 @@ struct ReservationView: View {
                 .padding(.bottom, 10)
             })
             
-        }
+        }.navigationBarBackButtonHidden(true)
+        .navigationBarTitle("상담받기", displayMode: .inline)
+            .navigationBarItems(leading:
+                                    Button(action: {
+                                    isPresentingModal.toggle()
+                                }) {
+                                    Image("Expand_left")
+                                }
+                            )
     }
 
     private func timeSlots(for date: Date) -> [Date] {
@@ -140,6 +148,7 @@ struct RectangleView: View {
 struct TestView2_Previews: PreviewProvider {
     static var previews: some View {
 //        ReservationView()
+        ContentView()
         RectangleView()
     }
 }

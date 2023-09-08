@@ -14,6 +14,7 @@ struct WriteView: View {
     @State var selectedSatisfaction1 = ""
     @State var selectedSatisfaction2 = ""
     @State var selectedSatisfaction3 = ""
+    @State var rating: Int = 0
     @Binding var isPresentingModal: Bool
     let placeholder = "Placeholder"
     
@@ -41,7 +42,7 @@ struct WriteView: View {
                                             .weight(.medium)
                                     )
                                     .multilineTextAlignment(.center)
-                                    .foregroundColor(.BackgroundBlue)
+                                    .foregroundColor(selectedSatisfaction1 == "" || selectedSatisfaction2 == "" || selectedSatisfaction3 == "" || reviewText.count < 20 || rating == 0 ? .gray : .BackgroundBlue)
                                     .frame(maxWidth: .infinity, alignment: .top)
                             }
                             .padding(8)
@@ -51,9 +52,9 @@ struct WriteView: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 8)
                                     .inset(by: 0.25)
-                                    .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 0.5)
+                                    .stroke(selectedSatisfaction1 == "" || selectedSatisfaction2 == "" || selectedSatisfaction3 == "" || reviewText.count < 20 || rating == 0 ? Color.gray : Color.BackgroundBlue, lineWidth: 0.5)
                             )
-                        })
+                        }).disabled(selectedSatisfaction1 == "" || selectedSatisfaction2 == "" || selectedSatisfaction3 == "" || reviewText.count < 20 || rating == 0)
                         
                         
                     }
@@ -80,7 +81,7 @@ struct WriteView: View {
                         
                         HStack(alignment: .center) {
                             Spacer()
-                            StarView()
+                            StarView(rating: $rating)
                             Spacer()
                         }
                         
@@ -267,7 +268,7 @@ struct EvaluationButton: View {
 }
 
 struct StarView: View {
-    @State var rating: Int = 0
+    @Binding var rating: Int
     
     var body: some View {
         HStack {
@@ -433,7 +434,7 @@ struct WriteView2: View {
                                 .weight(.medium)
                         )
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.BackgroundBlue)
+                        .foregroundColor(isSelected1 == false || isSelected2 == false ? .gray : .BackgroundBlue)
                         .frame(maxWidth: .infinity, alignment: .top)
                 }
                 .padding(8)
@@ -443,9 +444,9 @@ struct WriteView2: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
                         .inset(by: 0.25)
-                        .stroke(Color(red: 0, green: 0.58, blue: 1), lineWidth: 0.5)
+                        .stroke(isSelected1 == false || isSelected2 == false ? Color.gray : Color.BackgroundBlue, lineWidth: 0.5)
                 )
-            })
+            }).disabled(isSelected1 == false || isSelected2 == false)
         })
                             
         )

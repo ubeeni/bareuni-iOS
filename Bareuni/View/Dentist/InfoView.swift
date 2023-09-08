@@ -18,13 +18,20 @@ struct InfoView: View {
     var body: some View {
         VStack{
             HStack{
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("Expand_left")
+                })
+                .padding(.leading, 15)
+                
                 Text("치과 정보")
                     .font(
                         Font.custom("Pretendard", size: 24)
                             .weight(.medium)
                     )
                     .foregroundColor(.black)
-                    .padding(.leading, 24)
+                    
                 
                 Spacer()
                 
@@ -42,14 +49,6 @@ struct InfoView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 0) {
-                    
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Text("지역선택 다시하기")
-                    })
-                    .padding(.trailing)
-                    
                     
                     Button(action: {
                         print(recommendDentistViewModel.selectedCities)
@@ -567,13 +566,19 @@ struct IntroduceView: View {
     //                                .weight(.medium)
     //                        )
     //                        .foregroundColor(.black)
+                        Rectangle().frame(width: 308, height: 0)
                         
                         Text(detailDentist.detailDentist?.openTime ?? "N/A")
                         
-                        Text("점심시간")
+//                        Text("점심시간")
                         
                         Text(detailDentist.detailDentist?.lunchTime ?? "N/A")
                     }
+                    .font(
+                        Font.custom("Pretendard", size: 14)
+                        .weight(.medium)
+                        )
+                        .foregroundColor(.black)
                 }
             }
             .frame(width: 338, height: 112)
@@ -624,8 +629,14 @@ struct IntroduceView: View {
             ZStack {
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 10) {
+                        Rectangle().frame(width: 308, height: 0)
+                        
                         Text(detailDentist.detailDentist?.content ?? "N/A")
-                    }
+                    }.font(
+                        Font.custom("Pretendard", size: 14)
+                        .weight(.medium)
+                        )
+                        .foregroundColor(.black)
                 }
             }
             .frame(width: 338, height: 112)
@@ -1012,15 +1023,43 @@ struct SearchView: View {
                                 }
                                 else{
                                     ForEach(searchViewModel.searchReviews, id: \.id){ review in
-//                                        VStack{
-//                                            Text(dentist.hosName)
-//                                            HStack{
-//                                                Text(String(dentist.score))
-//                                                Text(String(dentist.reviewCnt))
-//                                            }
-//                                            Text(dentist.address)
-//                                        }
-                                        Text(review.content)
+                                        VStack(alignment: .leading){
+                                            HStack {
+                                                Image("Tooth")
+                                                    .frame(width: 20, height: 20)
+                                                    .padding(.all, 13)
+                                                    .overlay(
+                                                        Circle().stroke(lineWidth: 0.5)
+                                                        
+                                                )
+                                                VStack(alignment: .leading){
+                                                    Text(review.user.nickName)
+                                                        .font(
+                                                        Font.custom("Pretendard", size: 16)
+                                                        .weight(.semibold)
+                                                        )
+                                                        .foregroundColor(Color(red: 0.13, green: 0.17, blue: 0.21))
+//                                                        .frame(width: 41, height: 21, alignment: .leading)
+                                                    
+                                                    Text(review.createdAt)
+                                                        .font(Font.custom("Pretendard", size: 10))
+                                                        .multilineTextAlignment(.trailing)
+                                                        .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
+//                                                        .frame(width: 57, height: 19, alignment: .trailing)
+                                                }
+                                                
+                                                Spacer()
+                                                
+                                                Image("YStar")
+                                                Text(String(review.totalScore))
+                                            }
+                                            ExpandableTextView(review.content, lineLimit: 3)
+                                                .padding(.horizontal, 20)
+                                                .font(
+                                                Font.custom("Pretendard", size: 12)
+                                                .weight(.medium)
+                                                )
+                                        }
                                     }
                                 }
                             }.listStyle(.plain)
@@ -1053,8 +1092,15 @@ struct SearchView: View {
                                 else{
                                     ForEach(searchViewModel.searchDentists, id: \.self){ dentist in
                                         VStack{
+//                                            Text(dentist.hosName)
+//                                            HStack{
+//                                                Text(String(dentist.score))
+//                                                Text(String(dentist.reviewCnt))
+//                                            }
+//                                            Text(dentist.address)
                                             Text(dentist.hosName)
                                             HStack{
+                                                Image("Star")
                                                 Text(String(dentist.score))
                                                 Text(String(dentist.reviewCnt))
                                             }
@@ -1155,6 +1201,6 @@ struct InfoView_Previews: PreviewProvider {
         ContentView()
         //        InfoView()
         //        ReviewView()
-        //        SearchView()
+                SearchView()
     }
 }
