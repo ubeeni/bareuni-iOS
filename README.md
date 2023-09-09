@@ -1,4 +1,6 @@
 # bareuni-FE
+<img width="1136" alt="image" src="https://github.com/bareuni/bareuni-iOS/assets/113659520/64504a94-e44d-4c0f-a25f-bf2312632948">
+
 ### Commit Message Convention
 
 |    Type     | Description  |
