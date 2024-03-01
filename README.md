@@ -1,10 +1,6 @@
-# bareuni-FE
-
-<!-- 
-<img width="1136" alt="image" src="https://github.com/bareuni/bareuni-iOS/assets/113659520/64504a94-e44d-4c0f-a25f-bf2312632948">
--->
-
 ![바른이](https://github.com/bareuni/bareuni-iOS/assets/69234788/5e0eb0ec-8ec4-4543-b36e-86b64ac92005)
+
+# bareuni-FE
 
 ### Commit Message Convention
 
